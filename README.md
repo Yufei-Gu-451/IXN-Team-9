@@ -1,4 +1,4 @@
-# IXN-team-9
+# IXN-Team-9
 
 Project Keyword : Remote consultations analysis / Automatic Speech Recognition (ASR) / Natural Language Processing (NLP) / Medical database
 
