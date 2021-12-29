@@ -75,11 +75,19 @@ def speech_recognize_once_from_mic():
     # </SpeechRecognitionWithMicrophone>
 
 
+# Write text to the end of a file
+# Will not cover original text
+def write_to_file_end(*, output_file_name, text):
+    with open (output_file_name, 'a') as f:
+        f.write(text)
+        f.close()
+
 # SpeechContinuousRecognitionWithFile
-# Performs continuous speech recognition with input from an audio file
-def speech_recognize_continuous_from_file(*, file_name):
+# Performs continuous speech recognition with input from the given audio file
+# Write the result to the given output txt file
+def speech_recognize_continuous_from_file(*, input_file_name, output_file_name):
     speech_config = set_speech_config()
-    audio_config = set_audio_file_config(file_name=file_name)
+    audio_config = set_audio_file_config(file_name=input_file_name)
 
     speech_recognizer = creare_audio_recognizer(speech_config=speech_config, audio_config=audio_config)
 
@@ -92,11 +100,25 @@ def speech_recognize_continuous_from_file(*, file_name):
         done = True
 
     # Connect callbacks to the events fired by the speech recognizer
+    # Intermediate recognition attempt
     speech_recognizer.recognizing.connect(lambda evt: print('RECOGNIZING: {}'.format(evt)))
-    speech_recognizer.recognized.connect(lambda evt: print('RECOGNIZED: {}'.format(evt)))
-    speech_recognizer.session_started.connect(lambda evt: print('SESSION STARTED: {}'.format(evt)))
-    speech_recognizer.session_stopped.connect(lambda evt: print('SESSION STOPPED {}'.format(evt)))
-    speech_recognizer.canceled.connect(lambda evt: print('CANCELED {}'.format(evt)))
+
+    # If a recognition attempt is successful
+    # Print event log to terminal
+    speech_recognizer.recognized.connect(lambda evt: print('RECOGNIZED: {}'.format(evt.result.text)))
+    #Write result text to output file
+    speech_recognizer.recognized.connect(lambda evt: write_to_file_end(output_file_name=output_file_name, 
+                                                            text = '{}\n'.format(evt.result.text)))
+
+    # If a recognition session has started
+    speech_recognizer.session_started.connect('''lambda evt: print('SESSION STARTED: {}'.format(evt))''')
+    # If a recognition session ha
+    # s stopped
+    speech_recognizer.session_stopped.connect('''lambda evt: print('SESSION STOPPED {}'.format(evt))''')
+
+    # If a recognition attempt was canceled as a result or a direct cancellation request 
+    # or, alternatively, a transport or protocol failure
+    speech_recognizer.canceled.connect('''lambda evt: print('CANCELED {}'.format(evt))''')
 
     # stop continuous recognition on either session stopped or canceled events
     speech_recognizer.session_stopped.connect(stop_cb)
@@ -107,6 +129,7 @@ def speech_recognize_continuous_from_file(*, file_name):
     while not done:
         time.sleep(.5)
 
+    # Stop continous speech recognition
     speech_recognizer.stop_continuous_recognition()
     # </SpeechContinuousRecognitionWithFile>
 
@@ -114,4 +137,5 @@ def speech_recognize_continuous_from_file(*, file_name):
 
 #speech_recognize_once_from_mic()
 
-speech_recognize_continuous_from_file(file_name="audiofiles/aboutSpeechSdk.wav")
+speech_recognize_continuous_from_file(input_file_name="audiofiles/aboutSpeechSdk.wav", 
+                output_file_name="textfiles/originalRecognitionResult.txt")
