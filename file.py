@@ -1,4 +1,5 @@
 import filetype
+import os
 
 # Write text to the end of a file
 # Will not cover original text
@@ -32,3 +33,27 @@ def check_file_type(filename, target_type):
     else:
         print("filetype: File type error: %s should be %s but is %s", filename, target_type, kind.extension)
         return False
+
+
+# Try to read a file and return its content in a list of string
+def read_file(filename):
+    f = open(filename)
+    file_content = []
+
+    try:
+        for line in f:
+            file_content.append(line)
+    except IOError:
+        print("Cannot access file content")
+        return ''
+
+    return file_content
+
+
+# Check if a file exists
+def exists_file(file):
+    return os.path.exists(file) and os.path.isfile(file)
+
+# Check if a directory exists
+def exists_dir(dir):
+    return os.path.exists(dir) and os.path.isdir(dir)

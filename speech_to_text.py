@@ -11,6 +11,7 @@ except ImportError:
     sys.exit(1)
 
 import time
+import pytest
 import file
 
 from azure.cognitiveservices.speech import audio
@@ -95,7 +96,7 @@ def speech_recognize_continuous_from_file(*, input_file_name, output_file_name):
 
     # Connect callbacks to the events fired by the speech recognizer
     # Intermediate recognition attempt
-    speech_recognizer.recognizing.connect(lambda evt: print('RECOGNIZING: {}'.format(evt)))
+    speech_recognizer.recognizing.connect('''lambda evt: print('RECOGNIZING: {}'.format(evt))''')
 
     # If a recognition attempt is successful
     # Print event log to terminal
@@ -131,9 +132,13 @@ def speech_recognize_continuous_from_file(*, input_file_name, output_file_name):
 
 #speech_recognize_once_from_mic()
 def speech_to_text(*, inputfile, outputfile):
-    if file.check_file_type(inputfile, 'wav') and file.check_file_type(outputfile, 'txt'):
+    if not file.exists_file(inputfile) or not file.check_file_type(inputfile, 'wav'):
+        print('speech_to_text: audio file error : %s', inputfile)
+        return
+
+    if file.check_file_type(outputfile, 'txt'):
         file.write_to_file(output_file_name=outputfile, text='', append=False)
     else:
-        return
+        print('speech_to_text: audio file error : %s', inputfile)
 
     speech_recognize_continuous_from_file(input_file_name=inputfile, output_file_name=outputfile)
