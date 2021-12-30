@@ -11,6 +11,7 @@ except ImportError:
     sys.exit(1)
 
 import time
+import file
 
 from azure.cognitiveservices.speech import audio
 
@@ -75,18 +76,6 @@ def speech_recognize_once_from_mic():
     # </SpeechRecognitionWithMicrophone>
 
 
-# Write text to the end of a file
-# Will not cover original text
-def write_to_file_end(*, output_file_name, text, append):
-    if append:
-        with open (output_file_name, 'a') as f:
-            f.write(text)
-            f.close()
-    else:
-        with open (output_file_name, 'w') as f:
-            f.write(text)
-            f.close()
-
 # SpeechContinuousRecognitionWithFile
 # Performs continuous speech recognition with the given awv file
 # Write the result to the given output txt file
@@ -112,7 +101,7 @@ def speech_recognize_continuous_from_file(*, input_file_name, output_file_name):
     # Print event log to terminal
     speech_recognizer.recognized.connect(lambda evt: print('RECOGNIZED: {}'.format(evt.result.text)))
     #Write result text to output file
-    speech_recognizer.recognized.connect(lambda evt: write_to_file_end(output_file_name=output_file_name, 
+    speech_recognizer.recognized.connect(lambda evt: file.write_to_file(output_file_name=output_file_name, 
                                                             text = '{}\n'.format(evt.result.text), append=True))
 
     # If a recognition session has started
@@ -139,22 +128,11 @@ def speech_recognize_continuous_from_file(*, input_file_name, output_file_name):
     # </SpeechContinuousRecognitionWithFile>
 
 
-def check_file_type(filename, target_type):
-    kind = None
-    if kind is None:
-        print("speech_to_text: filetype: Cannot guess file type")
-        return False
-    elif kind.extension == target_type:
-        return True
-    else:
-        print("speech_to_text: filetype: File type error: %s should be %s but is %s", filename, target_type, kind.extension)
-        return False
-
 
 #speech_recognize_once_from_mic()
 def speech_to_text(*, inputfile, outputfile):
-    if check_file_type(inputfile, 'wav') and check_file_type(outputfile, 'txt'):
-        write_to_file_end(output_file_name=outputfile, text=None, append=False)
+    if file.check_file_type(inputfile, 'wav') and file.check_file_type(outputfile, 'txt'):
+        file.write_to_file(output_file_name=outputfile, text='', append=False)
     else:
         return
 
