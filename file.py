@@ -18,21 +18,18 @@ def check_file_type(filename, target_type):
     kind = filetype.guess(filename)
 
     # txt file cannot be identified
-    if target_type == 'txt':
-        try:
-            with open(filename, 'w') as f:
-                f.close()
-        except IOError:
-            print("filetype: Cannot access txt file")
-        return True
-    elif kind is None:
-        print("filetype: Cannot guess file type")
+    if kind is None:
+        if target_type == 'txt':
+            try:
+                with open(filename, 'w') as f:
+                    f.close()
+                    return True
+            except Exception:
+                return False
+
         return False
-    elif kind.extension == target_type:
-        return True
-    else:
-        print("filetype: File type error: %s should be %s but is %s", filename, target_type, kind.extension)
-        return False
+    
+    return kind.extension == target_type
 
 
 # Try to read a file and return its content in a list of string
@@ -43,9 +40,8 @@ def read_file(filename):
     try:
         for line in f:
             file_content.append(line)
-    except IOError:
-        print("Cannot access file content")
-        return ''
+    except IOError as e:
+        raise IOError("readfile: Cannot access file content: {}".format(e))
 
     return file_content
 

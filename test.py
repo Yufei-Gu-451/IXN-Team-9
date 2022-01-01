@@ -5,20 +5,13 @@ import file
 test_file = "test/testfile.txt"
 test_audio = "audiofiles/aboutSpeechSdk.wav"
 
-false_audio = "test/testfile.txt"
-false_audio2 = "audiofiles/x.wav"
-false_audio3 = "audiofile/aboutSpeechSdk.wav"
-
-false_file = "test/testfile.tx"
-false_file2 = "test/testfile2.txt"
-false_file2 = "tes/testfile2.txt"
-
 class TestSpeechToText(object):
     # Set up method executed before all test methods in the class
     def setup_class(self):
         print("\n\nTestSpeechToText Class : Test begins\n")
         # Create a temporal test file
         open(test_file, 'w')
+        open('test/testfile.tx', 'w')
 
     # Tear down method executed after all test methods in the class
     def teardown_class(self):
@@ -51,6 +44,30 @@ class TestSpeechToText(object):
     # Test wrong audio with wrong file type
     def test_false_audio(self):
         try:
-            speech_to_text.speech_to_text(inputfile=false_audio, outputfile=test_file)
+            speech_to_text.speech_to_text(inputfile='test/testfile.txt', outputfile=test_file)
         except Exception as e:
-            assert str(e) == 'speech_to_text: audio file error : %s test/testfile.txt'
+            assert str(e) == 'speech_to_text: audio file type error: test/testfile.txt should be of type wav'
+
+    def test_false_audio2(self):
+        try:
+            speech_to_text.speech_to_text(inputfile="audiofiles/x.wav", outputfile=test_file)
+        except Exception as e:
+            assert str(e) == 'speech_to_text: audio file not exists: audiofiles/x.wav'
+
+    def test_false_audio3(self):
+        try:
+            speech_to_text.speech_to_text(inputfile="audiofile/aboutSpeechSdk.wav", outputfile=test_file)
+        except Exception as e:
+            assert str(e) == 'speech_to_text: audio file not exists: audiofile/aboutSpeechSdk.wav'
+
+    def test_false_file(self):
+        try:
+            speech_to_text.speech_to_text(inputfile=test_audio, outputfile="test/testfile.tx")
+        except Exception as e:
+            assert str(e) == 'speech_to_text: output file type error: test/testfile.tx should be of type txt'
+
+    def test_false_file2(self):
+        try:
+            speech_to_text.speech_to_text(inputfile=test_audio, outputfile="test/testfile2.txt")
+        except Exception as e:
+            assert str(e) == 'speech_to_text: output file not exists: test/testfile2.txt'

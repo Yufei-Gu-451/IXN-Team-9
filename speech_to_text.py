@@ -132,13 +132,18 @@ def speech_recognize_continuous_from_file(*, input_file_name, output_file_name):
 
 #speech_recognize_once_from_mic()
 def speech_to_text(*, inputfile, outputfile):
-    if not file.exists_file(inputfile) or not file.check_file_type(inputfile, 'wav'):
-        print('speech_to_text: audio file error : %s', inputfile)
-        return
+    if not file.exists_file(inputfile):
+        raise IOError('speech_to_text: audio file not exists: {}'.format(inputfile))
+
+    if not file.check_file_type(inputfile, 'wav'):
+        raise IOError('speech_to_text: audio file type error: {} should be of type wav'.format(inputfile))
+    
+    if not file.exists_file(outputfile):
+        raise IOError('speech_to_text: output file not exists: {}'.format(outputfile))
 
     if file.check_file_type(outputfile, 'txt'):
         file.write_to_file(output_file_name=outputfile, text='', append=False)
     else:
-        print('speech_to_text: audio file error : %s', inputfile)
+        raise IOError('speech_to_text: output file type error: {} should be of type txt'.format(outputfile))
 
     speech_recognize_continuous_from_file(input_file_name=inputfile, output_file_name=outputfile)
