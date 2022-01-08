@@ -12,3 +12,6 @@ py==1.11.0
 pyparsing==3.0.6
 pytest==6.2.5
 toml==0.10.2
+tensorflow==1.15
+numpy==1.19.5
+nltk==3.6.7
