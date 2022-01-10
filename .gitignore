@@ -4,9 +4,6 @@ venv
 # BERT
 BERT/
 
-# AUDIO
-AUDIO/
-
 .DS_Store
 
 # Initially taken from Github's Python gitignore file
