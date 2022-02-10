@@ -177,7 +177,6 @@ def summarize_text(*, input_file, output_file, compression_rate, number_of_clust
 
     #-------------------- Preprocessing --------------------
 
-
     input_address = input_file
     print('---------- Preprocessing started ----------\n')
 
