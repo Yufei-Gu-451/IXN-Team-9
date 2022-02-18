@@ -12,8 +12,8 @@ py==1.11.0
 pyparsing==3.0.6
 pytest==6.2.5
 toml==0.10.2
-tensorflow==1.15
-numpy==1.19.5
+tensorflow==2.8.0
+numpy==1.20
 nltk==3.6.7
 json-lines==0.5.0
 
