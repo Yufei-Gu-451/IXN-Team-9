@@ -4,11 +4,13 @@ from ..models import User
 from . import main
 from .forms import NameForm
 
+import speech_to_text
+import text_summarizer
+import file
+
 @main.route('/')
 def index():
     return render_template('index.html')
-
-
 
 @main.route('/uploadPage', methods=['GET'])
 def uploadAudioPage():
