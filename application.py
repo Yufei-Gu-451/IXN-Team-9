@@ -2,14 +2,13 @@ import os
 import click
 from flask import Flask
 from app import create_app, db
-from app.models import User, Role
+from app.models import User, Role, Files, Patient, Doctor, Appointment
 
 app = create_app(os.getenv('FLASK_CONFIG') or 'default')
 
-
 @app.shell_context_processor
 def make_shell_context():
-    return dict(db=db, User=User, Role=Role, Files=Files)
+    return dict(db=db, User=User, Role=Role, Files=Files, Appointment=Appointment, Patient=Patient, Doctor=Doctor)
 
 
 @app.cli.command()
