@@ -1,8 +1,5 @@
-from flask import render_template, session, redirect, url_for, current_app
-from .. import db
-from ..models import User
+from flask import render_template
 from . import main
-from .forms import NameForm
 
 import speech_to_text
 import text_summarizer
