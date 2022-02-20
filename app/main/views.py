@@ -1,13 +1,14 @@
-from flask import render_template
+from flask import render_template, session, redirect, url_for, current_app
+from .. import db
+from ..models import User
 from . import main
-
-import speech_to_text
-import text_summarizer
-import file
+from .forms import NameForm
 
 @main.route('/')
 def index():
     return render_template('index.html')
+
+
 
 @main.route('/uploadPage', methods=['GET'])
 def uploadAudioPage():
