@@ -13,4 +13,7 @@ Project Description : Use natural language processing or understanding to allow 
 4. Activate the virtual enviroument using command 'conda activate env'
 5. Install all dependencys using command 'pip install -r requirements.txt'
 7. Export the Flask App 'export FLASK_APP=application.py'
-8. Run the Web Application 'flask run'
+8. Run the Web Application use 'flask run'
+
+
+9. After running complete, deactivate the environment using command 'conda deactivate'
