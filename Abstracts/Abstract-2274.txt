@@ -1,0 +1,1 @@
+Peripheral tolerance is partially controlled by the expression of peripheral tissue antigens (PTAs) in lymph node stromal cells (LNSCs). We previously identified a transcriptional regulator, deformed epidermal autoregulatory factor 1 (Deaf1), that can regulate PTA expression in LNSCs of the pancreatic lymph nodes (PLNs). During the pathogenesis of type 1 diabetes (T1D),
