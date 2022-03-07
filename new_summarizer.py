@@ -1,16 +1,10 @@
-
-'''
-This code was written by Milad Moradi
-Institute for Artificial Intelligence and Decision Support
-Medical University of Vienna
-'''
-
 import subprocess
+from xmlrpc.client import MAXINT
 import nltk
 import json_lines
 import random
 import math
-from numpy import double
+from numpy import False_, double
 
 #-------------------- CLASSES
 
@@ -64,7 +58,7 @@ class Sentence:
 class Cluster:
     def __init__(self, num):
         self.cluster_number = num
-        self.mean = []
+        self.center = []
         self.members = []
         self.summary_members = 0
         
@@ -77,7 +71,6 @@ class Cluster:
 #-------------------- THE MAIN SUMMARIZATION FUNCTION
 
 def produce_summary(compression_rate, sentence_list, clusters, output_address):
-    
     summary_size = math.ceil(len(sentence_list) * compression_rate) + 1
     print('\nSummary size: ', summary_size)
 
@@ -159,7 +152,8 @@ def produce_summary(compression_rate, sentence_list, clusters, output_address):
     output_file_text = open(output_address, 'w')
     output_file_text.write(final_summary)
     output_file_text.close()
-    
+
+    #print(final_summary)
     return
 
 
@@ -299,68 +293,65 @@ def summarize_text(*, input_file, output_file, compression_rate, number_of_clust
     #-------------------- Clustering algorithm
     print('\n---------- Clustering started ----------')
 
-    clusters = []
-
-
-    i = 0
-    for sentence in sentence_list:
+    cluster_list = []
+    center_list = []      # Stored center of all Clusters ; Termination Condition
+    for i in range(number_of_clusters):
         temp_cluster = Cluster(i+1)
         temp_cluster.members.append(i)
-        clusters.append(temp_cluster)
-        i += 1
+        temp_cluster.center = sentence_list[i]
+        print(sentence_list[i].sentence_text)
+        cluster_list.append(temp_cluster)
 
+        center_list.append(i)
+
+    center_list.sort()
 
     #-------------------- Starting clustering algorithm
-
-
-    end_of_clustering = False
-
     iteration = 1
-    while (end_of_clustering != True):
-
+    while (iteration < 50):
         print('---------- Iteration: ', iteration)
-
-        highest_similarity = -10000000000
-        similar_cluster1 = -1
-        similar_cluster2 = -1
-                
-        for i in range(0, len(clusters)):
-            for j in range(0, len(clusters)):
-
-                if i < j:
-
-                    #----------Compute the similarity between two clusters
-                    denominator = 0
-                    temp_similarity = 0
-                    for index1 in clusters[i].members:
-                        for index2 in clusters[j].members:
-                                    
-                            temp_similarity += sentence_list[index1].cosine_similarity(sentence_list[index2].representation)
-                            denominator += 1
-                                    
-                    if denominator != 0:
-                        temp_similarity /= denominator
-                            
-                    if temp_similarity > highest_similarity:
-                        highest_similarity = temp_similarity
-                        similar_cluster1 = i
-                        similar_cluster2 = j
-
-        #----------Merge two most similar clusters
-        clusters[similar_cluster1].members = clusters[similar_cluster1].members + clusters[similar_cluster2].members
-        clusters.remove(clusters[similar_cluster2])
-        print(similar_cluster1, 'and', similar_cluster2, 'merged')
-        print('Number of clusters: ', str(len(clusters)))
-
         iteration += 1
-        if len(clusters) <= number_of_clusters:
-            end_of_clustering = True
-            output_address = output_file
-            produce_summary(compression_rate, sentence_list, clusters, output_address)
+        
+        #-------------------- Allocate each sentence to a cluster with a highest cosine similiarity
+        for i in range(len(sentence_list)):
+            min_similiarity = (0, 0)
+            for j in range(number_of_clusters):
+                temp_cluster_center = cluster_list[j].center
+                temp_similiarity = sentence_list[i].cosine_similarity(temp_cluster_center.representation)
+                if temp_similiarity > min_similiarity[1]:
+                    min_similiarity = (j, temp_similiarity)
+                #print(i, j, temp_similiarity, min_similiarity)
 
+            cluster_list[min_similiarity[0]].members.append(i)
+            #print(i, '-----------------------------------', min_similiarity)
 
-        #-------------------- End of clustering algorithm
+        #-------------------- For each cluster, find a new center
+        temp_center_list = []
 
+        for cluster in cluster_list:
+            max_similarity_sum = (0, 0)
 
-    print("\n")
-    print("---------- Finished ----------")
+            for i in range(len(cluster.members)):
+                temp_similiarity_sum = 0
+                for j in cluster.members:
+                    temp_similiarity_sum += sentence_list[i].cosine_similarity(sentence_list[j].representation)
+
+                #print(temp_similiarity_sum, max_similarity_sum)
+                if temp_similiarity_sum > max_similarity_sum[1]:
+                    max_similarity_sum = (i, temp_similiarity_sum)
+
+            cluster.center = sentence_list[cluster.cluster_number]
+            print(max_similarity_sum[0], max_similarity_sum[1]/len(cluster.members), len(cluster.members))
+
+            temp_center_list.append(max_similarity_sum[0])
+
+        
+        temp_center_list.sort()
+        if center_list == temp_center_list:
+            produce_summary(compression_rate, sentence_list, cluster_list, output_file)
+            print("\n---------- Finished ----------")
+            return
+        else:
+            center_list = temp_center_list
+            for cluster in cluster_list:
+                cluster.members = []
