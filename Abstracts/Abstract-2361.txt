@@ -1,1 +1,0 @@
-Sorting of target cells from a heterogeneous pool is technically difficult when the selection criterion is complex,

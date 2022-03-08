@@ -1,1 +1,0 @@
-Current tandem mass spectral libraries for lipid annotations in metabolomics are limited in size and diversity. We provide a freely available computer generated

@@ -1,1 +1,0 @@
-Molecular motors are instrumental in mRNA localization, which provides spatial and temporal control of protein expression and function. To obtain mechanistic insight into how a class V myosin transports mRNA, we performed single-molecule

@@ -188,15 +188,14 @@ def summarize_text(*, input_file, output_file, compression_rate, number_of_clust
     #-------------------- Feature extraction --------------------
 
     import os
-    os.system('/Library/Frameworks/Python.framework/Versions/3.7/bin/python3.7 bert/extract_features.py --input_file=FILE/temp_input.txt --output_file=FILE/temp_features.jsonl --vocab_file=bert/vocab.txt --bert_config_file=bert/bert_config.json --init_checkpoint=bert/bert_model.ckpt --layers=-1 --max_seq_length=128 --batch_size=8')
-    #os.system('python3 bert/extract_features.py --input_file=FILE/temp_input.txt --output_file=FILE/temp_features.jsonl --vocab_file=bert/vocab.txt --bert_config_file=bert/bert_config.json --init_checkpoint=bert/bert_model.ckpt --layers=-1 --max_seq_length=128 --batch_size=8')
+    os.system('/Library/Frameworks/Python.framework/Versions/3.7/bin/python3.7 bert/extract_features.py --input_file=file/temp_input.txt --output_file=file/temp_features.jsonl --vocab_file=bert/vocab.txt --bert_config_file=bert/bert_config.json --init_checkpoint=bert/bert_model.ckpt --layers=-1 --max_seq_length=128 --batch_size=8')
     #-------------------- Clustering --------------------
 
 
     print('---------- Text summarizer started ----------\n')
     
-    input_address_text = 'FILE/temp_input.txt'
-    input_address_feature = 'FILE/temp_features.jsonl'
+    input_address_text = 'file/temp_input.txt'
+    input_address_feature = 'file/temp_features.jsonl'
     output_address = output_file
 
     input_file = open(input_address_text)

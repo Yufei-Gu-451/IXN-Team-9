@@ -1,1 +1,0 @@
-The sequencing of large and complex genomes of crop species, facilitated by new sequencing technologies and bioinformatic approaches, has provided new opportunities for crop improvement. Current challenges include understanding how genetic variation translates into phenotypic performance in the field.

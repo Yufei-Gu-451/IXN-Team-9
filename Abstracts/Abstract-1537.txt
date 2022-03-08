@@ -1,1 +1,0 @@
-Tetrad analysis has been a gold standard genetic technique for several decades. Unfortunately, the manual nature of the process has relegated its application to small-scale studies and limited its integration with rapidly evolving DNA sequencing technologies. We have developed a rapid, high-throughput method, called

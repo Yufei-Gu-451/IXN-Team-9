@@ -1,1 +1,0 @@
-KCNQ4, a voltage-gated potassium channel, plays an important role in maintaining cochlear ion homoeostasis and regulating hair cell membrane potential, both essential for normal auditory function. Mutations in the

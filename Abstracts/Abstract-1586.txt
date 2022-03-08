@@ -1,1 +1,0 @@
-The performance of 23 density functionals, including one LDA, four GGAs, three meta-GGAs, three hybrid GGAs, eight hybrid meta-GGAs, and ten double-hybrid functionals, was investigated for the computation of activation energies of various covalent main-group single bonds by four catalysts: Pd, PdCl

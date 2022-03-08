@@ -1,1 +1,0 @@
-In yeasts and animals, premature entry into mitosis is prevented by the inhibitory phosphorylation of cyclin-dependent kinase (CDK) by WEE1 kinase, and, at mitosis, WEE1 protein is removed through the action of the 26S proteasome. Although in higher plants WEE1 function has been confirmed in the DNA replication checkpoint,
