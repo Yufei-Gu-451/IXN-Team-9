@@ -1,6 +1,6 @@
 import os
-import speech_to_text
-import file
+from . import speech_to_text
+from . import file
 
 test_file = "FILE/testfile.txt"
 wrong_file = "FILE/testfile.tx"

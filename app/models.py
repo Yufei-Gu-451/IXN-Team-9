@@ -79,3 +79,12 @@ class Appointment(db.Model):
 @login_manager.user_loader
 def load_user(user_id):
     return User.query.get(int(user_id))
+
+def addProcessedFile(filename):
+    processedFile = open("FILE/temp_output.txt", "r")
+    
+    upload = Files(name=filename, processedData=processedFile.read().encode())
+    processedFile.close()
+    
+    db.session.add(upload)
+    db.session.commit()
