@@ -4,6 +4,12 @@ Institute for Artificial Intelligence and Decision Support
 Medical University of Vienna
 '''
 
+'''
+This code was edited by Yufei Gu for studying purpose
+Code Structures are modified and new algorithms have been introduced
+UCL Computer Science
+'''
+
 from typing_extensions import final
 import nltk
 import json_lines
@@ -127,7 +133,7 @@ def produce_summary(compression_rate, sentence_list, clusters):
     final_summary = ''
     for index in summary_index:
         print(sentence_list[index].sentence_text)
-        final_summary += sentence_list[index].sentence_text + '\n'
+        final_summary += sentence_list[index].sentence_text + ' '
 
     return final_summary
 
@@ -139,14 +145,6 @@ def output_summary(*, final_summary, output_address):
 #-------------------- MAIN BODY OF SUMMARIZER
 
 def summarize_text(*, input_file, output_file, compression_rate, number_of_clusters):
-    #--------------------- Arguments -----------------------
-
-    print("Input file is:", input_file)
-    print("Output file is:", output_file)
-    print("Compression rate is:", compression_rate)
-    print("Number of clusters is:", number_of_clusters)
-
-
     #-------------------- Preprocessing --------------------
 
     input_address = input_file
@@ -329,12 +327,12 @@ def k_cluster(*, sentence_list, compression_rate, number_of_clusters):
                 cluster.members = []
         else:
             final_summary = produce_summary(compression_rate, sentence_list, cluster_list)
-            print("\n---------- Finished ----------")
+            print("\n---------- Finished ----------\n")
             return final_summary
 
 
 def merge_cluster(*, sentence_list, compression_rate, number_of_clusters):
-    print('\n---------- Clustering started ----------')
+    print('\n---------- Clustering started ----------\n')
 
     clusters = []
     for i in range(len(sentence_list)):
@@ -348,7 +346,7 @@ def merge_cluster(*, sentence_list, compression_rate, number_of_clusters):
     iteration = 1
     while (end_of_clustering != True):
 
-        print('---------- Iteration: ', iteration)
+        print('\n---------- Iteration: {} ----------\n'.format(iteration))
 
         highest_similarity = -10000000000
         similar_cluster1 = -1
@@ -378,13 +376,13 @@ def merge_cluster(*, sentence_list, compression_rate, number_of_clusters):
         clusters[similar_cluster1].members = clusters[similar_cluster1].members + clusters[similar_cluster2].members
         clusters.remove(clusters[similar_cluster2])
         print(similar_cluster1, 'and', similar_cluster2, 'merged')
-        print('Number of clusters: ', str(len(clusters)))
+        print('\n---------- Number of clusters: {} ----------\n'.format(str(len(clusters))))
 
         iteration += 1
         if len(clusters) <= number_of_clusters:
             end_of_clustering = True
             final_summary = produce_summary(compression_rate, sentence_list, clusters)
-            print("\n---------- Finished ----------")
+            print("\n---------- Finished ----------\n")
             return final_summary
 
 
@@ -394,14 +392,22 @@ def text_rank(*, sentence_list, compression_rate):
     for i in range(len(sentence_list)):
         for j in range(len(sentence_list)):
             similarity_matrix[i][j] = sentence_list[i].cosine_similarity(sentence_list[j].representation)
-    
+            print(i, j, end='')
+        print('\n')
+
+    print('\n---------- Constructing nx graph ----------\n')
     nx_graph = nx.from_numpy_array(similarity_matrix)
+    print('\n---------- Construction complete ----------\n')
+
+    print('\n---------- Ranking sentences ----------\n')
     scores = nx.pagerank(nx_graph)
+    print('\n---------- Ranking complete ----------\n')
 
     ranked_sentence_list = sorted(((scores[i], s) for i,s in enumerate(sentence_list)), reverse=True)
+
     final_summary = ''
     print(len(sentence_list))
     for i in range(int(len(sentence_list)*compression_rate)):
         print(ranked_sentence_list[i][1].sentence_text + '\n')
-        final_summary += ranked_sentence_list[i][1].sentence_text + '\n'
+        final_summary += ranked_sentence_list[i][1].sentence_text + ' '
     return final_summary

@@ -1,8 +1,205 @@
-The ocelot leopardus Pardalis is a small Wildcat native to the southwestern United States, Mexico, and Central and South America.
-This medium sized cat is characterized by solid black spots and streaks on its coat, round, ears and white neck, and undersides.
-It weighs between 8:00 and 15.5 kilograms, 18 and 34 pounds, and reaches 40 to 50 centimeters, 16 to 20 inches at the shoulders.
-It was first described by Carl Linnaeus in 1758.
-Two subspecies are recognized LP paralysis and LP Midas.
-Typically active during twilight and at night, the ocelot tends to be solitary and territorial.
-It is efficient at climbing, leaping and swimming.
-It preys on small terrestrial mammals such as armadillo, Opossum, and lagomorphs.
+Magnetic resonance imaging (MRI) is playing an increasing role in the assessment of patients with liver disease due to its high soft tissue resolution, lack of ionizing radiation and ability to provide functional data.
+Diffusion-weighted (DW)-MRI is a functional imaging technique that is now widely used as a standard imaging sequence, together with unenhanced T1/T2 weighted imaging and contrast-enhanced imaging for liver evaluation.
+As a non-contrast-enhanced technique, DW-MRI is particularly useful in patients with severe renal dysfunction at risk of developing nephrogenic systemic fibrosis (NSF) after administration of gadolinium-based contrast medium[None].
+The clinical uses of liver DW-MRI include improved detection of focal liver lesions, contribution to tissue characterization for both diffuse disease and focal lesions, monitoring of tumour response after chemotherapy or radiotherapy, detection of recurrent disease, differentiating recurrence from post-therapeutic change, and potentially predicting treatment outcome.
+Knowledge of the evidence highlighting the strengths and limitations of the technique in these areas is important to maximize the advantages of using DW-MRI and to avoid the potential pitfalls.
+DW-MRI is a technique that explores the random, thermally driven, motion of water protons in the body, deriving image contrast on the basis of differences in water diffusivity within tissues.
+Water protons in the body exist in the intra- and extracellular spaces; free diffusion is modified by bulk capillary flow and the interactions of the protons with cell membranes and macromolecules.
+In this way, DW-MRI provides an insight into cellular architecture at the micrometre scale.
+In highly cellular tissues (e.g.
+tumour tissue), the tortuosity of the extracellular space and cell membrane density limit the apparent diffusion of water, which is said to be impeded[None,None].
+In contrast, cystic and necrotic tissues have fewer barriers to water diffusion and the apparent diffusion is relatively free.
+The sensitivity of DW-MRI to water diffusion is altered by changing thebvalue of the sequence, a parameter that is proportional to the gradient amplitude, duration of the applied gradient and time interval between the 2 gradients.
+Protons with larger diffusion distances, e.g.
+in the intravascular space, show steep signal attenuation at lowbvalues (b less than 100-150 s mm-2).
+By contrast, cellular tissues (e.g.
+tumours) with more impeded water diffusion tend to maintain their signal at higherbvalues ( greater than 500 s mm-2).
+Therefore, increasingbvalues result in greater signal attenuation in less cellular areas, e.g.
+normal liver parenchyma, compared with cellular areas, e.g.
+tumours, in this way improving and maximizing the contrast between cellular disease and the background liver parenchyma.
+Visual assessment in this way also enables qualitative disease evaluation based on differential signal attenuation between tissues with increasing diffusion weighting.
+The data obtained from 2 or more (typically 3)bvalues[None]is used to generate the apparent diffusion coefficient (ADC) maps.
+To achieve this, the signal intensity (or logarithm of the signal intensity) from each image voxel measured at increasingbvalues is plotted against thebvalue to generate a graph, and the slope of this line is the ADC for that single voxel.
+The mathematical equation used to calculate the ADC is ADC = ln(SI0/SI)/b, where SI0is the signal intensity forb = 0 and SI is the signal intensity for a higherbvalue.
+On the MR scanner, this process is automated for all voxels and a parametric ADC map is produced.
+With growing equalization of technology across MR vendor platforms, there is now a significant convergence in the implementation of DW-MRI across different scanners.
+The most widely used technique is fat-suppressed single-shot spin-echo echo-planar imaging, which can be performed in breathhold, free-breathing or with respiratory triggering.
+In the clinical setting, the free-breathing technique is now most frequently used, as multiple signal averaging improves the image signal-to-noise ratio (SNR) especially at higherbvalues.
+However, a detailed discussion of the technical implementation of liver DW-MRI is beyond the scope of this article.
+The reader is referred to previously published papers on the subject[None].
+A typical diffusion-weighted MR imaging protocol at 1.5 T and 3.0 T is listed inTable 1.
+In general, the quality of liver DW-MRI seems to be more consistent at 1.5 T compared with 3.0 T, although many institutions are now adopting the 3.0 T imaging platform for liver imaging because of the high-quality T1-weighted dynamic contrast-enhanced imaging that can be achieved at the higher field strength.
+NoneNoneNoneNoneTypical MRI parameters for performing free-breathing DWI liver imaging at 1.5 T and 3.0 TSPAIR, spectral-attenuated inversion recovery.
+Visual assessment of DW-MR images is useful in disease detection and lesion characterization based on differential signal attenuation within tissues.
+Cellular tissues demonstrate impeded diffusion, which shows high signal intensity at higherbvalues and a corresponding low ADC value.
+Cystic or necrotic tissues show greater signal attenuation on higherbvalues and return higher ADC values.
+However, the signal return on diffusion images is related to both the proton diffusivity within a tissue and the T2 relaxation time of that tissue.
+Therefore lesions may appear to show impeded diffusion on the highbvalue images (i.e.
+returning high signal intensity) as a result of their intrinsic long T2 relaxation time rather than impeded water diffusivity.
+This phenomenon is known as T2 shine-through and may be encountered in hepatic cysts and liver haemangiomas.
+It is recognized by correlating the highbvalue images with the ADC map; regions with T2 shine-through also return high ADC values.
+Quantification of tissue diffusivity is performed using ADC maps, which can be evaluated visually or by drawing regions of interest on the ADC map to generate mean ADC values for the tissue/region of interest.
+These quantitative measures are being used to characterize both focal and diffuse liver pathology and in the prediction and assessment of tumour response to treatment.
+However, to enable meaningful interpretation and for confidence in ascribing an observed ADC change to real treatment effects rather than to biological, instrumental or observer variations, it is important to establish the ADC measurement reproducibility of the scanner system[None].
+Unfortunately, as each scanner and the conditions of measurements are different, reproducibility measurements should be verified on individual scanners and could be built into the departmental quality assurance programme, which includes the use of dedicated diffusion phantoms[None].
+The measurement reproducibility of a scanner can be established using a small cohort of patients (typically about 10-12) who are scanned twice on the same scanner using the same imaging parameters on different days or times.
+By performing Bland-Altman statistical analysis on the mean ADC result obtained on each measurement in each patient, we can calculate the coefficient of repeatability (R).
+This provides the 95% confidence limits of the ADC measurement variation on a per patient basis.
+For example, a coefficient of repeatability of 13% suggests that by using the particular DW-MRI technique, a change in the ADC value of more than 13% is unlikely to be due to chance.
+Measurement reproducibility calculated from normal tissues may not be applicable to the disease as disease processes (e.g.
+tumours) are often heterogeneous and thus result in poorer measurement reproducibility compared with normal tissues[None].
+Nevertheless, free-breathing DW-MRI has been found to provide the most reproducible ADC results compared with breathhold or respiratory-triggered DW-MRI[None].
+Furthermore, by meticulous technique, it is possible to achieve measurement reproducibility of less than 10% using free-breathing DW-MRI.
+In the reported literature, a coefficient of repeatability of 20-40% is typical[None,None,None,None].
+Liver fibrosis resulting from alcoholic or infective hepatitis is an important cause of morbidity and mortality.
+As clinical examination and biochemical markers are unreliable for staging hepatic fibrosis, the gold standard for establishing liver fibrosis is by histologic evaluation after liver biopsy.
+However, this is invasive and prone to sampling errors[None,None], intra-observer variation[None]and potential complications[None].
+Hence, there is desire for a reliable, non-invasive means of assessing disease severity in patients with chronic liver disease.
+Although conventional computed tomography (CT) and MRI can identify patients with advanced liver cirrhosis, the evaluation of early hepatic fibrosis and inflammation is impossible with conventional MRI, and newer sequences such as DW-MRI and MR elastography are currently under evaluation.
+Several studies have shown that the cirrhotic liver is associated with lower ADC values than normal liver parenchyma (Fig.
+1)[None]and higher grades of cirrhosis are associated with lower ADC values[None,None](Table 2).
+The reduction in water diffusivity seen with hepatic fibrosis is likely to be multifactorial but has in part been attributed to the increase in collagen within the liver, which has a lower unbound water content than normal hepatic parenchyma[None,None].
+In 2 studies, decrease in hepatic perfusion was cited as a reason because decreased liver perfusion fraction was observed in the cirrhotic liver, measured using multiplebvalue DW-MRI and analysed using the principles of intravoxel incoherent motion (IVIM)[None,None].
+NoneNoneNoneNoneNoneNoneA 46-year-old with liver cirrhosis.
+Theb = 750 s mm-2image shows an irregular liver outline, which also returns higher signal intensity compared with normal liver due to impeded water diffusion.
+Selected publications on the use of DWI for the assessment of liver cirrhosis.
+A recent retrospective study by Fujimoto et al.
+[None]assessed hepatic entropy ADC values in addition to mean ADC values in patients with chronic hepatitis C. The entropy ADC provides information related to variation in the volume histogram of ADC and has previously been applied in the neurologic system[None,None].
+A wider distribution in histogram values leads to a larger entropy ADC value.
+As in previous studies, the authors showed that the mean hepatic ADC decreased with increasing grades of fibrosis/inflammation.
+In addition, entropy ADC was shown to increase with fibrosis, which correlated strongly with fibrosis score and inflammatory activity grade.
+Table 2summarizes published papers utilizing DW-MRI for the assessment of liver fibrosis.
+From these studies, the mean ADC values measured on DW-MRI seem to have a limited range to distinguish early stages of fibrosis (e.g.
+METAVAR grades I and II, where medical intervention may be possible) from more advanced disease, thus limiting the use of the technique in this disease context.
+In one study comparing MR elastography with DW-MRI, MR elastography was more sensitive than DW-MRI in diagnosing early stages of liver fibrosis.
+With technologic advancement, it may be possible to evaluate other diffusion quantitative metrics derived by different diffusion models to improve diagnostic performance.
+Hepatic steatosis or fatty infiltration can progress to hepatitis and eventually to cirrhosis.
+The accepted standard for diagnosis is liver biopsy, although non-invasive MRI using fat-water separation sequences is becoming accepted as a non-invasive method of diagnosis and means of assessing the hepatic fat fraction.
+Significant hepatic steatosis has been shown to lower hepatic ADC values.
+One probable explanation for this observation is that protons associated with intra- and extracellular fat have reduced diffusivity, thus resulting in a lower ADC compared with normal parenchyma[None].
+A recent study by Poyraz et al.
+[None]showed a significant ADC reduction in patients with a hepatic fat fraction of greater than 5% and demonstrated an inverse relationship between ADC and hepatic fat fraction.
+However, an earlier study found no correlation between ADC values and hepatic fat fraction, although MR spectroscopy and dual-echo chemical shift imaging in the same population showed good correlation with hepatic fat fraction[None].
+In patients with haemochromatosis, the high parenchymal iron content induces susceptibility artefacts that result in low signal intensity on diffusion sequences and spuriously low ADC values.
+These susceptibility artefacts can also lead to obscuration of smaller focal liver lesions, and disease evaluation in the presence of iron overload in the liver should be interpreted with caution.
+Application of a small diffusion weighting (b less than 50-150 s mm-2) nulls the intrahepatic vascular signal resulting in black-blood images that improve the detection of focal liver lesions while maintaining a high SNR (Fig.
+2)[None,None].
+The use of higherbvalues ( greater than 500 s mm-2) facilitates liver lesion characterization, helping to distinguish between cystic and solid lesions[None,None].
+However, differentiation between different solid lesions is difficult based on visual assessment because these lesions, whether benign or malignant, demonstrate impeded diffusion on the highbvalue images.
+Hence, further lesion characterization by DW-MRI could be aided by evaluating the ADC map in conjunction with the morphologic sequences.
+NoneNoneNoneA 56-year-old man with a history of colorectal cancer.
+(a) T2-weighted and (b)b = 100 s mm-2image of the liver.
+Liver metastases (arrows) appear more conspicuous on the diffusion-weighted image as the high signal from the intrahepatic vasculature is suppressed by applying diffusion weighting.
+A substantial number of studies have compared DW-MRI with T2-weighted imaging or contrast-enhanced MRI for the detection of focal liver lesions (Tables 3and4).
+These studies have shown improved liver lesion detection on diffusion sequences[None,None,None,None,None,None]compared with conventional T2-weighted MRI or even contrast-enhanced MRI.
+NoneNoneNoneNoneNoneNoneNoneStudies comparing DWI with T2-weighted imaging for the detection of focal liver lesionsStudies comparing DWI with contrast-enhanced MRI for the detection of focal liver lesionsDTPA, diethylenetriaminepentaacetic acid; EOB, ethoxybenzyl; Mn-DPDP, mangafodipir trisodium; SPIO, superparamagnetic iron oxide; TSE, turbo spin-echo.
+Compared with T2-weighted MRI, the use of lowbvalues to generate black-blood images has been shown to result in comparable image quality but improved lesion detection[None,None,None], particularly for lesions less than or equal to 1 cm in diameter[None], for lesions lying adjacent to blood vessels and for those located in the right hepatic lobe[None].
+Improvement in lesion detection with DW-MRI can be explained by improved lesion to background image contrast using lowbvalue (or black-blood) images, which helps to differentiate small metastases from intrahepatic vasculature[None].
+However, lesions in the sub-diaphragmatic right lobe of the liver, as well as the sub-cardiac region in the left hepatic lobe may be obscured due to motion-induced artefacts (Fig.
+3).
+NoneNoneNoneArtefacts over the left lobe of the liver.
+Diffusion-weighted (a)b = 0 s mm-2and (b)b = 500 s mm-2images.
+On the higherbvalue image (b), note substantial artefacts over the left lobe due to cardiac motion, which can obscure lesions located in this area.
+Other studies have compared focal liver lesion detection on DW-MRI with contrast-enhanced (superparamagnetic iron oxide, low molecular gadolinium chelates, gadoxetic acid and mangafodipir trisodium) examinations.
+These studies (Table 3) demonstrated that DW-MRI has a high sensitivity and specificity for the detection of liver metastases[None,None].
+Even with the use of the liver-specific contrast medium (Gd-EOB-DTPA), it was the combination of hepatocellular phase T1-weighted imaging and DW-MR images that resulted in the highest diagnostic accuracy, increasing sensitivity without sacrificing specificity[None,None].
+This is because combining these techniques maximizes the advantages of each while minimizing their disadvantages.
+DW-MRI improves the detection of small metastases that may mimic small blood vessels on the hepatocellular phase of Gd-EOB-DTPA-enhanced imaging (Fig.
+4), whereas contrast-enhanced images are more useful in the sub-diaphragmatic and sub-cardiac liver regions, which are prone to DW-MRI artefacts[None].
+When DW-MRI was performed after the administration of superparamagnetic iron oxide contrast medium, lesion detection was also improved by suppression of background liver signal[None].
+NoneNoneNoneLiver metastasis mimicking intrahepatic vasculature on Gd-EOB-DTPA-enhanced imaging.
+A 48 year-old man with colorectal cancer.
+(a)b = 750 s mm-2image shows high-signal metastasis in the caudate lobe of the liver adjacent to the inferior vena cava (arrow).
+(b) The lesion is poorly seen and cannot be distinguished from the intrahepatic vasculature, which also appears hypointense relative to the liver in the hepatocellular phase of contrast enhancement.
+Although DW-MRI can be used to distinguish solid from cystic lesions, this usually does not pose a significant diagnostic challenge even on conventional morphologic imaging.
+Characterization of solid hepatic lesions is usually more challenging due to the substantial overlap in their conventional morphologic appearance, DW-MRI appearances and the ADC values between benign and malignant lesions.
+However, benign lesions have been shown to have higher (i.e.
+less impeded) ADC values than malignant lesions[None,None,None,None,None,None](Table 5).
+From the published literature, it would seem that a threshold value of approximately 1.7 * 10-3 mm2 s-1has a fairly high diagnostic sensitivity and specificity for differentiating benign from malignant focal disease[None,None,None,None].
+Of the benign solid lesions, hepatic haemangiomas have the highest ADC value, typically higher than the adjacent liver parenchyma, which can be ascribed to the T2 shine-through effect (Fig.
+5).
+NoneNoneNoneNoneNoneNoneA 55 year-old woman with a history of breast cancer.
+(a) T1-weighted arterial phase after Gd-DOTA contrast administration shows peripheral nodular enhancement of the lesion in the right lobe of the liver.
+(b) The lesion shows persistent high signal on the highb-value image (b = 750 s mm-2), due to the long T2 relaxation time (T2 shine-through).
+(c) The lesion returns a typical ADC value higher than the adjacent liver on the ADC map.
+Appearances are in keeping with a hepatic haemangioma.
+Reported ADC values of benign versus malignant hepatic lesionsWhen comparing or interpreting ADC values, it is important to be aware of the method of ADC calculation and to compare with values obtained using similar techniques to avoid misinterpretation.
+For example, ADC values calculated using or including lowbvalues ( less than =100 s mm-2) are higher because perfusional effects are included[None,None].
+Consensus recommendations suggest that the omission ofb = 0 and calculation using a range of higher and lowerbvalues[None]may be practical to avoid measurement uncertainty that may arise from variations in the flow-sensitive components of the diffusion measurements.
+Quantitative ADC measurements can be used to aid focal liver lesion characterization, but it may be difficult to confidently describe a lesion as benign or malignant based on ADC values alone, due to the considerable overlap between groups of hepatic pathologies.
+In one recent study, benign solid hepatic lesions, such as focal nodular hyperplasia and adenomas, were found to have similar ADC values compared with malignant disease, such as metastases and hepatocellular carcinoma[None].
+Mucinous metastatic deposits (e.g.
+from ovarian or colorectal primaries) can mimic benign lesions such as simple cysts and haemangiomas.
+For these reasons, one should not rely on ADC values as the sole basis for disease characterization.
+It is important to take into account the clinical background (e.g.
+histology of primary tumour), temporal context (i.e.
+untreated metastatic deposits will show an interval increase in size) and other available imaging before making a radiologic diagnosis.
+In a recently published study, Battal et al.
+[None]suggest that simply using visual assessment of source DW-MR images performed usingb0 andb800 allows detection and differentiation of focal liver lesions.
+All focal liver lesions showed hyperintensity on theb0 images, benign lesions tended to become isointense or hypointense onb800 images, and malignant lesions remained hyperintense.
+In their study, qualitative visual assessment performed better than quantitative ADC measurement with sensitivities of 100% and 100%, and specificities of 92.2% and 89.3%, respectively.
+However, in that study, few lesions were haemangiomas, which could have confounded the results.
+The cirrhotic liver shows impeded diffusion and is associated with lower ADC values, which reduces the contrast between hepatocellular carcinoma and the background cirrhotic liver.
+Histopathologic grade is one of the important prognostic indicators in hepatocellular carcinoma (HCC).
+An early study by Nasu et al.
+[None]showed that the signal intensity of lesions on the diffusion acquisition tended to increase as the grade of tumour increased in 125 surgically resected hypervascular HCCs.
+Although some studies showed that well-differentiated HCCs returned higher ADC values, other studies found no correlation between tumour grade and the mean ADC value, and there was a large overlap between grades[None].
+More recent data from Nishie et al.
+[None]suggests that minimum ADC could be useful in detecting poorly differentiated components of the tumour and that application of an ADC cut-off at 0.972 * 10-3 mm2 s-1distinguished moderately to poorly and poorly differentiated HCCs with a sensitivity of 73.1% and specificity of 72.9%.
+Similar results were obtained by Nakanishi et al.
+[None]who showed that minimum ADC predicted histologic grade in HCC and early tumour recurrence ( less than 6 months after hepatectomy).
+However, care is needed to ensure minimum ADC measurements are not confounded by image artefacts, which can lead to spuriously low values.
+In addition, recent studies have found that combining DW-MRI with conventional contrast-enhanced MRI can improve the detection of HCC, compared with contrast-enhanced MRI on its own[None](Fig.
+6).
+NoneNoneNoneTypical imaging appearances of HCC.
+In cirrhotic liver, HCC (arrows) typically (a) demonstrates hyperenhancement in the arterial phase of low molecular weight Gd contrast-enhanced imaging; (b) appears relatively hypointense to liver in the portovenous or interstitial phase of contrast enhancement (washout) and (c) shows impeded diffusion on diffusion-weighted imaging (b = 500 s mm-2).
+The prediction and detection of therapeutic response and the detection of residual disease are paramount in oncologic imaging.
+DW-MRI is increasingly being used as a means of assessing tumour response to various treatment modalities (e.g.
+chemotherapy, radiotherapy, targeted therapy, embolization and other combined treatments).
+The early detection of treatment responders could allow changes in therapy to minimize treatment-related toxicity and individualize management of specific tumour biology.
+Tumour response is conventionally assessed by measurement of percentage reduction in tumour size after therapy (e.g.
+using RECIST 1.1 criteria[None]).
+However, changes in tumour size are insensitive to early treatment changes and may be inappropriate for monitoring the effects of novel therapeutic agents, which are frequently cytostatic (e.g.
+tyrosine kinase inhibitors).
+Studies have shown that effective tumour treatment can result in an increase in ADC value long before measureable changes in lesion size are detected[None], and as early as 1-4 weeks from the start of therapy.
+Studies have been carried out on both primary and metastatic hepatic lesions to assess treatment-related DW-MRI changes.
+In patients with colorectal hepatic metastases, mean lesional ADC values have been shown to increase in response to chemotherapy in those patients showing at least a partial response[None,None], reflecting a reduction in tissue cellular density and barriers to water movement.
+This ADC increase was not seen in lesions that showed no change or disease progression[None].
+An example of ADC increase in response to treatment in a liver metastasis is shown inFig.
+7.
+NoneNoneNoneA 47-year-old man with liver metastasis from a gastrointestinal stromal tumour.
+ADC maps obtained (a) pre-treatment and (b) at 12 weeks after that start of treatment show no significant change in tumour size (cross-sectional area).
+However, there was a 37% increase in the mean ADC value (pre-treatment ADC = 1.49 * 10-3 mm2 s-1; post-treatment ADC = 2.05 * 10-3 mm2 s-1) within the tumour after treatment in keeping with treatment response.
+Patients who are not eligible for surgery often receive locoregional therapy for liver tumours, most commonly in the form of radiofrequency ablation (RFA) and transcatheter arterial chemoembolization (TACE).
+DW-MRI in the follow-up of patients receiving RFA for hepatic metastases has shown promising results for the detection of local tumour progression.
+In 58 of 148 examinations, peripheral ablation zone hyperintensity was detected, which corresponded with local tumour progression in only 17 patients (Fig.
+8).
+However, quantitative evaluation of these hyperintense areas showed significantly lower ADC values in those patients with tumour recurrence than in those without[None].
+Several studies have evaluated the response of primary HCC to chemo- or radioembolization and have demonstrated ADC differences between viable and necrotic portions of the tumour and measureable changes with treatment[None].
+NoneNoneNoneA middle-aged man with previous RFA for colorectal liver metastasis in the right lobe of the liver.
+(a) Arterial phase Gd-DOTA-enhanced MRI shows a lesion in the right lobe with peripheral nodularity, which does not show significant enhancement.
+(b)b = 750 s mm-2image shows high-signal impeded diffusion in the peri-ablative zone consistent with marginal disease recurrence.
+Prediction of which tumours will respond to treatment before onset could bring considerable clinical benefit.
+There are limited data available on disease prognostication and the prediction of liver lesion response to treatment.
+High pre-treatment ADC values in colorectal hepatic metastases have been shown to predict a poor response to chemotherapy[None,None], a finding that is in agreement with studies on primary rectal tumours[None].
+This observation suggests that those tumours that are probably necrotic before treatment (with a resultant higher mean ADC) are more resistant to chemotherapy.
+These findings need to be validated in larger prospective studies but they clearly suggest a potential role for DW-MRI in disease prognostication.
+There is little doubt that DW-MRI has had an impact on the routine clinical evaluation of the liver, especially for the detection of focal liver lesions.
+With growing convergence in MR hardware and scanning technologies, implementing analogous imaging protocols across different imaging platforms is becoming a possibility.
+As more studies are being conducted to assess the measurement reproducibility within and between MR imaging systems, it is clear that in a well-conducted study in which there is sufficient image SNR and minimal image artefact, mean ADC measurements have good reproducibility using the free-breathing fat-suppressed echo-planar spin-echo DW-MRI technique.
+A coefficient of repeatability as low as 10% can be achieved when whole liver tumours are analysed.
+In order to have confidence in the magnitude of the mean ADC change that can be reliably ascertained on individual scanners, the readers should validate the measurement reproducibility of their own diagnostic system using a particular imaging sequence on their MR scanners.
+Measurement reproducibility obtained from normal tissues may not be applicable to diseased states because disease tissues are typically more heterogeneous, which results in poorer measurement reproducibility compared with normal tissues[None].
+There is currently considerable interest in using a bi-exponential model by applying the principles of IVIM to the evaluation of the liver and focal liver disease.
+Reports in the literature suggest that it is possible to measure perfusion-sensitive parameters such as the perfusion fraction (f) and flow-sensitive pseudodiffusion coefficient (D*); indeed these parameters have been found to differ between normal and diseased states.
+For example, studies have shown that using IVIM analysis, cirrhotic liver shows a lower perfusion fraction and pseudodiffusion coefficient.
+However, these findings are reported on a background of significant measurement uncertainty associated with the estimation and quantification of these parameters.
+In a clinical setting, it has been shown that quantification offandD* are associated with poor measurement reproducibility[None](e.g.
+50% or greater) and hence developments to improve the stability and reproducibility of these estimates would be important to allow the IVIM analysis to be robustly deployed within the clinical arena.
+Nevertheless, studies reported in the literature suggest that using these additional diffusion parameters could be helpful in a number of clinical scenarios.
+DW-MRI is now available on most commercial MRI platforms and is routinely incorporated into standard liver MR imaging protocols in many departments.
+It is particularly useful in patients who tolerate gadolinium-based contrast agents where DW-MRI has the potential to be an alternative contrast-enhanced technique.
+There are convincing data available to show that DW-MRI contributes to focal liver lesion detection and the assessment of treatment response.
+When used in conjunction with morphologic sequences, the mean ADC values act as an adjunct to lesion characterization.
+Although DW-MRI has been used for the evaluation of liver fibrosis, the sensitivity of the technique to early fibrosis appears limited, and more research is needed to optimize the measurement reproducibility of quantitative parameters derived by IVIM analysis before they can be robustly and meaningfully deployed in the clinical arena.
+The authors have no conflicts of interest to declare.
