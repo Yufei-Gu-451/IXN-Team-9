@@ -4,16 +4,11 @@ Project Keyword : Remote consultations analysis / Automatic Speech Recognition (
 
 Project Description : Use natural language processing or understanding to allow audio individualised records - a set of smart documents with a common infrastructure but individually populated using the NLP captured from remote consultation. The aim is for near real-time electronic documents to be created for the clinical team - clinical documentation -, the patient or parents, to improve patient understanding and experience, and for the laboratory diagnostics, to ensure the correct test with the necessary clinical history.
 
-1. Download the BERT repository from https://github.com/google-research/bert, 
+1. Download and Install python 3.7 on your computer
+2. Download the BERT repository from https://github.com/google-research/bert, 
     and copy the files to the BERT directory.
-2. Download a BioBERT pretrained model from https://github.com/naver/biobert-pretrained, 
+3. Download a BioBERT pretrained model from https://github.com/naver/biobert-pretrained, 
     change the name of 'model.ckpt_100001.\*' to 'bert_model.ckpt.\*',
     and copy the files to the BERT directory.
-3. Create a virtual enviroument of Python 3.7 using command 'conda create -n env python==3.7'
-4. Activate the virtual enviroument using command 'conda activate env'
-5. Install all dependencys using command 'pip install -r requirements.txt'
-7. Export the Flask App 'export FLASK_APP=application.py'
-8. Run the Web Application use 'flask run'
-
-
-9. After running complete, deactivate the environment using command 'conda deactivate'
+4. Install all dependencys using command 'pip install -r requirements.txt'
+5. Run the web app 'python3 application.py'
