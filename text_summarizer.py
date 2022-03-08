@@ -5,11 +5,14 @@ Medical University of Vienna
 '''
 
 import subprocess
+from typing_extensions import final
 import nltk
 import json_lines
 import random
 import math
+import numpy as np
 from numpy import double
+import networkx as nx
 
 #-------------------- CLASSES
 
@@ -75,7 +78,7 @@ class Cluster:
 
 #-------------------- THE MAIN SUMMARIZATION FUNCTION
 
-def produce_summary(compression_rate, sentence_list, clusters, output_address):
+def produce_summary(compression_rate, sentence_list, clusters):
     
     summary_size = math.ceil(len(sentence_list) * compression_rate) + 1
     print('\nSummary size: ', summary_size)
@@ -123,9 +126,7 @@ def produce_summary(compression_rate, sentence_list, clusters, output_address):
     for cluster in clusters:
         for i in range(0, cluster.summary_members):
             summary_index.append(cluster.members[i])
-        
-        
-    
+
     summary_index.sort()
     print('---------- Sorted selected sentences --------')
     for index in summary_index:
@@ -134,35 +135,16 @@ def produce_summary(compression_rate, sentence_list, clusters, output_address):
 
     #----------------------- Producing final summary
     final_summary = ''
-    i = 0
     for index in summary_index:
         print(sentence_list[index].sentence_text)
-        if i > 0:
-            final_summary += ' '
-        final_summary += sentence_list[index].sentence_text
-        i += 1
-        
+        final_summary += sentence_list[index].sentence_text + '\n'
 
-    '''
-    final_output = '<html>'
-    final_output += '\n<head>'
-    final_output += '\n</head>'
-    final_output += '\n<body bgcolor="white">'
-    final_output += '\n<a name="1">[1]</a> <a href="#1" id=1>'
-    final_output += final_summary
-    final_output += '\n</a>'
-    final_output += '\n</body>'
-    final_output += '\n</html>'
-    '''
+    return final_summary
 
+def output_summary(*, final_summary, output_address):
     output_file_text = open(output_address, 'w')
     output_file_text.write(final_summary)
     output_file_text.close()
-    
-    return
-
-
-
 
 #-------------------- MAIN BODY OF SUMMARIZER
 
@@ -176,7 +158,6 @@ def summarize_text(*, input_file, output_file, compression_rate, number_of_clust
 
 
     #-------------------- Preprocessing --------------------
-
 
     input_address = input_file
     print('---------- Preprocessing started ----------\n')
@@ -216,15 +197,9 @@ def summarize_text(*, input_file, output_file, compression_rate, number_of_clust
 
     #-------------------- Feature extraction --------------------
 
-
-    import subprocess
-    feature_eaxtraction_script = "python BERT/extract_features.py --input_file=FILE/temp_input.txt " +\
-            "--output_file=FILE/temp_features.jsonl --vocab_file=BERT/vocab.txt --bert_config_file=BERT/bert_config.json " +\
-            "--init_checkpoint=BERT/bert_model.ckpt --layers=-1 --max_seq_length=128 --batch_size=8"
-    subprocess.call(feature_eaxtraction_script, shell=True)
-    #exec(open("extract_features.py --input_file=Input.txt --output_file=Example100.jsonl --vocab_file=vocab.txt --bert_config_file=bert_config.json --init_checkpoint=bert_model.ckpt --layers=-1 --max_seq_length=128 --batch_size=8").read())
-
-
+    import os
+    #os.system('/Library/Frameworks/Python.framework/Versions/3.7/bin/python3.7 bert/extract_features.py --input_file=FILE/temp_input.txt --output_file=FILE/temp_features.jsonl --vocab_file=bert/vocab.txt --bert_config_file=bert/bert_config.json --init_checkpoint=bert/bert_model.ckpt --layers=-1 --max_seq_length=128 --batch_size=8')
+    os.system('python3 bert/extract_features.py --input_file=FILE/temp_input.txt --output_file=FILE/temp_features.jsonl --vocab_file=bert/vocab.txt --bert_config_file=bert/bert_config.json --init_checkpoint=bert/bert_model.ckpt --layers=-1 --max_seq_length=128 --batch_size=8')
     #-------------------- Clustering --------------------
 
 
@@ -256,26 +231,25 @@ def summarize_text(*, input_file, output_file, compression_rate, number_of_clust
     with open(input_address_feature) as input_file:
         for line in json_lines.reader(input_file):
             feature_set = line['features']
-        
+
             for feature in feature_set:
                 if feature['token'] in ['[CLS]', '[SEP]']:
                     continue;
-            
+
                 temp_feature = Feature(feature['token'])
             
                 for layer in feature['layers']:
                     temp_feature.weight_list = layer['values']
-                    
+
                 if sentence_num < len(sentence_list):
                     sentence_list[sentence_num].feature_list.append(temp_feature)
-                            
+
             sentence_num += 1
-        
+
     print('-----------------------------------------------')
 
 
     #-------------------- Compute a representation for every sentence
-
 
     for sentence in sentence_list:
         if len(sentence.feature_list) > 0:
@@ -293,25 +267,93 @@ def summarize_text(*, input_file, output_file, compression_rate, number_of_clust
             sentence.representation[j] /= len(sentence.feature_list)
             j += 1
 
+    #-------------------- Clustering Algorithm
+    #final_summary = k_cluster(sentence_list=sentence_list, compression_rate=compression_rate, number_of_clusters=number_of_clusters)
+
+    #final_summary = merge_cluster(sentence_list=sentence_list, compression_rate=compression_rate, number_of_clusters=number_of_clusters)
+
+    final_summary = text_rank(sentence_list=sentence_list, compression_rate=compression_rate)
+
+    output_summary(final_summary=final_summary, output_address=output_address)
 
 
-    #-------------------- Clustering algorithm
+
+
+def k_cluster(*, sentence_list, compression_rate, number_of_clusters):
+    print('\n---------- Clustering started ----------')
+
+    cluster_list = []
+    center_list = []      # Stored center of all Clusters ; Termination Condition
+    for i in range(number_of_clusters):
+        temp_cluster = Cluster(i+1)
+        temp_cluster.members.append(i)
+        temp_cluster.center = sentence_list[i]
+        print(sentence_list[i].sentence_text)
+        cluster_list.append(temp_cluster)
+
+        center_list.append(i)
+
+    center_list.sort()
+
+    #-------------------- Starting clustering algorithm
+    for iteration in range(1, 51):
+        print('---------- Iteration: ', iteration)
+        
+        #-------------------- Allocate each sentence to a cluster with a highest cosine similiarity
+        for i in range(len(sentence_list)):
+            min_similiarity = (0, 0)
+            for j in range(number_of_clusters):
+                temp_cluster_center = cluster_list[j].center
+                temp_similiarity = sentence_list[i].cosine_similarity(temp_cluster_center.representation)
+                if temp_similiarity > min_similiarity[1]:
+                    min_similiarity = (j, temp_similiarity)
+                #print(i, j, temp_similiarity, min_similiarity)
+
+            cluster_list[min_similiarity[0]].members.append(i)
+            #print(i, '-----------------------------------', min_similiarity)
+
+        #-------------------- For each cluster, find a new center
+        temp_center_list = []
+
+        for cluster in cluster_list:
+            max_similarity_sum = (0, 0)
+
+            for i in range(len(cluster.members)):
+                temp_similiarity_sum = 0
+                for j in cluster.members:
+                    temp_similiarity_sum += sentence_list[i].cosine_similarity(sentence_list[j].representation)
+
+                #print(temp_similiarity_sum, max_similarity_sum)
+                if temp_similiarity_sum > max_similarity_sum[1]:
+                    max_similarity_sum = (i, temp_similiarity_sum)
+
+            cluster.center = sentence_list[cluster.cluster_number]
+            print(max_similarity_sum[0], max_similarity_sum[1]/len(cluster.members), len(cluster.members))
+
+            temp_center_list.append(max_similarity_sum[0])
+
+        
+        temp_center_list.sort()
+        if center_list != temp_center_list:
+            center_list = temp_center_list
+            for cluster in cluster_list:
+                cluster.members = []
+        else:
+            final_summary = produce_summary(compression_rate, sentence_list, cluster_list)
+            print("\n---------- Finished ----------")
+            return final_summary
+
+
+def merge_cluster(*, sentence_list, compression_rate, number_of_clusters):
     print('\n---------- Clustering started ----------')
 
     clusters = []
-
-
-    i = 0
-    for sentence in sentence_list:
+    for i in range(len(sentence_list)):
         temp_cluster = Cluster(i+1)
         temp_cluster.members.append(i)
         clusters.append(temp_cluster)
-        i += 1
-
 
     #-------------------- Starting clustering algorithm
-
-
     end_of_clustering = False
 
     iteration = 1
@@ -322,10 +364,9 @@ def summarize_text(*, input_file, output_file, compression_rate, number_of_clust
         highest_similarity = -10000000000
         similar_cluster1 = -1
         similar_cluster2 = -1
-                
+
         for i in range(0, len(clusters)):
             for j in range(0, len(clusters)):
-
                 if i < j:
 
                     #----------Compute the similarity between two clusters
@@ -333,13 +374,12 @@ def summarize_text(*, input_file, output_file, compression_rate, number_of_clust
                     temp_similarity = 0
                     for index1 in clusters[i].members:
                         for index2 in clusters[j].members:
-                                    
                             temp_similarity += sentence_list[index1].cosine_similarity(sentence_list[index2].representation)
                             denominator += 1
-                                    
+
                     if denominator != 0:
                         temp_similarity /= denominator
-                            
+
                     if temp_similarity > highest_similarity:
                         highest_similarity = temp_similarity
                         similar_cluster1 = i
@@ -354,12 +394,23 @@ def summarize_text(*, input_file, output_file, compression_rate, number_of_clust
         iteration += 1
         if len(clusters) <= number_of_clusters:
             end_of_clustering = True
-            output_address = output_file
-            produce_summary(compression_rate, sentence_list, clusters, output_address)
+            final_summary = produce_summary(compression_rate, sentence_list, clusters)
+            print("\n---------- Finished ----------")
+            return final_summary
 
 
-        #-------------------- End of clustering algorithm
+def text_rank(*, sentence_list, compression_rate):
+    similarity_matrix = np.zeros([len(sentence_list), len(sentence_list)])
 
+    for i in range(len(sentence_list)):
+        for j in range(len(sentence_list)):
+            similarity_matrix[i][j] = sentence_list[i].cosine_similarity(sentence_list[j].representation)
+    
+    nx_graph = nx.from_numpy_array(similarity_matrix)
+    scores = nx.pagerank(nx_graph)
 
-    print("\n")
-    print("---------- Finished ----------")
+    ranked_sentence_list = sorted(((scores[i], s) for i,s in enumerate(sentence_list)), reverse=True)
+    final_summary = ''
+    for i in range(int(len(sentence_list)*compression_rate)):
+        final_summary += ranked_sentence_list[i][1].sentence_text + '\n'
+    return final_summary
