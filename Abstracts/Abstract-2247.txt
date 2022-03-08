@@ -1,0 +1,1 @@
+New synthetic methods to rapidly access useful fluorophores are needed to advance modern molecular imaging techniques. A new variant of the classical Smiles rearrangement is reported that enables the efficient synthesis of previously inaccessible C4'-
