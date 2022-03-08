@@ -401,6 +401,8 @@ def text_rank(*, sentence_list, compression_rate):
 
     ranked_sentence_list = sorted(((scores[i], s) for i,s in enumerate(sentence_list)), reverse=True)
     final_summary = ''
+    print(len(sentence_list))
     for i in range(int(len(sentence_list)*compression_rate)):
+        print(ranked_sentence_list[i][1].sentence_text + '\n')
         final_summary += ranked_sentence_list[i][1].sentence_text + '\n'
     return final_summary
