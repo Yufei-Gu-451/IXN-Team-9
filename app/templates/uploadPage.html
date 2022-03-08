@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block title %}Flasky{% endblock %}
+
+{% block page_content %}
+<form method="POST" action="/upload" enctype="multipart/form-data">
+    <div class="form">
+        <label for="inputFile">File input </label>
+        <input type="file" name="inputFile">
+    </div>
+    <button type="submit" class="btn btn-default">Submit</button>
+</form>
+{% endblock %}

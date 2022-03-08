@@ -49,7 +49,7 @@ def read_txt_file(filename):
 
         return file_content
     else:
-        raise IOError("read_txt_file: error file input: {}".format(e))
+        raise IOError("read_txt_file: error file input: {}".format(filename)) # .format(e) ?
 
 
 # Check if a file exists
