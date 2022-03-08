@@ -4,7 +4,6 @@ Institute for Artificial Intelligence and Decision Support
 Medical University of Vienna
 '''
 
-import subprocess
 from typing_extensions import final
 import nltk
 import json_lines
@@ -55,8 +54,7 @@ class Sentence:
         denominator = math.sqrt(term1) * math.sqrt(term2)
         cosine_sim = numerator / denominator
         return cosine_sim
-    
-    
+
     def set_token_list(self, tkn_list):
         self.feature_list = tkn_list
     
@@ -69,17 +67,16 @@ class Cluster:
         self.mean = []
         self.members = []
         self.summary_members = 0
-        
+
     def add_member(self, sentence_index):
         self.members.append(sentence_index)
-        
+
     def remove_member(self, sentence_index):
         self.members.remove(sentence_index)
 
 #-------------------- THE MAIN SUMMARIZATION FUNCTION
 
 def produce_summary(compression_rate, sentence_list, clusters):
-    
     summary_size = math.ceil(len(sentence_list) * compression_rate) + 1
     print('\nSummary size: ', summary_size)
 
@@ -95,19 +92,15 @@ def produce_summary(compression_rate, sentence_list, clusters):
         for sentence_index in cluster.members:
             temp_avg_similarity = 0
             denominator = 0
-        
+
             for other_member in cluster.members:
                 if sentence_index != other_member:
                     temp_avg_similarity += sentence_list[sentence_index].cosine_similarity(sentence_list[other_member].representation)
                     denominator += 1
-                
+
             if denominator != 0:
                 temp_avg_similarity /= denominator
             sentence_list[sentence_index].avg_similarity = temp_avg_similarity
-        
-    #------------------------------------------------------------------------------------------------
-    #------------------------------------------------------------------------------------------------
-
 
     #Sort members of each cluster
     for cluster in clusters:
@@ -118,9 +111,6 @@ def produce_summary(compression_rate, sentence_list, clusters):
                     temp_index = cluster.members[i]
                     cluster.members[i] = cluster.members[j]
                     cluster.members[j] = temp_index
-                
-    #------------------------------------------------------------------------------------------------
-    #------------------------------------------------------------------------------------------------
 
     summary_index=[]
     for cluster in clusters:

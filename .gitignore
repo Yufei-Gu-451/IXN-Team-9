@@ -1,9 +1,6 @@
 # Virtual environment
 venv
 
-# BERT
-BERT/
-
 .DS_Store
 
 # Initially taken from Github's Python gitignore file
