@@ -1,0 +1,1 @@
+Patient-ventilator trigger dys-synchronies are common with the use of assisted forms of mechanical ventilatory support, including non-invasive mechanical ventilatory support (NIV). Future system designs need to address this in order to improve the effectiveness of NIV.

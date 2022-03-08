@@ -1,0 +1,1 @@
+Apoptosis signal-regulating kinase 1 (ASK1) is activated by various stresses. The link between ASK1 activation and endoplasmic reticulum (ER) stress, two causal events in diabetic embryopathy, has not been determined. We sought to investigate whether ASK1 is involved in the unfolded protein response (UPR) that leads to ER stress. Deleting
