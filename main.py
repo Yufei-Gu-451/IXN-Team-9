@@ -1,6 +1,5 @@
 import speech_to_text
 import text_summarizer
-import new_summarizer
 
 #speech_to_text.speech_to_text(inputfile="AUDIO/aboutSpeechSdk.wav", 
 #                outputfile="FILE/temp_result.txt")
