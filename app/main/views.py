@@ -1,8 +1,13 @@
-from flask import render_template, session, redirect, url_for, current_app
+from flask import render_template, session, redirect, url_for, current_app, request
 from .. import db
 from ..models import User
 from . import main
+from . import file
+from . import speech_to_text
+from . import text_summarizer
+from . import test_func
 from .forms import NameForm
+from .. import models
 
 @main.route('/')
 def index():
@@ -24,13 +29,15 @@ def upload():
 
     text_summarizer.summarize_text(input_file='FILE/temp_input.txt', output_file="FILE/temp_output.txt", compression_rate=0.3, number_of_clusters=2)
 
-    processedFile = open("FILE/temp_output.txt", "r")
+    models.addProcessedFile(file.filename)
+
+    # processedFile = open("FILE/temp_output.txt", "r")
     
-    upload = Files(name=file.filename, processedData=processedFile.read().encode())
-    processedFile.close()
+    # upload = Files(name=file.filename, processedData=processedFile.read().encode())
+    # processedFile.close()
     
-    db.session.add(upload)
-    db.session.commit()
+    # db.session.add(upload)
+    # db.session.commit()
     
     return file.filename
 
