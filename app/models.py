@@ -41,6 +41,10 @@ class User(UserMixin, db.Model):
     
     def verify_password(self, password):
         return check_password_hash(self.password_hash, password)
+    
+    def has_role(self, role):
+        return self.role_id == role
+
 
     def __repr__(self):
         return '<User %r>' % self.username
