@@ -5,7 +5,6 @@ from . import main
 from . import file
 from . import speech_to_text
 from . import text_summarizer
-from . import test_func
 from .forms import NameForm
 from .. import models
 
