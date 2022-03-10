@@ -173,8 +173,8 @@ def summarize_text(*, input_file, output_file, compression_rate, number_of_clust
         preprocessed_text += str(tokenized_sentence)
         sentence_num += 1
         
-    temp_file_address = 'FILE/temp_input.txt'
-    temp_file_token_address = 'FILE/temp_input_token.txt'
+    temp_file_address = 'app/file/temp_input.txt'
+    temp_file_token_address = 'app/file/temp_input_token.txt'
     temp_file = open(temp_file_address, 'w')
     temp_file_token = open(temp_file_token_address, 'w')
     temp_file.write(sentence_split_text)
@@ -186,15 +186,15 @@ def summarize_text(*, input_file, output_file, compression_rate, number_of_clust
     #-------------------- Feature extraction --------------------
 
     import os
-    os.system('/Library/Frameworks/Python.framework/Versions/3.7/bin/python3.7 bert/extract_features.py --input_file=file/temp_input.txt --output_file=file/temp_features.jsonl --vocab_file=bert/vocab.txt --bert_config_file=bert/bert_config.json --init_checkpoint=bert/bert_model.ckpt --layers=-1 --max_seq_length=128 --batch_size=8')
+    os.system('/Library/Frameworks/Python.framework/Versions/3.7/bin/python3.7 app/bert/extract_features.py --input_file=app/file/temp_input.txt --output_file=app/file/temp_features.jsonl --vocab_file=app/bert/vocab.txt --bert_config_file=app/bert/bert_config.json --init_checkpoint=app/bert/bert_model.ckpt --layers=-1 --max_seq_length=128 --batch_size=8')
     #os.system('python3 bert/extract_features.py --input_file=file/temp_input.txt --output_file=file/temp_features.jsonl --vocab_file=bert/vocab.txt --bert_config_file=bert/bert_config.json --init_checkpoint=bert/bert_model.ckpt --layers=-1 --max_seq_length=128 --batch_size=8')
     #-------------------- Clustering --------------------
 
 
     print('---------- Text summarizer started ----------\n')
     
-    input_address_text = 'file/temp_input.txt'
-    input_address_feature = 'file/temp_features.jsonl'
+    input_address_text = 'app/file/temp_input.txt'
+    input_address_feature = 'app/file/temp_features.jsonl'
     output_address = output_file
 
     input_file = open(input_address_text)

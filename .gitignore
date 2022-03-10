@@ -5,6 +5,8 @@ venv
 
 .DS_Store
 
+temp_features.jsonl
+
 # Initially taken from Github's Python gitignore file
 
 # Byte-compiled / optimized / DLL files

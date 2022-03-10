@@ -12,7 +12,7 @@ except ImportError:
 
 import time
 import pytest
-import file
+from . import file
 
 from azure.cognitiveservices.speech import audio
 

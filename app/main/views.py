@@ -5,7 +5,6 @@ from . import main
 from . import file
 from . import speech_to_text
 from . import text_summarizer
-from . import test_func
 from .forms import NameForm
 from .. import models
 
@@ -25,11 +24,11 @@ def upload():
 
     writeFile(file.read(), file.filename)
 
-    speech_to_text.speech_to_text(inputfile='FILE/' + file.filename, outputfile="FILE/temp_input.txt")
+    speech_to_text.speech_to_text(inputfile='app/file/' + file.filename, outputfile="app/file/temp_input.txt")
 
-    text_summarizer.summarize_text(input_file='FILE/temp_input.txt', output_file="FILE/temp_output.txt", compression_rate=0.3, number_of_clusters=2)
+    text_summarizer.summarize_text(input_file='app/file/temp_input.txt', output_file="app/file/temp_output.txt", compression_rate=0.3, number_of_clusters=2)
 
-    models.addProcessedFile(file.filename)
+    # models.addProcessedFile(file.filename)
 
     # processedFile = open("FILE/temp_output.txt", "r")
     
@@ -58,7 +57,7 @@ def download():
     # return BytesIO(upload.data)
 
 def writeFile(data, filename):
-    with open('FILE/' + filename, 'wb') as file:
+    with open('app/file/' + filename, 'wb') as file:
         file.write(data)
 
                            
