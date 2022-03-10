@@ -5,10 +5,11 @@ from . import login_manager
 
 class Files(db.Model):
     __tablename__ = 'files'
-    user_id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     name = db.Column(db.String(300))
-    # originalData = db.Column(db.LargeBinary)
     processedData = db.Column(db.LargeBinary)
+    # patient_id = db.Column()
+    # doctor_id = db.Column()
 
     def __repr__(self):
         return '<Role %r>' % self.name
@@ -85,7 +86,7 @@ def load_user(user_id):
     return User.query.get(int(user_id))
 
 def addProcessedFile(filename):
-    processedFile = open("FILE/temp_output.txt", "r")
+    processedFile = open("/temp_output.txt", "r")
     
     upload = Files(name=filename, processedData=processedFile.read().encode())
     processedFile.close()
