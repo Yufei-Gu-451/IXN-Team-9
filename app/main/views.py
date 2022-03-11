@@ -2,16 +2,15 @@ from flask import render_template, session, redirect, url_for, current_app, requ
 from .. import db
 from ..models import User
 from . import main
-from . import file
-from . import speech_to_text
-from . import text_summarizer
+from .. import file
+from .. import speech_to_text
+from .. import text_summarizer
 from .forms import NameForm
 from .. import models
 
 @main.route('/')
 def index():
     return render_template('index.html')
-
 
 
 @main.route('/uploadPage', methods=['GET'])
@@ -38,7 +37,11 @@ def upload():
     # db.session.add(upload)
     # db.session.commit()
     
-    return file.filename
+    f = open("app/file/temp_output.txt")
+    for line in f:
+        file_content = line
+
+    return file_content
 
 @main.route('/download')
 def download():
@@ -57,7 +60,5 @@ def download():
     # return BytesIO(upload.data)
 
 def writeFile(data, filename):
-    with open('app/file/' + filename, 'wb') as file:
+    with open('app/audio/' + filename, 'wb') as file:
         file.write(data)
-
-                           
