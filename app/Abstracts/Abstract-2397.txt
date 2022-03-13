@@ -1,1 +1,0 @@
-mHealth interventions that deliver content via mobile phones represent a burgeoning area of health behavior change. The current paper examines two themes that can inform the underlying design of mHealth interventions: (1) mobile device functionality, which represents the technological toolbox available to intervention developers; and (2) the

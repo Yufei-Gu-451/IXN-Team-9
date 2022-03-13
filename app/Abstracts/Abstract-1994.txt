@@ -1,1 +1,0 @@
-Vesicular stomatitis virus G glycoprotein (VSV-G) is the most widely used envelope protein for retroviral and lentiviral vector pseudotyping; however, serum inactivation of VSV-G pseudotyped vectors is a significant challenge for

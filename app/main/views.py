@@ -23,7 +23,7 @@ def upload():
 
     writeFile(file.read(), file.filename)
 
-    speech_to_text.speech_to_text(inputfile='app/file/' + file.filename, outputfile="app/file/temp_input.txt")
+    speech_to_text.speech_to_text(inputfile='app/audio/' + file.filename, outputfile="app/file/temp_input.txt")
 
     text_summarizer.summarize_text(input_file='app/file/temp_input.txt', output_file="app/file/temp_output.txt", compression_rate=0.3, number_of_clusters=2)
 

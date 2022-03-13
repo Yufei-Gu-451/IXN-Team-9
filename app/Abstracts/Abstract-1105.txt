@@ -1,1 +1,0 @@
-PHF2 is a JmjC family histone demethylase that removes the methyl group from H3K9me2 and works as a coactivator for several metabolism-related transcription factors. In this study, we examined the in vivo role of PHF2 in mice. We generated

@@ -1,0 +1,1 @@
+The epidermal growth factor receptor (EGFR) is a central regulator of tumor progression in human cancers. Cetuximab is an anti-EGFR antibody that has been approved for use in oncology. Previously we investigated mechanisms of resistance to cetuximab using a model derived from the non-small cell lung cancer line NCI-H226. We demonstrated that cetuximab-resistant clones (Ctx

@@ -1,1 +1,0 @@
-In eukaryotes, the Cdt1-bound replicative helicase core MCM2-7 is loaded onto DNA by the ORC-Cdc6 ATPase to form a pre-Replicative Complex (pre-RC) with a MCM2-7 double-hexamer encircling DNA. Using purified components in the presence of ATPgammaS, we have captured

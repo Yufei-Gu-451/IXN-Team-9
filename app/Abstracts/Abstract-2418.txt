@@ -1,1 +1,0 @@
-Aggregated alpha-synuclein inclusions are found where cell death occurs in several diseases, including Parkinson's Disease, Dementia with Lewy Bodies and Multiple System Atrophy. However, the relationship between inclusion formation and an individual cell's fate has been difficult to study with conventional techniques. We developed a system that allows for

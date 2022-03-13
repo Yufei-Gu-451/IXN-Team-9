@@ -1,0 +1,1 @@
+The Pim protein kinases contribute to transformation by enhancing the activity of oncogenic Myc and Ras, which drives significant metabolic changes during tumorigenesis. In this report, we demonstrate that mouse embryo fibroblasts (MEFs) lacking all three isoforms of Pim protein kinases, triple knockout (TKO), cannot tolerate the expression of activated K-Ras (K-Ras

@@ -1,1 +1,0 @@
-We propose a hopping mechanism for diffusion of large nonsticky nanoparticles subjected to topological constraints in both unentangled and entangled polymer solids (networks and gels) and entangled polymer liquids (melts and solutions). Probe particles with size larger than the mesh size

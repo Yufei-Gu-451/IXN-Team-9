@@ -1,0 +1,1 @@
+Cell line models have been widely used to investigate glioblastoma multiforme (GBM) pathobiology and in the development of targeted therapies. However, GBM tumours are molecularly heterogeneous and how cell lines can best model that diversity is unknown. In this report, we investigated gene expression profiles of three preclinical growth models of glioma cell lines,

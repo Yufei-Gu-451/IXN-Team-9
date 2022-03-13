@@ -1,0 +1,1 @@
+Neuroimaging data collection is inherently expensive. Maximizing the return on investment in neuroimaging studies requires that neuroimaging data be re-used whenever possible. In an effort to further scientific knowledge, the COINS Data Exchange (DX) (

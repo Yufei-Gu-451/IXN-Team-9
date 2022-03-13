@@ -1,1 +1,0 @@
-Subtle alterations in how cortical network dynamics are modulated by different behavioral states could disrupt normal brain function and underlie symptoms of neuropsychiatric disorders, including fragile X syndrome (FXS). Using two-photon calcium imaging and electrophysiology we recorded spontaneous neuronal ensemble activity in mouse somatosensory cortex. Unanesthetized

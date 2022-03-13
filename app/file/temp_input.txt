@@ -1,359 +1,187 @@
-The search for a sustainable substitute for fossil fuels has stimulated research into bioenergy crops.
-The criteria for such crops include low-input requirements, rapid accumulation of biomass and high yield.
-Perenniality is also advantageous, both economically and environmentally, as financial costs are saved on annual re-planting and tilling and environmentally by the sequestration of carbon in the soil (Clifton-BrownNone, 2007).
-As a C4perennial rhizomatous grass with a high annual yield and low-input requirements (LewandowskiNone, 2000),Miscanthusfulfils these criteria.
-As a C4plantMiscanthusexhibits high radiation, water- and nitrogen-use efficiencies (LewandowskiNone, 2000).
-The penalty of C4photosynthesis, however, is a higher thermal requirement to initiate growth in the spring which imposes a limitation on growing range (Long, 1983;NaiduNone, 2003).
-Currently all commercial plantations ofMiscanthus, and indeed a large amount of the research, have focussed on a single genotypeM.*giganteus.
-This genotype is a sterile triploid progeny of a cross betweenM.
-sinensisandM.
-sacchariflorus; it is high yielding, reportedly producing over 20 t dry matter ha-1year-1in Europe (LewandowskiNone, 2000) and over 30 t dry matter ha-1year-1in the mid-western USA (Dohleman and Long, 2009).
-An unusual characteristic ofM.
-*giganteusis its ability to maintain high rates of light-saturated photosynthesis under chilling conditions inhibitory to other C4crops such asZea mays(maize;NaiduNone, 2003).
-However, it has shown poor overwinter survival rates in northern locations (Clifton-Brown and Lewandowski, 2000) and, owing to its sterility,M.
-*giganteuscan only be vegetatively propagated from rhizome pieces, resulting in high establishment costs.
-A major plant breeding target is to develop a seed-based crop that can equal or outperformM.*giganteus.
-The geographical range forMiscanthusspans from the sub-tropics to the sub-arctic (Numata, 1974;Clifton-Brown and Lewandowski, 2000).
-Correspondingly, variation in cold tolerance has been observed in different genotypes (Clifton-Brown and Jones, 1997;Clifton-Brown and Lewandowski, 2000;FarrellNone, 2006;YanNone, 2012).
-Cold tolerance may refer to the ability of a rhizome to survive winter conditions (Clifton-Brown and Lewandowski, 2000;YanNone, 2012), late spring frosts (FarrellNone, 2006), seedling survival (YanNone, 2012), the continuation of leaf expansion in progressively colder temperatures (Clifton-Brown and Jones, 1997) or the ability to retain high rates of photosynthesis under cool conditions (WangNone, 2008None).
-In spring when the canopy is still developing the daily temperature fluctuations in northern European locations are typically near freezing at night and up to 30 degrees C on a clear day.
-Temperatures may vary greatly between days but also within the daylight period of individual days.
-For example, in the coastal region of West Wales, temperatures in the daylight period on 22 May 2010 were recorded to decrease 14 degrees C between the warmest time of day (28 degrees C, at approximately noon) and sunset (approximately 2100 h;Supplementary DataTable S1).
-Sub-optimal temperatures during the light period depress photosynthetic performance of maize, and complete recovery may take several days even after a return to favourable temperatures (AndrewsNone, 1995).
-Whether allMiscanthusgenotypes are equally susceptible to the same limitations remains to be determined.
-For the production ofMiscanthusin the cooler climates of northern Europe and parts of North America all of these aspects will have to be considered to generate high yielding varieties.
-Miscanthus sinensishas been reported to have greater tolerance to cold, in terms of overwinter survival, compared withM.
-*giganteus(Clifton-Brown and Lewandowski, 2000).
-However,M*giganteushas been shown to retain high levels of photosynthesis compared with other C4grasses under cool conditions (NaiduNone, 2003;WangNone, 2008None;Dohleman and Long, 2009;DohlemanNone, 2009), although how this compares with otherMiscanthusgenotypes is yet to be reported.
-Miscanthusis a bioenergy crop harvested for the structural carbohydrates in the cell wall.
-Carbohydrates assimilated through photosynthesis may be directly respired, converted into structural forms (cellulose and hemi-cellulose), maintained in soluble form or converted into the transient storage form, starch.
-Carbohydrate partitioning refers to the division of carbohydrates between these pools.
-To date there have been no studies that address the non-structural carbohydrate status of the above-ground material in either optimal or short-term chilling conditions inMiscanthus.
-The changes in carbohydrate status that occur in response to chilling have been documented in a number of other species including maize (HodgesNone, 1997),Saccharumsp.
-(sugarcane) (Du and Nose, 2002),Arabidopsis thaliana(arabidopsis) (Stitt and Hurry, 2002) andHelianthus annuus(sunflower) (PaulNone, 1991).
-The changes in the non-structural carbohydrate pools can be indicative of chilling tolerance or susceptibility.
-For example, chilling tolerant varieties of sugarcane accumulated soluble sugar in response to chilling, whereas a sensitive variety did not (Du and Nose, 2002).
-In maize the opposite response was observed (HodgesNone, 1997).
-In a chilling-tolerant plant such as arabidopsis, chilling-shock leads to a shift in carbohydrate partitioning away from starch and into soluble sugars (KaplanNone, 2004).
-The breakdown of starch during chilling leads to an increase in soluble sugars, such as maltose, which have protective properties during temperature stress (KaplanNone, 2004).
-Whether this adaptive response also occurs inMiscanthusremains to be determined.
-Upon exposure to chilling temperatures, large transcriptional changes have been documented to take place in a number of species includingVitis vinifera(grapevine) (TattersallNone, 2007), arabidopsis (ProvartNone, 2003;HannahNone, 2006;KaplanNone, 2007), maize (Trzcinska-DanielewiczNone, 2009) and sugarcane (NogueiraNone, 2003).
-Transcriptional changes that take place during chilling inMiscanthusare yet to be studied.
-The identification of DNA-based markers of chilling tolerance (or susceptibility) would facilitate the screening of seedlings or potential parents to accelerate the breeding of new varieties better adapted to more northerly locations.
-In temperate climates such as northern Europe and the mid-western USA, short-term temperature deviations from favourable temperatures to chilling are problematic for thermophilic C4crops (AndrewsNone, 1995;Allen and Ort, 2001).
-Studies in other species, including maize, arabidopsis,Triticum aestivum(wheat) andHordeum vulgare(barley), have successfully used chilling-shock experiments to identify cold-inducible transcripts and transcription factors (Cattivelli and Bartels, 1989;LiuNone, 1998;MedinaNone, 1999;ShenNone, 2003;NguyenNone, 2009), metabolic responses to chilling (KaplanNone, 2004) and cold-signalling molecules (KnightNone, 1996).
-Therefore, to investigate chilling-shock responses, we performed an extreme version of the cooling experienced on 22 May 2010 in West Wales (Table S1) by exposing plants to a rapid reduction in temperatures from 28 degrees C to 12 degrees C.We conducted a twin-time course in which plants were measured over 12 h at optimal growing conditions and then over the same time period after an abrupt shift to chilling conditions.
-On 22 May 2010, the daily maximum temperature reached 28 degrees C at the field site in West Wales (Table S1).
-All genotypes used in this study are capable of flowering under a constant temperature of 28 degrees C (C. Hayes, pers.
-comm., Aberystwyth University, UK), probably because this is a temperature regime representative of their native environment in Japan.
-TheM.
-sacchariflorusgenotype used in this study has never been reported to flower under field conditions in West Wales.
-We therefore concluded that 28 degrees C was representative of both a northern European high temperature and also an optimal (non-restrictive) temperature for growth of all genotypes tested.
-To select a chilling regime we used the results of previous studies as a basis:Allen and Ort (2001)describe chilling conditions in C4crops to be 0-12 degrees C and in a study into chilling tolerance inM.
-*giganteus,NaiduNone(2003)used a chilling treatment of 14/11 degrees C. We therefore chose a compromise between these two reports of 12 degrees C to impose chilling.
-We characterized the changes in photosynthesis, soluble sugars and starch following chilling-shock and then, to investigate the molecular response to chilling, we conducted qRT-PCR on target transcripts.
-Amongst the plethora of genes documented to be affected by chilling in other species we focussed on the expression of genes involved in carbohydrate metabolism, cold signal transduction and stress responses.
-The genome ofMiscanthushas not yet been sequenced so we preferentially selected genes for study that had been annotated in maize or sorghum genome databases.
-Finally, we measured changes in leaf-extension rates in plants subjected to chilling treatments compared with control plants maintained at 28 degrees C.The aim of our experiments was 3-fold: (1) to characterize photosynthesis and carbohydrate dynamics throughout the light period in different genotypes ofMiscanthus; (2) to measure changes in photosynthesis, carbohydrates and gene expression during chilling-shock; and (3) to identify suitable measurements or markers that could, in future, be used to screen prospective parent plants or crosses for chilling-shock tolerance/sensitivity.
-All genotypes used in this study are of Japanese origin.
-A summary of geographical origin, ploidy and phenotypic attributes for each genotype are provided in Table 1.
-Miscanthus sinensis(EMI-11) is a diploid clone selected in 1988 from temperate Japan (Honshu Island) by Danish plant collector Dr Poul Erik Brander.
-It was part of the EuropeanMiscanthusImprovement (EMI) programme (1997-2000) and is the female parent of the Mx2 mapping family (MaNone, 2012).
-Miscanthus sinensis(Goliath) is an intraspecific hybrid ofM.
-sinensis.
-It is a triploid, originally selected as a vigorous seedling from a cross (parents unknown) by Ernst Pagels and marketed as a 'large-type' horticultural variety since the 1970s.
-Miscanthus sacchariflorus(Sac-5) is a tetraploid that was part of a seed population collected from central Japan by TINPLANT in 1992.
-It was also part of the EMI programme.
-Miscanthus*giganteus(Gig-311) is a naturally occurring hybrid of diploidM.
-sinensisand a tetraploidM.
-sacchariflorus.
-It was supplied to IBERS from Bical (Taunton) in 2005.
-NoneNoneNoneNoneDescription and phenotypes of the four genotypes used in this studyMeasurements of height and stem number are the average of eight plants per genotype from rhizome-propagated plants (+/- s.e.).
-Different letters show significant differences between genotypes (Student's two-tailedt-test,P less than 0.05).
-Plants were propagated from rhizome pieces cut from field-grown mature plants in December 2010.
-Rhizome pieces were grown in a polytunnel under natural lighting in 1-L pots in moist compost placed on capillary matting to ensure constant water availability.
-When emerged stems had reached four to seven mature (ligule) leaves on the tallest stem they were transferred to a growth room (Sanyo Fitotron) set at a constant (day and night) temperature of 28 degrees C on a 12 h light : 12 h dark diurnal cycle with a light intensity of 500 umol m-2s-1photosynthetic photon flux density (PPFD) for 10 d. Relative humidity was set at 84 % at 28 degrees C and 57 % at 12 degrees C to maintain a vapour pressure deficit of 0.6 kPa in both rooms.
-Plants were randomly arranged in trays containing six plants.
-Each tray contained a layer of capillary matting to ensure a constant availability of water.
-Plants were watered every 3 d during which time the plants were re-randomized within trays and the trays re-randomized within the growth room.
-After 10 d the time course experiment commenced.
-On day 1, plants were harvested at 0 h (lights on), 2 h, 4 h, 6 h, 10 h and 12 h (lights out).
-On day 2, 2 h after the lights came on half the plants were rapidly transferred to an identical controlled-environment room, with identical lighting settings but at a temperature of a constant 12 degrees C (day and night).
-Harvests at 12 degrees C were carried out at 4 h (2 h after transfer), 6 h (4 h after transfer), 10 h (8 h after transfer) and 12 h (10 h after transfer).
-A total of 33 plants per genotype were used in the experiments.
-Conditions in both rooms were monitored by in-built PC-based monitoring systems (SpecView Corp. and SpecView Ltd) and independent data loggers within the growth rooms monitored temperature and humidity (Rotronic International) and photosynthetically active radiation (Skye, Llandrindod Wells, UK).
-Leaf light-saturated CO2assimilation rates (Asat) were measuredin vivousing a portable open-path gas exchange system incorporating infrared CO2and water vapour analysers (Walz GFS-3000, Walz Gmbh, Germany) incorporating a red-blue LED light source (Walz 3055-FL).
-Reference [CO2] in the cuvette was set at 385 umol mol-1, the leaf temperature was maintained at the experimental temperature (12 degrees C or 28 degrees C), and vapour pressure deficit maintained between 1.1 and 2 kPa for all of the measurements (Long and Bernacchi, 2003).
-Three plants per genotype were randomly selected at the start of the experiment and measured at each time-point.
-Measurements were made on the youngest fully expanded leaf with a fully formed ligule and taken on the same area of the leaf, one-third of the leaf length from the leaf tip.
-For each of the genotypes studied, a preliminary assessment of the response of photosynthesis to light was made on a small number of replicates to identify the PPFD required to reachAsat.
-Plots ofAvs.Qwere measured starting at PPFD 2000 umol m-2s-1and decreasing stepwise to complete darkness; curves consisted of a minimum of ten measurements ofQ.
-CompletedAvs.Qcurves were fitted to a non-rectangular empirical function to estimateAsat, which was consistently attained at a PPFD of 1500 umol m-2s-1(BernacchiNone, 2003).
-For the measurement ofAsatthe leaf was placed in the gas analyser leaf chamber with the PPFD set at ambient irradiance; all other chamber parameters were as described above.
-The PPFD was then increased stepwise to 1000 umol m-2s-1then to 1500 umol m-2s-1.
-Each leaf was first allowed to achieve steady-state CO2and water vapour exchange at each increase ofQ(BernacchiNone2003).
-Asatwas measured at a PPFD of 1500 umol m-2s-1once the steady state had been achieved (WangNone, 2012).
-For each genotype three biological replicates (separate plants) were sampled per time-point, per treatment.
-The same leaf was used for both RNA and carbohydrate analysis but a separate set of plants were used for measuring photosynthesis.
-At each time-point, two 2-cm sections from the middle of the highest ligule leaf, on either side of the central mid-rib (to facilitate grinding), were quickly excised with a razor, placed in a 2-mL micro-centrifuge tube and flash frozen in liquid nitrogen.
-Immediately afterwards the carbohydrate sample was harvested from the same leaf and flash frozen in liquid nitrogen.
-Four time-points were selected for transcriptional studies: 2 h, 4 h, 6 h and 10 h for plants grown at 28 degrees C and 4 h (2 h after transfer), 6 h (4 h after transfer) and 10 h (8 h after transfer) at 12 degrees C. Samples were stored at -80 degrees C until processed.
-An 8-cm section of leaf tissue on either side of the section harvested for RNA was cut out with a razor blade, wrapped in aluminium foil and flash frozen in liquid nitrogen.
-In addition to the time-points on which tissue was harvested for RNA, there were two other time-points, 0 h (lights on) and 12 h (lights off) when tissue was harvested for carbohydrate analyses.
-Carbohydrate samples were freeze-dried for 48 h (Freezemobile 6; Virtis Co Inc., Gardiner, NY, USA) then cryomilled to a fine powder (Spex SamplePrep 6870 Large Freezer Mill;www.spexsampleprep.com).
-Three biological replicates (individual plants) for each genotype were harvested at each time-point.
-A total of 30 plants per genotype were harvested for carbohydrate and/or RNA extraction.
-Approximately 20 mg (actual weight recorded) of each cryo-milled carbohydrate sample was weighed into 2-mL screw-cap micro-centrifuge tubes.
-Sugars were extracted in 1 mL of 80 % (v/v) ethanol heated in a water bath at 80 degrees C for 20 min.
-Samples were then cooled and centrifuged and the supernatant extracted and added to a 15-mL tube.
-The process was repeated a further three times.
-A 0.5-mL aliquot of the supernatant containing the soluble sugars was added to a 2-mL micro-centrifuge tube and, along with the remaining pellet containing the insoluble fraction (including starch), dried down in a centrifugal evaporator (Jouan RC 1022, Saint Nazaire, France) until all the solvent had evaporated.
-The dried-down residue from the soluble fraction was then re-suspended in 0.5 mL of distilled water.
-The dried pellet was stored at -20 degrees C until analysed for starch.
-Soluble sugars were quantified enzymatically by the stepwise addition of hexokinase, phosphoglucose isomerase and invertase (JonesNone, 1977).
-Samples were quantified photometrically by measuring the change in wavelength at 340 nm, 15 min after the addition of each enzyme.
-Sucrose, glucose and fructose were then quantified from a standard curve.
-Starch was quantified using a modified Megazyme protoco1 (Megazyme Total Starch Assay Procedure, AOAC method 996.11; Megazyme International, Ireland).
-Briefly, the dried pellet was resuspended in 0.4 mL of 0.2mKOH, vortexed vigorously and heated to 90 degrees C in a water bath for 15 min to facilitate gelatinization of the starch.
-A total of 1.28 mL of 0.15mNaOAc (pH 3.8) was added to each tube and vortexed before the addition of 20 uL alpha-amylase and 20 uL amyloglucosidase (Megazyme).
-After incubation at 50 degrees C for 30 min, a 0.02-mL aliquot was extracted and combined with 0.6 mL of GOPOD reagent (Megazyme).
-A total of 0.2 mL of this reaction was assayed photometrically on a 96-well microplate at 510 nm against a water blank.
-Starch was quantified from a standard curve.
-For both soluble sugar and starch quantification a series of standards were included on each plate assayed.
-Each sample and standard was tested in duplicate.
-RNA samples were ground in liquid N using a ball mill (Tissuelyser MM300, Retsch,www.retsch.com).
-RNA was extracted using RNeAsy Plant mini kit (Qiagen) according to the manufacturer's instructions and quantified on a NanoDrop (ND1000; Thermo Scientific;www.nanodrop.com).
-Contaminating genomic DNA was removed by DNase treatment with Turbo DNase Free (Ambion, Austin, TX, USA).
-cDNA was synthesized from 0.5 ug of total RNA with iScript cDNA synthesis kit (Bio-Rad Laboratories Inc.).
-qPCR was performed on an Applied Biosystems, 7500 real time PCR system (Life Technologies;www.appliedbiosystems.com) with QuantiFast SYBR Green (Qiagen), according to the manufacturer's instructions.
-Cycle conditions were 95 degrees C for 5 min, then 40 cycles of 95 degrees C for 10 s and a combined annealing/extension phase of 60 degrees C for 1 min, followed by a melt curve analysis.
-A dissociation curve for each reaction was included to check for non-specific primer binding.
-In the absence of a sequenced genome forMiscanthus, primers were designed from theSorghum bicolour(sorghum) andZea mays(maize) cDNA libraries available from the NCBI website (http://www.ncbi.nlm.nih.gov/; see Table S2).
-Annotated sequences in sorghum and maize are available for all genes tested from the NCBI database (http://www.ncbi.nlm.nih.gov/).
-The crossing point threshold was calculated using the Applied Biosystems, 7500 real time PCR system software.
-The crossing point threshold of two technical replicates was used to calculate expression relative to an internal control gene.
-A number of control genes were tested based upon published data.
-CzechowskiNone(2005)identifiedYellow Leaf Specific8(YLS8) as a superior reference gene for abiotic stress treatments in arabidopsis.
-An orthologue of this gene was identified in maize and sorghum and found to be the most stably expressed inMiscanthusin both warm (28 degrees C) and chilling (12 degrees C) conditions.
-The plants were grown, arranged and maintained as described above.
-This phase of the experiment was initiated 24 h after the on-set on the chilling time course.
-At the start of the experiment a stem with four to seven mature ligule leaves was identified from six plants per genotype.
-With permanent marker, the highest ligule and the point at which this met the unfurling leaf sheath was marked.
-Treatments were as follows: 28 degrees C for 4 d (control) and 12 degrees C for 24 h (overlapping the chilling time course) before transfer back to 28 degrees C for a further 3 d and 12 degrees C for 4 d. After 4 d the distance between the marked ligule and the mark on the unfurling leaf was determined with callipers.
-Plants were re-arranged within their respective trays and shifted within the growth room every 3 d.ANOVA's and Tukey's tests were carried out using GenStat version 13,t-tests were performed in Excel (Microsoft Inc.) and alpha less than 0.05 was applied for all analyses.
-Analysis for carbohydrate data was carried out as follows.
-At 28 degrees C, a two-way ANOVA was used to compare the effect of genotype and time into the photoperiod on total soluble sugar; a corresponding Tukey's test identified significant differences between genotypes for each time-point.
-At 12 degrees C, two-way ANOVAs and corresponding Tukey's tests were used for each genotype to determine significant differences between warm and chilled treatments for each time-point.
-For the average increase and percentage increase in soluble sugars after transfer, two, one-way ANOVAs with corresponding Tukey's tests were used to identify significant differences.
-When single variables were compared for morphological characteristics and LER, Student's two-tailedt-tests were performed assuming unequal variances (alpha less than 0.05; Excel, Microsoft Inc.).
-The four genotypes were selected because they represent two distinct species ofMiscanthus;M. sinensisandM.
-sacchariflorusand an inter-specific hybridM.
-*giganteus(Table 1).
-The genotypes also represent a range of ploidy.
-Three of the genotypes used in this study; Gig-311, Goliath and Sac-5 have successfully been used in previous studies to investigate freezing tolerance (Clifton-Brown and Lewandowski, 2000;FarrellNone, 2006;ZubNone, 2011).
-AlthoughM.
-*giganteus(hereafter referred to as Gig-311) is a hybrid between anM.
-sacchariflorus(4n) and anM.
-sinensis(2n) the physical measurements of stem numbers and height place it as being more physically similar toM.
-sacchariflorusclone Sac-5 (hereafter referred to as Sac-5) than the diploidM.
-sinensisclone EMI-11 (hereafter referred to as EMI-11).
-There were no significant differences between Gig-311 and Sac-5 for maximum ligule height or stem number, whereas both of these genotypes were taller, with fewer stems than either EMI-11 or the triploidM.
-sinensisclone Goliath (hereafter referred to as Goliath).
-Both EMI-11 and Goliath had a similar number of stems with an average of 61 % and 47 %, respectively, more than both Gig-311 and Sac-5.
-Measurement of light-saturated photosynthesis (Asat) revealed that at 28 degrees C Gig-311 and Sac-5 exhibited higher rates ofAsatthroughout the day than either of theM.
-sinensisgenotypes (Fig.
-1A).
-EMI-11 exhibited the lowest rate ofAsatafter 4 h, thereafter showing a steady rate of decline.
-All genotypes exhibited a rapid decline inAsatwithin the first 2 h after transfer to 12 degrees C. Gig-311 and Sac-5 continued to decline inAsatuntil 6 h, and Goliath until 10 h (Fig.
-1A).
-Gig-311 maintained the highest absoluteAsat.
-At the end of the time course (12 h) the rank order ofAsatwas almost the same as at 28 degrees C with the twoM.
-sinensisgenotypes having the lowest rate and Gig-311 and Sac-5 having the highest rate.
-As a percentage ofAsatat 28 degrees C,M.
-*giganteusmaintained the highest percentage; Goliath and Sac-5 experienced the greatest decline (Fig.
-1B).
-At the end of the time course, all genotypes had, relatively, declined to the same extent, to approx.
-65-68 % of their corresponding rate at 28 degrees C.NoneNoneNone(A) Light saturated photosynthesis (Asat) at 28 degrees C (Warm) and after transfer to 12 degrees C (Chilled) in the four genotypes.
-(B) Percentage reduction in leaf CO2assimilation following transfer.
-Values are means +/- s.e.,n= 3.
-The most abundant soluble sugar was sucrose, followed by glucose and then fructose in all the genotypes (Fig.
-2A-C).
-In EMI-11 and Goliath, sucrose contents increased from 6 h and 4 h, respectively, to the end of the light period, whereas in Sac-5 sucrose concentrations peaked at 6 h and then declined.
-The separation in accumulation trend between theM.
-sinensisgenotypes and Sac-5 and Gig-311 was more obvious in their accumulation of glucose: EMI-11 and Goliath reached peak concentrations at 10 h and 12 h, respectively, whereas Gig-311 and Sac-5 reached peak concentration at 6 h. Fructose concentrations for EMI-11 and Goliath were low throughout the experiment, dropping below detectable concentrations at 0 h, 10 h and 12 h in EMI-11.
-Fructose concentrations were higher in Sac-5 and Gig-311, again, peaking at 6 h. The genotypes with the highest concentration of total soluble sugars consistently were Sac-5 and Gig-311, followed, in order, by Goliath and finally EMI-11 (Table 2).
-This pattern is consistent with their respective rates of photosynthesis throughout the day; the genotype with the highest rate (Sac-5) accumulated the most soluble sugars and vice versa.
-NoneNoneNoneNoneNoneNoneNoneSoluble sugar contents of the four genotypes at 28 degrees C (Warm) and after transfer to 12 degrees C (Chilled): sucrose (A), glucose (B) and fructose (C).
-Plants were transferred to 12 degrees C at 2 h. Values are means +/- s.e.,n= 3.
-Average amount of total soluble sugars (glucose, sucrose and fructose; mg g-1d.
-wt) at 28 degrees CDifferent letters show significant differences between genotypes (Tukey test,P less than 0.05).
-n= 3, +/- s.e.
-After transfer to 12 degrees C an increase in sucrose, glucose and fructose concentrations was observed in all genotypes, but to different extents (Fig.
-2A-C).
-The greatest increase in sucrose, compared with the 28 degrees C treatment, was an 85 % increase in EMI-11 at 6 h (Fig.
-2A and Table 3).
-The smallest change in sucrose was observed in Sac-5 where concentrations remained comparable to the 28 degrees C treatment throughout the experiment.
-Sac-5, however, accumulated elevated concentrations of hexose in chilling conditions so the low concentrations of sucrose cannot be attributed to the impairment of photosynthesis (Fig.
-2B).
-EMI-11 and Goliath, like Sac-5, accumulated large concentrations of glucose and fructose at 12 degrees C compared with 28 degrees C (B and C, respectively, in Fig.
-2).
-Gig-311 accumulated the least concentration of hexose, with very little change in glucose content between the 12 degrees C and 28 degrees C treatments.
-Despite not accumulating hexoses to the same extent as the other genotypes, Gig-311, still exhibited the highest average concentration of soluble sugars (Table 3).
-In contrast to the absolute values, the percentage increase in soluble sugars revealed that EMI-11 and Goliath exhibited the greatest percentage increase in soluble sugars during chilling and Sac-5 showed the lowest.
-Gig-311 was intermediate between the two groups (Table 3).
-NoneNoneNoneNoneTotal soluble sugars (mg g-1d.
-wt) and percentage increase following transfer to 12 degrees CMean total mg g-1d.
-wt glucose, fructose and sucrose following transfer to 12 degrees C and percentage increase from total amount of soluble sugar at 28 degrees C grown plants at the same time-point.
-n= 3, +/- s.e.
-* Significant difference from 28 degrees C. Different letters show significant differences between genotypes for the overall average and percentage increase (Tukey test,P less than 0.05).
-At 28 degrees C starch concentrations accumulated throughout the light period in all genotypes (Fig.
-3).
-Although the total concentration of starch accumulated between the genotypes at the end of the day was similar, the pattern of accumulation was different.
-In the twoM.
-sinensisgenotypes starch accumulated fairly linearly throughout the day, whereas concentrations of starch remained low in Gig-311 and Sac-5 until 10 h when 71 % and 66 % of starch, respectively, was accumulated in the last 2 h of the light period (Fig.
-3).
-In Gig-311 this pattern of accumulation mirrored that of sucrose which was also more abundant in the last 2 h of the light period (Figs 2and3).
-NoneNoneNoneStarch contents at 28 degrees C (Warm) and at 12 degrees C (Chilled) in the four genotypes.
-Values are means +/- s.e.,n= 3.
-After transfer to chilling conditions, starch continued to accumulate in all genotypes (Fig.
-3).
-At 10 h, EMI-11, Gig-311 and Sac-5 all contained more starch at 12 degrees C than their warm-grown counterparts.
-In EMI-11 and Sac-5, a lower quantity of starch had accumulated at the end of the day in the chilled plants and concentrations had decreased in the last 2 h of the experiment.
-To study molecular changes in response to chilling, transcripts homologous to those that had previously been identified as being involved in carbohydrate metabolism or stress responses in other species were identified inMiscanthus(Table 4).
-The pattern of expression forMsPGM1was similar for the twoM.
-sinensistypes showing a progressive increase in transcription from the point of transfer to 12 degrees C (Fig.
-4A).
-Sac-5 and Gig-311 also had a very similar pattern of expression to each other but different from the twoM.
-sinensisgenotypes where expression peaked 2 h after transfer and then declined.
-The amplitude in expression ofMsPGM1reflected the soluble sugar concentration; Sac-5 showed the slightest increase in expression ofMsPGM1and the smallest increase in soluble sugars, whereas EMI-11 showed the greatest increase in soluble sugars and expression ofMsPGM1.
-The expression patterns forMsBAM3(Fig.
-4B) were similar to those ofMsPGM1, which is interesting as they are most commonly regarded as being involved in opposite processes (breakdown and synthesis, respectively; for a review, seeZeemanNone, 2007.
-The greatest increase in transcription ofMsBAM3(8-fold) was observed 4 h after transfer to 12 degrees C in both EMI-11 and Sac-5.
-A lesser increase of 3- and 4-fold was observed in Goliath and Gig-311, respectively, at this same time-point (Fig.
-4B).
-The fold change in expression pattern ofMsBAM3andMsPGM1in the four genotypes mirrored the respective increases in sucrose accumulation at 12 degrees C (Figs 2A and 4A, B).
-A Pearson's Correlation co-efficient revealed averageR2values of 0.4-0.9 for all genotypes, for both genes (A and B, respectively, in Fig.
-5).
-NoneNoneNoneNoneNoneNoneNoneNoneNoneNoneFold change in expression between cold/warm conditions of (A)MsPGM1, (B)MsBAM3, (C)MsCBF3and (D)MsRD19a.
-Expression levels at 28 degrees C and 12 degrees C were calculated relative to an internal control gene (MsYLS8).
-Fold change is the relative expression at 12 degrees C/relative expression at 28 degrees C. Values are means +/- s.e.,n= 3.
-* Significant differences to 28 degrees C (Tukey test,P less than 0.05).
-Primer sequences are listed inSupplementary DataTable S2.
-Pearson's correlation coefficient for fold changes in (A)MsPGM1and (B)MsBAM3 against sucrose content after transfer to 12 degrees C;n= 3.
-Time-points correspond to T0, 2, 4 and 8 h after transfer to 12 degrees C. Fold change in relative gene expression is as described in Fig.
-4.
-Transcripts selected for expression analysisGenes involved in carbohydrate metabolism and/or cold-stress response in other species were selected from published literature.
-Primer sequences are listed inSupplementary DataTable S2.
-The C-repeat binding factors/dehydration responsive element binding (CBF/DREB) family of transcription factors have been proven to control the expression of a swathe of cold-inducible transcripts in arabidopsis (Yamaguchi-Shinozaki and Shinozaki, 1994;GilmourNone, 1998;Thomashow, 2010;FowlerNone, 2005).
-The expression of this gene inMiscanthusshowed the greatest fold increase in expression in response to cold of all the transcripts tested.
-Transcription was most highly expressed 2 h after transfer in all genotypes but this increase was transient and, by the end of the experiment, the change was less than 6-fold for all genotypes (Fig.
-4C).
-Goliath expressedMsCBF3most highly with a 56-fold change, followed by Sac-5, Gig-311 and EMI-11 which only increased 4-fold at the peak of expression.
-RD19ais under strong circadian regulation (KrepsNone, 2000) and a large increase in transcription was observed progressively through the light period in both temperature treatments in all genotypes (data not shown).
-Sac-5 was unique amongst the genotypes for exhibiting an increase in expression in response to chilling (Fig.
-4D).
-Previous reports on the expression ofRD19aare mixed with some reporting cold induction (Robinson and Parkin, 2008) and some reporting only drought induction (KoizumiNone, 1993;CoupeNone, 2003).
-In Sac-5, transcription reached a 2.7-fold increase at 12 degrees C compared with 28 degrees C 4 h after transfer and then declined.
-All genotypes showed a decline in LER after 4 d at 12 degrees C, although in Gig-311 this difference was not significant (Fig.
-6).
-Sac-5 and Goliath showed the greatest reduction in LER at 12 degrees C with reductions of 97 % and 86 %, respectively.
-In both EMI-11 and Gig-311 a slight increase in LER was observed after treatment for 24 h at 12 degrees C compared with the control plants maintained at 28 degrees C. In Goliath there was a 79 % reduction in plants treated to 24 h at 12 degrees C compared with warm-grown plants, indicating that short-term chilling had a lasting detrimental effect on LER.
-NoneNoneNoneAverage leaf elongation rate of the four genotypes at 28 degrees C for 4 d (Warm), 12 degrees C chilling-shock for 24 h before a return to 28 degrees C for 3 d (Mixed), 12 degrees C chilling-shock maintained for 4 d (Cold).Values are means + s.e.,n= 4-6.
-Different letters show significant differences between treatments for the same genotype (Student's two-tailedt-test,P less than 0.05).
-Under optimal growing conditions the rate of photosynthesis (Asat) was highest for Sac-5 and Gig-311 throughout the experiment.
-The twoM.
-sinensisgenotypes, particularly EMI-11 were, comparably, low.
-Previous reports have described the superiority of the photosynthesis rates at lower temperatures inM.
-*giganteuscompared with maize (NaiduNone, 2003;WangNone, 2008None;Dohleman and Long, 2009).
-In field trials in Illinois,M.
-*giganteusowes its high productivity to a high green leaf area index and the ability to develop a functional canopy at lower temperatures (Dohleman and Long, 2009).
-The four genotypes used in this study were selected based, in part, upon their differing morphology.
-Therefore, despite the lower rate of photosynthesis in individual leaves of theM.
-sinensisgenotypes, the higher stem density could still result in a greater capacity for carbon fixation on a per plant basis.
-Studies are currently underway to investigate this hypothesis.
-Under warm conditions, soluble carbohydrates and starch showed a diurnal pattern of accumulation similar to that reported in other species such as maize, cotton and soybean (HuberNone, 1984;Hendrix and Huber, 1986;Kalt-TorresNone, 1987).
-Sac-5 and EMI-11 showed the most contrasting carbohydrate phenotypes.
-Miscanthus sacchariflorusgenotypes are phylogenetically more closely related to sugarcane thanM.
-sinensis(HodkinsonNone, 2002) and many aspects of the difference in the carbohydrate phenotype of Sac-5 and EMI-11 reflect this.
-For example, the reported mid-day concentration of sucrose in sugarcane leaves is 48 mg g-1d.
-wt compared with 40 mg g-1d.
-wt in Sac-5 (IskandarNone, 2011).
-In EMI-11, mid-day sucrose levels were 7 mg g-1d.
-wt which is more similar to sucrose concentrations reported in maize of 8 mg g-1d.
-wt (Kalt-TorresNone, 1987).
-In terms of sucrose content, Sac-5 is therefore more similar to sugarcane and EMI-11 is more similar to maize.
-In Sac-5 the pattern of soluble sugar accumulation is also comparable to sugarcane (LehrerNone, 2007), with concentration peaking around mid-day and then declining.
-The pattern of accumulation in EMI-11 showed a progressive increase in soluble sugars from mid-day as has also been reported in the temperate grasses barley and switchgrass (Greenfield and Smith, 1974;SicherNone, 1984).
-After transfer to 12 degrees C, all of the genotypes suffered a large and rapid decline in photosynthesis.
-At the same time, an increase in soluble sugar concentration was observed in all genotypes although, proportionately, less so in Sac-5 and Gig-311.
-The accumulation of soluble sugars and starch is probably the result of the combination of the remaining photosynthesis and a decline in growth rate, reducing carbon utilization.
-In sunflower plants grown at 30 degrees C and then abruptly shifted to 13 degrees C a similar increase in soluble sugars and starch was observed as in our study (PaulNone, 1991).
-Carbon labelling demonstrated that carbohydrate export was greatly reduced following the application of chilling stress, and the authors concluded that in chilling conditions assimilation exceeds utilization resulting in carbohydrate accumulation (PaulNone, 1991).
-A study byClifton-Brown and Jones (1997)showed that at progressively cooler temperatures the leaf elongation rate of many genotypes including Gig-311 and Sac-5 were reduced.
-The reduction in demand for sugars for growth during chilling therefore explains the observations.
-The two genotypes that suffered the greatest percentage decline in photosynthesis were Goliath and Sac-5.
-These two genotypes also showed both a large decline in LER after 4 d at 12 degrees C and reduced LER after being returned to 28 degrees C after only 24 h in chilling temperatures.
-Therefore either percentage decline inAsatin the first 4-8 h after chilling or a combination of low LER during chilling and a failure to recover LER were suitable measurements of chilling-shock sensitivity inMiscanthus.
-The failure of Sac-5 to accumulate sucrose during chilling-shock is similar to the observations ofDu and Nose (2002)who reported that a chilling sensitive variety of sugarcane failed to accumulate soluble sugars (including hexoses) in response to chilling.
-That Sac-5 accumulated large amounts of hexose in response to chilling but not sucrose indicates that the function of sucrose phosphate synthase (SPS) and/or cFru-1,6-BPase (FBPase) may have been impaired by chilling.
-In the chilling-sensitive sugarcane genotype a decrease in SPS enzyme activity was observed after only 4 h of exposure to chilling, whereas no difference was observed in tolerant genotypes (Du and Nose, 2002).
-Furthermore, in maize plants exposed to short-term chilling conditions, FBPase activity was reduced by half even after a return to optimal conditions, demonstrating lasting damage to the enzyme (Kingston-SmithNone, 1997).
-The superior photosynthetic performance ofM.
-*giganteuscompared with maize under chilling conditions has been attributed, in part, to the increased abundance of pyruvate orthophospate dikinase (PPDK) (NaiduNone, 2003;WangNone, 2008None).
-The poorer photosynthetic performance during chilling of EMI-11, Goliath and Sac-5, compared with Gig-311 may reflect a reduced ability to retain activity or abundance of PPDK during chilling.
-However, our results also suggest that the resilience of other enzymes, such as SPS or FBPase, may also be indicative of the performance of different genotypes ofMiscanthusunder chilling conditions.
-In arabidopsis the accumulation of soluble sugars has been attributed, at least in part, to the hydrolysis of starch (Kaplan and Guy, 2004,2005;YanoNone, 2005).
-InMiscanthusnone of the increase in soluble sugars after only a 2-h exposure to chilling conditions could be attributed to starch breakdown as starch continued to accumulate until at least 8 h after exposure.
-The rate of starch accumulation following chilling was actually greater than at 28 degrees C between 6 and 8 h in all genotypes except Goliath.
-This response has also been reported in maize (HodgesNone, 1997) and sunflower (PaulNone, 1991) but the contrary has been observed in arabidopsis (YanoNone, 2005;Kaplan and Guy, 2004,2005).
-Both maize and sunflower are sensitive to chilling and freezing, although genotypic variation in tolerance exists for both (HodgesNone, 1997;Allen and Ort, 2001;BalbuenaNone, 2011).
-However, arabidopsis is tolerant to freezing as long as a period of acclimation is first experienced (Thomashow, 1999).
-The reported Lt50(the temperature at which the calculated percentage damage would exceed 50 %) for acclimated arabidopsis is -7 to -12 degrees C (HannahNone, 2006) which is colder than the Lt50for shoots of acclimatedMiscanthusgenotypes which ranges between -6 degrees C and -9 degrees C (FarrellNone, 2006).
-In arabidopsis the breakdown of starch following exposure to chilling conditions has been correlated with freezing tolerance (Kaplan and Guy, 2005).
-InMiscanthus, maize and sensitive genotypes of sunflower, the absence of this response may be representative of their greater freezing susceptibility.
-Consistent with previous reports of the greater tolerance ofM.
-*giganteusto sub-optimal temperatures (NaiduNone, 2003;FarageNone, 2006;WangNone, 2008None), Gig-311 maintained the highest photosynthesis rates and showed no reduction in LER in response to chilling.
-A number of research groups, from different countries, have observed superiority in the performance ofM.
-*giganteusgenotypes for many different traits.
-This is particularly interesting as they do not all represent the same clone.
-A recent study into the performance of different genotypes ofMiscanthusin Poland included two triploidM.
-*giganteusoriginating from separate hybridization events (JezowskiNone, 2011).
-BothM.
-*giganteusgenotypes yielded more than theM.
-sinensisintraspecific hybrids and the interspecificM.
-sacchariflorus*M. sinensisdiploid hybrids (JezowskiNone, 2011).
-This finding, along with our own and the numerous other reports of the superior performance ofM.
-*giganteus(Clifton-Brown and Jones, 1997;NaiduNone, 2003;Naidu and Long, 2004;WangNone, 2008None,None;Dohleman and Long, 2009;JezowskiNone, 2011), provides evidence for the release of hybrid vigour in the triploid progeny of tetraploidM.
-sacchariflorus* diploidM.
-sinensis.
-In arabidopsis the expression ofbeta-amylaseis known to be stimulated by cold (NielsenNone, 1997;Kaplan and Guy, 2004) and a high sugar status (MitaNone, 1995,1997).
-Whether induction during cold stress is actually the result of sugar accumulation rather than induction being directed through a cold-signalling pathway, is unclear.
-We observed a strong correlation between the increase in expression of the two carbohydrate-metabolizing transcripts,MsPGM1andMsBAM3, and the accumulation of sucrose in each genotype, suggesting that this was the cause of induction.
-However, the greatest fold-change in expression ofMsBAM3was observed in Sac-5, which had the lowest increase in soluble sugar of the four genotypes, suggesting that the sugar responsiveness ofMsBAM3varies between genotypes.
-Different degrees of increased expression for abeta-amylasegene have also been observed in arabidopsis with the Landsbergerectaaccession showing reduced expression compared with Columbia after sugar feeding (MitaNone, 1997).
-This indicates that allelic variation controls induction ofbeta-amylasein response to increasing sugar contents which may account for the difference observed here.
-It is interesting to note that the highest increase in expression ofMsBAM3was observed in Sac-5 and EMI-11, and these were the only genotypes to show a reduced quantity of starch at the end of the experiment.
-The expression level of neitherMsBAM3norMsPGM1strongly reflected the degree of chilling-shock sensitivity in the four genotypes tested; therefore we conclude that these transcripts are not suitable markers of sensitivity.
-ArabidopsisRD19ahas been reported to be cold inducible (Robinson and Parkin, 2008) but more often as being specifically drought responsive (KoizumiNone, 1993;CoupeNone, 2003).
-Sac-5 was the only genotype to show an increase in expression of this transcript in response to chilling.
-Although the plants used in this study were kept well watered throughout the experiment, during chilling, water stress may occur in chilling-sensitive plants due to reduced xylem hydraulics which can drastically impair water uptake (Allen and Ort, 2001).
-This is particularly the case if the roots cool more quickly that the above-ground tissues (Allen and Ort, 2001).
-To this effect, rhizome shape could affect chilling tolerance;M. sacchariflorusgenotypes (including Sac-5) have a spreading-rhizome morphology, whereasM.
-sinensisand Gig-311 have compact 'tussock' rhizomes (Clifton-Brown and Lewandowski, 2000).
-A spreading morphology may expose a greater surface area for rapid cooling than the compact form, resulting in acute water stress and the subsequent expression of drought-responsive genes during chilling-shock.
-The CBF/DREB family of transcription factors are rapidly induced in response to cold and activate the expression of a large family of cold-inducible genes (GilmourNone, 1998;Fowler and Thomashow, 2002).
-In arabidopsis sequencing ofCBF1, -2and -3from accessions from a latitudinal gradient revealed polymorphisms, particularly amongst southern European-derived accessions compared with northern-origin accessions The observed polymorphisms affected the expression of downstream genes with southern accessions showing the lowest level of expression and the greatest susceptibility to freezing (Zhen and Ungerer, 2008).
-Our study identified thatMsCBF3was most highly expressed in the genotypes that showed the greatest percentage reduction inAsatand LER and recovery.
-Studies are now underway to determine whether expression level and/or sequence polymorphisms ofMsCBF3are a good indicator of chilling tolerance or susceptibility in a larger selection ofMiscanthusplants originating from a latitudinal gradient in Asia.
-If, similarly to arabidopsis, gene polymorphisms relating to tolerance are identified, this gene may be used as a molecular marker to screen seedlings and potential parents for chilling tolerance.
-In summary: under optimal conditions theM.
-sacchariflorusgenotype showed a diurnal pattern of carbohydrate accumulation that was similar to sugarcane, whereas theM.
-sinensisgenotypes more closely resembled temperate grasses.
-In keeping with its reported superior performance in prolonged cool temperatures,M.
-*giganteusalso maintains a greater degree of resilience to chilling-shock than other genotypes.
-The failure ofM.
-sacchariflorus(Sac-5) to accumulate sucrose indicates impairment in the enzyme function of SPS or FBPase during chilling.
-The most chilling-sensitive genotypes most highly expressed the candidate transcription factor,MsCBF3, suggesting that this gene may be a suitable molecular marker of chilling tolerance or susceptibility.
-Supplementary data are available online at www.aob.oxfordjournals.org and consist of the following.
-Table S1: temperature changes during daylight hours in May 2010 at Aberystwyth, UK.
-Table S2: list of primer sequences used in the study.
+The germline mutations ofTP53gene increase the risk of various cancers (McBrideNone, 2014).
+The germline mutations of components of p53 signalling system (e.g.,ATM) also modulate cancer risk (Shiloh, 2003).
+The kinase coded byATMparticipates directly in activation of p53 by phosphorylating its serine 15 (BaninNone, 1998;CanmanNone, 1998).
+This phosphate can be removed by a phosphatase coded byPPM1D(WIP1) gene (LuNone, 2005).
+WIP1 also dephosphorylates kinases that activate p53 (e.g., ATM, CHK2) (ShreeramNone, 2006;Oliva-TrastoyNone, 2007).
+In U-2 OS cells, we detected a nonsense mutation in codon 458 ofPPM1D(Arg458X).
+Initially, the functional significance of this mutation was unknown (ZajkowiczNone, 2013).
+Independently, this mutation was reported by others (KleiblovaNone, 2013).
+They found similar truncating mutation in another cell line (HCT116) used in studies of p53.
+Moreover, truncating mutations ofPPM1Dwere revealed in blood DNA from colorectal cancer patients.
+The functional experiments demonstrated that the truncating mutations code for hyper-stable WIP1 protein, which induces strong dephosphorylation of Ser15 of p53 and impairs the p53-dependent G1 checkpoint (KleiblovaNone, 2013).
+The presence of mutantPPM1Din normal cells of cancer patients suggests that the mutations were transmitted in germline and contributed to carcinogenesis.
+However, a paper published earlier demonstrated that the truncating mutations ofPPM1Dfound in blood cells of breast or ovarian cancer patients may result from sequence alterations formed during individual development as a mosaic mutations.
+The mutant DNA sequences constituted only small fraction of DNA samples.
+Moreover, in patients available for pedigree analysis, the mutations were present neither in parents nor in progeny of probands (RuarkNone, 2013).
+These authors sequenced the whole coding region ofPPM1Din many patients but found that the truncating mutations (either frameshift or nonsense) cluster within the last coding exon ofPPM1D(exon 6).
+Similar mutations ofPPM1Dwere also found by others in leukocytes of ovarian cancer patients (AkbariNone, 2014).
+So far, the truncatingPPM1Dmutations were found in breast, ovarian and colorectal cancer patients (KleiblovaNone, 2013;RuarkNone, 2013;AkbariNone, 2014).
+The aforementioned observations suggest that at least some of these mutations are mosaic; however, it is plausible that a fraction of them may be genuine germline mutations.
+We decided to find out whether truncating mutations ofPPM1Dare present in blood DNA samples from lung cancer patients.
+All patients were Polish Caucasians treated for non-small-cell lung cancer (NSCLC) in Maria Sklodowska -Curie Memorial Cancer Center and Institute of Oncology, Gliwice Branch.
+The demographic and clinical data are presented inTable 1.
+Most of the patients (87.5%) were in advanced clinical stage at the diagnosis (stage III-IV), squamous cell carcinoma was found in 328/543 patients (60.4%).
+Radiotherapy or chemo-radiotherapy was the most common treatment.
+The blood draw was performed before irradiation and usually after chemotherapy.
+Nearly all patients (94.3%) had smoking history.
+The patients gave the written informed consent for the genetic testing, and the study was approved by the institutional Ethics Committee.
+The whole blood DNA samples were purified using Genomic Maxi AX column purification kit (A A Biotechnology, Gdynia, Poland).
+The exon 6 ofPPM1Dgene was amplified by PCR with AmpliTaq Gold polymerase (Life Technologies, Carlsbad, CA, USA) and the following primers: WIP-P11 TAGTGAATGCATACCCCGTT (forward), WIP-P12 CAAGCAAGTACAAGGCCAGGA (reverse).
+The PCR products were prepared for sequencing by treatment with exonuclease I and shrimp alkaline phosphatase (Affymetrix, Santa Clara, CA, USA).
+The sequencing reaction was performed using BigDye Terminator v.3.1 cycle sequencing kit (Life Technologies) and the forward primer (TCACATGCATAGATTTGTTGAGTTC) located in intron 5.
+For confirmation of mutation, the PCR product was also sequenced with reverse primer (GTTCAACATCGGCACCAAAT).
+The sequencing products were analysed on GA3500 genetic analyzer (Applied Biosystems-Life Technologies, Carlsbad, CA, USA).
+The mutations were confirmed by resequencing of independent PCR product.
+For selected DNA samples with mutations, the PCR products were cloned using CloneJet PCR cloning kit (Fermentas-Thermo Fisher Scientific, Waltham, MA, USA).
+The bacterial colonies were resuspended in 20 mul of TE buffer, boiled and one microlitre of the cleared lysate was used as template.
+Polymerase chain reaction and sequencing that were performed according to protocol used for genomic DNA.
+The p53-responsive promoters ofBAXandMDM2genes were cloned into pGL3-Basic reporter vector coding for firefly luciferase (Promega, Madison, WI, USA).
+The plasmid with SmaI-SacI fragment ofBAXgene promoter (Miyashita and Reed, 1995) was a kind gift from Dr. Curtis C. Harris (National Cancer Institute, NIH, Bethesda, MD, USA).
+The humanMDM2promoter 2 containing two p53-responsive elements (ZaubermanNone, 1995) was amplified by PCR from genomic DNA sample using primers: TTTTGCTAGCCTTTGTGCGGTTCGTGG, TTTTAAGCTTGCCTACAAGGAAAAAAAAGACA with the attached restriction sites for, respectively,NheI andHinDIII (underlined).
+We ligated the amplified DNA intoNheI andHinDIII sites of pGL3-Basic plasmid.
+The inserted DNA was sequenced to ensure that the clone contained no mutations introduced by PCR.
+The cDNA coding for wild-type and mutant (codon 458:CGA greater than TGA) WIP1 cDNA was cloned from RNA sample from U-2 OS cells.
+The total RNA was reversely transcribed with MuLV reverse transcriptase and random hexamers (Life Technologies).
+The cDNA was amplified with Proof Start polymerase (Qiagen, Hilden, Germany) using primers: WIP-SQ1 AACAATAGTTGGCCGGCGAG and WIP-SQ12 GTTCAACATCGGCACCAAAT amplifying the whole coding sequence ofPPM1D.
+Subsequently, the nested PCR was performed with Proof Start polymerase and primers: WIP-CLO1 and WIP-CLO2, which are nested in the first PCR product.
+The WIP-CLO1 primer TTTTAAGCTTATGGCGGGGCTGTACTCGcontains theHinDIII restriction site (underlined) and is complimentary to the beginning ofWIP1open reading frame (ORF, bold).
+The WIP-CLO2 primer TTTTTCTAGATCAGCAAACACAAACAGTTTTCcontains theXbaI site (underlined), the STOP codon and the end ofWIP1ORF (bold).
+The PCR product was cloned into pJET1.2/blunt using CloneJET PCR cloning kit (Fermentas-Thermo Fisher Scientific).
+The clones with wild-type or mutant (codon 458) sequences were identified.
+Subsequently, the cloned PCR products were cut out from the pJET1.2/blunt vector withHinDIII andXbaI and were ligated into these restriction sites of pcDNA3.1+ expression vector (Invitrogen-Life Technologies, Carlsbad, CA, USA) creating plasmids pcDNA3.1-WIP1-wild-type and pcDNA3.1-WIP1-mut-458.
+The DNA fragment containing exon 6 with the substitution in codon 469 (AAA greater than GAA) was amplified by PCR from genomic DNA of the heterozygous individual using primers: WIP-P11 (see above) and WIP-CLO2.
+The PCR product was cloned into pJET1.2/blunt using CloneJET PCR cloning kit.
+The clones containing the codon 469 nucleotide substitution were identified.
+The beginning ofWIP1exon 6 containsBamHI site.
+TheBamHI-XbaI fragment of pcDNA3.1-WIP1-wild-type plasmid was replaced byBamHI-XbaI fragment with codon 469 substitution cloned in pJET1.2/blunt.
+The resulting plasmid was named pcDNA3.1-WIP1-mut469.
+The NCI-H1299 cells (ATCC, Manassas, VA, USA) and SAOS-2 cells (European Collection of Cell Cultures, Salisbury, UK) do not express endogenous p53 protein.
+They were grown at 37 degrees C, 5% CO2, in DMEM medium (Sigma-Aldrich, St Louis, MO, USA) supplemented with 10% foetal bovine serum (Gibco-Life Technologies, Carlsbad, CA, USA) and penicillin/streptomycin (Sigma-Aldrich).
+The NCI-H1299 cells were transfected with FuGene6 (Promega), whereas SAOS-2 cells were transfected with Fugene HD (Active Motif, La Hulpe, Belgium) according to manufacturer's protocol.
+Some transfected SAOS-2 cells were treated with 1 muM camptothecin (Calbiochem-Merck, Darmstadt, Germany, the stock solution 4 mM in DMSO), a topoisomerase I inhibitor strongly activating p53 (JaksNone, 2001).
+The wild-type p53 was expressed from pC53-SN3 plasmid, which was a gift from Dr. Bert Vogelstein and Dr. Kenneth W. Kinzler from Johns Hopkins University, Baltimore, MD, USA (BakerNone, 1990).
+The null-control cells were transfected with empty expression vector (pcDNA3.1+).
+The negative control cells were transfected with p53 expression vector and empty pcDNA3.1+ plasmid.
+The experimental cells were transfected with p53 expression plasmid and the plasmid expressing wild-type or mutant forms ofWIP1.
+The SAOS-2 were seeded on two 6-well plates in 2 ml of medium.
+The transfection mixture for one well consisted of 6 mul of Fugene HD and 2 mug of DNA in 100 mul of growth medium without serum and antibiotics.
+The weight ratio of pC53-SN3 plasmid to WIP1 plasmid was 1 : 1.
+After 24 h, the medium with transfecting reagents was removed, and the cells were washed with fresh medium.
+Subsequently, the cells on one plate were supplemented with medium containing 1 muM camptothecin and the cells on the other plate were supplemented with medium containing 0.025% DMSO.
+After 24-h incubation, the cells were harvested by trypsinisation, washed with PBS, and the cell pellets were frozen on dry ice and stored at -70 degrees C.The NCI-H1299 cells were seeded on 6-well plate.
+The ratio of FuGene6 to DNA was 3 mul:1, 2 mug.
+The ratio of p53:WIP1 plasmids was 1 : 1.
+After 48 h, the cells were harvested and stored as SAOS-2 cells.
+The preparation of protein extracts in IP buffer and other steps of western blotting was performed as described before (ZajkowiczNone, 2013).
+The following antibodies were used in the detection step: anti-p53 (DO1, Santa Cruz Biotechnology-SCBT, Dallas, TX, USA), anti-phospho-p53 at Ser 15 (rabbit polyclonal antibody from Cell Signaling Technology, Danvers, MA, USA), anti-p21 (F-5, SCBT), anti-MDM2 (HDM2-323, SCBT), anti-HSC70 (B-6, SCBT), anti-WIP1 (H-300, SCBT).
+The NCI-H1299 cells were seeded on 12-well plates.
+The next day, the cells were transfected, according to the manufacturer's protocol, using FuGene6 (1,2 mul per well) with the combination of the reporter vector coding for firefly luciferase under the control of eitherBAXorMDM2promoters (0.12 mug), the expression vector pC53-SN3 (p53 plasmid, 0.18 mug) and the expression vector (0.3 mug) coding for wild-type or mutant cDNA ofWIP1 (PPM1D).
+In negative control, the p53 and WIP1 plasmids were replaced by empty pcDNA3.1+ so the amount of DNA in transfection mixtures was kept constant (0,6 mug).
+The transfection mixture also contained pRL-TK vector (0.012 mug) coding forRenilla sp.
+luciferase under the control of the herpes simplex virus thymidine kinase promoter that served as an internal control.
+After 48 h from the start of transfection, the cells were washed with PBS and lysed with passive lysis buffer from Dual Luciferase Reporter Assay system (Promega) that was also used to measure the firefly andRenilla sp.
+luciferase activities.
+The firefly luciferase activity was normalised toRenilla sp.
+luciferase activity.
+Each transfection was performed in triplicate in three independent experiments.
+The coding region of exon 6 ofPPM1Dwas sequenced in DNA samples isolated from blood of 543 NSCLC patients.
+In five patients (0.92%), we detected the electropherogram pattern consistent with the deletion/insertion mutations.
+In three cases, the mutation constituted a relatively large part of DNA sample.
+It enabled the precise identification of the deleted nucleotide (Figure 1).
+We cloned the relevantPPM1DPCR products from two patients showing similar intensities of wild-type and mutant reads on electropherograms (Figure 1, case no.
+189 and case no.
+522).
+We sequenced individual clones (derived from single molecules of PCR products-the essence of cloning in bacteria) and counted clones with wild-type and mutant sequences.
+This gave us better estimation of proportion of wild-typeversusmutant sequence in DNA sample than the 'height' of electropherogram peaks.
+For case no.
+522 (c.1288delG), we have sequenced 41 clones; 31 (76%) had wild-type sequence whereas 10 (24%) had mutant sequence.
+This proportion significantly differs from 50%versus50% ratio expected for the germline mutation (chi2test,P=0.03).
+Thus, this indicates that case no.
+522 has mosaic mutation ofPPM1Dand that the mutant cells constitute a large proportion of peripheral white blood cell population.
+Assuming that the white blood cells with mutantPPM1Dharbour wild-type allele on the other chromosome and taking into account that mutant sequence constitutes about one quarter of DNA sample, it can be estimated that cells with mutantPPM1Dmake up about 50% of cell population.
+For case no.
+189, we have sequenced 37 clones finding 25 (68%) with wild-type sequence and 12 (32%) with mutant one.
+The predominance of wild-type sequence suggests the mosaic nature of mutation, however, the proportion does not significantly differ from the expected 50%versus50% ratio (chi2testP=0.198); hence, we cannot formally reject the hypothesis that case no.
+189 has germline mutation, although this possibility is less likely than mosaicism.
+In two cases, the mutation constituted small fraction of DNA sample (consistent with the mosaic nature of mutation) and only the approximate localisation of mutant position was possible.
+In these cases, we also cloned PCR product in bacterial plasmids.
+We have sequenced DNA from 8 to 12 clones to detect the one with mutation what allowed for precise identification of the sequence change (Figure 2,Table 2).
+Out of five mutations detected by us, four were 1-base pair (bp) deletions, whereas one was 2-bp deletion, therefore the mutations generated frameshifts resulting in stop codons at or very close to the mutation sites (Table 2).
+All mutations were found in patients with squamous cell carcinomas (SCC), hence the frequency ofPPM1Dmutations in this histological type of NSCLC is 1.5% (5/328).
+Table 2describes the clinical characteristics of five patients with mutation.
+No apparent differences between clinical characteristics of these patients and the patients without mutation can be found, except for relatively high age at the diagnosis of five individuals of interest (mean 69 years).
+All patients with mutations underwent chemotherapy before the blood draw (Table 2).
+As for the patients without mutations, only 68 cases had chemotherapy after the blood draw.
+For the remaining 246 cases, which did not harbour mutations and for which the detailed dates of treatment were available, the mean time from the end of chemotherapy to the blood draw was 15.3 weeks (standard deviation +/-36.3 weeks, median 6.1 weeks, range 0-363 weeks).
+The difference in frequency of truncating mutations between SCC and adenocarcinomas is not due to more frequent use of chemotherapy in SCC, because SCC cases less frequently underwent chemotherapy than adenocarcinoma cases (197/328, 60%versus79/104, 76%P=0.005 bychi2test).
+The frequency of truncating mutations found in our group of cancer patients (5/543) is higher than the frequency found in the blood of non-cancer controls by other researchers (1/5861 inRuarkNone, 2013and 0/450 inKleiblovaNone, 2013).
+Thus, these mutations are clearly cancer-related.
+The sequencing of coding fragment of exon 6 also revealed five different single nucleotide substitutions.
+Four of them generate amino acid substitutions and one is a silent mutation (Table 3).
+Three variants have been identified by others and are listed in the short nucleotide polymorphisms databasehttp://www.ncbi.nlm.nih.gov/snp.
+Two of the nucleotide substitutions are reported here for the first time (Table 3).
+To the best of our knowledge, the functional significance of these rarePPM1Dvariants with amino acid substitutions was not examined.
+It is not known whether they are functionally neutral or modulate the activity of WIP1 phosphatase.
+We have selected one (469:AAA- greater than GAA) for functional study.
+It was chosen because it changes amino acid with basic side chain to the amino acid with acidic side chain (Lys469Glu).
+As a positive control, we used the previously detected mutant version ofPPM1Dfrom U-2 OS cells (R458X) (ZajkowiczNone, 2013).
+We wanted to confirm and extend the results of others (KleiblovaNone, 2013) who showed that this mutation (R458X) codes for the molecule, which is more stable and accumulates to much higher level than the wild-type protein.
+We have created expression vectors coding for wild-type or mutant versions of WIP1 protein (Mut458, Mut469).
+Subsequently, the vectors coding for the selected forms of WIP1 were transfected to NCI-H1299 cells together with the expression vector coding for wild-type p53.
+The recombinant WIP1 is expressed from the vectors as shown on immunoblot (Figure 3).
+Expectedly, the Mut458 codes for WIP1 with lower molecular weight.
+The amount of the protein with Lys469Glu substitution is similar to the amount of wild-type protein.
+In strong contrast, the amount of the truncated protein expressed from Mut458 vector is significantly higher.
+This is consistent with the observations made by others (KleiblovaNone, 2013) who showed that this mutant protein is more stable than the wild-type version.
+In our experiment, the expression of any form of WIP1 lowered the level of p53 with phosphorylated serine 15 without changing the total amount of p53 (Figure 3).
+The Arg458X causes enhancement of this dephosphorylation activity, whereas Lys469Glu is equivalent to the wild-type sequence.
+This is consistent with the observations that the truncated WIP1 codes for gain-of-function mutants (KleiblovaNone, 2013;RuarkNone, 2013).
+Unexpectedly, the major differences in the phosphorylation status of p53 Ser15 did not influence the ability of ectopic p53 to activate the expression of endogenous targets of p53-the genes coding for p21 or MDM2 proteins (Figure 3).
+Thus, in this experimental system, the effect of Arg458X on enhancing dephosphorylation does not influence the transactivation activity of p53 on its target genes.
+A similar experiment was performed on a different cell line, which also does not express p53 protein (SAOS-2 osteosarcoma cell line).
+In this case, we have additionally treated the cells with camptothecin, which is a strong activator of p53 (Figure 4).
+As expected, the camptothecin treatment induced stronger accumulation of total p53 and induced stronger expression of endogenous p21 protein.
+Expression of any form of WIP1 diminished the phosphorylation of Ser15 of p53 in both treated and untreated cells.
+Expression of Arg458X induced the strongest dephosphorylation of p53.
+Similar to previous experiment, the Ser15 phosphorylation status of p53 did not modulate the expression of endogenous p21.
+To further examine the influence of various forms of WIP1 on the ability of p53 to transactivate genes, we used another experimental system employing the reporter vectors containing the p53-responsive gene promoters.
+We selected promoters fromBAXandMDM2genes, which in our experimental system, are activated 15- and 200-fold, respectively, by p53 expressed from the co-transfected vector in NCI-H1299 cells (Figure 5).
+The co-expression of WIP1 did not significantly modulate the ability of p53 to transactivateBAXorMDM2promoters.
+Thus, the observations made using different experimental settings suggest that very strong expression of mutant WIP1, which clearly has the ability to diminish p53 phosphorylation on Ser15, does not measurably influence the ability of p53 to regulate the expression of its target genes.
+Moreover, we conclude that WIP1 protein with Lys469Glu substitution does not significantly differ from wild type in our experiments.
+This is the first report onPPM1Dmutations in blood DNA of NSCLC patients.
+Moreover, the truncating mutations detected by us were not reported in three papers onPPM1Dalterations found in blood cells of breast, ovarian or colorectal cancer patients (KleiblovaNone, 2013,RuarkNone, 2013;AkbariNone, 2014).
+The frequency of NSCLC cases with mutations (0.92%) is higher than the frequency of colorectal cancer patients (0.66%) (KleiblovaNone, 2013) and breast cancer patients (0.26%), but very similar to the frequency of ovarian cancer patients (1.07%) (RuarkNone, 2013).
+Another study reported 1.5% of ovarian cancer cases with truncating mutations ofPPM1D(AkbariNone, 2014).
+ThePPM1Dtruncating mutations arising somatically were recently found in brainstem gliomas (ZhangNone, 2014).
+So far, more than 30 truncating mutations ofPPM1Dhave been published, however, the functional significance of only some of them was examined.
+The mutations that we and others have detected are located within the mutation cluster region identified inPPM1DbyRuarkNone(2013).
+The gain-of-function nature of the following mutations was assessed and confirmed: c.1384C greater than T (p.Q462X), c.1420delC (RuarkNone, 2013), c.1349delT (p.450X), c.1372C greater than T (p.R458X) (KleiblovaNone, 2013).
+It is assumed that all truncating mutations in the mutation cluster region ofPPM1Dare of gain-of-function type.
+This assumption may be verified in the future, for example, by simple tests that we have performed for the mutation (p.R458X) found in U-2 OS cells (Figure 3).
+In three cases reported in our study, the mutant sequence constituted a small fraction of DNA sample what is consistent with mosaic nature of the mutations.
+However, in two cases, the electropherogram peaks of wild-type and mutant sequences exhibited similar intensity (Figure 1) indicating that a large proportion of blood cells contain the mutant version ofPPM1Dgene (wild-type version on one chromosome and the mutant on the other).
+Thus, in these two cases, we found either a germline mutation or mosaicism.
+However, more precise estimation of proportion of mutant and wild-type sequence (see Results) performed by cloning of PCR product strongly suggests mosaicism.
+We found no evidence that hyperactive WIP1 can modulate the ability of p53 to activate the promoters either of endogenous genes or the promoters cloned in reporter vectors (Figures 3,4,5).
+Although p53 phosphorylation is correlated with its activation, many studies showed that p53 can be activated regardless of its phosphorylation status (reviewed byKruse and Gu, 2009).
+Specifically,FuchsNone(1995)demonstrated that Ser15 phosphorylation mutant retains transcription activity and ability to suppress cell growth.
+Our observations apparently contrasts with the data published by others (KleiblovaNone2013) who showed that knockdown of WIP1 (either its mutant or wild-type form) promotes the expression of p21-the product of p53 target gene.
+We have also noticed in our previous experiments that downregulation of WIP1 with shRNA in U-2 OS cells promotes the expression of p21 in untreated cells (ZajkowiczNone, 2013).
+We speculate that the inability of hyperactive WIP1 to modulate the expression of p53 target genes results from the high expression level of p53 from the transfected plasmid.
+Our approach is apparently suitable for detection of the influence of WIP1 on the phosphorylation status of ectopic p53, but the amount of ectopic p53 may be too high for detection of the modulating effect of Ser15 phosphorylation on the ability of p53 to regulate the expression of target genes.
+It is also plausible that p53 is not the only target for the hyperactive, gain-of-function, truncated versions of WIP1 protein.
+WIP1 can dephosphorylate other proteins, including components of the base excision repair, what is associated with decreased activity of this DNA repair system (LuNone, 2004).
+Thus, hyperactive WIP1 may increase the mutation rate and by doing so, its mosaic/germline mutations may promote the formation of cancer.
+One of the major questions arising from our study is whether the detected mutations were induced by chemotherapy.
+All patients with the truncating mutations were exposed, before the blood collection, to the DNA-damaging agents as a part of chemotherapeutic regimen (Table 2).
+There are numerous examples showing that chemotherapeutic agents promote mutagenesis and the formation of therapy-induced cancers, for example, radiotherapy for Hodgkin lymphoma significantly increases risk of lung cancer, and the risk of developing leukaemia is elevated after platinum-based chemotherapy for testicular or ovarian cancer.
+Usually the latency between therapy and the formation of secondary cancer is as long as several or more years (see review byAllan and Travis, 2005).
+In the case of our group of patients, the latency between the chemotherapy and the detection of thePPM1Dmutations in white blood cells was relatively short-several months.
+At this moment, we cannot judge whether this is enough time to generate and expand the mutant clone of white blood cells.
+Another question arising from our study is whether the cells withPPM1Dmutations were selected by chemotherapy owing to their potentially increased apoptosis resistance caused by attenuation of p53 activity.
+These questions cannot be answered without further studies, which must be designed in a way that will elucidate whether the mutations are induced/selected by chemotherapy.
+In conclusion, our study revealed that truncating mutations ofPPM1Dare present in blood DNA of 0,9% NSCLC patients.
+The mutations are found exclusively in cases with SCC.
+Consistent with previous findings, the mutant form R458X found in U-2 OS cell line accumulates in cells to significantly higher amount than the wild-type form and strongly reduces the phosphorylation of p53 on Ser15.
+The variant with Lys469Glu amino acid substitution is equivalent to wild type in our experiments.

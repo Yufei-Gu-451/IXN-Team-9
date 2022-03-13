@@ -144,7 +144,7 @@ def output_summary(*, final_summary, output_address):
 
 #-------------------- MAIN BODY OF SUMMARIZER
 
-def summarize_text(*, input_file, output_file, compression_rate, number_of_clusters):
+def summarize_text(*, input_file, output_file, compression_rate, number_of_clusters, algorithm_num):
     #-------------------- Preprocessing --------------------
 
     print('---------- Preprocessing started ----------\n')
@@ -246,15 +246,16 @@ def summarize_text(*, input_file, output_file, compression_rate, number_of_clust
             j += 1
 
     #-------------------- Clustering Algorithm
-    final_summary = k_cluster(sentence_list=sentence_list, compression_rate=compression_rate, number_of_clusters=number_of_clusters)
-
-    #final_summary = merge_cluster(sentence_list=sentence_list, compression_rate=compression_rate, number_of_clusters=number_of_clusters)
-
-    #final_summary = text_rank(sentence_list=sentence_list, compression_rate=compression_rate)
+    if algorithm_num == 1:
+        final_summary = k_cluster(sentence_list=sentence_list, compression_rate=compression_rate, number_of_clusters=number_of_clusters)
+    elif algorithm_num == 2:
+        final_summary = merge_cluster(sentence_list=sentence_list, compression_rate=compression_rate, number_of_clusters=number_of_clusters)
+    elif algorithm_num == 3:
+        final_summary = text_rank(sentence_list=sentence_list, compression_rate=compression_rate)
+    else:
+        print('Unknown Algorithm')
 
     output_summary(final_summary=final_summary, output_address=output_file)
-
-
 
 
 def k_cluster(*, sentence_list, compression_rate, number_of_clusters):
@@ -383,8 +384,8 @@ def text_rank(*, sentence_list, compression_rate):
     for i in range(len(sentence_list)):
         for j in range(len(sentence_list)):
             similarity_matrix[i][j] = sentence_list[i].cosine_similarity(sentence_list[j].representation)
-            print(i, j, end=' ')
-        print('\n')
+            #print(i, j, end=' ')
+        #print('\n')
 
     print('\n---------- Constructing nx graph ----------\n')
     nx_graph = nx.from_numpy_array(similarity_matrix)

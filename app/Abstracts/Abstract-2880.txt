@@ -1,0 +1,1 @@
+Bacteria use a process of chemical communication called quorum sensing to assess their population density and to change their behavior in response to fluctuations in the cell number and species composition of the community. In this work, we identified the quorum-sensing-regulated proteome in the model organism

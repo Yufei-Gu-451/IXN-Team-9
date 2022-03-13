@@ -1,1 +1,0 @@
-Integrating vectors can lead to the dysregulation of nearby chromosomal genes, with important consequences for clinical trials and cellular engineering. This includes the retroviral and lentiviral vectors commonly used for deriving induced pluripotent stem cells (iPSCs). We previously used integrating foamy virus (FV) vectors expressing

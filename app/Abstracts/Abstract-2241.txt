@@ -1,1 +1,0 @@
-Programmed cell death-1 (PD-1) plays an important role in peripheral T cell tolerance, but whether or not it affects the differentiation of helper T cell subsets remains elusive. Here we describe the importance of PD-1 in the control of T helper type 1 (Th1) cell activation and development of forkhead box protein 3 (FoxP3
