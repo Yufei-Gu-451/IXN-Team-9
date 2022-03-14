@@ -37,15 +37,15 @@ def check_file_type(filename, target_type):
     return kind.extension == target_type
 
 
-# Try to read a txt file and return its content in a list of string
+# Try to read a txt file and return its content in a string
 # If file does not exist / not txt file, raise IOError
 def read_txt_file(filename):
     if exists_file(filename) and check_file_type(filename, 'txt'):
         f = open(filename)
-        file_content = []
+        file_content = ''
 
         for line in f:
-            file_content.append(line)
+            file_content += line + ' '
 
         return file_content
     else:

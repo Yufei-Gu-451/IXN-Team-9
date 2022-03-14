@@ -10,16 +10,10 @@ Code Structures are modified and new algorithms have been introduced
 UCL Computer Science
 '''
 
-#from ast import Num
-#from select import select
-#from typing_extensions import final
-#from matplotlib.pyplot import text
 import nltk
 import json_lines
-#import random
 import math
 import numpy as np
-#from numpy import double
 import networkx as nx
 from . import file
 
@@ -109,7 +103,7 @@ class Cluster:
 def summarize_text(*, input_file, output_file, compression_rate, number_of_clusters, algorithm_num):
     print('\n-------------------- Preprocessing started --------------------\n')
 
-    #-------------------- Split sentences and get tokens --------------------
+
     print('\n-------------------- Split sentences and get tokens --------------------\n')
 
     input_text = file.read_txt_file(filename=input_file)
@@ -136,7 +130,7 @@ def summarize_text(*, input_file, output_file, compression_rate, number_of_clust
     file.write_txt_file(output_file_name=temp_file_token_address, text=preprocessed_text, append=False)
 
 
-    #-------------------- Feature extraction --------------------
+
     print('\n-------------------- Feature extraction --------------------\n')
 
     import os
@@ -145,7 +139,8 @@ def summarize_text(*, input_file, output_file, compression_rate, number_of_clust
                     ' --vocab_file=app/bert/vocab.txt --bert_config_file=app/bert/bert_config.json'\
                     ' --init_checkpoint=app/bert/bert_model.ckpt --layers=-1 --max_seq_length=128 --batch_size=8')
 
-    #-------------------- Initialize Sentences --------------------
+
+
     print('\n-------------------- Initialize Sentences --------------------\n')
 
     sentence_list, sentence_num = [], 0
@@ -155,7 +150,8 @@ def summarize_text(*, input_file, output_file, compression_rate, number_of_clust
         temp_sentence = Sentence(sentence_num, sentence)
         sentence_list.append(temp_sentence)
 
-    #-------------------- Get features for every sentence --------------------
+
+
     print('\n-------------------- Get features for every sentence --------------------\n')
 
     sentence_num = 0
@@ -177,7 +173,8 @@ def summarize_text(*, input_file, output_file, compression_rate, number_of_clust
 
             sentence_num += 1
 
-    #-------------------- Compute a representation for every sentence --------------------
+
+
     print('\n-------------------- Compute a representation for every sentence --------------------\n')
 
     for sentence in sentence_list:
@@ -196,7 +193,8 @@ def summarize_text(*, input_file, output_file, compression_rate, number_of_clust
             sentence.representation[j] /= len(sentence.feature_list)
             j += 1
 
-    #---------------------------------------- Clustering Algorithm ----------------------------------------
+
+
     print('\n\n-------------------- Clustering started --------------------\n')
     if algorithm_num == 1:
         final_summary = k_cluster(sentence_list=sentence_list, compression_rate=compression_rate, number_of_clusters=number_of_clusters)
@@ -208,6 +206,8 @@ def summarize_text(*, input_file, output_file, compression_rate, number_of_clust
         print('Unknown Algorithm')
 
     file.write_txt_file(output_file_name=output_file, text=final_summary, append=False)
+
+
 
 # K-Clustering Algorithm - Algorithm No. 1
 def k_cluster(*, sentence_list, compression_rate, number_of_clusters):
