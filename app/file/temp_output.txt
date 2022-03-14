@@ -1,1 +1,25 @@
-The Speech SDK exposes many features from the speech service, but not all of them. The Speech SDK is ideal for both real time and non real time scenarios using local devices files, Azure blob storage and even input and output streams. When a scenario is not achievable with the speech SDK, look for a rest API alternative speech to text, also known as speech recognition, transcribes audio streams to text that your applications, tools, or devices can consume or display. Use speech to text with language understanding Lewis to derive user intents from transcribed speech and act on voice commands. 
+Trisomy 18 Other Names: Chromosome 18 trisomy; 18 trisomy; Edwards syndrome; See More. Most cases are not inherited and occur sporadically (by chance). People with the same disease may not have all the symptoms listed. Use the HPO ID to access more in-depth information about a symptom. The extra genetic material from the 3rd copy of the chromosome disrupts development, causing the characteristic signs and symptoms of the condition. Very rarely, an extra piece of chromosome 18 is attached to another chromosome; this is called translocation trisomy 18, or partial trisomy 18. Inheritance
+Most cases of trisomy 18 are not inherited and occur randomly due to errors in the formation of eggs or sperm. If an egg or sperm gains an extra copy of chromosome 18 during cell division and contributes to a pregnancy, the embryo will have an extra chromosome 18 (trisomy) in each cell of the body. Mosaic trisomy 18 (when some body cells have trisomy 18 and some have a normal chromosome make-up), is also typically not inherited. About 5% of affected people have a mosaic form of trisomy 18. Partial trisomy 18 (when only part of chromosome 18 is present in 3 copies) can be inherited. An unaffected parent can carry a rearrangement of genetic material between chromosome 18 and another chromosome. However, a person with a balanced translocation has an increased risk with each pregnancy to have a child with trisomy 18. Research
+Research helps us better understand diseases and can lead to advances in diagnosis and treatment. This section provides resources to help you learn about medical research and ways to get involved. Click on the link to go to ClinicalTrials.gov to read descriptions of these studies. They can direct you to research, resources, and services. Organizations Supporting this Disease
+Chromosome Disorder Outreach (CDO)
+PO Box 724
+Boca Raton, FL 33429
+Telephone: +1-561-395-4252
+E-mail: https://chromodisorder.org/contact/
+Website: https://chromodisorder.org/
+Hope For Trisomy
+PO Box 121986
+Arlington, TX 76012
+Toll-free: 1-866-977-6637
+E-mail: staff@hopefortrisomy13and18.org
+Website: https://www.hopefortrisomy13and18.org/
+Support Organization for Trisomy 18, 13, and Related Disorders (SOFT)
+c/o Barb Vanherreweghe
+2982 South Union Street
+Rochester, NY 14624
+Toll-free: 800-716-SOFT (7638)
+Telephone: 585-594-4621
+E-mail: barbsoft@rochester.rr.com
+Website: https://trisomy.org/
+The E.WE Foundation
+P.O. These resources can help families navigate various aspects of living with a rare disease. Will she be able to have a normal child? 
