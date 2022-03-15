@@ -22,7 +22,7 @@
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                {% if current_user.is_authenticated and current_user.has_role(1) %}
+                {% if current_user.is_authenticated and current_user.has_role('doctor') %}
                 <li><a href="{{ url_for('main.uploadAudioPage') }}">Home Doctor</a></li> 
                 {% endif %}
                 <li><a href="{{ url_for('main.index') }}">Hsome</a></li>

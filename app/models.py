@@ -3,16 +3,24 @@ from . import db
 from flask_login import UserMixin
 from . import login_manager
 
-class Files(db.Model):
-    __tablename__ = 'files'
+class Permission:
+    pass
+
+class File(db.Model):
+    __tablename__ = 'file'
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     name = db.Column(db.String(300))
     processedData = db.Column(db.LargeBinary)
-    # patient_id = db.Column()
-    # doctor_id = db.Column()
+    
+    patient_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+    doctor_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+
+    patient = db.relationship("User", foreign_keys=patient_id)
+    doctor = db.relationship("User", foreign_keys=doctor_id)
+
 
     def __repr__(self):
-        return '<Role %r>' % self.name
+        return '<File %r>' % self.name
 
 class Role(db.Model):
     __tablename__ = 'role'
@@ -27,10 +35,15 @@ class Role(db.Model):
 class User(UserMixin, db.Model):
     __tablename__ = 'user'
     id = db.Column(db.Integer, primary_key=True)
+    first_name = db.Column(db.String(200))
+    last_name = db.Column(db.String(200))
+    age = db.Column(db.Integer)
     email = db.Column(db.String(64), unique=True, index=True)
     username = db.Column(db.String(64), unique=True, index=True)
     role_id = db.Column(db.Integer, db.ForeignKey('role.id'))
     password_hash = db.Column(db.String(128))
+    
+    # file = db.relationship("File", backref="user", lazy='dynamic')
 
     @property
     def password(self):
@@ -43,53 +56,35 @@ class User(UserMixin, db.Model):
     def verify_password(self, password):
         return check_password_hash(self.password_hash, password)
     
+    def get_role(self):
+        return Role.query.get(self.role_id).name
+        
     def has_role(self, role):
-        return self.role_id == role
-
+        return role == Role.query.get(self.role_id).name
 
     def __repr__(self):
         return '<User %r>' % self.username
 
-class Patient(db.Model):
-    __tablename__ = 'patient'
-    id = db.Column(db.Integer, primary_key=True)
-    first_name = db.Column(db.String(200))
-    last_name = db.Column(db.String(200))
-    age = db.Column(db.Integer)
+# class Appointment(db.Model):
+#     __tablename__ = 'appointment'
+#     id = db.Column(db.Integer, primary_key=True)
 
-    appointment = db.relationship('Appointment', backref='patient', uselist=False)
-
-    def __rep__(self):
-        return '<Patient %r>' % self.last_name
-
-class Doctor(db.Model):
-    __tablename__ = 'doctor'
-    id = db.Column(db.Integer, primary_key=True)
-    first_name = db.Column(db.String(200))
-    last_name = db.Column(db.String(200))
-    age = db.Column(db.Integer)
-
-    appointments = db.relationship('Appointment', backref='appointment', lazy='dynamic')
-
-    def __rep__(self):
-        return '<Doctor %r>' % self.last_name
-
-class Appointment(db.Model):
-    __tablename__ = 'appointment'
-    id = db.Column(db.Integer, primary_key=True)
-
-    patient_id = db.Column(db.Integer, db.ForeignKey('patient.id'))
-    doctor_id = db.Column(db.Integer, db.ForeignKey('doctor.id'))
+#     patient_id = db.Column(db.Integer, db.ForeignKey('patient.id'))
+#     doctor_id = db.Column(db.Integer, db.ForeignKey('doctor.id'))
 
 @login_manager.user_loader
 def load_user(user_id):
     return User.query.get(int(user_id))
 
-def addProcessedFile(filename):
+def addProcessedFile(filename, patient_id, doctor_id):
     processedFile = open("/temp_output.txt", "r")
-    
-    upload = Files(name=filename, processedData=processedFile.read().encode())
+
+    upload = File(name=filename, processedData=processedFile.read().encode(), patient_id=patient_id, doctor_id=doctor_id)
     processedFile.close()
     
     db.session.add(upload)
     db.session.commit()
+
+def getAllPatients():
+    patient_role_id = Role.query.filter_by(name='patient').first()
+    return User.query.join(User.role).filter(Role.id == 2).all()

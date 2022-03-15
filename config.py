@@ -13,7 +13,7 @@ engine_azure = create_engine(conn_str,echo=True)
 # print(engine_azure.table_names())
 
 class Config:
-    SECRET_KEY = os.environ.get('SECRET_KEY') or 'afygawyufgwauyf'
+    SECRET_KEY = os.environ.get('SECRET_KEY') or 'afasfsafafs'
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
     @staticmethod
