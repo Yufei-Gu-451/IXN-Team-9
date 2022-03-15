@@ -1,72 +1,7 @@
-You are reading this information because your baby is suspected of having Edwards’ syndrome (also known as Trisomy 18 or T18) following your 20-week scan.
-This information should help you and your health professionals to talk through the next stages of your and your baby’s care.
-It should support, but not replace, discussions you have with health professionals.
-Finding out there may be a problem with your baby’s development can be worrying.
-It’s important to remember you are not alone.
-We will refer you to a specialist team who will:
-  provide more accurate information about your baby’s condition
-  answer your questions
-  help you plan the next steps
-  About Edwards’ syndrome
-  Inside the cells of our bodies there are tiny structures called chromosomes.
-These chromosomes carry the genes that determine how we develop.
-Cells in the human body contain 46 chromosomes.
-Changes that take place in the sperm or egg cells can lead to a baby having an extra chromosome.
-Babies with Edwards’ syndrome have an extra copy of chromosome 18 in all or some cells.
-There are 3 types of Edwards’ syndrome called full, mosaic and partial Edwards’ syndrome.
-How serious the condition is usually depends on the type of Edwards’ syndrome your baby has.
-Screening at the 20-week scan cannot tell you what type of Edwards’ syndrome your baby may have.
-In many cases, Edwards’ syndrome is a life-limiting condition and survival rates are low.
-There is no way to cure this condition.
-All babies born with Edwards’ syndrome will have learning disabilities and a wide range of health challenges, some of which can be extremely serious.
-They may have problems with their:
-  heart
-  respiratory system
-  kidneys
-  digestive system
-  Babies born with full Edwards’ syndrome can slowly make progress with their development, despite their complex needs.
-Babies born with mosaic or partial Edwards’ syndrome may have less serious health challenges, but it is not possible to know this before the baby is born.
-Causes
-  We do not know exactly what causes Edwards’ syndrome.
-It is not caused by something you have or have not done.
-Babies with Edwards’ syndrome are born to mothers of all ages but the chance of having a baby with this condition increases as the age of the mother increases.
-You will be able to discuss your individual circumstances with a specialist team.
-Edwards’ syndrome happens in about one baby out of every 1,500 (0.06%).
-How we find Edwards’ syndrome
-  We screen for Edwards’ syndrome at the ‘20-week scan’ (between 18+0 and 20+6 weeks of pregnancy).
-Screening for Edwards’ syndrome is also part of the combined test offered earlier in pregnancy between 10 and 14 weeks.
-Follow-up tests and appointments
-  Because the result of the scan suggests your baby may have a condition such as Edwards’ syndrome, we are referring you to a specialist team which cares for pregnant mothers and their babies before they are born.
-They may be based at the hospital where you are currently receiving antenatal care, or in a different hospital.
-The specialist team may offer you extra tests, such as chorionic villus sampling (CVS) or amniocentesis, which will be able to confirm if your baby has Edwards’ syndrome and what this might mean.
-It may be useful to write down any questions you want to ask before you see the specialist team.
-Outcome
-  There is no cure for Edwards’ syndrome.
-Sadly, many babies with Edwards’ syndrome are miscarried during pregnancy.
-Of those babies born alive around 13% live past their first birthday.
-Some babies may survive to adulthood, but this is rare.
-The life expectancy for babies born with mosaic or partial types of Edwards’ syndrome can be much more variable.
-Babies with Edwards’ syndrome are likely to need specialist care and treatment after they are born.
-This will focus on the symptoms of the condition that they have.
-Babies with Edwards’ syndrome may also have a low birthweight.
-Next steps and choices
-  If it is confirmed that your baby has Edwards’ syndrome, you can talk to the team caring for you during your pregnancy about your baby’s condition and your options.
-These will include continuing with your pregnancy or ending your pregnancy.
-You might want to learn more about Edwards’ syndrome.
-It can be helpful to speak to a support organisation with experience of helping parents in this situation.
-If you decide to continue with your pregnancy, the specialist team will help you plan your care.
-The team will discuss with you how you wish your baby to be cared for after birth.
-Depending on your baby’s specific symptoms, palliative care may be offered.
-Children’s palliative care is about promoting the best possible quality of life and care for every child with a life-limiting condition and their family.
-If you decide to end your pregnancy, you will be given information about what this involves and how you will be supported.
-You should be offered a choice of where and how to end your pregnancy and be given support that is individual to you and your family.
-Only you know what the best decision for you and your family is.
-Whatever decision you make, your healthcare professionals will support you.
-Future pregnancies
-  If you choose to have another baby, they are unlikely to have Edwards’ syndrome.
-Babies with Edwards’ syndrome are born to mothers of all ages but the chance increases as the mother gets older.
-You can be referred to a genetic counsellor to discuss future pregnancies.
-More information and support
-  Antenatal Results and Choices (ARC) is a national charity that supports people making decisions about screening and diagnosis and whether or not to continue a pregnancy.
-Support Organisation for Trisomy 13/18 (SOFT UK) is a national charity that supports families affected by Edwards’ syndrome, Patau’s syndrome and related conditions.
-You can find further information about Edwards’ syndrome on the NHS website.
+The functional experiments demonstrated that the truncating mutations code for hyper-stable WIP1 protein, which induces strong dephosphorylation of Ser15 of p53 and impairs the p53-dependent G1 checkpoint (KleiblovaNone, 2013).
+However, a paper published earlier demonstrated that the truncating mutations ofPPM1Dfound in blood cells of breast or ovarian cancer patients may result from sequence alterations formed during individual development as a mosaic mutations.
+We decided to find out whether truncating mutations ofPPM1Dare present in blood DNA samples from lung cancer patients.
+We selected promoters fromBAXandMDM2genes, which in our experimental system, are activated 15- and 200-fold, respectively, by p53 expressed from the co-transfected vector in NCI-H1299 cells (Figure 5).
+Another study reported 1.5% of ovarian cancer cases with truncating mutations ofPPM1D(AkbariNone, 2014).
+Our observations apparently contrasts with the data published by others (KleiblovaNone2013) who showed that knockdown of WIP1 (either its mutant or wild-type form) promotes the expression of p21-the product of p53 target gene.
+We have also noticed in our previous experiments that downregulation of WIP1 with shRNA in U-2 OS cells promotes the expression of p21 in untreated cells (ZajkowiczNone, 2013).

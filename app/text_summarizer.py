@@ -1,15 +1,3 @@
-'''
-This code was written by Milad Moradi
-Institute for Artificial Intelligence and Decision Support
-Medical University of Vienna
-'''
-
-'''
-This code was edited by Yufei Gu for studying purpose
-Code Structures are modified and new algorithms have been introduced
-UCL Computer Science
-'''
-
 from xmlrpc.client import MAXINT
 import nltk
 import json_lines
@@ -20,6 +8,7 @@ from . import file
 
 # Change this variable to your python3.7 directory
 PYTHON_DIRECTORY = '/Library/Frameworks/Python.framework/Versions/3.7/bin/python3.7'
+#PYTHON_DIRECTORY = '/usr/bin/python3.7'
 
 #-------------------- CLASSES --------------------
 
@@ -80,8 +69,8 @@ class Sentence:
 
 
 class Cluster:
-    def __init__(self, num):
-        self.center = num
+    def __init__(self, sentence_num):
+        self.center = sentence_num
         self.mean = []
         self.members = []
         self.summary_members = 0
@@ -109,6 +98,17 @@ class Cluster:
         #print('The new center point : ', sorted_list[0], '\n\n')
         self.center = sorted_list[0][0]
         return self.center
+
+'''
+    def update_mean(self, sentence_list):
+        if len(sentence_list) < 1:
+            self.mean = []
+        else:
+            self.
+
+        for sentence in self.members:
+            vector = sentence
+'''
 
 
 
@@ -200,6 +200,9 @@ def summarize_text(*, input_file, output_file, compression_rate, number_of_clust
         for weight in sentence.representation:
             sentence.representation[j] /= len(sentence.feature_list)
             j += 1
+    
+    for sentence in sentence_list:
+        print(len(sentence.representation))
 
     print('\n\n-------------------- Clustering started --------------------\n')
     if algorithm_num == 1:
@@ -283,7 +286,7 @@ def k_cluster(*, sentence_list, compression_rate, number_of_clusters):
 def agglomerative_cluster(*, sentence_list, compression_rate, number_of_clusters):
     clusters = []
     for i in range(len(sentence_list)):
-        temp_cluster = Cluster(i+1)
+        temp_cluster = Cluster(i)
         temp_cluster.members.append(i)
         clusters.append(temp_cluster)
 
@@ -354,7 +357,7 @@ def produce_summary_for_clustering(*, cluster_list, sentence_list, compression_r
         print('Sorted similiarity dict : ', sorted_list)
 
         # Calculate the number of sentences to be selected in this cluster
-        num_sentence_selected = int(len(cluster.members)*compression_rate)
+        num_sentence_selected = int(len(cluster.members)*compression_rate) + 1
         print('Number of sentence selected in this cluster : ', num_sentence_selected)
 
         # Select the best sentences in this cluster
@@ -412,6 +415,3 @@ def text_rank(*, sentence_list, compression_rate):
     
     print("\n---------------------- Finished ----------------------\n")
     return final_summary
-
-
-[3, 4, 27, 29, 35, 36, 43, 48, 49, 50, 51, 52, 53, 54, 55, 56, 58, 59, 60, 64, 66, 67, 68, 72, 87, 91, 94, 109, 111, 117, 118, 124, 126, 132, 139, 140, 145, 148, 152, 154, 159, 160, 169, 175, 181, 182, 183, 187, 189, 202, 208, 209] 
