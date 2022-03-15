@@ -1,15 +1,4 @@
-'''
-This code was written by Milad Moradi
-Institute for Artificial Intelligence and Decision Support
-Medical University of Vienna
-'''
-
-'''
-This code was edited by Yufei Gu for studying purpose
-Code Structures are modified and new algorithms have been introduced
-UCL Computer Science
-'''
-
+from xmlrpc.client import MAXINT
 import nltk
 import json_lines
 import math
@@ -19,6 +8,7 @@ from . import file
 
 # Change this variable to your python3.7 directory
 PYTHON_DIRECTORY = '/Library/Frameworks/Python.framework/Versions/3.7/bin/python3.7'
+#PYTHON_DIRECTORY = '/usr/bin/python3.7'
 
 #-------------------- CLASSES --------------------
 
@@ -35,7 +25,17 @@ class Sentence:
         self.feature_list = []
         self.representation = []
         self.cluster_index = 0
-    
+
+    def distance(self, second_vector, distance_num):
+        if distance_num == 1:
+            return self.eucl_distance(second_vector=second_vector)
+        elif distance_num == 2:
+            return self.manh_distance(second_vector=second_vector)
+        elif distance_num == 3:
+            return 1 / self.cosine_similarity(second_vector=second_vector)
+        else:
+            print('\n\nException : Unknown Distance Method. Please reset the distance num.\n\n')
+
     # Euclidean Distance
     def eucl_distance(self, second_vector):
         eucl_dist = 0
@@ -73,14 +73,14 @@ class Sentence:
 
     def set_token_list(self, tkn_list):
         self.feature_list = tkn_list
-    
+
     def get_token_list(self):
         return self.feature_list;
 
 
 class Cluster:
-    def __init__(self, num):
-        self.center = num
+    def __init__(self, sentence_num):
+        self.center = sentence_num
         self.mean = []
         self.members = []
         self.summary_members = 0
@@ -92,28 +92,40 @@ class Cluster:
         self.members.remove(sentence_index)
 
     # Select the new center of the cluster
-    def update_center(self, sentence_list):
-        # Computer the average similarity of every sentence in the cluster to all other senetences
-        similarity_dict = {}
+    def update_center(self, sentence_list, distance_num):
+        # Computer the average distance of every sentence in the cluster to all other senetences
+        distance_dict = {}
         for i in self.members:
-            similarity_dict[i] = 0
+            distance_dict[i] = 0
             for j in self.members:
-                similarity_dict[i] += sentence_list[i].cosine_similarity(sentence_list[j].representation)
+                distance_dict[i] += sentence_list[i].distance(sentence_list[j].representation, distance_num)
             
-            similarity_dict[i] = similarity_dict[i]/len(self.members)
+            distance_dict[i] = distance_dict[i]/len(self.members)
 
-        # Sort the similarity list and update the cluster with its newest center
-        #print('Update center : similarity dict : ', similiarity_dict, '\n')
-        sorted_list = sorted(similarity_dict.items(), key = lambda item:item[1], reverse=True)
+        # Sort the distance list and update the cluster with its newest center
+        #print('Update center : distance dict : ', similiarity_dict, '\n')
+        sorted_list = sorted(distance_dict.items(), key = lambda item:item[1])
         #print('The new center point : ', sorted_list[0], '\n\n')
         self.center = sorted_list[0][0]
         return self.center
 
+'''
+    def update_mean(self, sentence_list):
+        if len(sentence_list) < 1:
+            self.mean = []
+        else:
+            self.
+
+        for sentence in self.members:
+            vector = sentence
+'''
+
 
 
 #-------------------- MAIN BODY OF SUMMARIZER
-def summarize_text(*, input_file, output_file, compression_rate, number_of_clusters, algorithm_num):
+def summarize_text(*, input_file, output_file, compression_rate, number_of_clusters, algorithm_num, distance_num):
     print('\n-------------------- Preprocessing started --------------------\n')
+
 
     print('\n-------------------- Split sentences and get tokens --------------------\n')
 
@@ -132,11 +144,16 @@ def summarize_text(*, input_file, output_file, compression_rate, number_of_clust
         sentence_split_text += sentence
         preprocessed_text += str(tokenized_sentence)
         sentence_num += 1
-        
-    temp_file_address = 'app/file/temp_input.txt'
-    temp_file_token_address = 'app/file/temp_input_token.txt'
-    temp_file_features_address = 'app/file/temp_features.jsonl'
 
+
+    print('\n-------------------- Prepare text files --------------------\n')
+
+    # Define the temporal files used
+    temp_file_address = 'app/file/temp_input/temp_input_{}_{}.txt'.format(str(algorithm_num), str(distance_num))
+    temp_file_token_address = 'app/file/temp_input_token/temp_input_token_{}_{}.txt'.format(str(algorithm_num), str(distance_num))
+    temp_file_features_address = 'app/file/temp_features/temp_features_{}_{}.jsonl'.format(str(algorithm_num), str(distance_num))
+
+    # Write sentences and tokens
     file.write_txt_file(output_file_name=temp_file_address, text=sentence_split_text, append=False)
     file.write_txt_file(output_file_name=temp_file_token_address, text=preprocessed_text, append=False)
 
@@ -194,29 +211,37 @@ def summarize_text(*, input_file, output_file, compression_rate, number_of_clust
             for weight in feature.weight_list:
                 sentence.representation[i] += weight
                 i += 1
-            
-        j = 0
+
         for weight in sentence.representation:
-            sentence.representation[j] /= len(sentence.feature_list)
-            j += 1
+            weight /= len(sentence.feature_list)
+
 
     print('\n\n-------------------- Clustering started --------------------\n')
+
     if algorithm_num == 1:
-        final_summary = k_cluster(sentence_list=sentence_list, compression_rate=compression_rate, number_of_clusters=number_of_clusters)
+        final_summary = k_cluster(sentence_list=sentence_list, compression_rate=compression_rate, \
+            number_of_clusters=number_of_clusters, distance_num=distance_num)
     elif algorithm_num == 2:
-        final_summary = agglomerative_cluster(sentence_list=sentence_list, compression_rate=compression_rate, number_of_clusters=number_of_clusters)
+        final_summary = agglomerative_cluster(sentence_list=sentence_list, compression_rate=compression_rate, \
+            number_of_clusters=number_of_clusters, distance_num=distance_num)
     elif algorithm_num == 3:
         final_summary = text_rank(sentence_list=sentence_list, compression_rate=compression_rate)
     else:
-        print('Unknown Algorithm')
+        print('\n\nException : Unknown Algorithm. Please reset the algorithm num.\n\n')
 
     file.write_txt_file(output_file_name=output_file, text=final_summary, append=False)
 
 
 
 # K-Clustering Algorithm - Algorithm No. 1
-def k_cluster(*, sentence_list, compression_rate, number_of_clusters):
+def k_cluster(*, sentence_list, compression_rate, number_of_clusters, distance_num):
     print('The number of sentences : ', len(sentence_list), '\n')
+
+    if number_of_clusters >= len(sentence_list):
+        final_summary = ''
+        for sentence in sentence_list:
+            final_summary += sentence + ' '
+            return final_summary
 
     #-------------------- Initialize the initial cluster with random centers
     cluster_list, center_list = [], [] # Stored center of all Clusters
@@ -234,13 +259,13 @@ def k_cluster(*, sentence_list, compression_rate, number_of_clusters):
     for iteration in range(1, 51):
         print('\n\n-------------------- Iteration: ', iteration, '--------------------\n')
         
-        #-------------------- Allocate each sentence to a cluster with a highest cosine similiarity
+        #-------------------- Allocate each sentence to a cluster with a lowest distance
         for i in range(len(sentence_list)):
-            temp_similarity_dict = {}
-            for center in center_list:  # Compute its similiarity to each centers
-                temp_similarity_dict[center] = sentence_list[i].cosine_similarity(sentence_list[center].representation)
+            temp_distance_dict = {}
+            for center in center_list:  # Compute its distance to each centers
+                temp_distance_dict[center] = sentence_list[i].distance(sentence_list[center].representation, distance_num)
 
-            sorted_list = sorted(temp_similarity_dict.items(), key = lambda item:item[1], reverse=True)
+            sorted_list = sorted(temp_distance_dict.items(), key = lambda item:item[1])
             #print(sorted_list)
 
             for cluster in cluster_list: # Allocate the sentence to the cloest center
@@ -250,7 +275,7 @@ def k_cluster(*, sentence_list, compression_rate, number_of_clusters):
         #-------------------- For each cluster, find a new center
         temp_center_list = []
         for cluster in cluster_list:
-            temp_center_list.append(cluster.update_center(sentence_list))
+            temp_center_list.append(cluster.update_center(sentence_list, distance_num))
         temp_center_list.sort()
         print('New center list : ', temp_center_list, '\n')
 
@@ -267,16 +292,16 @@ def k_cluster(*, sentence_list, compression_rate, number_of_clusters):
 
     print("\n-------------------- Final Summary --------------------\n")
     final_summary = produce_summary_for_clustering(cluster_list=cluster_list, \
-        sentence_list=sentence_list, compression_rate=compression_rate)
+        sentence_list=sentence_list, compression_rate=compression_rate, distance_num=distance_num)
 
     print("\n-------------------- Finished --------------------\n")
     return final_summary
 
 # Agglomerative-Clustering Algorithm - Algorithm No. 2
-def agglomerative_cluster(*, sentence_list, compression_rate, number_of_clusters):
+def agglomerative_cluster(*, sentence_list, compression_rate, number_of_clusters, distance_num):
     clusters = []
     for i in range(len(sentence_list)):
-        temp_cluster = Cluster(i+1)
+        temp_cluster = Cluster(i)
         temp_cluster.members.append(i)
         clusters.append(temp_cluster)
 
@@ -287,29 +312,23 @@ def agglomerative_cluster(*, sentence_list, compression_rate, number_of_clusters
     while (end_of_clustering != True):
         print('\n---------- Iteration: {} ----------\n'.format(iteration))
 
-        highest_similarity = -10000000000
+        min_distance = MAXINT
         similar_cluster1 = -1
         similar_cluster2 = -1
 
-        for i in range(0, len(clusters)):
-            for j in range(0, len(clusters)):
-                if i < j:
+        for i in range(0, len(clusters)-1):
+            for j in range(i, len(clusters)):
+                #----------Compute the distance between two clusters
+                temp_distance = 0
+                for index1 in clusters[i].members:
+                    for index2 in clusters[j].members:
+                        temp_distance += sentence_list[index1]\
+                            .distance(sentence_list[index2].representation, distance_num) / len(clusters[j].members)
 
-                    #----------Compute the similarity between two clusters
-                    denominator = 0
-                    temp_similarity = 0
-                    for index1 in clusters[i].members:
-                        for index2 in clusters[j].members:
-                            temp_similarity += sentence_list[index1].cosine_similarity(sentence_list[index2].representation)
-                            denominator += 1
-
-                    if denominator != 0:
-                        temp_similarity /= denominator
-
-                    if temp_similarity > highest_similarity:
-                        highest_similarity = temp_similarity
-                        similar_cluster1 = i
-                        similar_cluster2 = j
+                if temp_distance < min_distance:
+                    min_distance = temp_distance
+                    similar_cluster1 = i
+                    similar_cluster2 = j
 
         #---------- Merge two most similar clusters
         clusters[similar_cluster1].members = clusters[similar_cluster1].members + clusters[similar_cluster2].members
@@ -324,30 +343,32 @@ def agglomerative_cluster(*, sentence_list, compression_rate, number_of_clusters
     #----------- Produce final summary
     print("\n-------------------- Final Summary --------------------\n")
     final_summary = produce_summary_for_clustering(cluster_list=clusters, \
-        sentence_list=sentence_list, compression_rate=compression_rate)
+        sentence_list=sentence_list, compression_rate=compression_rate, distance_num=distance_num)
 
     print("\n-------------------- Finished --------------------\n")
     return final_summary
 
 
 # Select sentences in clustering algorithms and produce a final summary
-def produce_summary_for_clustering(*, cluster_list, sentence_list, compression_rate):
-    #-------------------- Produce the final summary
+def produce_summary_for_clustering(*, cluster_list, sentence_list, compression_rate, distance_num):
+
     print("\n\n-------------------- Produce the final summary --------------------\n\n")
+
     selected_sentences = [] #select the top sentences in each cluster
     for cluster in cluster_list:
         print('\n\nCenter of cluster : ', cluster.center)
-        similarity_dict = {}
-        for i in cluster.members: # i is the no of sentences in sentence_list
-            #print(i, sentence_list[i].cosine_similarity(sentence_list[cluster.center].representation))
-            similarity_dict[i] = sentence_list[i].cosine_similarity(sentence_list[cluster.center].representation)
+        distance_dict = {}
 
-        # Sort the sentences according to their similarity to center
-        sorted_list = sorted(similarity_dict.items(), key = lambda item:item[1], reverse=True)
+        for i in cluster.members: # i is the no of sentences in sentence_list
+            #print(i, sentence_list[i].distance(sentence_list[cluster.center].representation))
+            distance_dict[i] = sentence_list[i].distance(sentence_list[cluster.center].representation, distance_num)
+
+        # Sort the sentences according to their distance to center
+        sorted_list = sorted(distance_dict.items(), key = lambda item:item[1])
         print('Sorted similiarity dict : ', sorted_list)
 
         # Calculate the number of sentences to be selected in this cluster
-        num_sentence_selected = int(len(cluster.members)*compression_rate)
+        num_sentence_selected = int(len(cluster.members)*compression_rate) + 1
         print('Number of sentence selected in this cluster : ', num_sentence_selected)
 
         # Select the best sentences in this cluster
@@ -405,6 +426,3 @@ def text_rank(*, sentence_list, compression_rate):
     
     print("\n---------------------- Finished ----------------------\n")
     return final_summary
-
-
-[3, 4, 27, 29, 35, 36, 43, 48, 49, 50, 51, 52, 53, 54, 55, 56, 58, 59, 60, 64, 66, 67, 68, 72, 87, 91, 94, 109, 111, 117, 118, 124, 126, 132, 139, 140, 145, 148, 152, 154, 159, 160, 169, 175, 181, 182, 183, 187, 189, 202, 208, 209] 
