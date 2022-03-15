@@ -1,4 +1,3 @@
-from tkinter import W
 from xmlrpc.client import MAXINT
 import nltk
 import json_lines
@@ -8,8 +7,8 @@ import networkx as nx
 from . import file
 
 # Change this variable to your python3.7 directory
-#PYTHON_DIRECTORY = '/Library/Frameworks/Python.framework/Versions/3.7/bin/python3.7'
-PYTHON_DIRECTORY = '/usr/bin/python3.7'
+PYTHON_DIRECTORY = '/Library/Frameworks/Python.framework/Versions/3.7/bin/python3.7'
+#PYTHON_DIRECTORY = '/usr/bin/python3.7'
 
 #-------------------- CLASSES --------------------
 
