@@ -17,7 +17,10 @@ import numpy as np
 import networkx as nx
 from . import file
 
-#-------------------- CLASSES
+# Change this variable to your python3.7 directory
+PYTHON_DIRECTORY = '/Library/Frameworks/Python.framework/Versions/3.7/bin/python3.7'
+
+#-------------------- CLASSES --------------------
 
 class Feature:
     def __init__(self, word):
@@ -32,29 +35,38 @@ class Sentence:
         self.feature_list = []
         self.representation = []
         self.cluster_index = 0
-        
+    
+    # Euclidean Distance
     def eucl_distance(self, second_vector):
         eucl_dist = 0
-        i = 0
-        for weight in self.representation:
-            eucl_dist += (weight - second_vector[i]) ** 2
-            i += 1
-        
-        eucl_dist = math.sqrt(eucl_dist)
-        return eucl_dist;
-    
-    def cosine_similarity(self, second_vector):
-        numerator = 0
-        term1 = 0
-        term2 = 0
-        i = 0
+        first_vector = self.representation
 
-        for weight in self.representation:
-            numerator += weight * second_vector[i]
-            term1 += weight ** 2
+        for i in range(len(first_vector)):
+            eucl_dist += (first_vector[i] - second_vector[i]) ** 2
+
+        eucl_dist = math.sqrt(eucl_dist)
+        return eucl_dist
+
+    # Manhattan Distance
+    def manh_distance(self, second_vector):
+        manh_dist = 0
+        first_vector = self.representation
+
+        for i in range(len(first_vector)):
+            manh_dist += abs(first_vector[i] - second_vector[i])
+
+        return manh_dist
+
+    # Cosine Similarity
+    def cosine_similarity(self, second_vector):
+        numerator, term1, term2 = 0, 0, 0
+
+        first_vector = self.representation
+        for i in range(len(first_vector)):
+            numerator += first_vector[i] * second_vector[i]
+            term1 += first_vector[i] ** 2
             term2 += second_vector[i] ** 2
-            i += 1
-            
+
         denominator = math.sqrt(term1) * math.sqrt(term2)
         cosine_sim = numerator / denominator
         return cosine_sim
@@ -68,7 +80,6 @@ class Sentence:
 
 class Cluster:
     def __init__(self, num):
-        self.cluster_number = num
         self.center = num
         self.mean = []
         self.members = []
@@ -80,19 +91,20 @@ class Cluster:
     def remove_member(self, sentence_index):
         self.members.remove(sentence_index)
 
+    # Select the new center of the cluster
     def update_center(self, sentence_list):
-        similiarity_dict = {}
-
         # Computer the average similarity of every sentence in the cluster to all other senetences
+        similarity_dict = {}
         for i in self.members:
-            similiarity_dict[i] = 0
+            similarity_dict[i] = 0
             for j in self.members:
-                similiarity_dict[i] += sentence_list[i].cosine_similarity(sentence_list[j].representation)
+                similarity_dict[i] += sentence_list[i].cosine_similarity(sentence_list[j].representation)
             
-            similiarity_dict[i] = similiarity_dict[i]/len(self.members)
+            similarity_dict[i] = similarity_dict[i]/len(self.members)
 
+        # Sort the similarity list and update the cluster with its newest center
         #print('Update center : similarity dict : ', similiarity_dict, '\n')
-        sorted_list = sorted(similiarity_dict.items(), key = lambda item:item[1], reverse=True)
+        sorted_list = sorted(similarity_dict.items(), key = lambda item:item[1], reverse=True)
         #print('The new center point : ', sorted_list[0], '\n\n')
         self.center = sorted_list[0][0]
         return self.center
@@ -102,7 +114,6 @@ class Cluster:
 #-------------------- MAIN BODY OF SUMMARIZER
 def summarize_text(*, input_file, output_file, compression_rate, number_of_clusters, algorithm_num):
     print('\n-------------------- Preprocessing started --------------------\n')
-
 
     print('\n-------------------- Split sentences and get tokens --------------------\n')
 
@@ -130,15 +141,13 @@ def summarize_text(*, input_file, output_file, compression_rate, number_of_clust
     file.write_txt_file(output_file_name=temp_file_token_address, text=preprocessed_text, append=False)
 
 
-
     print('\n-------------------- Feature extraction --------------------\n')
 
     import os
-    os.system('/Library/Frameworks/Python.framework/Versions/3.7/bin/python3.7 app/bert/extract_features.py'\
-                ' --input_file=' + temp_file_address +' --output_file=' + temp_file_features_address + \
-                    ' --vocab_file=app/bert/vocab.txt --bert_config_file=app/bert/bert_config.json'\
+    os.system(PYTHON_DIRECTORY + ' app/bert/extract_features.py'\
+            ' --input_file=' + temp_file_address +' --output_file=' + temp_file_features_address + \
+                ' --vocab_file=app/bert/vocab.txt --bert_config_file=app/bert/bert_config.json'\
                     ' --init_checkpoint=app/bert/bert_model.ckpt --layers=-1 --max_seq_length=128 --batch_size=8')
-
 
 
     print('\n-------------------- Initialize Sentences --------------------\n')
@@ -149,7 +158,6 @@ def summarize_text(*, input_file, output_file, compression_rate, number_of_clust
         sentence_num += 1
         temp_sentence = Sentence(sentence_num, sentence)
         sentence_list.append(temp_sentence)
-
 
 
     print('\n-------------------- Get features for every sentence --------------------\n')
@@ -174,7 +182,6 @@ def summarize_text(*, input_file, output_file, compression_rate, number_of_clust
             sentence_num += 1
 
 
-
     print('\n-------------------- Compute a representation for every sentence --------------------\n')
 
     for sentence in sentence_list:
@@ -193,13 +200,11 @@ def summarize_text(*, input_file, output_file, compression_rate, number_of_clust
             sentence.representation[j] /= len(sentence.feature_list)
             j += 1
 
-
-
     print('\n\n-------------------- Clustering started --------------------\n')
     if algorithm_num == 1:
         final_summary = k_cluster(sentence_list=sentence_list, compression_rate=compression_rate, number_of_clusters=number_of_clusters)
     elif algorithm_num == 2:
-        final_summary = merge_cluster(sentence_list=sentence_list, compression_rate=compression_rate, number_of_clusters=number_of_clusters)
+        final_summary = agglomerative_cluster(sentence_list=sentence_list, compression_rate=compression_rate, number_of_clusters=number_of_clusters)
     elif algorithm_num == 3:
         final_summary = text_rank(sentence_list=sentence_list, compression_rate=compression_rate)
     else:
@@ -232,14 +237,13 @@ def k_cluster(*, sentence_list, compression_rate, number_of_clusters):
         #-------------------- Allocate each sentence to a cluster with a highest cosine similiarity
         for i in range(len(sentence_list)):
             temp_similarity_dict = {}
-
-            for center in center_list:
+            for center in center_list:  # Compute its similiarity to each centers
                 temp_similarity_dict[center] = sentence_list[i].cosine_similarity(sentence_list[center].representation)
 
             sorted_list = sorted(temp_similarity_dict.items(), key = lambda item:item[1], reverse=True)
             #print(sorted_list)
 
-            for cluster in cluster_list:
+            for cluster in cluster_list: # Allocate the sentence to the cloest center
                 if cluster.center == sorted_list[0][0]:
                     cluster.add_member(i)
 
@@ -248,7 +252,7 @@ def k_cluster(*, sentence_list, compression_rate, number_of_clusters):
         for cluster in cluster_list:
             temp_center_list.append(cluster.update_center(sentence_list))
         temp_center_list.sort()
-        print(temp_center_list)
+        print('New center list : ', temp_center_list, '\n')
 
         #-------------------- If the clustering doesn't change, exit the loop
         if center_list != temp_center_list:
@@ -258,6 +262,7 @@ def k_cluster(*, sentence_list, compression_rate, number_of_clusters):
             for cluster in cluster_list:
                 cluster.members = []
         else:
+            print("\n-------------------- Exit Loop --------------------\n")
             break
 
     print("\n-------------------- Final Summary --------------------\n")
@@ -267,8 +272,8 @@ def k_cluster(*, sentence_list, compression_rate, number_of_clusters):
     print("\n-------------------- Finished --------------------\n")
     return final_summary
 
-# Merge-Clustering Algorithm - Algorithm No. 2
-def merge_cluster(*, sentence_list, compression_rate, number_of_clusters):
+# Agglomerative-Clustering Algorithm - Algorithm No. 2
+def agglomerative_cluster(*, sentence_list, compression_rate, number_of_clusters):
     clusters = []
     for i in range(len(sentence_list)):
         temp_cluster = Cluster(i+1)
@@ -280,7 +285,6 @@ def merge_cluster(*, sentence_list, compression_rate, number_of_clusters):
 
     iteration = 1
     while (end_of_clustering != True):
-
         print('\n---------- Iteration: {} ----------\n'.format(iteration))
 
         highest_similarity = -10000000000
@@ -401,3 +405,6 @@ def text_rank(*, sentence_list, compression_rate):
     
     print("\n---------------------- Finished ----------------------\n")
     return final_summary
+
+
+[3, 4, 27, 29, 35, 36, 43, 48, 49, 50, 51, 52, 53, 54, 55, 56, 58, 59, 60, 64, 66, 67, 68, 72, 87, 91, 94, 109, 111, 117, 118, 124, 126, 132, 139, 140, 145, 148, 152, 154, 159, 160, 169, 175, 181, 182, 183, 187, 189, 202, 208, 209] 
