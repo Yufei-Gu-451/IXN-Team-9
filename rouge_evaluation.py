@@ -6,15 +6,17 @@ import time
 COMPRESSION_RATE = 0.1
 NUMBER_OF_CLUSTERS = 4
 ALGORITHM_NUM = 1
+DISTANCE_NUM = 1
 FILE_START = 2501
-FILE_END = 4000
-RESULT_FILE = 'Result.txt'
+FILE_END = 3000
+RESULT_FILE = 'Result/Result_{}_{}.txt'.format(str(ALGORITHM_NUM), str(DISTANCE_NUM))
 
 files_rouge = FilesRouge()
 
 score = {'rouge-1':{'r':0, 'p':0, 'f':0}, 'rouge-2':{'r':0, 'p':0, 'f':0}}
 
-file.write_txt_file(output_file_name=RESULT_FILE, text='Algorithm type : {}\n\n'.format(str(ALGORITHM_NUM)), append=False)
+TEXT = 'Algorithm Type : {}    |    Distance Type : {}\n\n'.format(str(ALGORITHM_NUM), str(DISTANCE_NUM))
+file.write_txt_file(output_file_name=RESULT_FILE, text=TEXT, append=False)
 
 time.clock() # Initialize for Windows OS
 sum_time = 0
@@ -26,7 +28,8 @@ for i in range(FILE_START, FILE_END + 1):
     begin_time = time.clock()
     text_summarizer.summarize_text(input_file=ref_path, output_file=hyp_path, \
         compression_rate=COMPRESSION_RATE, number_of_clusters=NUMBER_OF_CLUSTERS, \
-            algorithm_num=ALGORITHM_NUM)
+            algorithm_num=ALGORITHM_NUM, distance_num=DISTANCE_NUM)
+
     end_time = time.clock()
 
     sum_time += end_time - begin_time

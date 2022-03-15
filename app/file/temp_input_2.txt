@@ -1,7 +1,0 @@
-The functional experiments demonstrated that the truncating mutations code for hyper-stable WIP1 protein, which induces strong dephosphorylation of Ser15 of p53 and impairs the p53-dependent G1 checkpoint (KleiblovaNone, 2013).
-However, a paper published earlier demonstrated that the truncating mutations ofPPM1Dfound in blood cells of breast or ovarian cancer patients may result from sequence alterations formed during individual development as a mosaic mutations.
-We decided to find out whether truncating mutations ofPPM1Dare present in blood DNA samples from lung cancer patients.
-We selected promoters fromBAXandMDM2genes, which in our experimental system, are activated 15- and 200-fold, respectively, by p53 expressed from the co-transfected vector in NCI-H1299 cells (Figure 5).
-Another study reported 1.5% of ovarian cancer cases with truncating mutations ofPPM1D(AkbariNone, 2014).
-Our observations apparently contrasts with the data published by others (KleiblovaNone2013) who showed that knockdown of WIP1 (either its mutant or wild-type form) promotes the expression of p21-the product of p53 target gene.
-We have also noticed in our previous experiments that downregulation of WIP1 with shRNA in U-2 OS cells promotes the expression of p21 in untreated cells (ZajkowiczNone, 2013).

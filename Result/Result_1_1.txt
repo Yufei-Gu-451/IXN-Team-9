@@ -1,0 +1,18 @@
+Algorithm Type : 1    |    Distance Type : 1
+
+
+Iteration : 1    |   Average Time Cost : 24.242085 second
+score['rouge-1']['r'] = 0.18325434439178515
+score['rouge-1']['p'] = 1.0
+score['rouge-1']['f'] = 0.3097463258201679
+score['rouge-2']['r'] = 0.11369150779896015
+score['rouge-2']['p'] = 0.973293768545994
+score['rouge-2']['f'] = 0.20360024641991303
+
+Iteration : 2    |   Average Time Cost : 15.953076999999999 second
+score['rouge-1']['r'] = 0.18960014516886553
+score['rouge-1']['p'] = 1.0
+score['rouge-1']['f'] = 0.3187149694497118
+score['rouge-2']['r'] = 0.12416307121679739
+score['rouge-2']['p'] = 0.9722064510600006
+score['rouge-2']['f'] = 0.22004188038238304
