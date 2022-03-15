@@ -7,8 +7,8 @@ import networkx as nx
 from . import file
 
 # Change this variable to your python3.7 directory
-PYTHON_DIRECTORY = '/Library/Frameworks/Python.framework/Versions/3.7/bin/python3.7'
-#PYTHON_DIRECTORY = '/usr/bin/python3.7'
+#PYTHON_DIRECTORY = '/Library/Frameworks/Python.framework/Versions/3.7/bin/python3.7'
+PYTHON_DIRECTORY = '/usr/bin/python3.7'
 
 #-------------------- CLASSES --------------------
 
@@ -26,12 +26,14 @@ class Sentence:
         self.representation = []
         self.cluster_index = 0
 
+    # Provides interface for different distance methods
     def distance(self, second_vector, distance_num):
         if distance_num == 1:
             return self.eucl_distance(second_vector=second_vector)
         elif distance_num == 2:
             return self.manh_distance(second_vector=second_vector)
         elif distance_num == 3:
+            # Use inverse cosine similarity to model the distance between two sentences
             return 1 / self.cosine_similarity(second_vector=second_vector)
         else:
             print('\n\nException : Unknown Distance Method. Please reset the distance num.\n\n')
@@ -299,50 +301,48 @@ def k_cluster(*, sentence_list, compression_rate, number_of_clusters, distance_n
 
 # Agglomerative-Clustering Algorithm - Algorithm No. 2
 def agglomerative_cluster(*, sentence_list, compression_rate, number_of_clusters, distance_num):
-    clusters = []
+    cluster_list = []
+
     for i in range(len(sentence_list)):
         temp_cluster = Cluster(i)
         temp_cluster.members.append(i)
-        clusters.append(temp_cluster)
+        cluster_list.append(temp_cluster)
 
-    #-------------------- Starting clustering algorithm
-    end_of_clustering = False
-
-    iteration = 1
-    while (end_of_clustering != True):
-        print('\n---------- Iteration: {} ----------\n'.format(iteration))
+    while (len(cluster_list) > number_of_clusters):
+        print('\n-------------------- Iteration: {} --------------------\n'.format(str(len(sentence_list) - len(cluster_list) + 1)))
 
         min_distance = MAXINT
-        similar_cluster1 = -1
-        similar_cluster2 = -1
+        similar_cluster1, similar_cluster2 = -1, -1
 
-        for i in range(0, len(clusters)-1):
-            for j in range(i, len(clusters)):
-                #----------Compute the distance between two clusters
+        # Find the two clusters which is most close to each others
+        for i in range(0, len(cluster_list) - 1):
+            for j in range(i + 1, len(cluster_list)):
                 temp_distance = 0
-                for index1 in clusters[i].members:
-                    for index2 in clusters[j].members:
-                        temp_distance += sentence_list[index1]\
-                            .distance(sentence_list[index2].representation, distance_num) / len(clusters[j].members)
 
+                # Compute the distance sum between every sentence of two clusters
+                for index1 in cluster_list[i].members:
+                    for index2 in cluster_list[j].members:
+                        temp_distance += sentence_list[index1].distance(sentence_list[index2].representation, distance_num)
+
+                # Computer the average distance between every sentence of two clusters
+                temp_distance /= len(cluster_list[j].members) * len(cluster_list[i].members)
+                print(i, j, '   ', temp_distance, min_distance)
+
+                # If this distance is smaller than the stored minimal, mark it as the new minimal
                 if temp_distance < min_distance:
                     min_distance = temp_distance
-                    similar_cluster1 = i
-                    similar_cluster2 = j
+                    similar_cluster1, similar_cluster2 = i, j
 
-        #---------- Merge two most similar clusters
-        clusters[similar_cluster1].members = clusters[similar_cluster1].members + clusters[similar_cluster2].members
-        clusters.remove(clusters[similar_cluster2])
+        #---------- Merge two most close to each other clusters
+        cluster_list[similar_cluster1].members = cluster_list[similar_cluster1].members + cluster_list[similar_cluster2].members
+        cluster_list.remove(cluster_list[similar_cluster2])
         print(similar_cluster1, 'and', similar_cluster2, 'merged')
-        print('\n---------- Number of clusters: {} ----------\n'.format(str(len(clusters))))
+        print('\n---------- Number of clusters: {} ----------\n'.format(str(len(cluster_list))))
 
-        iteration += 1
-        if len(clusters) <= number_of_clusters:
-            end_of_clustering = True
 
     #----------- Produce final summary
     print("\n-------------------- Final Summary --------------------\n")
-    final_summary = produce_summary_for_clustering(cluster_list=clusters, \
+    final_summary = produce_summary_for_clustering(cluster_list=cluster_list, \
         sentence_list=sentence_list, compression_rate=compression_rate, distance_num=distance_num)
 
     print("\n-------------------- Finished --------------------\n")

@@ -5,7 +5,7 @@ import time
 
 COMPRESSION_RATE = 0.1
 NUMBER_OF_CLUSTERS = 4
-ALGORITHM_NUM = 1
+ALGORITHM_NUM = 2
 DISTANCE_NUM = 1
 FILE_START = 2501
 FILE_END = 3000
@@ -26,7 +26,6 @@ for i in range(FILE_START, FILE_END + 1):
     hyp_path = 'app/Abstracts/Abstract-{}.txt'.format(str(i))
 
     begin_time = time.clock()
-
     text_summarizer.summarize_text(input_file=ref_path, output_file=hyp_path, \
         compression_rate=COMPRESSION_RATE, number_of_clusters=NUMBER_OF_CLUSTERS, \
             algorithm_num=ALGORITHM_NUM, distance_num=DISTANCE_NUM)

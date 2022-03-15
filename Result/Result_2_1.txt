@@ -1,0 +1,12 @@
+Algorithm Type : 2    |    Distance Type : 1
+
+
+Iteration : 1    |   Average Time Cost : 441.130982 second
+
+Begin Time : 2.588708    |    End Time : 443.71969
+score['rouge-1']['r'] = 0.18246445497630331
+score['rouge-1']['p'] = 1.0
+score['rouge-1']['f'] = 0.30861723185898854
+score['rouge-2']['r'] = 0.11577123050259966
+score['rouge-2']['p'] = 0.9681159420289855
+score['rouge-2']['f'] = 0.20681114360278544
