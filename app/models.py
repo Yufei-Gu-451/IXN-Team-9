@@ -77,7 +77,7 @@ def load_user(user_id):
     return User.query.get(int(user_id))
 
 def addProcessedFile(filename, patient_id, doctor_id):
-    processedFile = open("/temp_output.txt", "r")
+    processedFile = open("app/file/temp_output.txt", "r")
 
     upload = File(name=filename, processedData=processedFile.read().encode(), patient_id=patient_id, doctor_id=doctor_id)
     processedFile.close()

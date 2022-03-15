@@ -10,6 +10,7 @@ Code Structures are modified and new algorithms have been introduced
 UCL Computer Science
 '''
 
+from xmlrpc.client import MAXINT
 import nltk
 import json_lines
 import math
@@ -58,7 +59,7 @@ class Sentence:
         return manh_dist
 
     # Cosine Similarity
-    def cosine_similarity(self, second_vector):
+    def inverse_cosine_similarity(self, second_vector):
         numerator, term1, term2 = 0, 0, 0
 
         first_vector = self.representation
@@ -69,11 +70,11 @@ class Sentence:
 
         denominator = math.sqrt(term1) * math.sqrt(term2)
         cosine_sim = numerator / denominator
-        return cosine_sim
+        return 1/cosine_sim
 
     def set_token_list(self, tkn_list):
         self.feature_list = tkn_list
-    
+
     def get_token_list(self):
         return self.feature_list;
 
@@ -98,13 +99,13 @@ class Cluster:
         for i in self.members:
             similarity_dict[i] = 0
             for j in self.members:
-                similarity_dict[i] += sentence_list[i].cosine_similarity(sentence_list[j].representation)
+                similarity_dict[i] += sentence_list[i].inverse_cosine_similarity(sentence_list[j].representation)
             
             similarity_dict[i] = similarity_dict[i]/len(self.members)
 
         # Sort the similarity list and update the cluster with its newest center
         #print('Update center : similarity dict : ', similiarity_dict, '\n')
-        sorted_list = sorted(similarity_dict.items(), key = lambda item:item[1], reverse=True)
+        sorted_list = sorted(similarity_dict.items(), key = lambda item:item[1])
         #print('The new center point : ', sorted_list[0], '\n\n')
         self.center = sorted_list[0][0]
         return self.center
@@ -208,7 +209,7 @@ def summarize_text(*, input_file, output_file, compression_rate, number_of_clust
     elif algorithm_num == 3:
         final_summary = text_rank(sentence_list=sentence_list, compression_rate=compression_rate)
     else:
-        print('Unknown Algorithm')
+        print('\n\nException : Unknown Algorithm. Please reset the algorithm num.\n\n')
 
     file.write_txt_file(output_file_name=output_file, text=final_summary, append=False)
 
@@ -217,6 +218,12 @@ def summarize_text(*, input_file, output_file, compression_rate, number_of_clust
 # K-Clustering Algorithm - Algorithm No. 1
 def k_cluster(*, sentence_list, compression_rate, number_of_clusters):
     print('The number of sentences : ', len(sentence_list), '\n')
+
+    if number_of_clusters >= len(sentence_list):
+        final_summary = ''
+        for sentence in sentence_list:
+            final_summary += sentence + ' '
+            return final_summary
 
     #-------------------- Initialize the initial cluster with random centers
     cluster_list, center_list = [], [] # Stored center of all Clusters
@@ -238,9 +245,9 @@ def k_cluster(*, sentence_list, compression_rate, number_of_clusters):
         for i in range(len(sentence_list)):
             temp_similarity_dict = {}
             for center in center_list:  # Compute its similiarity to each centers
-                temp_similarity_dict[center] = sentence_list[i].cosine_similarity(sentence_list[center].representation)
+                temp_similarity_dict[center] = sentence_list[i].inverse_cosine_similarity(sentence_list[center].representation)
 
-            sorted_list = sorted(temp_similarity_dict.items(), key = lambda item:item[1], reverse=True)
+            sorted_list = sorted(temp_similarity_dict.items(), key = lambda item:item[1])
             #print(sorted_list)
 
             for cluster in cluster_list: # Allocate the sentence to the cloest center
@@ -287,7 +294,7 @@ def agglomerative_cluster(*, sentence_list, compression_rate, number_of_clusters
     while (end_of_clustering != True):
         print('\n---------- Iteration: {} ----------\n'.format(iteration))
 
-        highest_similarity = -10000000000
+        min_distance = MAXINT
         similar_cluster1 = -1
         similar_cluster2 = -1
 
@@ -300,14 +307,14 @@ def agglomerative_cluster(*, sentence_list, compression_rate, number_of_clusters
                     temp_similarity = 0
                     for index1 in clusters[i].members:
                         for index2 in clusters[j].members:
-                            temp_similarity += sentence_list[index1].cosine_similarity(sentence_list[index2].representation)
+                            temp_similarity += sentence_list[index1].inverse_cosine_similarity(sentence_list[index2].representation)
                             denominator += 1
 
                     if denominator != 0:
                         temp_similarity /= denominator
 
-                    if temp_similarity > highest_similarity:
-                        highest_similarity = temp_similarity
+                    if temp_similarity < min_distance:
+                        min_distance = temp_similarity
                         similar_cluster1 = i
                         similar_cluster2 = j
 
@@ -340,10 +347,10 @@ def produce_summary_for_clustering(*, cluster_list, sentence_list, compression_r
         similarity_dict = {}
         for i in cluster.members: # i is the no of sentences in sentence_list
             #print(i, sentence_list[i].cosine_similarity(sentence_list[cluster.center].representation))
-            similarity_dict[i] = sentence_list[i].cosine_similarity(sentence_list[cluster.center].representation)
+            similarity_dict[i] = sentence_list[i].inverse_cosine_similarity(sentence_list[cluster.center].representation)
 
         # Sort the sentences according to their similarity to center
-        sorted_list = sorted(similarity_dict.items(), key = lambda item:item[1], reverse=True)
+        sorted_list = sorted(similarity_dict.items(), key = lambda item:item[1])
         print('Sorted similiarity dict : ', sorted_list)
 
         # Calculate the number of sentences to be selected in this cluster
@@ -375,7 +382,7 @@ def text_rank(*, sentence_list, compression_rate):
 
     for i in range(len(sentence_list)):
         for j in range(len(sentence_list)):
-            similarity_matrix[i][j] = sentence_list[i].cosine_similarity(sentence_list[j].representation)
+            similarity_matrix[i][j] = 1/sentence_list[i].inverse_cosine_similarity(sentence_list[j].representation)
             #print(i, j, end=' ')
         #print('\n')
 
