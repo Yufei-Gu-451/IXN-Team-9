@@ -10,16 +10,16 @@ Project Description : Use natural language processing or understanding to allow 
 ## Step 1: Install Python 3.7 and configure enviroument on your server
 Python3.7 is the only version of Python we used to compile our server app. All our following guidelines are based on Python3.7.
 
-Step 1.A: Install the python3.7 package
+### Step 1.A: Install the python3.7 package
 Linux (Ubuntu 20.04): Install python3.7 through terminal 
                       `sudo apt-get install python3.7`
                       `sudo apt-get install python3.7-dev`
 
-Step 1.B: Configure the python interpreter
+### Step 1.B: Configure the python interpreter
 
 Linux (Ubuntu 20.04): Add `alias python3=‘/bin/usr/python3.7’` to the .bashrc file under your user directory. (You may need to open a new terminal or use ‘. .bashrc’ to apply the new rule)
 
-Step 1.C: Install pip in python 3.7 directory
+### Step 1.C: Install pip in python 3.7 directory
 Linux (Ubuntu 20.04): `curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py`
                       `python3.7 get-pip.py`
 
