@@ -1,22 +1,26 @@
 import filetype
 import os
 
-# Write text to the end of a file
-# If append is true, add to file end
-# If append is false, cover original content
-# If file does not exist / not txt file, raise IOError
-def write_txt_file(*, output_file_name, text, append):
-    if exists_file(output_file_name) and check_file_type(output_file_name, 'txt'):
-        if append:
-            with open (output_file_name, 'a') as f:
-                f.write(text)
-                f.close()
-        else:
-            with open (output_file_name, 'w') as f:
-                f.write(text)
-                f.close()
-    else:
-        raise IOError('write_txt_file: error file input: {}'.format(output_file_name))
+# Create a file
+# If file exists, remove all text
+def create_file(*, file_name):
+    file = open(file_name, 'w+')
+    file.write('')
+    file.close()
+
+# Delete a file
+# If file not exist, do nothing
+def delete_file(*, file_name):
+    if exists_file(file_name):
+        os.remove(file_name)
+
+# Check if a file exists
+def exists_file(file):
+    return os.path.exists(file) and os.path.isfile(file)
+
+# Check if a directory exists
+def exists_dir(dir):
+    return os.path.exists(dir) and os.path.isdir(dir)
 
 # Check file type according to the first 16 bit of the file
 def check_file_type(filename, target_type):
@@ -51,11 +55,19 @@ def read_txt_file(filename):
     else:
         raise IOError("read_txt_file: error file input: {}".format(filename)) # .format(e) ?
 
-
-# Check if a file exists
-def exists_file(file):
-    return os.path.exists(file) and os.path.isfile(file)
-
-# Check if a directory exists
-def exists_dir(dir):
-    return os.path.exists(dir) and os.path.isdir(dir)
+# Write text to the end of a file
+# If append is true, add to file end
+# If append is false, cover original content
+# If file does not exist / not txt file, raise IOError
+def write_txt_file(*, output_file_name, text, append):
+    if exists_file(output_file_name) and check_file_type(output_file_name, 'txt'):
+        if append:
+            with open (output_file_name, 'a') as f:
+                f.write(text)
+                f.close()
+        else:
+            with open (output_file_name, 'w') as f:
+                f.write(text)
+                f.close()
+    else:
+        raise IOError('write_txt_file: error file input: {}'.format(output_file_name))

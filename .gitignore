@@ -5,7 +5,7 @@ venv
 
 .DS_Store
 
-temp_features.jsonl
+app/file/temp_features/
 
 # Initially taken from Github's Python gitignore file
 

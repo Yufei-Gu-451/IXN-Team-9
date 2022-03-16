@@ -91,6 +91,8 @@ def speech_recognize_continuous_from_file(*, input_file_name, output_file_name):
         nonlocal done
         done = True
 
+    print('\n-------------------- Start Speech Recognition --------------------\n')
+
     # Connect callbacks to the events fired by the speech recognizer
     # Intermediate recognition attempt
     speech_recognizer.recognizing.connect('''lambda evt: print('RECOGNIZING: {}'.format(evt))''')
@@ -124,6 +126,8 @@ def speech_recognize_continuous_from_file(*, input_file_name, output_file_name):
     # Stop continous speech recognition
     speech_recognizer.stop_continuous_recognition()
     # </SpeechContinuousRecognitionWithFile>
+
+    print('\n-------------------- Stop Speech Recognition --------------------\n')
 
 
 
