@@ -47,18 +47,17 @@ def uploadAudioPage():
 @requires_roles('doctor')
 def upload():
     file = request.files['inputFile']
-    # patient_id = User.query.filter(Role.id == 2).all() # query all users where they are patients
     current_doctor_id = flask_login.current_user.id
     patient_id = request.form.get('patient')
 
     writeFile(file.read(), file.filename)
 
-    appointment = request.form.get('appointmentDate')
+    appointment_date = request.form.get('appointmentDate')
 
     speech_to_text.speech_to_text(inputfile='app/audio/' + file.filename, outputfile="app/file/temp_input.txt")
-    text_summarizer.summarize_text(input_file='app/file/temp_input.txt', output_file="app/file/temp_output.txt", compression_rate=0.3, number_of_clusters=2)
+    text_summarizer.summarize_text(input_file='app/file/temp_input.txt', output_file="app/file/temp_output.txt", compression_rate=0.3, number_of_clusters=2, algorithm_num=1)
 
-    models.addProcessedFile(file.filename, patient_id, current_doctor_id)
+    models.addProcessedFile(file.filename, patient_id, current_doctor_id, appointment_date)
     
     f = open("app/file/temp_output.txt")
     for line in f:

@@ -3,13 +3,12 @@ from . import db
 from flask_login import UserMixin
 from . import login_manager
 
-class Permission:
-    pass
 
 class File(db.Model):
     __tablename__ = 'file'
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     name = db.Column(db.String(300))
+    appointment_date = db.Column(db.Date)
     processedData = db.Column(db.LargeBinary)
     
     patient_id = db.Column(db.Integer, db.ForeignKey('user.id'))
@@ -76,10 +75,10 @@ class User(UserMixin, db.Model):
 def load_user(user_id):
     return User.query.get(int(user_id))
 
-def addProcessedFile(filename, patient_id, doctor_id):
+def addProcessedFile(filename, patient_id, doctor_id, appointment_date):
     processedFile = open("/temp_output.txt", "r")
 
-    upload = File(name=filename, processedData=processedFile.read().encode(), patient_id=patient_id, doctor_id=doctor_id)
+    upload = File(name=filename, appointment_date=appointment_date, processedData=processedFile.read().encode(), patient_id=patient_id, doctor_id=doctor_id)
     processedFile.close()
     
     db.session.add(upload)
