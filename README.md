@@ -29,7 +29,8 @@ Linux (Ubuntu 20.04): `curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py`
 &nbsp;
 
 ## Step 2: Install the mysql server
-
+Linux (Ubuntu 20.04): `sudo apt-get install mysql-client`
+                      `sudo apt install unixodbc-dev`
 
 &nbsp;
 
