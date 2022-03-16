@@ -15,15 +15,18 @@ Python3.7 is the only version of Python we used to compile our server app. All o
 
 ### Step 1.A: Install the python3.7 package
 Linux (Ubuntu 20.04): Install python3.7 through terminal 
-                      `sudo apt-get install python3.7`
-                      `sudo apt-get install python3.7-dev`
+`sudo apt install software-properties-common`
+`sudo add-apt-repository ppa:deadsnakes/ppa`
+`sudo apt-get install python3.7`
+`sudo apt-get install python3.7-dev`
 
 ### Step 1.B: Configure the python interpreter
 
 Linux (Ubuntu 20.04): Add `alias python3=‘/bin/usr/python3.7’` to the .bashrc file under your user directory. (You may need to open a new terminal or use ‘. .bashrc’ to apply the new rule)
 
 ### Step 1.C: Install pip in python 3.7 directory
-Linux (Ubuntu 20.04): `curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py`
+Linux (Ubuntu 20.04):   `sudo apt install python3.7 python3-pip`
+`curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py`
                       `python3.7 get-pip.py`
 
 &nbsp;
@@ -36,12 +39,12 @@ Linux (Ubuntu 20.04): `sudo apt-get install mysql-client`
 
 ## Step 4: Download the source code of the server
 `git clone `
-Then enter the package directory 'cd IXN-Team-9'
+Then enter the package directory `cd IXN-Team-9`
 
 &nbsp;
 
 ## Step 5: Install the required Python Library using Pip
-Linux (Ubuntu 20.04): `python3 -m pip install -r requirements.txt`
+Linux (Ubuntu 20.04): `sudo python3.7 -m pip install -r requirements.txt`
 
 &nbsp;
 
