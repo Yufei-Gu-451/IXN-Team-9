@@ -61,7 +61,7 @@ def upload():
 
     models.addProcessedFile(file.filename, patient_id, current_doctor_id, appointment_date)
     
-    f = open("app/file/temp_output.txt")
+    f = open("app/file/output.txt")
     for line in f:
         file_content = line
 
