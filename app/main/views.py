@@ -55,18 +55,21 @@ def upload():
 
     appointment_date = request.form.get('appointmentDate')
 
-    speech_to_text.speech_to_text(inputfile='app/audio/' + file.filename, outputfile="app/file/input.txt")
+    # speech_to_text.speech_to_text(inputfile='app/audio/' + file.filename, outputfile="app/file/input.txt")
 
-    text_summarizer.summarize_text(input_file='app/file/input.txt', output_file="app/file/output.txt", \
-      compression_rate=0.3, number_of_clusters=2, algorithm_num=1, distance_num=3)
+    # text_summarizer.summarize_text(input_file='app/file/input.txt', output_file="app/file/output.txt", \
+    #   compression_rate=0.3, number_of_clusters=2, algorithm_num=1, distance_num=3)
 
     models.addProcessedFile(file.filename, patient_id, current_doctor_id, appointment_date)
     
+    file_content = list()
     f = open("app/file/output.txt")
     for line in f:
-        file_content = line
+        file_content.append(line)
 
-    return file_content
+    # return file_content
+
+    return render_template('showProcessedAudio.html', lines=file_content)
 
 @main.route('/viewPatientRecords', methods=['GET', 'POST'])
 @flask_login.login_required
