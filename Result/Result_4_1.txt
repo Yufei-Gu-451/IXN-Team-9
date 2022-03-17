@@ -1,0 +1,2 @@
+Algorithm Type : 4    |    Distance Type : 1
+
