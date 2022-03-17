@@ -350,6 +350,7 @@ def k_cluster(*, sentence_list, compression_rate, number_of_clusters, distance_n
     print("\n-------------------- Finished --------------------\n")
     return final_summary
 
+
 # UPGMA-Agglomerative-Clustering Algorithm - Algorithm No. 2
 def upgma_agglomerative_cluster(*, sentence_list, compression_rate, number_of_clusters, distance_num):
     cluster_list = []
