@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{ % block head % }
+<style>
+    td {
+           width: 150px;
+           text-align: center;
+           border: 1px solid black;
+           padding: 5px;
+        }
+</style>
+{ % endblock % }
+
+{% block page_content %}
+    <h1> Viewing Patient's Past Clinical Documents </h1>
+    <div class='containder'>
+        <table class="table">
+            <tr>
+                {% for heading in headings %}
+                <th> {{ heading }} </th>
+                {% endfor %}
+                <th>Download Clinical Record</th>
+            </tr>
+            {% for file in files %}
+                <tr>
+                    <td>{{file.name}}</td>
+                    <td>{{file.appointment_date}}</td>
+                    <td>
+                    <form action="/download" method="POST" enctype="multipart/form-data">
+                        <input name='patientFile' type='hidden' value="{{file.id}}"></input>
+                        <button type="submit" class="btn btn-default">Download</button>
+                    </form>
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+{% endblock %}

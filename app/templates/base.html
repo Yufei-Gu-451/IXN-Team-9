@@ -27,6 +27,9 @@
                 <li><a href="{{ url_for('main.uploadAudioPage') }}">Upload Audio</a></li> 
                 <li><a href="{{ url_for('main.viewPatients') }}">View Patients</a></li>
                 {% endif %}
+                {% if current_user.is_authenticated and current_user.has_role('patient') %}
+                <li><a href="{{ url_for('main.viewPatientRecords') }}">View Records</a></li>
+                {% endif %}
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 {% if current_user.is_authenticated %}

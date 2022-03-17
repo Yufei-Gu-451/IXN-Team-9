@@ -2,6 +2,7 @@ from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField
 from wtforms.validators import DataRequired
 from wtforms.fields import DateField
+from datetime import datetime
 
 class AppointmentForm(FlaskForm):
     # appointmentDate = DateField('Date', format='%d-%m-%Y', validators=[DataRequired()])

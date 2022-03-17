@@ -7,6 +7,13 @@
 
 {% block page_content %}
     <h1> Processed Audio </h1>
+    <br>
+    <h3> First Name: {{patient.first_name}} <h3>
+    <h3> Last Name: {{patient.last_name}} </h3>
+    <h3> Age: {{patient.age}} <h3>
+    <h3> Email: {{ patient.email }} <h3>
+    <br>
+    <h3> Processed Consultation Audio: <h3>
     {% for line in lines %}
     {{ line }}
     {% endfor %}

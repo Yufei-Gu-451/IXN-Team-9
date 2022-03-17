@@ -89,6 +89,9 @@ def getAllPatients():
     patient_role_id = Role.query.filter_by(name='patient').first()
     return User.query.join(User.role).filter(Role.id == 2).all()
 
+def getPatient(patientId):
+    return User.query.filter(User.id == patientId).first()
+
 def getPatientFiles(patientId):
     return File.query.filter(File.patient_id == patientId).all()
 
