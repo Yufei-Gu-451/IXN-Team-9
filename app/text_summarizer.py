@@ -1,3 +1,5 @@
+from ast import Return
+from dis import dis
 from xmlrpc.client import MAXINT
 import nltk
 import json_lines
@@ -7,8 +9,8 @@ import networkx as nx
 from . import file
 
 # Change this variable to your python3.7 directory
-# PYTHON_DIRECTORY = '/Users/sidd/miniconda3/pkgs/certifi-2021.10.8-py37hecd8cb5_2/lib/python3.7'
-PYTHON_DIRECTORY = '/usr/bin/python3.7'
+PYTHON_DIRECTORY = '/Library/Frameworks/Python.framework/Versions/3.7/bin/python3.7'
+#PYTHON_DIRECTORY = '/usr/bin/python3.7'
 
 #-------------------- CLASSES --------------------
 
@@ -111,42 +113,124 @@ class Cluster:
         self.center = sorted_list[0][0]
         return self.center
 
-'''
+    # Computer the mean 
     def update_mean(self, sentence_list):
         if len(sentence_list) < 1:
             self.mean = []
         else:
-            self.
+            feature_num = len(sentence_list[0].representation)
+            self.mean = np.zeros([1, feature_num])
 
-        for sentence in self.members:
-            vector = sentence
-'''
+            for sentence in self.members:
+                vector = sentence.representation
 
+                for i in range(feature_num):
+                    self.mean[i] += vector[i]
+
+            for i in range(feature_num):
+                self.mean[i] /= len(self.members)
+
+        return self.mean
+
+    # Compute the average distance between all sentences from this cluster and another cluster
+    def avg_distance(self, second_cluster, sentence_list, distance_num):
+        distance = 0
+
+        # Compute the distance sum between every sentence of two clusters
+        for index1 in self.members:
+            for index2 in second_cluster.members:
+                distance += sentence_list[index1].distance(sentence_list[index2].representation, distance_num)
+
+        # Computer the average distance between every sentence of two clusters
+        distance /= len(second_cluster.members) * len(self.members)
+
+        return distance
+
+    # Compute the minimal distance between all sentences from this cluster and another cluster
+    def min_distance(self, second_cluster, sentence_list, distance_num):
+        min_distance, temp_distance = MAXINT, MAXINT
+
+        # Compute the distance sum between every sentence of two clusters
+        for index1 in self.members:
+            for index2 in second_cluster.members:
+                temp_distance = sentence_list[index1].distance(sentence_list[index2].representation, distance_num)
+
+                if temp_distance < min_distance:
+                    min_distance = temp_distance
+
+        return min_distance
+
+    # Compute the maximum distance between all sentences from this cluster and another cluster
+    def max_distance(self, second_cluster, sentence_list, distance_num):
+        max_distance, temp_distance = 0, 0
+
+        # Compute the distance sum between every sentence of two clusters
+        for index1 in self.members:
+            for index2 in second_cluster.members:
+                temp_distance = sentence_list[index1].distance(sentence_list[index2].representation, distance_num)
+
+                if temp_distance > max_distance:
+                    max_distance = temp_distance
+
+        return max_distance
 
 
 #-------------------- MAIN BODY OF SUMMARIZER
 def summarize_text(*, input_file, output_file, compression_rate, number_of_clusters, algorithm_num, distance_num):
     print('\n-------------------- Preprocessing started --------------------\n')
 
+    sentence_list = preprocessing(input_file=input_file, algorithm_num=algorithm_num, distance_num=distance_num)
 
+    print('\n-------------- The number of sentences : ', len(sentence_list), '--------------\n')
+    # If too less text : output and exit summarization
+    if len(sentence_list) <= number_of_clusters:
+        print('\n-------------------- Number of sentence less than number of clusters --------------------\n')
+        file.write_txt_file(output_file_name=output_file, text=file.read_txt_file(filename=input_file), append=False)
+        return
+
+    print('\n\n-------------------- Clustering started --------------------\n')
+
+    if algorithm_num == 1:
+        final_summary = k_cluster(sentence_list=sentence_list, compression_rate=compression_rate, \
+            number_of_clusters=number_of_clusters, distance_num=distance_num)
+    elif algorithm_num == 2:
+        final_summary = upgma_agglomerative_cluster(sentence_list=sentence_list, compression_rate=compression_rate, \
+            number_of_clusters=number_of_clusters, distance_num=distance_num)
+    elif algorithm_num == 3:
+        final_summary = text_rank(sentence_list=sentence_list, compression_rate=compression_rate)
+    elif algorithm_num == 4:
+        final_summary = single_agglomerative_cluster(sentence_list=sentence_list, compression_rate=compression_rate, \
+            number_of_clusters=number_of_clusters, distance_num=distance_num)
+    elif algorithm_num == 5:
+        final_summary = complete_agglomerative_cluster(sentence_list=sentence_list, compression_rate=compression_rate, \
+            number_of_clusters=number_of_clusters, distance_num=distance_num)
+    else:
+        print('\n\nException : Unknown Algorithm. Please reset the algorithm num.\n\n')
+
+    file.write_txt_file(output_file_name=output_file, text=final_summary, append=False)
+
+
+# Preprocess the text file and extract features for the sentences
+def preprocessing(*, input_file, algorithm_num, distance_num):
     print('\n-------------------- Split sentences and get tokens --------------------\n')
 
     input_text = file.read_txt_file(filename=input_file)
     input_sentences = nltk.sent_tokenize(input_text)
     sentence_split_text, preprocessed_text = '', ''
-    sentence_num = 1
-    
+    sentence_list, sentence_num = [], 0
+
     for sentence in input_sentences:
         tokenized_sentence = nltk.word_tokenize(sentence)
 
-        if sentence_num > 1:
+        if sentence_num > 0:
             sentence_split_text += '\n'
             preprocessed_text += '\n'
 
         sentence_split_text += sentence
         preprocessed_text += str(tokenized_sentence)
+        temp_sentence = Sentence(sentence_num, sentence)
+        sentence_list.append(temp_sentence)
         sentence_num += 1
-
 
     print('\n-------------------- Prepare text files --------------------\n')
 
@@ -167,16 +251,6 @@ def summarize_text(*, input_file, output_file, compression_rate, number_of_clust
             ' --input_file=' + temp_file_address +' --output_file=' + temp_file_features_address + \
                 ' --vocab_file=app/bert/vocab.txt --bert_config_file=app/bert/bert_config.json'\
                     ' --init_checkpoint=app/bert/bert_model.ckpt --layers=-1 --max_seq_length=128 --batch_size=8')
-
-
-    print('\n-------------------- Initialize Sentences --------------------\n')
-
-    sentence_list, sentence_num = [], 0
-
-    for sentence in input_sentences:
-        sentence_num += 1
-        temp_sentence = Sentence(sentence_num, sentence)
-        sentence_list.append(temp_sentence)
 
 
     print('\n-------------------- Get features for every sentence --------------------\n')
@@ -217,34 +291,11 @@ def summarize_text(*, input_file, output_file, compression_rate, number_of_clust
         for weight in sentence.representation:
             weight /= len(sentence.feature_list)
 
-
-    print('\n\n-------------------- Clustering started --------------------\n')
-
-    if algorithm_num == 1:
-        final_summary = k_cluster(sentence_list=sentence_list, compression_rate=compression_rate, \
-            number_of_clusters=number_of_clusters, distance_num=distance_num)
-    elif algorithm_num == 2:
-        final_summary = agglomerative_cluster(sentence_list=sentence_list, compression_rate=compression_rate, \
-            number_of_clusters=number_of_clusters, distance_num=distance_num)
-    elif algorithm_num == 3:
-        final_summary = text_rank(sentence_list=sentence_list, compression_rate=compression_rate)
-    else:
-        print('\n\nException : Unknown Algorithm. Please reset the algorithm num.\n\n')
-
-    file.write_txt_file(output_file_name=output_file, text=final_summary, append=False)
-
+    return sentence_list
 
 
 # K-Clustering Algorithm - Algorithm No. 1
 def k_cluster(*, sentence_list, compression_rate, number_of_clusters, distance_num):
-    print('The number of sentences : ', len(sentence_list), '\n')
-
-    if number_of_clusters >= len(sentence_list):
-        final_summary = ''
-        for sentence in sentence_list:
-            final_summary += sentence + ' '
-            return final_summary
-
     #-------------------- Initialize the initial cluster with random centers
     cluster_list, center_list = [], [] # Stored center of all Clusters
 
@@ -299,8 +350,9 @@ def k_cluster(*, sentence_list, compression_rate, number_of_clusters, distance_n
     print("\n-------------------- Finished --------------------\n")
     return final_summary
 
-# Agglomerative-Clustering Algorithm - Algorithm No. 2
-def agglomerative_cluster(*, sentence_list, compression_rate, number_of_clusters, distance_num):
+
+# UPGMA-Agglomerative-Clustering Algorithm - Algorithm No. 2
+def upgma_agglomerative_cluster(*, sentence_list, compression_rate, number_of_clusters, distance_num):
     cluster_list = []
 
     for i in range(len(sentence_list)):
@@ -317,16 +369,9 @@ def agglomerative_cluster(*, sentence_list, compression_rate, number_of_clusters
         # Find the two clusters which is most close to each others
         for i in range(0, len(cluster_list) - 1):
             for j in range(i + 1, len(cluster_list)):
-                temp_distance = 0
-
-                # Compute the distance sum between every sentence of two clusters
-                for index1 in cluster_list[i].members:
-                    for index2 in cluster_list[j].members:
-                        temp_distance += sentence_list[index1].distance(sentence_list[index2].representation, distance_num)
-
-                # Computer the average distance between every sentence of two clusters
-                temp_distance /= len(cluster_list[j].members) * len(cluster_list[i].members)
-                print(i, j, '   ', temp_distance, min_distance)
+                # Computer the average distance between two clusters
+                temp_distance = cluster_list[i].avg_distance(second_cluster=cluster_list[j], \
+                    sentence_list=sentence_list, distance_num=distance_num)
 
                 # If this distance is smaller than the stored minimal, mark it as the new minimal
                 if temp_distance < min_distance:
@@ -338,7 +383,6 @@ def agglomerative_cluster(*, sentence_list, compression_rate, number_of_clusters
         cluster_list.remove(cluster_list[similar_cluster2])
         print(similar_cluster1, 'and', similar_cluster2, 'merged')
         print('\n---------- Number of clusters: {} ----------\n'.format(str(len(cluster_list))))
-
 
     #----------- Produce final summary
     print("\n-------------------- Final Summary --------------------\n")
@@ -413,7 +457,7 @@ def text_rank(*, sentence_list, compression_rate):
 
     print("\n-------------------- Select sentences --------------------\n")
     selected_sentences = []
-    for i in range(int(len(sentence_list)*compression_rate)):
+    for i in range(int(len(sentence_list)*compression_rate) + 1):
         selected_sentences.append(sorted_list[i][0])
     selected_sentences.sort()
     print('All sentence selected : ', selected_sentences, '\n')
@@ -425,4 +469,89 @@ def text_rank(*, sentence_list, compression_rate):
         final_summary += sentence_list[i].sentence_text + ' '
     
     print("\n---------------------- Finished ----------------------\n")
+    return final_summary
+
+
+
+# Single-Agglomerative-Clustering Algorithm - Algorithm No. 4
+def single_agglomerative_cluster(*, sentence_list, compression_rate, number_of_clusters, distance_num):
+    cluster_list = []
+
+    for i in range(len(sentence_list)):
+        temp_cluster = Cluster(i)
+        temp_cluster.members.append(i)
+        cluster_list.append(temp_cluster)
+
+    while (len(cluster_list) > number_of_clusters):
+        print('\n-------------------- Iteration: {} --------------------\n'.format(str(len(sentence_list) - len(cluster_list) + 1)))
+
+        min_distance = MAXINT
+        similar_cluster1, similar_cluster2 = -1, -1
+
+        # Find the two clusters which is most close to each others
+        for i in range(0, len(cluster_list) - 1):
+            for j in range(i + 1, len(cluster_list)):
+                # Computer the minimal distance between two clusters
+                temp_distance = cluster_list[i].min_distance(second_cluster=cluster_list[j], \
+                    sentence_list=sentence_list, distance_num=distance_num)
+
+                # If this distance is smaller than the stored minimal, mark it as the new minimal
+                if temp_distance < min_distance:
+                    min_distance = temp_distance
+                    similar_cluster1, similar_cluster2 = i, j
+
+        #---------- Merge two most close to each other clusters
+        cluster_list[similar_cluster1].members = cluster_list[similar_cluster1].members + cluster_list[similar_cluster2].members
+        cluster_list.remove(cluster_list[similar_cluster2])
+        print(similar_cluster1, 'and', similar_cluster2, 'merged')
+        print('\n---------- Number of clusters: {} ----------\n'.format(str(len(cluster_list))))
+
+    #----------- Produce final summary
+    print("\n-------------------- Final Summary --------------------\n")
+    final_summary = produce_summary_for_clustering(cluster_list=cluster_list, \
+        sentence_list=sentence_list, compression_rate=compression_rate, distance_num=distance_num)
+
+    print("\n-------------------- Finished --------------------\n")
+    return final_summary
+
+
+# Complete-Agglomerative-Clustering Algorithm - Algorithm No. 4
+def complete_agglomerative_cluster(*, sentence_list, compression_rate, number_of_clusters, distance_num):
+    cluster_list = []
+
+    for i in range(len(sentence_list)):
+        temp_cluster = Cluster(i)
+        temp_cluster.members.append(i)
+        cluster_list.append(temp_cluster)
+
+    while (len(cluster_list) > number_of_clusters):
+        print('\n-------------------- Iteration: {} --------------------\n'.format(str(len(sentence_list) - len(cluster_list) + 1)))
+
+        min_distance = MAXINT
+        similar_cluster1, similar_cluster2 = -1, -1
+
+        # Find the two clusters which is most close to each others
+        for i in range(0, len(cluster_list) - 1):
+            for j in range(i + 1, len(cluster_list)):
+                # Computer the maximum distance between two clusters
+                temp_distance = cluster_list[i].max_distance(second_cluster=cluster_list[j], \
+                    sentence_list=sentence_list, distance_num=distance_num)
+
+                # If this distance is smaller than the stored minimal, mark it as the new minimal
+                if temp_distance < min_distance:
+                    min_distance = temp_distance
+                    similar_cluster1, similar_cluster2 = i, j
+
+        #---------- Merge two most close to each other clusters
+        cluster_list[similar_cluster1].members = cluster_list[similar_cluster1].members + cluster_list[similar_cluster2].members
+        cluster_list.remove(cluster_list[similar_cluster2])
+        print(similar_cluster1, 'and', similar_cluster2, 'merged')
+        print('\n---------- Number of clusters: {} ----------\n'.format(str(len(cluster_list))))
+
+    #----------- Produce final summary
+    print("\n-------------------- Final Summary --------------------\n")
+    final_summary = produce_summary_for_clustering(cluster_list=cluster_list, \
+        sentence_list=sentence_list, compression_rate=compression_rate, distance_num=distance_num)
+
+    print("\n-------------------- Finished --------------------\n")
     return final_summary
