@@ -33,7 +33,7 @@ class Role(db.Model):
 
 class User(UserMixin, db.Model):
     __tablename__ = 'user'
-    id = db.Column(db.Integer, primary_key=True)
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     first_name = db.Column(db.String(200))
     last_name = db.Column(db.String(200))
     age = db.Column(db.Integer)
@@ -77,6 +77,7 @@ def load_user(user_id):
 
 def addProcessedFile(filename, patient_id, doctor_id, appointment_date):
     processedFile = open("app/file/output.txt", "r")
+    filename = filename.split('.')[0] + ".txt"
 
     upload = File(name=filename, appointment_date=appointment_date, processedData=processedFile.read().encode(), patient_id=patient_id, doctor_id=doctor_id)
     processedFile.close()
@@ -96,3 +97,9 @@ def addProcessedFile(filename, patient_id, doctor_id, appointment_date):
 def getAllPatients():
     patient_role_id = Role.query.filter_by(name='patient').first()
     return User.query.join(User.role).filter(Role.id == 2).all()
+
+def getPatientFiles(patientId):
+    return File.query.filter(File.patient_id == patientId).all()
+
+def getFile(fileId):
+    return File.query.filter(File.id == fileId).first()

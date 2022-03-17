@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block title %}Flasky{% endblock %}
+
+{ % block head % }
+<style>
+    td {
+           width: 150px;
+           text-align: center;
+           border: 1px solid black;
+           padding: 5px;
+        }
+</style>
+{ % endblock % }
+
+{% block page_content %}
+    <div class='containder'>
+        <table class="table">
+            <tr>
+                {% for heading in headings %}
+                <th> {{ heading }} </th>
+                {% endfor %}
+                <th>View Patient Clinical Records</th>
+            </tr>
+
+            {% for patient in patients %}
+                <tr>
+                    <td>{{patient.first_name}}</td>
+                    <td>{{patient.last_name}}</td>
+                    <td>{{patient.age}}</td>
+                    <td>{{patient.email}}</td>
+                    <td>{{patient.username}}</td>
+                    <td>
+                    <form action="/viewPatientRecords" method="POST" enctype="multipart/form-data">
+                        <input name='patient' type="hidden" value="{{patient.id}}"></input>
+                        <button type="submit" class="btn btn-default">View Records</button>
+                    </form>
+                    </td>
+                </tr>
+            {% endfor %}
+
+        </table>
+    </div>
+{% endblock %}
