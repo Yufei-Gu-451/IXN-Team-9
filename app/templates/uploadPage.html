@@ -1,16 +1,18 @@
 {% extends "base.html" %}
 
-{% block title %}Flasky{% endblock %}
+{% block title %}Home{% endblock %}
 
 {% block page_content %}
+<h1> Uploading Audio </h1>
 <form action="/upload" method="POST" enctype="multipart/form-data">
     <div class="form">
         {{form.appointmentDate.label}} {{form.appointmentDate(class='datepicker')}} {{form.hidden_tag()}}
         <br><br>
-        <label for="inputFile">File input </label>
+        <label for="inputFile">Please choose the audio file of the patient's consultation: </label>
         <input type="file" name="inputFile">
         <br>
         <br>
+        Please select your patient:
         <select name="patient" class="selectpicker form-control">
             {% for patient in patients %}
             <option value="{{ patient.id }}">{{ patient.first_name }} {{ patient.last_name }}</option>
