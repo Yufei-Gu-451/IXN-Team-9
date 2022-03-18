@@ -14,7 +14,26 @@
     <h3> Email: {{ patient.email }} <h3>
     <br>
     <h3> Processed Consultation Audio: <h3>
-    {% for line in lines %}
-    {{ line }}
-    {% endfor %}
+    <h4>
+        {% for line in lines %}
+        {{ line }}
+        {% endfor %}
+    </h4>
+
+    <br>
+
+    <form action="/downloadProcessedAudio" method="POST" enctype="multipart/form-data">
+        <div class="form">
+            <button type="submit" class="btn btn-default">Download Processed Audio</button>
+        </div>
+        <!-- <button type="submit" class="btn btn-default">Submit</button> -->
+    </form>
+
+    <br>
+
+    <form action="/downloadTranscribedAudio" method="POST" enctype="multipart/form-data">
+        <div class="form">
+            <button type="submit" class="btn btn-default">Download Transcribed Audio</button>
+        </div>
+    </form>
 {% endblock %}

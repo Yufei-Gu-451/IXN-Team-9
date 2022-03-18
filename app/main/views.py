@@ -111,6 +111,16 @@ def download():
   return send_file(BytesIO(patientFile.processedData), attachment_filename=patientFile.name, as_attachment=True)
     # return redirect(url_for('viewPatients'))
 
+@main.route('/downloadProcessedAudio', methods=['POST'])
+@requires_roles('doctor')
+def downloadProcessedAudio():
+  return send_file("file/output.txt", attachment_filename="transcribed_audio.txt", as_attachment=True)
+
+@main.route('/downloadTranscribedAudio', methods=['POST'])
+@requires_roles('doctor')
+def downloadTranscribedAudio():
+  return send_file('file/input.txt', attachment_filename="processed_audio.txt", as_attachment=True)
+
 @main.route('/viewPatients', methods=['GET'])
 @flask_login.login_required
 @requires_roles('doctor')
