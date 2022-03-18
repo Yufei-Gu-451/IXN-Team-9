@@ -1,187 +1,117 @@
-The germline mutations ofTP53gene increase the risk of various cancers (McBrideNone, 2014).
-The germline mutations of components of p53 signalling system (e.g.,ATM) also modulate cancer risk (Shiloh, 2003).
-The kinase coded byATMparticipates directly in activation of p53 by phosphorylating its serine 15 (BaninNone, 1998;CanmanNone, 1998).
-This phosphate can be removed by a phosphatase coded byPPM1D(WIP1) gene (LuNone, 2005).
-WIP1 also dephosphorylates kinases that activate p53 (e.g., ATM, CHK2) (ShreeramNone, 2006;Oliva-TrastoyNone, 2007).
-In U-2 OS cells, we detected a nonsense mutation in codon 458 ofPPM1D(Arg458X).
-Initially, the functional significance of this mutation was unknown (ZajkowiczNone, 2013).
-Independently, this mutation was reported by others (KleiblovaNone, 2013).
-They found similar truncating mutation in another cell line (HCT116) used in studies of p53.
-Moreover, truncating mutations ofPPM1Dwere revealed in blood DNA from colorectal cancer patients.
-The functional experiments demonstrated that the truncating mutations code for hyper-stable WIP1 protein, which induces strong dephosphorylation of Ser15 of p53 and impairs the p53-dependent G1 checkpoint (KleiblovaNone, 2013).
-The presence of mutantPPM1Din normal cells of cancer patients suggests that the mutations were transmitted in germline and contributed to carcinogenesis.
-However, a paper published earlier demonstrated that the truncating mutations ofPPM1Dfound in blood cells of breast or ovarian cancer patients may result from sequence alterations formed during individual development as a mosaic mutations.
-The mutant DNA sequences constituted only small fraction of DNA samples.
-Moreover, in patients available for pedigree analysis, the mutations were present neither in parents nor in progeny of probands (RuarkNone, 2013).
-These authors sequenced the whole coding region ofPPM1Din many patients but found that the truncating mutations (either frameshift or nonsense) cluster within the last coding exon ofPPM1D(exon 6).
-Similar mutations ofPPM1Dwere also found by others in leukocytes of ovarian cancer patients (AkbariNone, 2014).
-So far, the truncatingPPM1Dmutations were found in breast, ovarian and colorectal cancer patients (KleiblovaNone, 2013;RuarkNone, 2013;AkbariNone, 2014).
-The aforementioned observations suggest that at least some of these mutations are mosaic; however, it is plausible that a fraction of them may be genuine germline mutations.
-We decided to find out whether truncating mutations ofPPM1Dare present in blood DNA samples from lung cancer patients.
-All patients were Polish Caucasians treated for non-small-cell lung cancer (NSCLC) in Maria Sklodowska -Curie Memorial Cancer Center and Institute of Oncology, Gliwice Branch.
-The demographic and clinical data are presented inTable 1.
-Most of the patients (87.5%) were in advanced clinical stage at the diagnosis (stage III-IV), squamous cell carcinoma was found in 328/543 patients (60.4%).
-Radiotherapy or chemo-radiotherapy was the most common treatment.
-The blood draw was performed before irradiation and usually after chemotherapy.
-Nearly all patients (94.3%) had smoking history.
-The patients gave the written informed consent for the genetic testing, and the study was approved by the institutional Ethics Committee.
-The whole blood DNA samples were purified using Genomic Maxi AX column purification kit (A A Biotechnology, Gdynia, Poland).
-The exon 6 ofPPM1Dgene was amplified by PCR with AmpliTaq Gold polymerase (Life Technologies, Carlsbad, CA, USA) and the following primers: WIP-P11 TAGTGAATGCATACCCCGTT (forward), WIP-P12 CAAGCAAGTACAAGGCCAGGA (reverse).
-The PCR products were prepared for sequencing by treatment with exonuclease I and shrimp alkaline phosphatase (Affymetrix, Santa Clara, CA, USA).
-The sequencing reaction was performed using BigDye Terminator v.3.1 cycle sequencing kit (Life Technologies) and the forward primer (TCACATGCATAGATTTGTTGAGTTC) located in intron 5.
-For confirmation of mutation, the PCR product was also sequenced with reverse primer (GTTCAACATCGGCACCAAAT).
-The sequencing products were analysed on GA3500 genetic analyzer (Applied Biosystems-Life Technologies, Carlsbad, CA, USA).
-The mutations were confirmed by resequencing of independent PCR product.
-For selected DNA samples with mutations, the PCR products were cloned using CloneJet PCR cloning kit (Fermentas-Thermo Fisher Scientific, Waltham, MA, USA).
-The bacterial colonies were resuspended in 20 mul of TE buffer, boiled and one microlitre of the cleared lysate was used as template.
-Polymerase chain reaction and sequencing that were performed according to protocol used for genomic DNA.
-The p53-responsive promoters ofBAXandMDM2genes were cloned into pGL3-Basic reporter vector coding for firefly luciferase (Promega, Madison, WI, USA).
-The plasmid with SmaI-SacI fragment ofBAXgene promoter (Miyashita and Reed, 1995) was a kind gift from Dr. Curtis C. Harris (National Cancer Institute, NIH, Bethesda, MD, USA).
-The humanMDM2promoter 2 containing two p53-responsive elements (ZaubermanNone, 1995) was amplified by PCR from genomic DNA sample using primers: TTTTGCTAGCCTTTGTGCGGTTCGTGG, TTTTAAGCTTGCCTACAAGGAAAAAAAAGACA with the attached restriction sites for, respectively,NheI andHinDIII (underlined).
-We ligated the amplified DNA intoNheI andHinDIII sites of pGL3-Basic plasmid.
-The inserted DNA was sequenced to ensure that the clone contained no mutations introduced by PCR.
-The cDNA coding for wild-type and mutant (codon 458:CGA greater than TGA) WIP1 cDNA was cloned from RNA sample from U-2 OS cells.
-The total RNA was reversely transcribed with MuLV reverse transcriptase and random hexamers (Life Technologies).
-The cDNA was amplified with Proof Start polymerase (Qiagen, Hilden, Germany) using primers: WIP-SQ1 AACAATAGTTGGCCGGCGAG and WIP-SQ12 GTTCAACATCGGCACCAAAT amplifying the whole coding sequence ofPPM1D.
-Subsequently, the nested PCR was performed with Proof Start polymerase and primers: WIP-CLO1 and WIP-CLO2, which are nested in the first PCR product.
-The WIP-CLO1 primer TTTTAAGCTTATGGCGGGGCTGTACTCGcontains theHinDIII restriction site (underlined) and is complimentary to the beginning ofWIP1open reading frame (ORF, bold).
-The WIP-CLO2 primer TTTTTCTAGATCAGCAAACACAAACAGTTTTCcontains theXbaI site (underlined), the STOP codon and the end ofWIP1ORF (bold).
-The PCR product was cloned into pJET1.2/blunt using CloneJET PCR cloning kit (Fermentas-Thermo Fisher Scientific).
-The clones with wild-type or mutant (codon 458) sequences were identified.
-Subsequently, the cloned PCR products were cut out from the pJET1.2/blunt vector withHinDIII andXbaI and were ligated into these restriction sites of pcDNA3.1+ expression vector (Invitrogen-Life Technologies, Carlsbad, CA, USA) creating plasmids pcDNA3.1-WIP1-wild-type and pcDNA3.1-WIP1-mut-458.
-The DNA fragment containing exon 6 with the substitution in codon 469 (AAA greater than GAA) was amplified by PCR from genomic DNA of the heterozygous individual using primers: WIP-P11 (see above) and WIP-CLO2.
-The PCR product was cloned into pJET1.2/blunt using CloneJET PCR cloning kit.
-The clones containing the codon 469 nucleotide substitution were identified.
-The beginning ofWIP1exon 6 containsBamHI site.
-TheBamHI-XbaI fragment of pcDNA3.1-WIP1-wild-type plasmid was replaced byBamHI-XbaI fragment with codon 469 substitution cloned in pJET1.2/blunt.
-The resulting plasmid was named pcDNA3.1-WIP1-mut469.
-The NCI-H1299 cells (ATCC, Manassas, VA, USA) and SAOS-2 cells (European Collection of Cell Cultures, Salisbury, UK) do not express endogenous p53 protein.
-They were grown at 37 degrees C, 5% CO2, in DMEM medium (Sigma-Aldrich, St Louis, MO, USA) supplemented with 10% foetal bovine serum (Gibco-Life Technologies, Carlsbad, CA, USA) and penicillin/streptomycin (Sigma-Aldrich).
-The NCI-H1299 cells were transfected with FuGene6 (Promega), whereas SAOS-2 cells were transfected with Fugene HD (Active Motif, La Hulpe, Belgium) according to manufacturer's protocol.
-Some transfected SAOS-2 cells were treated with 1 muM camptothecin (Calbiochem-Merck, Darmstadt, Germany, the stock solution 4 mM in DMSO), a topoisomerase I inhibitor strongly activating p53 (JaksNone, 2001).
-The wild-type p53 was expressed from pC53-SN3 plasmid, which was a gift from Dr. Bert Vogelstein and Dr. Kenneth W. Kinzler from Johns Hopkins University, Baltimore, MD, USA (BakerNone, 1990).
-The null-control cells were transfected with empty expression vector (pcDNA3.1+).
-The negative control cells were transfected with p53 expression vector and empty pcDNA3.1+ plasmid.
-The experimental cells were transfected with p53 expression plasmid and the plasmid expressing wild-type or mutant forms ofWIP1.
-The SAOS-2 were seeded on two 6-well plates in 2 ml of medium.
-The transfection mixture for one well consisted of 6 mul of Fugene HD and 2 mug of DNA in 100 mul of growth medium without serum and antibiotics.
-The weight ratio of pC53-SN3 plasmid to WIP1 plasmid was 1 : 1.
-After 24 h, the medium with transfecting reagents was removed, and the cells were washed with fresh medium.
-Subsequently, the cells on one plate were supplemented with medium containing 1 muM camptothecin and the cells on the other plate were supplemented with medium containing 0.025% DMSO.
-After 24-h incubation, the cells were harvested by trypsinisation, washed with PBS, and the cell pellets were frozen on dry ice and stored at -70 degrees C.The NCI-H1299 cells were seeded on 6-well plate.
-The ratio of FuGene6 to DNA was 3 mul:1, 2 mug.
-The ratio of p53:WIP1 plasmids was 1 : 1.
-After 48 h, the cells were harvested and stored as SAOS-2 cells.
-The preparation of protein extracts in IP buffer and other steps of western blotting was performed as described before (ZajkowiczNone, 2013).
-The following antibodies were used in the detection step: anti-p53 (DO1, Santa Cruz Biotechnology-SCBT, Dallas, TX, USA), anti-phospho-p53 at Ser 15 (rabbit polyclonal antibody from Cell Signaling Technology, Danvers, MA, USA), anti-p21 (F-5, SCBT), anti-MDM2 (HDM2-323, SCBT), anti-HSC70 (B-6, SCBT), anti-WIP1 (H-300, SCBT).
-The NCI-H1299 cells were seeded on 12-well plates.
-The next day, the cells were transfected, according to the manufacturer's protocol, using FuGene6 (1,2 mul per well) with the combination of the reporter vector coding for firefly luciferase under the control of eitherBAXorMDM2promoters (0.12 mug), the expression vector pC53-SN3 (p53 plasmid, 0.18 mug) and the expression vector (0.3 mug) coding for wild-type or mutant cDNA ofWIP1 (PPM1D).
-In negative control, the p53 and WIP1 plasmids were replaced by empty pcDNA3.1+ so the amount of DNA in transfection mixtures was kept constant (0,6 mug).
-The transfection mixture also contained pRL-TK vector (0.012 mug) coding forRenilla sp.
-luciferase under the control of the herpes simplex virus thymidine kinase promoter that served as an internal control.
-After 48 h from the start of transfection, the cells were washed with PBS and lysed with passive lysis buffer from Dual Luciferase Reporter Assay system (Promega) that was also used to measure the firefly andRenilla sp.
-luciferase activities.
-The firefly luciferase activity was normalised toRenilla sp.
-luciferase activity.
-Each transfection was performed in triplicate in three independent experiments.
-The coding region of exon 6 ofPPM1Dwas sequenced in DNA samples isolated from blood of 543 NSCLC patients.
-In five patients (0.92%), we detected the electropherogram pattern consistent with the deletion/insertion mutations.
-In three cases, the mutation constituted a relatively large part of DNA sample.
-It enabled the precise identification of the deleted nucleotide (Figure 1).
-We cloned the relevantPPM1DPCR products from two patients showing similar intensities of wild-type and mutant reads on electropherograms (Figure 1, case no.
-189 and case no.
-522).
-We sequenced individual clones (derived from single molecules of PCR products-the essence of cloning in bacteria) and counted clones with wild-type and mutant sequences.
-This gave us better estimation of proportion of wild-typeversusmutant sequence in DNA sample than the 'height' of electropherogram peaks.
-For case no.
-522 (c.1288delG), we have sequenced 41 clones; 31 (76%) had wild-type sequence whereas 10 (24%) had mutant sequence.
-This proportion significantly differs from 50%versus50% ratio expected for the germline mutation (chi2test,P=0.03).
-Thus, this indicates that case no.
-522 has mosaic mutation ofPPM1Dand that the mutant cells constitute a large proportion of peripheral white blood cell population.
-Assuming that the white blood cells with mutantPPM1Dharbour wild-type allele on the other chromosome and taking into account that mutant sequence constitutes about one quarter of DNA sample, it can be estimated that cells with mutantPPM1Dmake up about 50% of cell population.
-For case no.
-189, we have sequenced 37 clones finding 25 (68%) with wild-type sequence and 12 (32%) with mutant one.
-The predominance of wild-type sequence suggests the mosaic nature of mutation, however, the proportion does not significantly differ from the expected 50%versus50% ratio (chi2testP=0.198); hence, we cannot formally reject the hypothesis that case no.
-189 has germline mutation, although this possibility is less likely than mosaicism.
-In two cases, the mutation constituted small fraction of DNA sample (consistent with the mosaic nature of mutation) and only the approximate localisation of mutant position was possible.
-In these cases, we also cloned PCR product in bacterial plasmids.
-We have sequenced DNA from 8 to 12 clones to detect the one with mutation what allowed for precise identification of the sequence change (Figure 2,Table 2).
-Out of five mutations detected by us, four were 1-base pair (bp) deletions, whereas one was 2-bp deletion, therefore the mutations generated frameshifts resulting in stop codons at or very close to the mutation sites (Table 2).
-All mutations were found in patients with squamous cell carcinomas (SCC), hence the frequency ofPPM1Dmutations in this histological type of NSCLC is 1.5% (5/328).
-Table 2describes the clinical characteristics of five patients with mutation.
-No apparent differences between clinical characteristics of these patients and the patients without mutation can be found, except for relatively high age at the diagnosis of five individuals of interest (mean 69 years).
-All patients with mutations underwent chemotherapy before the blood draw (Table 2).
-As for the patients without mutations, only 68 cases had chemotherapy after the blood draw.
-For the remaining 246 cases, which did not harbour mutations and for which the detailed dates of treatment were available, the mean time from the end of chemotherapy to the blood draw was 15.3 weeks (standard deviation +/-36.3 weeks, median 6.1 weeks, range 0-363 weeks).
-The difference in frequency of truncating mutations between SCC and adenocarcinomas is not due to more frequent use of chemotherapy in SCC, because SCC cases less frequently underwent chemotherapy than adenocarcinoma cases (197/328, 60%versus79/104, 76%P=0.005 bychi2test).
-The frequency of truncating mutations found in our group of cancer patients (5/543) is higher than the frequency found in the blood of non-cancer controls by other researchers (1/5861 inRuarkNone, 2013and 0/450 inKleiblovaNone, 2013).
-Thus, these mutations are clearly cancer-related.
-The sequencing of coding fragment of exon 6 also revealed five different single nucleotide substitutions.
-Four of them generate amino acid substitutions and one is a silent mutation (Table 3).
-Three variants have been identified by others and are listed in the short nucleotide polymorphisms databasehttp://www.ncbi.nlm.nih.gov/snp.
-Two of the nucleotide substitutions are reported here for the first time (Table 3).
-To the best of our knowledge, the functional significance of these rarePPM1Dvariants with amino acid substitutions was not examined.
-It is not known whether they are functionally neutral or modulate the activity of WIP1 phosphatase.
-We have selected one (469:AAA- greater than GAA) for functional study.
-It was chosen because it changes amino acid with basic side chain to the amino acid with acidic side chain (Lys469Glu).
-As a positive control, we used the previously detected mutant version ofPPM1Dfrom U-2 OS cells (R458X) (ZajkowiczNone, 2013).
-We wanted to confirm and extend the results of others (KleiblovaNone, 2013) who showed that this mutation (R458X) codes for the molecule, which is more stable and accumulates to much higher level than the wild-type protein.
-We have created expression vectors coding for wild-type or mutant versions of WIP1 protein (Mut458, Mut469).
-Subsequently, the vectors coding for the selected forms of WIP1 were transfected to NCI-H1299 cells together with the expression vector coding for wild-type p53.
-The recombinant WIP1 is expressed from the vectors as shown on immunoblot (Figure 3).
-Expectedly, the Mut458 codes for WIP1 with lower molecular weight.
-The amount of the protein with Lys469Glu substitution is similar to the amount of wild-type protein.
-In strong contrast, the amount of the truncated protein expressed from Mut458 vector is significantly higher.
-This is consistent with the observations made by others (KleiblovaNone, 2013) who showed that this mutant protein is more stable than the wild-type version.
-In our experiment, the expression of any form of WIP1 lowered the level of p53 with phosphorylated serine 15 without changing the total amount of p53 (Figure 3).
-The Arg458X causes enhancement of this dephosphorylation activity, whereas Lys469Glu is equivalent to the wild-type sequence.
-This is consistent with the observations that the truncated WIP1 codes for gain-of-function mutants (KleiblovaNone, 2013;RuarkNone, 2013).
-Unexpectedly, the major differences in the phosphorylation status of p53 Ser15 did not influence the ability of ectopic p53 to activate the expression of endogenous targets of p53-the genes coding for p21 or MDM2 proteins (Figure 3).
-Thus, in this experimental system, the effect of Arg458X on enhancing dephosphorylation does not influence the transactivation activity of p53 on its target genes.
-A similar experiment was performed on a different cell line, which also does not express p53 protein (SAOS-2 osteosarcoma cell line).
-In this case, we have additionally treated the cells with camptothecin, which is a strong activator of p53 (Figure 4).
-As expected, the camptothecin treatment induced stronger accumulation of total p53 and induced stronger expression of endogenous p21 protein.
-Expression of any form of WIP1 diminished the phosphorylation of Ser15 of p53 in both treated and untreated cells.
-Expression of Arg458X induced the strongest dephosphorylation of p53.
-Similar to previous experiment, the Ser15 phosphorylation status of p53 did not modulate the expression of endogenous p21.
-To further examine the influence of various forms of WIP1 on the ability of p53 to transactivate genes, we used another experimental system employing the reporter vectors containing the p53-responsive gene promoters.
-We selected promoters fromBAXandMDM2genes, which in our experimental system, are activated 15- and 200-fold, respectively, by p53 expressed from the co-transfected vector in NCI-H1299 cells (Figure 5).
-The co-expression of WIP1 did not significantly modulate the ability of p53 to transactivateBAXorMDM2promoters.
-Thus, the observations made using different experimental settings suggest that very strong expression of mutant WIP1, which clearly has the ability to diminish p53 phosphorylation on Ser15, does not measurably influence the ability of p53 to regulate the expression of its target genes.
-Moreover, we conclude that WIP1 protein with Lys469Glu substitution does not significantly differ from wild type in our experiments.
-This is the first report onPPM1Dmutations in blood DNA of NSCLC patients.
-Moreover, the truncating mutations detected by us were not reported in three papers onPPM1Dalterations found in blood cells of breast, ovarian or colorectal cancer patients (KleiblovaNone, 2013,RuarkNone, 2013;AkbariNone, 2014).
-The frequency of NSCLC cases with mutations (0.92%) is higher than the frequency of colorectal cancer patients (0.66%) (KleiblovaNone, 2013) and breast cancer patients (0.26%), but very similar to the frequency of ovarian cancer patients (1.07%) (RuarkNone, 2013).
-Another study reported 1.5% of ovarian cancer cases with truncating mutations ofPPM1D(AkbariNone, 2014).
-ThePPM1Dtruncating mutations arising somatically were recently found in brainstem gliomas (ZhangNone, 2014).
-So far, more than 30 truncating mutations ofPPM1Dhave been published, however, the functional significance of only some of them was examined.
-The mutations that we and others have detected are located within the mutation cluster region identified inPPM1DbyRuarkNone(2013).
-The gain-of-function nature of the following mutations was assessed and confirmed: c.1384C greater than T (p.Q462X), c.1420delC (RuarkNone, 2013), c.1349delT (p.450X), c.1372C greater than T (p.R458X) (KleiblovaNone, 2013).
-It is assumed that all truncating mutations in the mutation cluster region ofPPM1Dare of gain-of-function type.
-This assumption may be verified in the future, for example, by simple tests that we have performed for the mutation (p.R458X) found in U-2 OS cells (Figure 3).
-In three cases reported in our study, the mutant sequence constituted a small fraction of DNA sample what is consistent with mosaic nature of the mutations.
-However, in two cases, the electropherogram peaks of wild-type and mutant sequences exhibited similar intensity (Figure 1) indicating that a large proportion of blood cells contain the mutant version ofPPM1Dgene (wild-type version on one chromosome and the mutant on the other).
-Thus, in these two cases, we found either a germline mutation or mosaicism.
-However, more precise estimation of proportion of mutant and wild-type sequence (see Results) performed by cloning of PCR product strongly suggests mosaicism.
-We found no evidence that hyperactive WIP1 can modulate the ability of p53 to activate the promoters either of endogenous genes or the promoters cloned in reporter vectors (Figures 3,4,5).
-Although p53 phosphorylation is correlated with its activation, many studies showed that p53 can be activated regardless of its phosphorylation status (reviewed byKruse and Gu, 2009).
-Specifically,FuchsNone(1995)demonstrated that Ser15 phosphorylation mutant retains transcription activity and ability to suppress cell growth.
-Our observations apparently contrasts with the data published by others (KleiblovaNone2013) who showed that knockdown of WIP1 (either its mutant or wild-type form) promotes the expression of p21-the product of p53 target gene.
-We have also noticed in our previous experiments that downregulation of WIP1 with shRNA in U-2 OS cells promotes the expression of p21 in untreated cells (ZajkowiczNone, 2013).
-We speculate that the inability of hyperactive WIP1 to modulate the expression of p53 target genes results from the high expression level of p53 from the transfected plasmid.
-Our approach is apparently suitable for detection of the influence of WIP1 on the phosphorylation status of ectopic p53, but the amount of ectopic p53 may be too high for detection of the modulating effect of Ser15 phosphorylation on the ability of p53 to regulate the expression of target genes.
-It is also plausible that p53 is not the only target for the hyperactive, gain-of-function, truncated versions of WIP1 protein.
-WIP1 can dephosphorylate other proteins, including components of the base excision repair, what is associated with decreased activity of this DNA repair system (LuNone, 2004).
-Thus, hyperactive WIP1 may increase the mutation rate and by doing so, its mosaic/germline mutations may promote the formation of cancer.
-One of the major questions arising from our study is whether the detected mutations were induced by chemotherapy.
-All patients with the truncating mutations were exposed, before the blood collection, to the DNA-damaging agents as a part of chemotherapeutic regimen (Table 2).
-There are numerous examples showing that chemotherapeutic agents promote mutagenesis and the formation of therapy-induced cancers, for example, radiotherapy for Hodgkin lymphoma significantly increases risk of lung cancer, and the risk of developing leukaemia is elevated after platinum-based chemotherapy for testicular or ovarian cancer.
-Usually the latency between therapy and the formation of secondary cancer is as long as several or more years (see review byAllan and Travis, 2005).
-In the case of our group of patients, the latency between the chemotherapy and the detection of thePPM1Dmutations in white blood cells was relatively short-several months.
-At this moment, we cannot judge whether this is enough time to generate and expand the mutant clone of white blood cells.
-Another question arising from our study is whether the cells withPPM1Dmutations were selected by chemotherapy owing to their potentially increased apoptosis resistance caused by attenuation of p53 activity.
-These questions cannot be answered without further studies, which must be designed in a way that will elucidate whether the mutations are induced/selected by chemotherapy.
-In conclusion, our study revealed that truncating mutations ofPPM1Dare present in blood DNA of 0,9% NSCLC patients.
-The mutations are found exclusively in cases with SCC.
-Consistent with previous findings, the mutant form R458X found in U-2 OS cell line accumulates in cells to significantly higher amount than the wild-type form and strongly reduces the phosphorylation of p53 on Ser15.
-The variant with Lys469Glu amino acid substitution is equivalent to wild type in our experiments.
+The liver performs important metabolic functions, degrades toxic and waste products, and regulates immunity.
+Impairment of these functions, due to autoimmune liver disorders, viral hepatitis, alcohol or cancer can lead to end-stage liver disease, for which liver transplantation (LTx) is the only therapeutic option.
+The liver is regarded as a lymphoid organ with a unique constituency of immune cells [1-3] and exhibits inherent tolerogenic properties [3-5] These include oral and portal venous tolerance and allograft acceptance in rodents or pigs, without dependence on any immunosuppressive therapy [6,7].
+Human liver transplant recipients have a relatively low susceptibility to rejection and achieve a comparatively high frequency of successful immunosuppressive drug withdrawal compared with recipients of other organs [5,8,9].
+Although donor-derived leukocytes [10,11], donor-derived dendritic cells (DC) [12,13], regulatory T cells (Treg) [14,15] and expression of immune regulatory molecules, in particular B7-H1[16] (= programed death ligand-1) and DNA-activating protein of 12kD (DAP12) [17] on donor cells have been implicated as important factors that promote experimental allograft liver acceptance, mechanisms underlying liver transplant tolerance are still poorly understood.
+Adenosine triphosphate (ATP) is essential for cell metabolism and is stored in the cell cytosol.
+Once released extracellularly, as the result of cell death or injury, extracellular (e)ATP acts as a damage-associated molecular pattern (DAMP) that activates innate immune cells through its receptors, P2X and P2Y [18,19].
+eATP not only activates eosinophils, neutrophils, macrophages and DC [18], but also recruits these immune cells as a 'find-me' signal [20], eATP concentrations increase at sites of inflammation, contact hypersensitivity [21], tumor growth [22], liver injury [23] and graft-versus-host disease following bone marrow transplantation [24], Furthermore, the eATP/P2 receptor axis is involved in the pathogenesis of organ allograft rejection [25] and P2X7 receptor deficiencies, or inhibition of P2X7 prolong mouse heart allograft survival [26].
+CD39 is an ectonucleotidase and hydrolyzes eATP to maintain homeostatic eATP levels.
+eATP hydrolysis by CD39 regulates immune cell activation and recruitment [20,27].
+Thus, CD39 contributes to the pathogenesis of infectious diseases [28], cancer [29-31], autoimmune disorders [32-34], and ischemia/reperfusion injury of the heart [35], kidney [36], intestine [37] and liver [38,39].
+We have reported recently [40] that CD39 deficiency exacerbates liver injury after syngeneic LTx with 24 hr cold organ storage.
+However, the role of CD39 in allogeneic organ transplantation has not been investigated.
+Previously [40], we reported that cell surface costimulatory molecules, production of pro-inflammatory cytokines and T cell allostimulatory activity are augmented in CD39KO liver conventional myeloid dendritic cells (DC), that are regarded as key instigators and regulators of alloimmunity [41,42].
+These observations suggest an enhanced potential of CD39KO liver DCs to stimulate host T cell responses and thus enhanced immunogenicity of CD39-deficient liver allografts.
+To evaluate the contribution of donor CD39 to liver allograft immunity and survival, we performed orthotopic mouse LTx with minimal cold ischemia time using B6 WT or CD39KO (B6 background) mice as donors and normal C3H mice as recipients.
+We examined allograft injury, the immune effector and regulatory T cell responses elicited and transplant survival.
+Our data suggest that CD39 expression by donor livers is important for regulation of tissue injury, inflammation, anti-donor immunity and the suppression of liver allograft rejection.
+Male C57BL/6 (B6;H-2b), and C3H (H2k) mice (8- to 12-wk old) were purchased from The Jackson Laboratory, Bar Harbor, ME.
+CD39KO mice (B6 background) were bred from pairs received from the Beth Israel Medical Center, Harvard University, Boston, MA.
+Animals were maintained in the specific pathogen-free Central Animal Facility of the University of Pittsburgh School of Medicine.
+Experiments were conducted under an Institutional Animal Care and Use Committee-approved protocol and in accordance with criteria outlined in the "Guide for the Care and Use of Laboratory Animals" prepared by the National Academy of Sciences and published by the National Institutes of Health.
+Animals were fed a diet of Purina rodent chow (Ralston Purina, St. Louis, MO) and received tap waterad libitum.
+Complete culture medium comprised RPMI-1640 (BioWhittaker, Walkersville, MD) supplemented with 10% (v/v) fetal calf serum (Nalgene, Miami, FL), non-essential amino acids, L-glutamine, sodium pyruvate, penicillin-streptomycin, and 2-mercaptoethanol (all from Life Technologies, Gaithersburg, MD).
+ATP and soluble CD39 (Apyrase) were purchased from Sigma-Aldrich (Sr. Louis, MO).
+Harvesting and orthotopic transplantation of the liver without hepatic artery reconstruction, were performed as described initially by Qian et al [7] with minor modifications [43].
+Liver grafts (WT B6 or CD39KO) were perfused with University of Wisconsin solution via the portal vein, then transplanted into C3H recipients by anastomosis of the suprahepatic vena cava with a running 10-0 suture and by anastomosis of the portal vein and inferior vena cava using the cuff technique.
+The bile duct was connected via ligation over the stent.
+The cold ischemia period consistently lasted approximately 1 hr.
+No immunosuppressive therapy was administered.
+Graft rejection was determined by host survival and confirmed histologically.
+In some recipients, apyrase (soluble CD39) was injected i.p.
+at day 0, 1, 3, 5, 7 post transplant and once a week after day 14.
+Serum alanine aminotransferase (ALT) levels were quantified as described [44].
+Hematoxylin and eosin-stained tissue sections were graded in a 'blinded' fashion by a transplant pathologist (KI) using the Banff schema for acute liver rejection [45].
+Hepatic non-parenchymal cells (NPC) and spleen cells were treated with FcgammaR-blocking rat anti-mouse CD16/32 mAb (2.4G2) to prevent non-specific antibody (Ab) binding.
+They were then incubated for 30 min with fluorescein isothiocyanate (FITC)-, phycoerythrin (PE)-, APC-, PE-cyanin (Cy)5-, PE-Cy7-or pacific blue-conjugated monoclonal Abs (mAbs) to detect surface expression of CD3 (145-2C11) CD4 (GK1.5) or CD8 (53-6.7) (all eBioscience, San Diego, CA).
+For intracellular cytokine staining, cells were fixed with 4% paraformaldehyde and permeabilized using 0.1% saponin, then stained with anti-mouse IFN-gamma Ab (XMG1.2) (BioLegend).
+For forkhead box p3 (Foxp3) staining, cells were fixed and permeabilized using Foxp3 Fix Perm kit (eBioscience) and stained with anti-Foxp3 mAb (FJK-16s) (eBioscience).
+Appropriate Ig isotype controls were obtained from BD Pharmingen (San Diego, CA).
+Flow analysis was performed using an LSR Fortessa flow cytometer (BD Biosciences) and results expressed as percent positive cells and mean fluorescence intensity (MFI).
+Messenger RNA (mRNA) expression was quantified by SYBR Green real-time RT-PCR using an ABI-Prism 7000 sequence detection system (PE Applied Biosystems, Foster City, CA) and primers specific for IFN-gamma (F: 5'-CACGGCACAGTCATTGAAAG-3'; R; 5'-TTTTGCCAGTTCCTCCAGAT-3') or beta-actin (F: 5'-AGAGGGAAATCGTGCGTGAC-3'; R: 5'-CAATAGTGATGACCTGGCCGT-3').
+The expression of IFN-gamma was normalized to the expression of beta-actin mRNA using the comparative cycle threshold method.
+To assess anti-donor immune responses, T cell-depleted WT B6 splenocytes were used as stimulators and carboxyfluorescein succinimidyl ester (CFSE)-labeled recipient splenocytes as responders.
+Stimulator and responder cells were co-cultured at 1:1 ratio for 5 days.
+CFSE-labeled T cell proliferation was determined by flow cytometry [17].
+The significances of differences between means were ascertained using the unpaired Student 't' test or Gehan-Breslow-Wilcoxon test using Prism version 5.00 (Graphpad Software, San Diego, CA).
+Values of p less than 0.05 were considered significant.
+As reported previously [40], no significant differences were observed between CD39KO and WT livers in the absolute numbers of all innate and adaptive immune cells examined (i.e.
+CD4, CD8, Treg, NKT, NK, B, conventional myeloid DC, plasmacytoid DC and Kupffer cells).
+Furthermore, there was no significant difference between the groups in the expression of CD4 or CD8 T cell surface activation markers or the proliferation of these cells following their allogeneic stimulation (data not shown).
+However, conventional myeloid DC from CD39 KO mice displayed enhanced MHC class II and costimulatory molecule expression, increased pro-inflammatory cytokine production in response to LPS +/- ATP stimulation, and enhanced allogeneic T cell stimulatory activity in MLR.
+We also observed a reduction in suppressive function of Treg isolated from CD39KO livers (data not shown).
+To examine the role of CD39 expression by donor tissue in mouse MHC-mismatched orthotopic liver transplantation, we grafted WT or CD39KO livers into normal C3H recipients and euthanized the recipients at day 4 after LTx.
+Acute rejection was assessed by serum ALT levels and histological grading (Banff criteria).
+As shown inFigure 1A, CD39KO liver recipients exhibited significantly higher circulating ALT levels compared with WT liver recipients (WT: 480+/-63 IU/l vs CD39KO: 860+/-183IU/l; p less than 0.05).
+Histologically, allografts lacking CD39 displayed more severe inflammatory liver injury than WT allografts as determined by Banff Schema (Figure 1B 1C).
+These results indicate that CD39 expression by donor livers is involved in regulation of acute liver allograft rejection.
+To explore mechanisms underlying the enhanced acute rejection of CD39KO livers, we examined immune cell populations in allografts and recipient spleens at day 4 after LTx.
+Treg are important for the regulation of alloimmune responses [46], including 'spontaneous' liver transplant tolerance.
+[14,15] We found that the incidence of Treg was reduced significantly in CD39KO compared with WT grafts (WT: 36.7+/-6.24% vs CD39KO: 28.9+/-2.7%; p less than 0.05) (Figure 2A B).
+Similarly to the liver grafts, spleens of CD39KO transplant recipients displayed significantly less Treg than those of WT livers (WT: 30.0+/-3.92% vs CD39KO: 24.9+/-1.3%; p less than 0.05) (Figure 2A C).
+These data suggest that reduced Treg in CD39KO liver transplants may be causally related to the more severe inflammation and tissue injury observed in these grafts.
+While Treg may protect livers from immune-mediated rejection, effector T cells are important mediators of the acute rejection response.
+IFN-gamma is a key cytokine released by effector T cells that mediates graft rejection.
+Thus, we measured the expression of IFN-gamma in liver allografts and IFN-gamma expression by effector T cells following LTx.
+CD39KO allografts displayed significantly higher IFN-gamma gene expression compared with WT grafts at day 4 after LTx (WT: 88.4+/-34.1 vs CD39KO: 179.9+/-73.1; p less than 0.05) (Figure 3A).
+Moreover, the incidence of CD8+IFN-gamma+cells was increased significantly in CD39KO livers compared with WT grafts (WT: 38.8+/-1.7% vs CD39KO: 46.6+/-4.4%; p less than 0.05) (Figure 3 B C).
+To further evaluate anti-donor T cell responses, we harvested host splenocytes at day 4 after LTx, and stimulated them ex vivo with T cell-depleted donor splenocytes.
+Although T cells from both WT and CD39KO liver recipients displayed proliferation after ex vivo restimulation in CFSE-MLR, T cells from CD39KO liver recipients exhibited greater proliferation (CD3; WT: 27.2+/-2.6% vs CD39KO: 36.3+/-2.5%; p less than 0.05, CD4; WT: 22.4+/-2.4% vs CD39KO: 30.1+/-2.2%; p less than 0.05, CD8; WT: 30.6+/-3.2% vs CD39KO: 42.9+/-3.4%; p less than 0.05) (Figure 4 A B).
+These results demonstrate that CD39KO liver grafts induce stronger systemic anti-donor T cell-mediated immune responses than WT livers.
+Mouse WT liver allografts are accepted without immunosuppressive therapy.
+[7] We determined WT and CD39KO liver allograft survival to assess the impact of CD39 deficiency in donor tissue on mouse liver transplant tolerance.
+All of the WT liver grafts survived greater than 100 days (Figure 5Figure 5).
+These data indicate that CD39 plays an important role in promotion of mouse allogeneic liver graft survival.
+LTx is the only treatment available for patients with end-stage liver disease.
+Immunosuppressive drug therapy is required to prevent rejection.
+Minimization or complete withdrawal of immunosuppressive agents without rejection is an important clinical goal [47,48].
+Importantly, 25-30% of stable LTx patients can be withdrawn from immunosuppression,- a frequency that is not attainable with other transplanted organs [8,9].
+Understanding the mechanism(s) of LTx tolerance in both humans and animal models may lead to the development of new approaches to promote tolerance to the liver and other organ allografts.
+CD39 is an immunoregulatory molecule, since it hydrolyzes eATP,- a DAMP that activates innate immune cells to generate adenosine that regulates immune responses [49,50].
+Its expression by endothelial cells and leukocytes reduces inflammatory cell trafficking, with consequent reduction in tissue injury following ischemia [51].
+We have reported recently [40] that human or mouse conventional liver DC express relatively high levels of cell surface CD39 (compared with DC from secondary lymphoid tissue or blood) and hydrolyze eATP efficiently to generate adenosine.
+Furthermore, CD39 deficiency is associated with a more mature liver DC phenotype and CD39 expression by liver DC plays an important role in regulating the pathogenesis of liver cold I/R injury after syngeneic liver transplantation [40].
+In these I/R injury studies using a syngeneic transplant model, an extended cold preservation time of 24 hr was used and liver enzymes and graft histology were examined 6 hr posttransplant.
+In the present study, in which we hypothesized that CD39 might contribute to liver allograft tolerance after LTx, ischemia time was limited to 1 hr and graft injury and histology were examined 4 days post-transplant.
+Under these latter conditions of minimal preservation time, liver enzyme levels decrease rapidly and markedly within 2-3 days of transplantation [52].
+In keeping with our hypothesis, CD39KO liver grafts displayed more severe inflammatory injury than those from WT donors and broke the allograft tolerance observed in WT graft recipients in the absence of any immunosuppressive therapy.
+Furthermore, sCD39 administration partially reversed allograft rejection in CD39KO liver recipients.
+Whether further improvement in allograft survival might be achieved by more frequent administration of sCD39 (once per week) after day 14 post-transplant will be addressed in future experiments.
+It would also be of interest to test the capacity of WT liver mDC, injected after transplantation, to affect alloimmunity and graft survival.
+Our results suggest that eATP contributes to the pathogenesis of acute liver rejection and that CD39 expression on donor cells is important in prevention of allograft rejection.
+Administration of sCD39, however, did not restore tolerance.
+Other mechanisms that are not restored by sCD39 may promote indefinite liver allograft survival.
+While CD39 hydrolyzes eATP into eAMP, CD73 hydrolyzes eAMP into adenosine.
+Thus CD39 is not fully responsible for adenosine generation from eATP.
+We speculate that while sCD39 hydrolyzes eATP after LTx, but does not maximize generation of adenosine, both sCD39 and sCD73 may be more effective in reducing liver injury and promoting allograft survival.
+Hepatocytes contain ATP in the cell cytosol and release ATP into the extracellular environment during injury/cell death.
+eATP stimulates immune cells, including neutrophils, T cells, macrophages and DC and enhances immune reactivity.
+We have shown [40] that ATP induces liver antigen-presenting cell (DC) maturation and pro-inflammatory cytokine production and enhances their ability to induce allogeneic T cell proliferation.
+Moreover, we found that CD39KO liver conventional DC exhibited stronger allogeneic T cell stimulatory capacity and enhanced ability to induce CD8+IFN-gamma+T cells in allogeneic MLR.
+Another molecule expressed by DC (and also by NK cells) that regulates liver DC maturation, migration and T cell allostimulatory function is the transmembrane adaptor protein DAP12.
+Livers that lack DAP12 also break murine liver transplant tolerance [17].
+We speculate that eATP concentrations remain elevated in CD39KO grafts after LTx because of markedly reduced ATP hydrolysis in the absence of CD39.
+Further, more mature CD39KO donor liver APC are likely to be activated by unhydrolyzed eATP.
+These activated and thus more mature donor-derived CD39KO liver DC, are capable of migration to secondary lymphoid organs, priming of host naive T cells via direct allorecognition and induction of more CD8+IFN-gamma+T cells and thus stronger anti-donor effector T cell responses.
+Indeed, we found that CD39KO livers were more efficient at sensitizing their hosts since splenic T cells from CD39KO liver recipients showed greater anti-donor T cell proliferative responses than those from WT recipients after ex vivo re-stimulation with donor cells.
+Since eATP is also known to activate host T cells via P2X7R in heart graft recipients [25,26], we suggest that donor-reactive T cells that infiltrate CD39KO liver allografts may be further activated by unhydrolyzed eATP, resulting in more severe liver injury.
+Treg regulate immune responses and contribute to liver allograft tolerance [14].
+In the mouse model of allogeneic liver transplantation, Treg increase in the graft after transplantation, while Treg depletion breaks tolerance [15].
+In this study, we found that following transplantation, CD39KO allografts contained less Treg compared to WT grafts.
+While we consider that graft injury due to 1 hr cold ischemia is substantially diminished by the time that the host immune response and Treg proportions can be measured, we cannot rule out entirely a contribution of graft injury or systemic inflammation to the observed changes in Treg or IFN-gamma-producing effector cells.
+We have not determined the mechanism underlying reduced Treg in CD39KO allografts, but our preliminary data suggest that CD39KO liver DC induce less Treg in primary MLR compared with WT liver DC (data not shown).
+Thus, skewing of Th1 responses, not Treg, by CD39KO donor-derived liver DC in lymphoid tissue might explain this finding.
+We demonstrate that in mice, CD39KO livers break murine allograft tolerance, associated with enhanced graft injury, inflammation, intra-graft IFN-gamma expression and CD8+IFN-gamma+T cells, reduced Treg and stronger anti-donor T cell proliferative responses.
+Furthermore, sCD39 administration partially reverses acute rejection in CD39KO liver recipients.
+Thus, CD39 appears to be an important molecule for promotion of liver allograft survival, with potential for therapeutic application in transplantation and other immune-mediated hepatic inflammatory disorders.

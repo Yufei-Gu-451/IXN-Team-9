@@ -12,8 +12,8 @@ import networkx as nx
 from . import file
 
 # Change this variable to your python3.7 directory
-PYTHON_DIRECTORY = '/Library/Frameworks/Python.framework/Versions/3.7/bin/python3.7'
-#PYTHON_DIRECTORY = '/usr/bin/python3.7'
+# PYTHON_DIRECTORY = '/Library/Frameworks/Python.framework/Versions/3.7/bin/python3.7'
+PYTHON_DIRECTORY = '/usr/bin/python3.7'
 
 #-------------------- CLASSES --------------------
 
@@ -697,7 +697,7 @@ def bi_clustering(*, cluster, sentence_list, distance_num):
     sentences = cluster.members
     cluster1, cluster2 = Cluster(1), Cluster(2)
     cluster1.mean = sentence_list[sentences[0]].representation
-    cluster1.mean = sentence_list[sentences[1]].representation
+    cluster2.mean = sentence_list[sentences[1]].representation
     distribution, temp_distribution = {}, {}
 
     for iteration in range(51):
@@ -707,15 +707,15 @@ def bi_clustering(*, cluster, sentence_list, distance_num):
             temp_distance2 = sentence_list[sentence].distance(cluster2.mean, distance_num)
 
             if temp_distance1 < temp_distance2:
-                cluster1.add_member()
+                cluster1.add_member(sentence)
                 temp_distribution[sentence] = 1
             else:
-                cluster2.add_member()
+                cluster2.add_member(sentence)
                 temp_distribution[sentence] = 2
 
         #-------------------- For each cluster, compute its new mean
-        cluster1.update_mean()
-        cluster2.update_mean()
+        cluster1.update_mean(sentence_list=sentence_list)
+        cluster2.update_mean(sentence_list=sentence_list)
 
         #-------------------- If the clustering doesn't change, exit the loop
         if distribution == temp_distribution:
