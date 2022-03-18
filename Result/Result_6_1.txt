@@ -1,0 +1,72 @@
+Algorithm Type : 6    |    Distance Type : 1
+
+
+Iteration : 1    |   Average Time Cost : 7.509635000000001 second
+
+Begin Time : 2.867652    |    End Time : 10.377287
+score['rouge-1']['r'] = 0.19194312796208532
+score['rouge-1']['p'] = 1.0
+score['rouge-1']['f'] = 0.3220675917313614
+score['rouge-2']['r'] = 0.1244367417677643
+score['rouge-2']['p'] = 0.9728997289972899
+score['rouge-2']['f'] = 0.2206515038281758
+
+Iteration : 2    |   Average Time Cost : 5.316007000000001 second
+
+Begin Time : 11.655116    |    End Time : 14.777495
+score['rouge-1']['r'] = 0.1945076000170787
+score['rouge-1']['p'] = 1.0
+score['rouge-1']['f'] = 0.3256622046503465
+score['rouge-2']['r'] = 0.1267829354484467
+score['rouge-2']['p'] = 0.9677931480807345
+score['rouge-2']['f'] = 0.22418276764090336
+
+Iteration : 3    |   Average Time Cost : 5.938509000000001 second
+
+Begin Time : 15.409076    |    End Time : 22.592589
+score['rouge-1']['r'] = 0.19883416989294248
+score['rouge-1']['p'] = 1.0
+score['rouge-1']['f'] = 0.33166409975179767
+score['rouge-2']['r'] = 0.13177186468065513
+score['rouge-2']['p'] = 0.9702747971331881
+score['rouge-2']['f'] = 0.23196263075443735
+
+Iteration : 4    |   Average Time Cost : 6.778014250000002 second
+
+Begin Time : 26.621761    |    End Time : 35.918291
+score['rouge-1']['r'] = 0.19486895651754677
+score['rouge-1']['p'] = 1.0
+score['rouge-1']['f'] = 0.32608427179705357
+score['rouge-2']['r'] = 0.13255303644152583
+score['rouge-2']['p'] = 0.9712319942642337
+score['rouge-2']['f'] = 0.23321597543929817
+
+Iteration : 5    |   Average Time Cost : 6.816569800000002 second
+
+Begin Time : 38.291461    |    End Time : 45.262253
+score['rouge-1']['r'] = 0.19695088368911073
+score['rouge-1']['p'] = 1.0
+score['rouge-1']['f'] = 0.32899393755367345
+score['rouge-2']['r'] = 0.13253992103873263
+score['rouge-2']['p'] = 0.9709380792126829
+score['rouge-2']['f'] = 0.2331979097311388
+
+Iteration : 6    |   Average Time Cost : 6.729165666666668 second
+
+Begin Time : 47.579205    |    End Time : 53.87135
+score['rouge-1']['r'] = 0.19751023372148327
+score['rouge-1']['p'] = 1.0
+score['rouge-1']['f'] = 0.32978821263009794
+score['rouge-2']['r'] = 0.13254332185171727
+score['rouge-2']['p'] = 0.9708123137169912
+score['rouge-2']['f'] = 0.2332066944813174
+
+Iteration : 7    |   Average Time Cost : 5.962614714285715 second
+
+Begin Time : 55.792795    |    End Time : 57.156104
+score['rouge-1']['r'] = 0.20806999625106729
+score['rouge-1']['p'] = 1.0
+score['rouge-1']['f'] = 0.34367079493675107
+score['rouge-2']['r'] = 0.14061545300085732
+score['rouge-2']['p'] = 0.9702200784240878
+score['rouge-2']['f'] = 0.2450698287158341

@@ -1,6 +1,9 @@
 from ast import Return
 from dis import dis
-from xmlrpc.client import MAXINT
+from tkinter.tix import MAX
+from turtle import distance
+from xmlrpc.client import MAXINT, MININT
+from importlib_metadata import distribution
 import nltk
 import json_lines
 import math
@@ -9,8 +12,8 @@ import networkx as nx
 from . import file
 
 # Change this variable to your python3.7 directory
-PYTHON_DIRECTORY = '/Library/Frameworks/Python.framework/Versions/3.7/bin/python3.7'
-#PYTHON_DIRECTORY = '/usr/bin/python3.7'
+# PYTHON_DIRECTORY = '/Library/Frameworks/Python.framework/Versions/3.7/bin/python3.7'
+PYTHON_DIRECTORY = '/usr/bin/python3.7'
 
 #-------------------- CLASSES --------------------
 
@@ -119,11 +122,10 @@ class Cluster:
             self.mean = []
         else:
             feature_num = len(sentence_list[0].representation)
-            self.mean = np.zeros([1, feature_num])
+            self.mean = np.zeros(feature_num)
 
             for sentence in self.members:
-                vector = sentence.representation
-
+                vector = sentence_list[sentence].representation
                 for i in range(feature_num):
                     self.mean[i] += vector[i]
 
@@ -131,6 +133,17 @@ class Cluster:
                 self.mean[i] /= len(self.members)
 
         return self.mean
+
+    # Compute and return the Sum of Squared Error
+    def compute_sse(self, sentence_list, distance_num):
+        mean = self.update_mean(sentence_list=sentence_list)
+        sse = 0
+
+        for sentence in self.members:
+            distance = sentence_list[sentence].distance(mean, distance_num)
+            sse += distance * distance
+
+        return sse
 
     # Compute the average distance between all sentences from this cluster and another cluster
     def avg_distance(self, second_cluster, sentence_list, distance_num):
@@ -203,6 +216,12 @@ def summarize_text(*, input_file, output_file, compression_rate, number_of_clust
             number_of_clusters=number_of_clusters, distance_num=distance_num)
     elif algorithm_num == 5:
         final_summary = complete_agglomerative_cluster(sentence_list=sentence_list, compression_rate=compression_rate, \
+            number_of_clusters=number_of_clusters, distance_num=distance_num)
+    elif algorithm_num == 6:
+        final_summary = k_means(sentence_list=sentence_list, compression_rate=compression_rate, \
+            number_of_clusters=number_of_clusters, distance_num=distance_num)
+    elif algorithm_num == 7:
+        final_summary = bi_k_means(sentence_list=sentence_list, compression_rate=compression_rate, \
             number_of_clusters=number_of_clusters, distance_num=distance_num)
     else:
         print('\n\nException : Unknown Algorithm. Please reset the algorithm num.\n\n')
@@ -515,7 +534,7 @@ def single_agglomerative_cluster(*, sentence_list, compression_rate, number_of_c
     return final_summary
 
 
-# Complete-Agglomerative-Clustering Algorithm - Algorithm No. 4
+# Complete-Agglomerative-Clustering Algorithm - Algorithm No. 5
 def complete_agglomerative_cluster(*, sentence_list, compression_rate, number_of_clusters, distance_num):
     cluster_list = []
 
@@ -555,3 +574,156 @@ def complete_agglomerative_cluster(*, sentence_list, compression_rate, number_of
 
     print("\n-------------------- Finished --------------------\n")
     return final_summary
+
+
+# K-Means-Clustering Algorithm - Algorithm No. 6
+def k_means(*, sentence_list, compression_rate, number_of_clusters, distance_num):
+    #-------------------- Initialize the initial cluster with random centers
+    cluster_list = []
+    for i in range(number_of_clusters):
+        temp_cluster = Cluster(i)
+        temp_cluster.add_member(i)
+        temp_cluster.update_mean(sentence_list=sentence_list)
+        cluster_list.append(temp_cluster)
+
+    # Decalre the distribution table
+    distribution, temp_distribution = {}, {}
+
+    #-------------------- Starting clustering algorithm
+    for iteration in range(number_of_clusters, 51):
+        print('\n\n-------------------- Iteration: ', iteration - number_of_clusters, '--------------------\n')
+        
+        #-------------------- Allocate each sentence to a cluster with a lowest distance
+        for i in range(len(sentence_list)):
+            min_distance, closest_cluster = MAXINT, -1
+
+            for j in range(len(cluster_list)):  # Compute its distance to each cluster means
+                temp_distance = sentence_list[i].distance(cluster_list[j].mean, distance_num)
+                #print(temp_distance, min_distance)
+
+                if temp_distance < min_distance:
+                    closest_cluster, min_distance = j, temp_distance
+
+            cluster_list[closest_cluster].add_member(i)
+            temp_distribution[i] = closest_cluster
+
+        #-------------------- For each cluster, compute its new mean
+        for cluster in cluster_list:
+            cluster.update_mean(sentence_list=sentence_list)
+            print(len(cluster.members))
+
+        print(temp_distribution, distribution)
+
+        #-------------------- If the clustering doesn't change, exit the loop
+        if distribution == temp_distribution:
+            #-------------------- If the clustering is the same as last clustering, exit the loop
+            print("\n-------------------- Exit Loop --------------------\n")
+            break
+        else:
+            # Store the clustering for 
+            distribution = temp_distribution
+            temp_distribution = {}
+
+            # Re-intialize each cluster
+            for cluster in cluster_list:
+                cluster.members = []
+
+    print("\n-------------------- Final Summary --------------------\n")
+    final_summary = produce_summary_for_clustering(cluster_list=cluster_list, \
+        sentence_list=sentence_list, compression_rate=compression_rate, distance_num=distance_num)
+
+    print("\n-------------------- Finished --------------------\n")
+    return final_summary
+
+# Bi-K-Means-Clustering Algorithm - Algorithm No. 7
+def bi_k_means(*, sentence_list, compression_rate, number_of_clusters, distance_num):
+    print("\n-------------------- Initialize Cluster --------------------\n")
+    init_cluster = Cluster(0)
+    for i in range(len(sentence_list)):
+        init_cluster.add_member(i)
+    cluster_list = [init_cluster]
+
+    print("\n-------------------- Enter Loop --------------------\n")
+    # Continue when there are less cluster than required
+    while len(cluster_list) < number_of_clusters:
+        print("\n-------------------- Number of clusters : {} --------------------\n".format(str(len(cluster_list))))
+        max_reduce_sse, remove_cluster = MININT, -1
+        append_cluster1, append_cluster2 =  Cluster(len(cluster_list)), Cluster(len(cluster_list)+1)
+
+        for cluster in cluster_list:
+            # If this cluster can be divided
+            if len(cluster.members) >= 2:
+                # Compute the current square of sum
+                current_sse = cluster.compute_sse(sentence_list=sentence_list, distance_num=distance_num)
+
+                # Attempt binary clustering in the current cluster
+                (new_cluster1, new_cluster2) = bi_clustering(cluster=cluster, sentence_list=sentence_list, distance_num=distance_num)
+
+                # Compute the new square of sum
+                new_sse = new_cluster1.compute_sse(sentence_list=sentence_list, distance_num=distance_num) + \
+                    new_cluster2.compute_sse(sentence_list=sentence_list, distance_num=distance_num)
+                
+                # If it is able to reduce the sse in a maximum scale, then store this information
+                if current_sse - new_sse > max_reduce_sse:
+                    max_reduce_sse = current_sse - new_sse
+                    remove_cluster = cluster
+                    append_cluster1, append_cluster2 = new_cluster1, new_cluster2
+            else:
+                continue
+
+        # Remove the cluster that can reduce sse of greatest
+        cluster_list.remove(remove_cluster)
+        # And append the two cluster divided from the original one
+        cluster_list.append(append_cluster1)
+        cluster_list.append(append_cluster2)
+
+        sentence_num = 0
+        for cluster in cluster_list:
+            sentence_num += len(cluster.members)
+        assert(sentence_num==len(sentence_list))
+
+    print("\n-------------------- Final Summary --------------------\n")
+    final_summary = produce_summary_for_clustering(cluster_list=cluster_list, \
+        sentence_list=sentence_list, compression_rate=compression_rate, distance_num=distance_num)
+
+    print("\n-------------------- Finished --------------------\n")
+    return final_summary
+
+
+def bi_clustering(*, cluster, sentence_list, distance_num):
+    if len(cluster.members) < 2:
+        return
+
+    sentences = cluster.members
+    cluster1, cluster2 = Cluster(1), Cluster(2)
+    cluster1.mean = sentence_list[sentences[0]].representation
+    cluster2.mean = sentence_list[sentences[1]].representation
+    distribution, temp_distribution = {}, {}
+
+    for iteration in range(51):
+        print('\n\n-------------------- Bi-Cluster-Iteration: ', iteration, '--------------------\n')
+        for sentence in sentences:
+            temp_distance1 = sentence_list[sentence].distance(cluster1.mean, distance_num)
+            temp_distance2 = sentence_list[sentence].distance(cluster2.mean, distance_num)
+
+            if temp_distance1 < temp_distance2:
+                cluster1.add_member(sentence)
+                temp_distribution[sentence] = 1
+            else:
+                cluster2.add_member(sentence)
+                temp_distribution[sentence] = 2
+
+        #-------------------- For each cluster, compute its new mean
+        cluster1.update_mean(sentence_list=sentence_list)
+        cluster2.update_mean(sentence_list=sentence_list)
+
+        #-------------------- If the clustering doesn't change, exit the loop
+        if distribution == temp_distribution:
+            return (cluster1, cluster2)
+        else:
+            # Store the clustering for 
+            distribution = temp_distribution
+            temp_distribution = {}
+
+            cluster1.members = []
+            cluster2.members = []
