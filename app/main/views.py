@@ -28,81 +28,96 @@ def requires_roles(*roles):
 @main.route('/')
 def index():
     # print(models.getAllPatients())
-    return render_template('index.html')
+  return render_template('index.html')
 
 @main.route('/uploadPage', methods=['GET', 'POST'])
 @flask_login.login_required
 @requires_roles('doctor')
 def uploadAudioPage():
-    print(flask_login.current_user.get_role() == 'patient')
-    form = AppointmentForm()
-    if form.validate_on_submit():
-        if form.appointmentDate.data < datetime.date.now():
-            return redirect(url_for('uploadAudioPage'))
-        else:
-            return redirect(url_for('upload'))
-    return render_template('uploadPage.html', form=form, patients=models.getAllPatients())
+  print(flask_login.current_user.get_role() == 'patient')
+  form = AppointmentForm()
+  if form.validate_on_submit():
+    if form.appointmentDate.data < datetime.date.now():
+      return redirect(url_for('uploadAudioPage'))
+    else:
+      return redirect(url_for('upload'))
+  return render_template('uploadPage.html', form=form, patients=models.getAllPatients())
 
 @main.route('/upload', methods=['GET', 'POST'])
 @flask_login.login_required
 @requires_roles('doctor')
 def upload():
-    file = request.files['inputFile']
-    current_doctor_id = flask_login.current_user.id
-    patient_id = request.form.get('patient')
+  file = request.files['inputFile']
+  current_doctor_id = flask_login.current_user.id
+  patient_id = request.form.get('patient')
+  appointment_date = request.form.get('appointmentDate')
 
-    writeFile(file.read(), file.filename)
+    # print(appointment_date)
+    # print(datetime.now())
 
-    appointment_date = request.form.get('appointmentDate')
+  writeFile(file.read(), file.filename)
+
 
     # speech_to_text.speech_to_text(inputfile='app/audio/' + file.filename, outputfile="app/file/input.txt")
 
     # text_summarizer.summarize_text(input_file='app/file/input.txt', output_file="app/file/output.txt", \
     #   compression_rate=0.3, number_of_clusters=2, algorithm_num=1, distance_num=3)
 
-    models.addProcessedFile(file.filename, patient_id, current_doctor_id, appointment_date)
+  models.addProcessedFile(file.filename, patient_id, current_doctor_id, appointment_date)
+
+  patient = models.getPatient(patient_id)
     
-    file_content = list()
-    f = open("app/file/output.txt")
-    for line in f:
-        file_content.append(line)
+  file_content = list()
+  f = open("app/file/output.txt")
+  for line in f:
+    file_content.append(line)
 
-    # return file_content
+  return render_template('showProcessedAudio.html', lines=file_content, patient=patient)
+  
 
-    return render_template('showProcessedAudio.html', lines=file_content)
+# @main.route('/viewRecords', methods='GET')
+# @flask_login.login_required
+# @requires_roles('doctor')
+# def viewRecords():
+#   current_patient_id = flask_login.current_user.id
+#   files = models.getPatientFiles(current_patient_id)
+
+
 
 @main.route('/viewPatientRecords', methods=['GET', 'POST'])
 @flask_login.login_required
-@requires_roles('doctor')
 def viewPatientRecords():
+  headings = ('name', 'appointment date', 'download')
+  if flask_login.current_user.has_role('doctor'):
     patient_id = request.form['patient']
     files = models.getPatientFiles(patient_id)
-    headings = ('name', 'appointment date', 'download')
-
     return render_template('viewPatientRecords.html', files=files)
+  if flask_login.current_user.has_role('patient'):
+    patient_id = flask_login.current_user.id
+    files = models.getPatientFiles(patient_id)
+    return render_template('viewPatientRecords.html', files=files)
+
+
 
 
 @main.route('/download', methods=['GET', 'POST'])
 @flask_login.login_required
 @requires_roles('doctor')
 def download():
-    file_id = request.form['patientFile']
-    # appointment_date = request.files['appointmentDate']
-    # doctor_id = request.form['doctor']
+  file_id = request.form['patientFile']
 
+  patientFile = models.getFile(file_id)
 
-    patientFile = models.getFile(file_id)
-
-    return send_file(BytesIO(patientFile.processedData), attachment_filename=patientFile.name, as_attachment=True)
+  return send_file(BytesIO(patientFile.processedData), attachment_filename=patientFile.name, as_attachment=True)
     # return redirect(url_for('viewPatients'))
 
 @main.route('/viewPatients', methods=['GET'])
 @flask_login.login_required
 @requires_roles('doctor')
 def viewPatients():
-    headings = ("first name", "last name", "age", "email", "username")
-    return render_template('viewPatients.html', headings=headings, patients=models.getAllPatients())
+  headings = ("first name", "last name", "age", "email", "username")
+  return render_template('viewPatients.html', headings=headings, patients=models.getAllPatients())
 
 def writeFile(data, filename):
-    with open('app/audio/' + filename, 'wb') as file:
-        file.write(data)
+  with open('app/audio/' + filename, 'wb') as file:
+      file.write(data)
