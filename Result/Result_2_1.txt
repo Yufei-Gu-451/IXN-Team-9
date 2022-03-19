@@ -1,2 +1,32 @@
 Algorithm Type : 2    |    Distance Type : 1
 
+
+Iteration : 1    |   Average Time Cost : 369.343093 second
+
+Begin Time : 2.968702    |    End Time : 372.311795
+score['rouge-1']['r'] = 0.2014218009478673
+score['rouge-1']['p'] = 1.0
+score['rouge-1']['f'] = 0.335305717130197
+score['rouge-2']['r'] = 0.13067590987868286
+score['rouge-2']['p'] = 0.9617346938775511
+score['rouge-2']['f'] = 0.23008849346897572
+
+Iteration : 2    |   Average Time Cost : 211.635501 second
+
+Begin Time : 373.659567    |    End Time : 427.587476
+score['rouge-1']['r'] = 0.2144496392126724
+score['rouge-1']['p'] = 1.0
+score['rouge-1']['f'] = 0.3529739579727578
+score['rouge-2']['r'] = 0.14291553251691902
+score['rouge-2']['p'] = 0.9652423469387755
+score['rouge-2']['f'] = 0.24878022483705914
+
+Iteration : 3    |   Average Time Cost : 334.498517 second
+
+Begin Time : 428.424907    |    End Time : 1008.649456
+score['rouge-1']['r'] = 0.2195315699658087
+score['rouge-1']['p'] = 1.0
+score['rouge-1']['f'] = 0.35984297475314286
+score['rouge-2']['r'] = 0.145480048625159
+score['rouge-2']['p'] = 0.9661520747088872
+score['rouge-2']['f'] = 0.25274056118935934

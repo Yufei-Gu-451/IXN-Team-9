@@ -1,7 +1,9 @@
+from re import X
 from xmlrpc.client import MAXINT, MININT
 import nltk
 import json_lines
 import math
+import random
 import numpy as np
 import networkx as nx
 from sklearn.cluster import MeanShift
@@ -10,8 +12,6 @@ from . import file
 # Change this variable to your python3.7 directory
 PYTHON_DIRECTORY = '/Library/Frameworks/Python.framework/Versions/3.7/bin/python3.7'
 # PYTHON_DIRECTORY = '/usr/bin/python3.7'
-
-#-------------------- CLASSES --------------------
 
 class Feature:
     def __init__(self, word):
@@ -184,11 +184,35 @@ class Cluster:
         return max_distance
 
 
-#-------------------- MAIN BODY OF SUMMARIZER
+
+
+#---------------------------------------- MAIN BODY OF SUMMARIZER ----------------------------------------
+
+
 def summarize_text(*, input_file, output_file, compression_rate, number_of_clusters, algorithm_num, distance_num):
+    print('\n-------------------- Create temp files --------------------\n')
+
+    # Generate a random unused number for temp files
+    temp_file_num = 0
+    while file.exists_file('app/file/temp_input/temp_input_{}.txt'.format(str(temp_file_num))):
+        temp_file_num = random.randint(0, MAXINT)
+
+    # Define the name of temp files
+    temp_file_address = 'app/file/temp_input/temp_input_{}.txt'.format(str(temp_file_num))
+    temp_file_token_address = 'app/file/temp_input_token/temp_input_token_{}.txt'.format(str(temp_file_num))
+    temp_file_features_address = 'app/file/temp_features/temp_features_{}.jsonl'.format(str(temp_file_num))
+
+    # Create temp files
+    file.create_file(temp_file_address)
+    file.create_file(temp_file_token_address)
+    file.create_file(temp_file_features_address)
+
+
     print('\n-------------------- Preprocessing started --------------------\n')
 
-    sentence_list = preprocessing(input_file=input_file, algorithm_num=algorithm_num, distance_num=distance_num)
+    sentence_list = preprocessing(input_file=input_file, temp_file_address=temp_file_address, \
+        temp_file_token_address=temp_file_token_address, temp_file_features_address=temp_file_features_address)
+
 
     print('\n-------------- The number of sentences : ', len(sentence_list), '--------------\n')
     # If too less text : output and exit summarization
@@ -224,12 +248,25 @@ def summarize_text(*, input_file, output_file, compression_rate, number_of_clust
             distance_num=distance_num)
     else:
         print('\n\nException : Unknown Algorithm. Please reset the algorithm num.\n\n')
+        return 1
+
+
+    print('\n\n-------------------- Write summary to output file --------------------\n')
 
     file.write_txt_file(output_file_name=output_file, text=final_summary, append=False)
 
 
+    print('\n\n-------------------- Delete temp files --------------------\n')
+
+    file.delete_file(temp_file_address)
+    file.delete_file(temp_file_token_address)
+    file.delete_file(temp_file_features_address)
+
+    return 0
+
+
 # Preprocess the text file and extract features for the sentences
-def preprocessing(*, input_file, algorithm_num, distance_num):
+def preprocessing(*, input_file, temp_file_address, temp_file_token_address, temp_file_features_address):
     print('\n-------------------- Split sentences and get tokens --------------------\n')
 
     input_text = file.read_txt_file(filename=input_file)
@@ -251,11 +288,6 @@ def preprocessing(*, input_file, algorithm_num, distance_num):
         sentence_num += 1
 
     print('\n-------------------- Prepare text files --------------------\n')
-
-    # Define the temporal files used
-    temp_file_address = 'app/file/temp_input/temp_input_{}_{}.txt'.format(str(algorithm_num), str(distance_num))
-    temp_file_token_address = 'app/file/temp_input_token/temp_input_token_{}_{}.txt'.format(str(algorithm_num), str(distance_num))
-    temp_file_features_address = 'app/file/temp_features/temp_features_{}_{}.jsonl'.format(str(algorithm_num), str(distance_num))
 
     # Write sentences and tokens
     file.write_txt_file(output_file_name=temp_file_address, text=sentence_split_text, append=False)

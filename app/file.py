@@ -2,10 +2,8 @@ import filetype
 import os
 
 # Create a file
-# If file exists, remove all text
 def create_file(*, file_name):
-    file = open(file_name, 'w+')
-    file.write('')
+    file = open(file_name, 'w')
     file.close()
 
 # Delete a file

@@ -8,7 +8,7 @@ NUMBER_OF_CLUSTERS = 4
 ALGORITHM_NUM = 2
 DISTANCE_NUM = 1
 FILE_START = 2501
-FILE_END = 3000
+FILE_END = 2700
 RESULT_FILE = 'Result/Result_{}_{}.txt'.format(str(ALGORITHM_NUM), str(DISTANCE_NUM))
 
 files_rouge = FilesRouge()
