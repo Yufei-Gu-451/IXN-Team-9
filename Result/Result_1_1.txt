@@ -1,12 +1,5 @@
-Algorithm Type : 1    |    Distance Type : 1
+Algorithm : K-Center Clustering
+
+Metric : Euclidean Distance
 
 
-Iteration : 1    |   Average Time Cost : 17.370342 second
-
-Begin Time : 3.05198    |    End Time : 20.422322
-score['rouge-1']['r'] = 0.20300157977883096
-score['rouge-1']['p'] = 1.0
-score['rouge-1']['f'] = 0.3374917897093591
-score['rouge-2']['r'] = 0.1289428076256499
-score['rouge-2']['p'] = 0.9662337662337662
-score['rouge-2']['f'] = 0.22752293370231652

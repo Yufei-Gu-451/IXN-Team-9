@@ -1,0 +1,13 @@
+Algorithm : OPTICS Clustering
+
+Metric : Manhattan Distance
+
+
+
+Iteration : 1    |   Average Time Cost : 2.5466539999999998 second
+score['rouge-1']['r'] = 0.002369668246445498
+score['rouge-1']['p'] = 1.0
+score['rouge-1']['f'] = 0.004728132340537309
+score['rouge-2']['r'] = 0.0006932409012131716
+score['rouge-2']['p'] = 1.0
+score['rouge-2']['f'] = 0.0013855212885444097

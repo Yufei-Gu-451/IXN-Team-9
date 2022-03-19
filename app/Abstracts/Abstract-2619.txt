@@ -1,1 +1,0 @@
-The nucleus is a critical subcellular compartment for the pathogenesis of polyglutamine disorders, including Huntington's disease (HD). Recent studies suggest the first 17-amino-acid domain (N17) of mutant Huntingtin (mHTT) mediates its nuclear exclusion in cultured cells. Here, we test whether N17 could be a molecular determinant of nuclear mHTT pathogenesis
