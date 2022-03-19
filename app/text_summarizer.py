@@ -1,19 +1,15 @@
-from ast import Return
-from dis import dis
-from tkinter.tix import MAX
-from turtle import distance
 from xmlrpc.client import MAXINT, MININT
-from importlib_metadata import distribution
 import nltk
 import json_lines
 import math
 import numpy as np
 import networkx as nx
+from sklearn.cluster import MeanShift
 from . import file
 
 # Change this variable to your python3.7 directory
-# PYTHON_DIRECTORY = '/Library/Frameworks/Python.framework/Versions/3.7/bin/python3.7'
-PYTHON_DIRECTORY = '/usr/bin/python3.7'
+PYTHON_DIRECTORY = '/Library/Frameworks/Python.framework/Versions/3.7/bin/python3.7'
+# PYTHON_DIRECTORY = '/usr/bin/python3.7'
 
 #-------------------- CLASSES --------------------
 
@@ -223,6 +219,9 @@ def summarize_text(*, input_file, output_file, compression_rate, number_of_clust
     elif algorithm_num == 7:
         final_summary = bi_k_means(sentence_list=sentence_list, compression_rate=compression_rate, \
             number_of_clusters=number_of_clusters, distance_num=distance_num)
+    elif algorithm_num == 8:
+        final_summary = mean_shift_clustering(sentence_list=sentence_list, compression_rate=compression_rate, \
+            distance_num=distance_num)
     else:
         print('\n\nException : Unknown Algorithm. Please reset the algorithm num.\n\n')
 
@@ -409,47 +408,6 @@ def upgma_agglomerative_cluster(*, sentence_list, compression_rate, number_of_cl
         sentence_list=sentence_list, compression_rate=compression_rate, distance_num=distance_num)
 
     print("\n-------------------- Finished --------------------\n")
-    return final_summary
-
-
-# Select sentences in clustering algorithms and produce a final summary
-def produce_summary_for_clustering(*, cluster_list, sentence_list, compression_rate, distance_num):
-
-    print("\n\n-------------------- Produce the final summary --------------------\n\n")
-
-    selected_sentences = [] #select the top sentences in each cluster
-    for cluster in cluster_list:
-        print('\n\nCenter of cluster : ', cluster.center)
-        distance_dict = {}
-
-        for i in cluster.members: # i is the no of sentences in sentence_list
-            #print(i, sentence_list[i].distance(sentence_list[cluster.center].representation))
-            distance_dict[i] = sentence_list[i].distance(sentence_list[cluster.center].representation, distance_num)
-
-        # Sort the sentences according to their distance to center
-        sorted_list = sorted(distance_dict.items(), key = lambda item:item[1])
-        print('Sorted similiarity dict : ', sorted_list)
-
-        # Calculate the number of sentences to be selected in this cluster
-        num_sentence_selected = int(len(cluster.members)*compression_rate) + 1
-        print('Number of sentence selected in this cluster : ', num_sentence_selected)
-
-        # Select the best sentences in this cluster
-        print('Sentence selected : ', end = '')
-        for i in range(num_sentence_selected):
-            selected_sentences.append(sorted_list[i][0])
-            print(sorted_list[i][0], end = ' ')
-
-    # Restore the original order
-    selected_sentences.sort()
-    print('\n\nAll sentence selected : ', selected_sentences, '\n\n')
-
-    # Find the corresponding sentence text and add them to final summary
-    final_summary = ''
-    for i in selected_sentences:
-        print(sentence_list[i].sentence_text)
-        final_summary += sentence_list[i].sentence_text + ' '
-
     return final_summary
 
 
@@ -690,6 +648,7 @@ def bi_k_means(*, sentence_list, compression_rate, number_of_clusters, distance_
     return final_summary
 
 
+# Split one cluster into two cluster using k-means clustering mechanism
 def bi_clustering(*, cluster, sentence_list, distance_num):
     if len(cluster.members) < 2:
         return
@@ -727,3 +686,75 @@ def bi_clustering(*, cluster, sentence_list, distance_num):
 
             cluster1.members = []
             cluster2.members = []
+
+
+# Means-Shift-Clustering Algorithm - Algorithm No. 8
+def mean_shift_clustering(*, sentence_list, compression_rate, distance_num):
+    print("\n-------------------- Initialize Matrix --------------------\n")
+    Matrix = []
+    for sentence in sentence_list:
+        Matrix.append(sentence.representation)
+    print("-------------------- Number of sentences : {}--------------------\n".format(str(len(Matrix))))
+
+    print("\n-------------------- Perform clustering --------------------\n")
+    clustering = MeanShift().fit(Matrix)
+    labels = list(clustering.labels_)
+    print("-------------------- Number of clusters : {}--------------------\n".format(str(max(labels))))
+
+    print("\n-------------------- Get Clustering Result --------------------\n")
+    cluster_list = []
+    for i in range(max(labels) + 1):
+        cluster_list.append(Cluster(i))
+
+    for i in range(len(labels)):
+        cluster_list[labels[i]].add_member(i)
+
+    print("-------------------- Number of clusters : {}--------------------\n".format(str(len(cluster_list))))
+
+    print("\n-------------------- Final Summary --------------------\n")
+    final_summary = produce_summary_for_clustering(cluster_list=cluster_list, \
+        sentence_list=sentence_list, compression_rate=compression_rate, distance_num=distance_num)
+
+    print("\n-------------------- Finished --------------------\n")
+    return final_summary
+
+
+
+# Select sentences in clustering algorithms and produce a final summary
+def produce_summary_for_clustering(*, cluster_list, sentence_list, compression_rate, distance_num):
+
+    print("\n\n-------------------- Produce the final summary --------------------\n\n")
+
+    selected_sentences = [] #select the top sentences in each cluster
+    for cluster in cluster_list:
+        cluster.update_mean(sentence_list)
+        distance_dict = {}
+
+        for i in cluster.members: # i is the no of sentences in sentence_list
+            distance_dict[i] = sentence_list[i].distance(cluster.mean, distance_num)
+
+        # Sort the sentences according to their distance to center
+        sorted_list = sorted(distance_dict.items(), key = lambda item:item[1])
+        print('Sorted similiarity dict : ', sorted_list)
+
+        # Calculate the number of sentences to be selected in this cluster
+        num_sentence_selected = int(len(cluster.members)*compression_rate) + 1
+        print('Number of sentence selected in this cluster : ', num_sentence_selected)
+
+        # Select the best sentences in this cluster
+        print('Sentence selected : ', end = '')
+        for i in range(num_sentence_selected):
+            selected_sentences.append(sorted_list[i][0])
+            print(sorted_list[i][0], end = ' ')
+
+    # Restore the original order
+    selected_sentences.sort()
+    print('\n\nAll sentence selected : ', selected_sentences, '\n\n')
+
+    # Find the corresponding sentence text and add them to final summary
+    final_summary = ''
+    for i in selected_sentences:
+        print(sentence_list[i].sentence_text)
+        final_summary += sentence_list[i].sentence_text + ' '
+
+    return final_summary
