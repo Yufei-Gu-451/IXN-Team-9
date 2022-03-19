@@ -1,5 +1,0 @@
-Algorithm : K-Center Clustering
-
-Metric : Euclidean Distance
-
-
