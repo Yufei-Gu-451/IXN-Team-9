@@ -1,0 +1,13 @@
+Algorithm : OPTICS Clustering
+
+Metric : Cosine Similarity
+
+
+
+Iteration : 1    |   Average Time Cost : 2.2508269999999997 second
+score['rouge-1']['r'] = 0.38400900900900903
+score['rouge-1']['p'] = 1.0
+score['rouge-1']['f'] = 0.5549226973737076
+score['rouge-2']['r'] = 0.28378378378378377
+score['rouge-2']['p'] = 0.9742268041237113
+score['rouge-2']['f'] = 0.4395348802270417

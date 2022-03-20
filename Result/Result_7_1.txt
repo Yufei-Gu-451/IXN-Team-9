@@ -1,0 +1,13 @@
+Algorithm : DBSCAN Clustering
+
+Metric : Euclidean Distance
+
+
+
+Iteration : 1    |   Average Time Cost : 2.8126429999999996 second
+score['rouge-1']['r'] = 0.11599099099099099
+score['rouge-1']['p'] = 1.0
+score['rouge-1']['f'] = 0.2078708356751836
+score['rouge-2']['r'] = 0.07857857857857858
+score['rouge-2']['p'] = 0.9751552795031055
+score['rouge-2']['f'] = 0.14543770125989833

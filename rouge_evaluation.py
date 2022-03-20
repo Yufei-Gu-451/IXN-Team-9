@@ -7,9 +7,9 @@ import time
 COMPRESSION_RATE = 0.1
 NUMBER_OF_CLUSTERS = 5
 ALGORITHM_NUM = 7
-DISTANCE_NUM = 1
-ITERATION_NUM = 200
-FILE_START = 2501
+DISTANCE_NUM = 2
+ITERATION_NUM = 1
+FILE_START = 2502
 FILE_END = FILE_START + ITERATION_NUM
 
 
@@ -28,6 +28,8 @@ elif ALGORITHM_NUM == 6:
     TEXT = 'Algorithm : Upgma Agglomerative Clustering\n\n'
 elif ALGORITHM_NUM == 7:
     TEXT = 'Algorithm : DBSCAN Clustering\n\n'
+    if DISTANCE_NUM != 1:
+        print('\n\nException : DBSCAN has no choice of distance method\n\n')
 elif ALGORITHM_NUM == 8:
     TEXT = 'Algorithm : OPTICS Clustering\n\n'
 elif ALGORITHM_NUM == 9:
@@ -64,7 +66,7 @@ time.clock() # Initialize for Windows OS
 sum_time = 0
 
 # Main loop for testing
-for i in range(FILE_START, FILE_END + 1):
+for i in range(FILE_START, FILE_END):
     iteration = i + 1 - FILE_START
     print('\n\n----------------- Rouge Evaluation {} ------------------\n\n'.format(iteration))
 

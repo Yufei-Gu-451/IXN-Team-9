@@ -11,8 +11,8 @@ from sklearn.cluster import MeanShift, DBSCAN, OPTICS
 from . import file
 
 # Change this variable to your python3.7 directory
-# PYTHON_DIRECTORY = '/Library/Frameworks/Python.framework/Versions/3.7/bin/python3.7'
-PYTHON_DIRECTORY = '/usr/bin/python3.7'
+PYTHON_DIRECTORY = '/Library/Frameworks/Python.framework/Versions/3.7/bin/python3.7'
+# PYTHON_DIRECTORY = '/usr/bin/python3.7'
 
 class Feature:
     def __init__(self, word):
@@ -360,6 +360,8 @@ def preprocessing(*, input_file, temp_file_address, temp_file_token_address, tem
 
 # K-Center Clustering Algorithm - Algorithm No. 1
 def k_center(*, sentence_list, compression_rate, number_of_clusters, distance_num):
+    print('\n\n\n-------------------- Algorithm 1 : K-Center Clustering --------------------\n\n\n')
+
     #-------------------- Initialize the initial cluster with random centers
     cluster_list, center_list = [], [] # Stored center of all Clusters
 
@@ -417,6 +419,8 @@ def k_center(*, sentence_list, compression_rate, number_of_clusters, distance_nu
 
 # K-Means-Clustering Algorithm - Algorithm No. 2
 def k_means(*, sentence_list, compression_rate, number_of_clusters, distance_num):
+    print('\n\n\n-------------------- Algorithm 2 : K-Means Clustering --------------------\n\n\n')
+
     #-------------------- Initialize the initial cluster with random centers
     cluster_list = []
     for i in range(number_of_clusters):
@@ -476,7 +480,9 @@ def k_means(*, sentence_list, compression_rate, number_of_clusters, distance_num
 
 # Bi-K-Means-Clustering Algorithm - Algorithm No. 3
 def bi_k_means(*, sentence_list, compression_rate, number_of_clusters, distance_num):
-    print("\n-------------------- Initialize Cluster --------------------\n")
+    print('\n\n\n-------------------- Algorithm 3 : Bi-K-Means Clustering --------------------\n\n\n')
+
+    # Initialize the beginning single cluster which contains all sentences
     init_cluster = Cluster(0)
     for i in range(len(sentence_list)):
         init_cluster.add_member(i)
@@ -572,13 +578,16 @@ def bi_clustering(*, cluster, sentence_list, distance_num):
 
 # Single-Agglomerative-Clustering Algorithm - Algorithm No. 4
 def single_agglomerative_cluster(*, sentence_list, compression_rate, number_of_clusters, distance_num):
-    cluster_list = []
+    print('\n\n\n-------------------- Algorithm 4 : Single-Agglomerative-Clustering --------------------\n\n\n')
 
+    # Initialize the initial clusters
+    cluster_list = []
     for i in range(len(sentence_list)):
         temp_cluster = Cluster(i)
         temp_cluster.members.append(i)
         cluster_list.append(temp_cluster)
 
+    # Main loop
     while (len(cluster_list) > number_of_clusters):
         print('\n-------------------- Iteration: {} --------------------\n'.format(str(len(sentence_list) - len(cluster_list) + 1)))
 
@@ -614,13 +623,16 @@ def single_agglomerative_cluster(*, sentence_list, compression_rate, number_of_c
 
 # Complete-Agglomerative-Clustering Algorithm - Algorithm No. 5
 def complete_agglomerative_cluster(*, sentence_list, compression_rate, number_of_clusters, distance_num):
-    cluster_list = []
+    print('\n\n\n-------------------- Algorithm 5 : Complete-Agglomerative-Clustering --------------------\n\n\n')
 
+    # Initialize the initial clusters
+    cluster_list = []
     for i in range(len(sentence_list)):
         temp_cluster = Cluster(i)
         temp_cluster.members.append(i)
         cluster_list.append(temp_cluster)
 
+    # Main loop
     while (len(cluster_list) > number_of_clusters):
         print('\n-------------------- Iteration: {} --------------------\n'.format(str(len(sentence_list) - len(cluster_list) + 1)))
 
@@ -655,13 +667,16 @@ def complete_agglomerative_cluster(*, sentence_list, compression_rate, number_of
 
 # UPGMA-Agglomerative-Clustering Algorithm - Algorithm No. 6
 def upgma_agglomerative_cluster(*, sentence_list, compression_rate, number_of_clusters, distance_num):
-    cluster_list = []
+    print('\n\n\n-------------------- Algorithm 6 : UPGMA-Agglomerative-Clustering --------------------\n\n\n')
 
+    # Initialize the initial clusters
+    cluster_list = []
     for i in range(len(sentence_list)):
         temp_cluster = Cluster(i)
         temp_cluster.members.append(i)
         cluster_list.append(temp_cluster)
 
+    # Main loop
     while (len(cluster_list) > number_of_clusters):
         print('\n-------------------- Iteration: {} --------------------\n'.format(str(len(sentence_list) - len(cluster_list) + 1)))
 
@@ -697,6 +712,8 @@ def upgma_agglomerative_cluster(*, sentence_list, compression_rate, number_of_cl
 
 # DBSCAN-Clustering Algorithm - Algorithm No. 7
 def dbscan_clustering(*, sentence_list, compression_rate, distance_num):
+    print('\n\n\n-------------------- Algorithm 7 : DBSCAN-Clustering Algorithm --------------------\n\n\n')
+
     print("\n-------------------- Initialize Matrix --------------------\n")
     Matrix = []
     for sentence in sentence_list:
@@ -707,17 +724,13 @@ def dbscan_clustering(*, sentence_list, compression_rate, distance_num):
 
     print("\n-------------------- Perform clustering --------------------\n")
     if distance_num == 1:
-        clustering = DBSCAN(eps=260, metric='euclidean').fit(Matrix)
-    elif distance_num == 2:
-        clustering = DBSCAN(eps=260, metric='manhattan').fit(Matrix)
-    elif distance_num == 3:
-        clustering = DBSCAN(eps=260, metric='cosine').fit(Matrix)
+        clustering = DBSCAN(eps=0.05, min_samples=2, metric='cosine').fit(np.array(Matrix))
     else:
-        print('\n\nException : Unknown Distance Method. Please reset the distance num.\n\n')
+        print('\n\nThere is only one distance method allowed for dbscan clustering\n\n')
 
     labels = list(clustering.labels_)
     print(labels)
-    print("-------------------- Number of clusters : {}--------------------\n".format(str(max(labels) + 1)))
+    print("\n-------------------- Number of labels : {}--------------------\n".format(str(max(labels) + 1)))
 
 
     print("\n-------------------- Get Clustering Result --------------------\n")
@@ -746,6 +759,8 @@ def dbscan_clustering(*, sentence_list, compression_rate, distance_num):
 
 # OPTICS-Clustering Algorithm - Algorithm No. 8
 def optics_clustering(*, sentence_list, compression_rate, distance_num):
+    print('\n\n\n-------------------- Algorithm 8 : OPTICS-Clustering Algorithm --------------------\n\n\n')
+
     print("\n-------------------- Initialize Matrix --------------------\n")
     Matrix = []
     for sentence in sentence_list:
@@ -756,17 +771,17 @@ def optics_clustering(*, sentence_list, compression_rate, distance_num):
 
     print("\n-------------------- Perform clustering --------------------\n")
     if distance_num == 1:
-        clustering = OPTICS(max_eps=10000, metric='euclidean').fit(Matrix)
+        clustering = OPTICS(max_eps=MAXINT, min_samples=2, metric='euclidean').fit(Matrix)
     elif distance_num == 2:
-        clustering = OPTICS(max_eps=10000, metric='manhattan').fit(Matrix)
+        clustering = OPTICS(max_eps=MAXINT, min_samples=2, metric='manhattan').fit(Matrix)
     elif distance_num == 3:
-        clustering = OPTICS(max_eps=10000, metric='cosine').fit(Matrix)
+        clustering = OPTICS(max_eps=MAXINT, min_samples=2, metric='cosine').fit(Matrix)
     else:
         print('\n\nException : Unknown Distance Method. Please reset the distance num.\n\n')
 
     labels = list(clustering.labels_)
     print(labels)
-    print("-------------------- Number of clusters : {}--------------------\n".format(str(max(labels))))
+    print("-------------------- Number of labels : {} --------------------\n".format(str(max(labels) + 1)))
 
 
     print("\n-------------------- Get Clustering Result --------------------\n")
@@ -778,7 +793,12 @@ def optics_clustering(*, sentence_list, compression_rate, distance_num):
         if labels[i] != -1:
             cluster_list[labels[i]].add_member(i)
 
-    print("-------------------- Number of clusters : {}--------------------\n".format(str(len(cluster_list))))
+    print("Clustering :  ", end = '')
+    for cluster in cluster_list:
+        print(len(cluster.members), end = '   ')
+    print("\n")
+
+    print("-------------------- Number of clusters : {} --------------------\n".format(str(len(cluster_list))))
 
 
     print("\n-------------------- Final Summary --------------------\n")
@@ -793,6 +813,8 @@ def optics_clustering(*, sentence_list, compression_rate, distance_num):
 
 # Means-Shift-Clustering Algorithm - Algorithm No. 9
 def mean_shift_clustering(*, sentence_list, compression_rate):
+    print('\n\n\n-------------------- Algorithm 9 : Mean-Shift-Clustering Algorithm --------------------\n\n\n')
+
     print("\n-------------------- Initialize Matrix --------------------\n")
     Matrix = []
     for sentence in sentence_list:
@@ -830,20 +852,21 @@ def produce_summary_for_clustering(*, cluster_list, sentence_list, compression_r
 
     selected_sentences = [] #select the top sentences in each cluster
     for cluster in cluster_list:
+        # Compute the mean of the cluster
         cluster.update_mean(sentence_list)
         distance_dict = {}
 
         for i in cluster.members: # i is the no of sentences in sentence_list
             distance_dict[i] = sentence_list[i].distance(cluster.mean, distance_num)
-            print(distance_dict[i])
+            #print(distance_dict[i])
 
         # Sort the sentences according to their distance to center
         sorted_list = sorted(distance_dict.items(), key = lambda item:item[1])
-        print('Sorted similiarity dict : ', sorted_list)
+        #print('Sorted similiarity dict : ', sorted_list)
 
         # Calculate the number of sentences to be selected in this cluster
         num_sentence_selected = int(len(cluster.members)*compression_rate) + 1
-        print('Number of sentence selected in this cluster : ', num_sentence_selected)
+        print('Number of sentence selected in this cluster : ', num_sentence_selected, '\n')
 
         # Select the best sentences in this cluster
         print('Sentence selected : ', end = '')
@@ -868,8 +891,10 @@ def produce_summary_for_clustering(*, cluster_list, sentence_list, compression_r
 
 # TextRank / PageRank Algorithm - Algorithm No. 10
 def text_rank(*, sentence_list, compression_rate):
-    similarity_matrix = np.zeros([len(sentence_list), len(sentence_list)])
+    print('\n\n\n-------------------- Algorithm 10 : Text-Rank Algorithm --------------------\n\n\n')
 
+    # Initialize the similarity matrix
+    similarity_matrix = np.zeros([len(sentence_list), len(sentence_list)])
     for i in range(len(sentence_list)):
         for j in range(len(sentence_list)):
             similarity_matrix[i][j] = sentence_list[i].cosine_similarity(sentence_list[j].representation)
