@@ -1,5 +1,3 @@
-from lib2to3.pgen2.token import OP
-from re import X
 from xmlrpc.client import MAXINT, MININT
 import nltk
 import json_lines
@@ -8,6 +6,7 @@ import random
 import numpy as np
 import networkx as nx
 from sklearn.cluster import MeanShift, DBSCAN, OPTICS
+
 from . import file
 
 # Change this variable to your python3.7 directory
@@ -248,8 +247,7 @@ def summarize_text(*, input_file, output_file, compression_rate, number_of_clust
 
     # Density-Clustering
     elif algorithm_num == 7:
-        final_summary = dbscan_clustering(sentence_list=sentence_list, compression_rate=compression_rate, \
-            distance_num=distance_num)
+        final_summary = dbscan_clustering(sentence_list=sentence_list, compression_rate=compression_rate)
     elif algorithm_num == 8:
         final_summary = optics_clustering(sentence_list=sentence_list, compression_rate=compression_rate, \
             distance_num=distance_num)
@@ -425,17 +423,20 @@ def k_means(*, sentence_list, compression_rate, number_of_clusters, distance_num
     cluster_list = []
     for i in range(number_of_clusters):
         temp_cluster = Cluster(i)
-        temp_cluster.add_member(i)
-        temp_cluster.update_mean(sentence_list=sentence_list)
+        temp_cluster.mean = sentence_list[i].representation
         cluster_list.append(temp_cluster)
 
     # Decalre the distribution table
     distribution, temp_distribution = {}, {}
 
     #-------------------- Starting clustering algorithm
-    for iteration in range(number_of_clusters, 51):
-        print('\n\n-------------------- Iteration: ', iteration - number_of_clusters, '--------------------\n')
-        
+    for iteration in range(1, 51):
+        print('\n\n-------------------- Iteration: ', iteration, '--------------------\n')
+
+        #-------------------- In the beginning of each iteration, clear all clusters
+        for cluster in cluster_list:
+            cluster.members = []
+
         #-------------------- Allocate each sentence to a cluster with a lowest distance
         for i in range(len(sentence_list)):
             min_distance, closest_cluster = MAXINT, -1
@@ -451,11 +452,14 @@ def k_means(*, sentence_list, compression_rate, number_of_clusters, distance_num
             temp_distribution[i] = closest_cluster
 
         #-------------------- For each cluster, compute its new mean
+        num = 0
         for cluster in cluster_list:
             cluster.update_mean(sentence_list=sentence_list)
             print(len(cluster.members))
+            num += len(cluster.members)
+        assert len(sentence_list) == num
 
-        print(temp_distribution, distribution)
+        #print(temp_distribution, distribution)
 
         #-------------------- If the clustering doesn't change, exit the loop
         if distribution == temp_distribution:
@@ -467,9 +471,6 @@ def k_means(*, sentence_list, compression_rate, number_of_clusters, distance_num
             distribution = temp_distribution
             temp_distribution = {}
 
-            # Re-intialize each cluster
-            for cluster in cluster_list:
-                cluster.members = []
 
     print("\n-------------------- Final Summary --------------------\n")
     final_summary = produce_summary_for_clustering(cluster_list=cluster_list, \
@@ -477,6 +478,7 @@ def k_means(*, sentence_list, compression_rate, number_of_clusters, distance_num
 
     print("\n-------------------- Finished --------------------\n")
     return final_summary
+
 
 # Bi-K-Means-Clustering Algorithm - Algorithm No. 3
 def bi_k_means(*, sentence_list, compression_rate, number_of_clusters, distance_num):
@@ -525,7 +527,7 @@ def bi_k_means(*, sentence_list, compression_rate, number_of_clusters, distance_
         sentence_num = 0
         for cluster in cluster_list:
             sentence_num += len(cluster.members)
-        assert(sentence_num==len(sentence_list))
+        assert sentence_num==len(sentence_list)
 
     print("\n-------------------- Final Summary --------------------\n")
     final_summary = produce_summary_for_clustering(cluster_list=cluster_list, \
@@ -589,7 +591,7 @@ def single_agglomerative_cluster(*, sentence_list, compression_rate, number_of_c
 
     # Main loop
     while (len(cluster_list) > number_of_clusters):
-        print('\n-------------------- Iteration: {} --------------------\n'.format(str(len(sentence_list) - len(cluster_list) + 1)))
+        print('\n-------------------- Iteration: {} --------------------'.format(str(len(sentence_list) - len(cluster_list) + 1)))
 
         min_distance = MAXINT
         similar_cluster1, similar_cluster2 = -1, -1
@@ -610,7 +612,7 @@ def single_agglomerative_cluster(*, sentence_list, compression_rate, number_of_c
         cluster_list[similar_cluster1].members = cluster_list[similar_cluster1].members + cluster_list[similar_cluster2].members
         cluster_list.remove(cluster_list[similar_cluster2])
         print(similar_cluster1, 'and', similar_cluster2, 'merged')
-        print('\n---------- Number of clusters: {} ----------\n'.format(str(len(cluster_list))))
+        print('---------- Number of clusters: {} ----------\n'.format(str(len(cluster_list))))
 
     #----------- Produce final summary
     print("\n-------------------- Final Summary --------------------\n")
@@ -634,7 +636,7 @@ def complete_agglomerative_cluster(*, sentence_list, compression_rate, number_of
 
     # Main loop
     while (len(cluster_list) > number_of_clusters):
-        print('\n-------------------- Iteration: {} --------------------\n'.format(str(len(sentence_list) - len(cluster_list) + 1)))
+        print('\n-------------------- Iteration: {} --------------------'.format(str(len(sentence_list) - len(cluster_list) + 1)))
 
         min_distance = MAXINT
         similar_cluster1, similar_cluster2 = -1, -1
@@ -655,7 +657,7 @@ def complete_agglomerative_cluster(*, sentence_list, compression_rate, number_of
         cluster_list[similar_cluster1].members = cluster_list[similar_cluster1].members + cluster_list[similar_cluster2].members
         cluster_list.remove(cluster_list[similar_cluster2])
         print(similar_cluster1, 'and', similar_cluster2, 'merged')
-        print('\n---------- Number of clusters: {} ----------\n'.format(str(len(cluster_list))))
+        print('---------- Number of clusters: {} ----------\n'.format(str(len(cluster_list))))
 
     #----------- Produce final summary
     print("\n-------------------- Final Summary --------------------\n")
@@ -678,7 +680,7 @@ def upgma_agglomerative_cluster(*, sentence_list, compression_rate, number_of_cl
 
     # Main loop
     while (len(cluster_list) > number_of_clusters):
-        print('\n-------------------- Iteration: {} --------------------\n'.format(str(len(sentence_list) - len(cluster_list) + 1)))
+        print('\n-------------------- Iteration: {} --------------------'.format(str(len(sentence_list) - len(cluster_list) + 1)))
 
         min_distance = MAXINT
         similar_cluster1, similar_cluster2 = -1, -1
@@ -699,7 +701,7 @@ def upgma_agglomerative_cluster(*, sentence_list, compression_rate, number_of_cl
         cluster_list[similar_cluster1].members = cluster_list[similar_cluster1].members + cluster_list[similar_cluster2].members
         cluster_list.remove(cluster_list[similar_cluster2])
         print(similar_cluster1, 'and', similar_cluster2, 'merged')
-        print('\n---------- Number of clusters: {} ----------\n'.format(str(len(cluster_list))))
+        print('---------- Number of clusters: {} ----------\n'.format(str(len(cluster_list))))
 
     #----------- Produce final summary
     print("\n-------------------- Final Summary --------------------\n")
@@ -711,7 +713,7 @@ def upgma_agglomerative_cluster(*, sentence_list, compression_rate, number_of_cl
 
 
 # DBSCAN-Clustering Algorithm - Algorithm No. 7
-def dbscan_clustering(*, sentence_list, compression_rate, distance_num):
+def dbscan_clustering(*, sentence_list, compression_rate):
     print('\n\n\n-------------------- Algorithm 7 : DBSCAN-Clustering Algorithm --------------------\n\n\n')
 
     print("\n-------------------- Initialize Matrix --------------------\n")
@@ -723,10 +725,7 @@ def dbscan_clustering(*, sentence_list, compression_rate, distance_num):
 
 
     print("\n-------------------- Perform clustering --------------------\n")
-    if distance_num == 1:
-        clustering = DBSCAN(eps=0.05, min_samples=2, metric='cosine').fit(np.array(Matrix))
-    else:
-        print('\n\nThere is only one distance method allowed for dbscan clustering\n\n')
+    clustering = DBSCAN(eps=0.05, min_samples=2, metric='cosine').fit(np.array(Matrix))
 
     labels = list(clustering.labels_)
     print(labels)
@@ -750,7 +749,7 @@ def dbscan_clustering(*, sentence_list, compression_rate, distance_num):
 
     print("\n-------------------- Final Summary --------------------\n")
     final_summary = produce_summary_for_clustering(cluster_list=cluster_list, \
-        sentence_list=sentence_list, compression_rate=compression_rate, distance_num=distance_num)
+        sentence_list=sentence_list, compression_rate=compression_rate, distance_num=3)
 
 
     print("\n-------------------- Finished --------------------\n")
