@@ -17,8 +17,11 @@
             {% for patient in patients %}
             <option value="{{ patient.id }}">{{ patient.first_name }} {{ patient.last_name }}   (email: {{ patient.email }})</option>
             {% endfor %}
-          </select>
-        <!-- {{form.submit()}} -->
+        </select>
+        <br>
+        Please enter the clinical specialty this consultation is concerned with: <input type='text' name="clinicalSpecialty" required> 
+        <br>
+        <br>
         Please wait on the page, while your audio file is being processed after clicking Submit!
         <button type="submit" class="btn btn-default" onclick="loading();">Submit</button>
     </div>

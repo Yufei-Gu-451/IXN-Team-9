@@ -1,9 +1,22 @@
 from flask import render_template, redirect, request, url_for, flash
-from flask_login import login_user, logout_user, login_required
+from flask_login import login_user, logout_user, login_required, current_user
 from . import auth
 from ..models import User
-from .forms import LoginForm
+from .. import models
+from .forms import LoginForm, RegistrationForm
 
+from functools import wraps
+
+def requires_roles(*roles):
+  def wrapper(f):
+    @wraps(f)
+    def wrapped(*args, **kwargs):
+      if current_user.get_role() not in roles:
+        #Redirect the user to an unauthorized notice!
+        return redirect(url_for('auth.login'))
+      return f(*args, **kwargs)
+    return wrapped
+  return wrapper
 
 @auth.route('/login', methods=['GET', 'POST'])
 def login():
@@ -27,3 +40,21 @@ def logout():
     logout_user()
     flash('You have been logged out.')
     return redirect(url_for('main.index'))
+
+@requires_roles('doctor')
+@auth.route('/registerPatient', methods=['GET', 'POST'])
+def registerPatient():
+    form = RegistrationForm()
+    if form.validate_on_submit():
+        print(form.date_of_birth)
+        patient = User(first_name=form.first_name.data,
+                    last_name=form.last_name.data,
+                    date_of_birth=form.date_of_birth.data,
+                    email=form.email.data,
+                    username=form.username.data,
+                    role_id=2,
+                    password=form.password.data)
+        models.addPatient(patient)
+        flash('Patient Created')
+        return redirect(url_for('main.index'))
+    return render_template('auth/registerPatient.html', form=form)

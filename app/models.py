@@ -9,7 +9,10 @@ class File(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     name = db.Column(db.String(300))
     appointment_date = db.Column(db.Date)
+    audio = db.Column(db.LargeBinary)
+    transcribedData = db.Column(db.LargeBinary)
     processedData = db.Column(db.LargeBinary)
+    clinical_specialty = db.Column(db.String(300))
     
     patient_id = db.Column(db.Integer, db.ForeignKey('user.id'))
     doctor_id = db.Column(db.Integer, db.ForeignKey('user.id'))
@@ -36,7 +39,7 @@ class User(UserMixin, db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     first_name = db.Column(db.String(200))
     last_name = db.Column(db.String(200))
-    age = db.Column(db.Integer)
+    date_of_birth = db.Column(db.Date)
     email = db.Column(db.String(64), unique=True, index=True)
     username = db.Column(db.String(64), unique=True, index=True)
     role_id = db.Column(db.Integer, db.ForeignKey('role.id'))
@@ -75,12 +78,17 @@ class User(UserMixin, db.Model):
 def load_user(user_id):
     return User.query.get(int(user_id))
 
-def addProcessedFile(filename, patient_id, doctor_id, appointment_date):
+def addProcessedFile(filename, patient_id, doctor_id, appointment_date, clinical_specialty):
     processedFile = open("app/file/output.txt", "r")
     filename = filename.split('.')[0] + ".txt"
 
-    upload = File(name=filename, appointment_date=appointment_date, processedData=processedFile.read().encode(), patient_id=patient_id, doctor_id=doctor_id)
-    processedFile.close()
+    transcribedData = open("app/file/input.txt", "r")
+
+    audioData = open('app/audio/' + filename, 'rb')
+
+    upload = File(name=filename, appointment_date=appointment_date, audio=audioData.read().encode(), 
+                transcribedData=transcribedData.read().encode(),processedData=processedFile.read().encode(), 
+                clinical_specialty=clinical_specialty, patient_id=patient_id, doctor_id=doctor_id)
     
     db.session.add(upload)
     db.session.commit()
@@ -94,6 +102,10 @@ def getPatient(patientId):
 
 def getPatientFiles(patientId):
     return File.query.filter(File.patient_id == patientId).all()
+
+def addPatient(patient):
+    db.session.add(patient)
+    db.session.commit() 
 
 def getFile(fileId):
     return File.query.filter(File.id == fileId).first()

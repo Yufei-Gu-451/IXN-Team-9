@@ -5,7 +5,8 @@ from sqlalchemy import create_engine
 
 basedir = os.path.abspath(os.path.dirname(__file__))
 
-conn_str = "mysql+mysqlconnector://teamixn9@ixn9:Uclcsixn9@ixn9.mysql.database.azure.com/ixn9"
+# conn_str = "mysql+mysqlconnector://teamixn9@ixn9:Uclcsixn9@ixn9.mysql.database.azure.com/ixn9"
+conn_str = "mysql://root:@localhost/ixn9"
 
 engine_azure = create_engine(conn_str,echo=True)
 # engine_azure.connect()
