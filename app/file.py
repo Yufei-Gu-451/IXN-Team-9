@@ -2,15 +2,13 @@ import filetype
 import os
 
 # Create a file
-# If file exists, remove all text
-def create_file(*, file_name):
-    file = open(file_name, 'w+')
-    file.write('')
+def create_file(file_name):
+    file = open(file_name, 'w')
     file.close()
 
 # Delete a file
 # If file not exist, do nothing
-def delete_file(*, file_name):
+def delete_file(file_name):
     if exists_file(file_name):
         os.remove(file_name)
 

@@ -1,2 +1,0 @@
-The Speech SDK exposes many features from the speech service, but not all of them.
-The capabilities of the speech SDK are often associated with scenarios.

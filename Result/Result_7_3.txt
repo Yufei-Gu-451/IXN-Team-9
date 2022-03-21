@@ -1,0 +1,45 @@
+Algorithm : DBSCAN Clustering
+
+Metric : Cosine Similarity
+
+
+
+Iteration : 1    |   Average Time Cost : 2.4502119999999996 second
+score['rouge-1']['r'] = 0.19144144144144143
+score['rouge-1']['p'] = 1.0
+score['rouge-1']['f'] = 0.3213610559038883
+score['rouge-2']['r'] = 0.12862862862862862
+score['rouge-2']['p'] = 0.9734848484848485
+score['rouge-2']['f'] = 0.22723253551557626
+
+Iteration : 2    |   Average Time Cost : 4.1710175 second
+score['rouge-1']['r'] = 0.23753544153290346
+score['rouge-1']['p'] = 1.0
+score['rouge-1']['f'] = 0.38163949805460684
+score['rouge-2']['r'] = 0.16121353912051586
+score['rouge-2']['p'] = 0.9742076053009201
+score['rouge-2']['f'] = 0.27527908392651484
+
+Iteration : 3    |   Average Time Cost : 4.632667999999999 second
+score['rouge-1']['r'] = 0.21638322108123254
+score['rouge-1']['p'] = 1.0
+score['rouge-1']['f'] = 0.3532719300401042
+score['rouge-2']['r'] = 0.1461883364251715
+score['rouge-2']['p'] = 0.9743174158796258
+score['rouge-2']['f'] = 0.2527002283509779
+
+Iteration : 4    |   Average Time Cost : 4.59640225 second
+score['rouge-1']['r'] = 0.22368770906605637
+score['rouge-1']['p'] = 1.0
+score['rouge-1']['f'] = 0.3635413510940969
+score['rouge-2']['r'] = 0.14888586724953665
+score['rouge-2']['p'] = 0.9761255157842581
+score['rouge-2']['f'] = 0.2571924309080186
+
+Iteration : 5    |   Average Time Cost : 4.5821342 second
+score['rouge-1']['r'] = 0.23221187101339766
+score['rouge-1']['p'] = 1.0
+score['rouge-1']['f'] = 0.374954292332187
+score['rouge-2']['r'] = 0.15383135127377537
+score['rouge-2']['p'] = 0.9735960648013195
+score['rouge-2']['f'] = 0.2645962171776014

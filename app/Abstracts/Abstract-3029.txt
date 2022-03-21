@@ -1,1 +1,0 @@
-Drug-target kinetics enable time-dependent changes in target engagement to be quantified as a function of drug concentration. When coupled to drug pharmacokinetics (PK), drug-target kinetics can thus be used to predict

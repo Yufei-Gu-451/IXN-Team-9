@@ -1,1 +1,0 @@
-Alpha1-chimaerin is a GTPase-activating protein (GAP) for Rac1, a member of the Rho small GTPase family, whose action leads to the inactivation of Rac1. Rac1 activity is upregulated in Alzheimer's disease, but little is known about the role of

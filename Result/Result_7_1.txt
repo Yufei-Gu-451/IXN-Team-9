@@ -1,102 +1,13 @@
-Algorithm Type : 7    |    Distance Type : 1
+Algorithm : DBSCAN Clustering
+
+Metric : Euclidean Distance
 
 
-Iteration : 1    |   Average Time Cost : 7.973542999999999 second
 
-Begin Time : 2.889053    |    End Time : 10.862596
-score['rouge-1']['r'] = 0.19194312796208532
+Iteration : 1    |   Average Time Cost : 2.8126429999999996 second
+score['rouge-1']['r'] = 0.11599099099099099
 score['rouge-1']['p'] = 1.0
-score['rouge-1']['f'] = 0.3220675917313614
-score['rouge-2']['r'] = 0.12166377816291161
-score['rouge-2']['p'] = 0.9642857142857143
-score['rouge-2']['f'] = 0.21606648000480488
-
-Iteration : 2    |   Average Time Cost : 6.26183 second
-
-Begin Time : 12.206093    |    End Time : 16.75621
-score['rouge-1']['r'] = 0.2035166090260877
-score['rouge-1']['p'] = 1.0
-score['rouge-1']['f'] = 0.33804954973787726
-score['rouge-2']['r'] = 0.12940045765002436
-score['rouge-2']['p'] = 0.9679584599797366
-score['rouge-2']['f'] = 0.2282086775150294
-
-Iteration : 3    |   Average Time Cost : 7.025180333333334 second
-
-Begin Time : 17.408617    |    End Time : 25.960498
-score['rouge-1']['r'] = 0.20780125880927
-score['rouge-1']['p'] = 1.0
-score['rouge-1']['f'] = 0.3439544371566992
-score['rouge-2']['r'] = 0.13443972924176598
-score['rouge-2']['p'] = 0.9693279863552062
-score['rouge-2']['f'] = 0.23601475027474725
-
-Iteration : 4    |   Average Time Cost : 7.510146250000001 second
-
-Begin Time : 29.525023    |    End Time : 38.490067
-score['rouge-1']['r'] = 0.20556504830009098
-score['rouge-1']['p'] = 1.0
-score['rouge-1']['f'] = 0.340901704229257
-score['rouge-2']['r'] = 0.13655393486235895
-score['rouge-2']['p'] = 0.9690520645327598
-score['rouge-2']['f'] = 0.2392706775303442
-
-Iteration : 5    |   Average Time Cost : 7.8327664 second
-
-Begin Time : 40.977082    |    End Time : 50.100329
-score['rouge-1']['r'] = 0.20770717060488217
-score['rouge-1']['p'] = 1.0
-score['rouge-1']['f'] = 0.3438485478498463
-score['rouge-2']['r'] = 0.1386323482439739
-score['rouge-2']['p'] = 0.9690159706923558
-score['rouge-2']['f'] = 0.24245420490276937
-
-Iteration : 6    |   Average Time Cost : 7.94452 second
-
-Begin Time : 52.592626    |    End Time : 61.095914
-score['rouge-1']['r'] = 0.21056692459590784
-score['rouge-1']['p'] = 1.0
-score['rouge-1']['f'] = 0.3477351093418521
-score['rouge-2']['r'] = 0.13876940960161935
-score['rouge-2']['p'] = 0.9677004939354944
-score['rouge-2']['f'] = 0.2426399523575504
-
-Iteration : 7    |   Average Time Cost : 6.992785857142857 second
-
-Begin Time : 62.988834    |    End Time : 64.271215
-score['rouge-1']['r'] = 0.2117784523747237
-score['rouge-1']['p'] = 1.0
-score['rouge-1']['f'] = 0.3493979504433021
-score['rouge-2']['r'] = 0.14017821251381118
-score['rouge-2']['p'] = 0.9663123081271825
-score['rouge-2']['f'] = 0.244739436419284
-
-Iteration : 8    |   Average Time Cost : 7.323739875000001 second
-
-Begin Time : 64.370314    |    End Time : 74.010732
-score['rouge-1']['r'] = 0.21200345841628493
-score['rouge-1']['p'] = 1.0
-score['rouge-1']['f'] = 0.34972087527301343
-score['rouge-2']['r'] = 0.14200740038473122
-score['rouge-2']['p'] = 0.9665513069944622
-score['rouge-2']['f'] = 0.24751469530976858
-
-Iteration : 9    |   Average Time Cost : 7.6349920000000004 second
-
-Begin Time : 76.687993    |    End Time : 86.813002
-score['rouge-1']['r'] = 0.20951189747207472
-score['rouge-1']['p'] = 1.0
-score['rouge-1']['f'] = 0.3462778343043951
-score['rouge-2']['r'] = 0.14011002850892576
-score['rouge-2']['p'] = 0.965569684206494
-score['rouge-2']['f'] = 0.24457189775906205
-
-Iteration : 10    |   Average Time Cost : 7.7791124 second
-
-Begin Time : 88.571844    |    End Time : 97.64804
-score['rouge-1']['r'] = 0.20839479520601353
-score['rouge-1']['p'] = 1.0
-score['rouge-1']['f'] = 0.34475263083686297
-score['rouge-2']['r'] = 0.13863099496749612
-score['rouge-2']['p'] = 0.9653272121003409
-score['rouge-2']['f'] = 0.24229292560118112
+score['rouge-1']['f'] = 0.2078708356751836
+score['rouge-2']['r'] = 0.07857857857857858
+score['rouge-2']['p'] = 0.9751552795031055
+score['rouge-2']['f'] = 0.14543770125989833

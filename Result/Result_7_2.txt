@@ -1,32 +1,13 @@
-Algorithm Type : 3    |    Distance Type : 3
+Algorithm : DBSCAN Clustering
+
+Metric : Manhattan Distance
 
 
-Iteration : 1    |   Average Time Cost : 12.263102 second
 
-Begin Time : 3.245124    |    End Time : 15.508226
-score['rouge-1']['r'] = 0.20616113744075829
+Iteration : 1    |   Average Time Cost : 2.1657129999999998 second
+score['rouge-1']['r'] = 0.15427927927927929
 score['rouge-1']['p'] = 1.0
-score['rouge-1']['f'] = 0.3418467555155338
-score['rouge-2']['r'] = 0.13934142114384748
-score['rouge-2']['p'] = 0.9686746987951808
-score['rouge-2']['f'] = 0.24363636143751155
-
-Iteration : 2    |   Average Time Cost : 8.610694500000001 second
-
-Begin Time : 17.193952    |    End Time : 22.152239
-score['rouge-1']['r'] = 0.21569318133299176
-score['rouge-1']['p'] = 1.0
-score['rouge-1']['f'] = 0.35474690566920725
-score['rouge-2']['r'] = 0.14549653639774957
-score['rouge-2']['p'] = 0.9746286115335128
-score['rouge-2']['f'] = 0.25315758137929983
-
-Iteration : 3    |   Average Time Cost : 11.712035333333333 second
-
-Begin Time : 22.981957    |    End Time : 40.896674
-score['rouge-1']['r'] = 0.2381270955079505
-score['rouge-1']['p'] = 1.0
-score['rouge-1']['f'] = 0.3835470622442782
-score['rouge-2']['r'] = 0.1703642468565285
-score['rouge-2']['p'] = 0.9773173026210232
-score['rouge-2']['f'] = 0.28865409947497184
+score['rouge-1']['f'] = 0.2673170708548531
+score['rouge-2']['r'] = 0.09759759759759759
+score['rouge-2']['p'] = 0.9701492537313433
+score['rouge-2']['f'] = 0.177353340767371

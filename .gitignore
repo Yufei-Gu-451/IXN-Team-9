@@ -5,8 +5,6 @@ venv
 
 .DS_Store
 
-app/file/temp_features/
-
 # Initially taken from Github's Python gitignore file
 
 # Byte-compiled / optimized / DLL files

@@ -58,11 +58,17 @@ def upload():
 
   writeFile(file.read(), file.filename)
 
+  speech_to_text.speech_to_text(inputfile='app/audio/' + file.filename, outputfile="app/file/input.txt")
 
+<<<<<<< HEAD
   speech_to_text.speech_to_text(inputfile='app/audio/' + file.filename, outputfile="app/file/input.txt")
 
   text_summarizer.summarize_text(input_file='app/file/input.txt', output_file="app/file/output.txt", \
     compression_rate=0.3, number_of_clusters=2, algorithm_num=1, distance_num=3)
+=======
+  text_summarizer.summarize_text(input_file='app/file/input.txt', output_file="app/file/output.txt", \
+  compression_rate=0.3, number_of_clusters=2, algorithm_num=1, distance_num=3)
+>>>>>>> 08ec2f1270c1f8f41481a7484c32683da8c84377
 
   models.addProcessedFile(file.filename, patient_id, current_doctor_id, appointment_date, clinical_specialty)
 

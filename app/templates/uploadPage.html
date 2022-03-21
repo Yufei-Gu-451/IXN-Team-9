@@ -4,25 +4,37 @@
 
 {% block page_content %}
 <h1> Uploading Audio </h1>
+<br/>
+<br/>
 <form action="/upload" method="POST" enctype="multipart/form-data">
     <div class="form">
+        <label>Please select the appointment date from the calender: </label>
+        <br>
         {{form.appointmentDate.label}} {{form.appointmentDate(class='datepicker')}} {{form.hidden_tag()}}
         <br><br>
-        <label for="inputFile">Please choose the audio file of the patient's consultation: </label>
+        <label for="inputFile">Please upload the audio recording of this consultation: </label>
         <input type="file" name="inputFile" required>
         <br>
-        <br>
-        Please select your patient:
+        <label>Please select your patient:</label>
         <select name="patient" class="selectpicker form-control">
             {% for patient in patients %}
             <option value="{{ patient.id }}">{{ patient.first_name }} {{ patient.last_name }}   (email: {{ patient.email }})</option>
             {% endfor %}
+<<<<<<< HEAD
         </select>
         <br>
         Please enter the clinical specialty this consultation is concerned with: <input type='text' name="clinicalSpecialty" required> 
         <br>
         <br>
         Please wait on the page, while your audio file is being processed after clicking Submit!
+=======
+          </select>
+        <!-- {{form.submit()}} -->
+        <br>
+        <br>
+        <label>Please wait on the page, while your audio file is being processed after clicking Submit!</label>
+        <br>
+>>>>>>> 08ec2f1270c1f8f41481a7484c32683da8c84377
         <button type="submit" class="btn btn-default" onclick="loading();">Submit</button>
     </div>
     <!-- <button type="submit" class="btn btn-default">Submit</button> -->
