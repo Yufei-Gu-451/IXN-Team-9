@@ -10,12 +10,20 @@
     <br/>
     <h3> First Name: {{patient.first_name}} <h3>
     <h3> Last Name: {{patient.last_name}} </h3>
-    <h3> Age: {{patient.age}} <h3>
+    <h3> Date Of Birth: {{patient.date_of_birth}} <h3>
     <h3> Email: {{ patient.email }} <h3>
     <br/>
+    
+    <h3> Transcribed Consulation: <h3>
+        <h4>
+            {% for line in transcribed_lines %}
+            {{ line }}
+            {% endfor %}
+        </h4>
+
     <h3> Summarized Consultation Report: <h3>
     <h4>
-        {% for line in lines %}
+        {% for line in summarized_lines %}
         {{ line }}
         {% endfor %}
     </h4>
@@ -26,7 +34,6 @@
         <div class="form">
             <button type="submit" class="btn btn-default">Download Summarized Consultation Report</button>
         </div>
-        <!-- <button type="submit" class="btn btn-default">Submit</button> -->
     </form>
 
     <br>

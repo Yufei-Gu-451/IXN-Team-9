@@ -9,7 +9,7 @@ class File(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     name = db.Column(db.String(300))
     appointment_date = db.Column(db.Date)
-    audio = db.Column(db.LargeBinary)
+    # audio = db.Column(db.LargeBinary)
     transcribedData = db.Column(db.LargeBinary)
     processedData = db.Column(db.LargeBinary)
     clinical_specialty = db.Column(db.String(300))
@@ -80,18 +80,19 @@ def load_user(user_id):
 
 def addProcessedFile(filename, patient_id, doctor_id, appointment_date, clinical_specialty):
     processedFile = open("app/file/output.txt", "r")
-    filename = filename.split('.')[0] + ".txt"
+    text_filename = filename.split('.')[0] + ".txt"
 
     transcribedData = open("app/file/input.txt", "r")
 
-    audioData = open('app/audio/' + filename, 'rb')
-
-    upload = File(name=filename, appointment_date=appointment_date, audio=audioData.read().encode(), 
+    upload = File(name=text_filename, appointment_date=appointment_date, 
                 transcribedData=transcribedData.read().encode(),processedData=processedFile.read().encode(), 
                 clinical_specialty=clinical_specialty, patient_id=patient_id, doctor_id=doctor_id)
     
     db.session.add(upload)
     db.session.commit()
+
+def deleteFile(file_id):
+    File.query.filter(File.id == file_id).delete()
 
 def getAllPatients():
     patient_role_id = Role.query.filter_by(name='patient').first()

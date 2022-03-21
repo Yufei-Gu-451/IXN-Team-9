@@ -53,33 +53,43 @@ def upload():
   appointment_date = request.form.get('appointmentDate')
   clinical_specialty = request.form.get('clinicalSpecialty')
 
-    # print(appointment_date)
-    # print(datetime.now())
-
   writeFile(file.read(), file.filename)
 
-  speech_to_text.speech_to_text(inputfile='app/audio/' + file.filename, outputfile="app/file/input.txt")
+  # speech_to_text.speech_to_text(inputfile='app/audio/' + file.filename, outputfile="app/file/input.txt")
 
-<<<<<<< HEAD
-  speech_to_text.speech_to_text(inputfile='app/audio/' + file.filename, outputfile="app/file/input.txt")
-
-  text_summarizer.summarize_text(input_file='app/file/input.txt', output_file="app/file/output.txt", \
-    compression_rate=0.3, number_of_clusters=2, algorithm_num=1, distance_num=3)
-=======
-  text_summarizer.summarize_text(input_file='app/file/input.txt', output_file="app/file/output.txt", \
-  compression_rate=0.3, number_of_clusters=2, algorithm_num=1, distance_num=3)
->>>>>>> 08ec2f1270c1f8f41481a7484c32683da8c84377
+  # text_summarizer.summarize_text(input_file='app/file/input.txt', output_file="app/file/output.txt", \
+  # compression_rate=0.3, number_of_clusters=2, algorithm_num=1, distance_num=3)
 
   models.addProcessedFile(file.filename, patient_id, current_doctor_id, appointment_date, clinical_specialty)
 
   patient = models.getPatient(patient_id)
     
-  file_content = list()
-  f = open("app/file/output.txt")
-  for line in f:
-    file_content.append(line)
+  summarized_file_content = list()
+  summarized_file = open("app/file/output.txt")
+  for line in summarized_file:
+    summarized_file_content.append(line)
+  
+  summarized_file.close()
+  
+  transcribed_file_content = list()
+  transcribed_file = open("app/file/input.txt")
+  for line in transcribed_file:
+    transcribed_file_content.append(line)
 
-  return render_template('showProcessedAudio.html', lines=file_content, patient=patient)
+  return render_template('showProcessedAudio.html', transcribed_lines=transcribed_file_content, summarized_lines=summarized_file_content, patient=patient)
+
+# @main.route('/confirmProcessing', methods=['POST'])
+# @flask_login.login_required
+# @requires_roles('doctor')
+# def confirmProcessing():
+#   file_id = request.form.get('file_id')
+#   satisfied = request.form.get('satisfied')
+#   if satisfied == 'no':
+#     models.deleteFile(file_id)
+#     return render_template('uploadPage.html')
+#   if satisfied == 'yes':
+#     return render_template('index.html')
+
 
 @main.route('/viewPatientRecords', methods=['GET', 'POST'])
 @flask_login.login_required
@@ -98,8 +108,6 @@ def viewPatientRecords():
     return render_template('viewPatientRecords.html', files=files)
 
 
-
-
 @main.route('/download', methods=['GET', 'POST'])
 @flask_login.login_required
 @requires_roles('doctor')
@@ -109,14 +117,13 @@ def download():
   patientFile = models.getFile(file_id)
 
   return send_file(BytesIO(patientFile.processedData), attachment_filename=patientFile.name, as_attachment=True)
-    # return redirect(url_for('viewPatients'))
 
 @main.route('/downloadProcessedAudio', methods=['POST'])
 @requires_roles('doctor')
 def downloadProcessedAudio():
   return send_file("file/output.txt", attachment_filename="transcribed_audio.txt", as_attachment=True)
 
-@main.route('/downloadTranscribedAudio', methods=['POST'])
+@main.route('/downloadTranscribedAudio', methods=['GET', 'POST'])
 @requires_roles('doctor')
 def downloadTranscribedAudio():
   return send_file('file/input.txt', attachment_filename="processed_audio.txt", as_attachment=True)
