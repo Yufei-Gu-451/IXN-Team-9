@@ -51,6 +51,7 @@ def upload():
   current_doctor_id = flask_login.current_user.id
   patient_id = request.form.get('patient')
   appointment_date = request.form.get('appointmentDate')
+  clinical_specialty = request.form.get('clinicalSpecialty')
 
     # print(appointment_date)
     # print(datetime.now())
@@ -62,7 +63,7 @@ def upload():
   text_summarizer.summarize_text(input_file='app/file/input.txt', output_file="app/file/output.txt", \
   compression_rate=0.3, number_of_clusters=2, algorithm_num=9, distance_num=1)
 
-  models.addProcessedFile(file.filename, patient_id, current_doctor_id, appointment_date)
+  models.addProcessedFile(file.filename, patient_id, current_doctor_id, appointment_date, clinical_specialty)
 
   patient = models.getPatient(patient_id)
     
@@ -72,16 +73,6 @@ def upload():
     file_content.append(line)
 
   return render_template('showProcessedAudio.html', lines=file_content, patient=patient)
-  
-
-# @main.route('/viewRecords', methods='GET')
-# @flask_login.login_required
-# @requires_roles('doctor')
-# def viewRecords():
-#   current_patient_id = flask_login.current_user.id
-#   files = models.getPatientFiles(current_patient_id)
-
-
 
 @main.route('/viewPatientRecords', methods=['GET', 'POST'])
 @flask_login.login_required
@@ -89,8 +80,11 @@ def viewPatientRecords():
   headings = ('name', 'appointment date', 'download')
   if flask_login.current_user.has_role('doctor'):
     patient_id = request.form['patient']
+    patient = models.getPatient(patient_id)
+    patient_name = patient.first_name + " " + patient.last_name
+
     files = models.getPatientFiles(patient_id)
-    return render_template('viewPatientRecords.html', files=files)
+    return render_template('viewPatientRecords.html', files=files, patient_name=patient_name)
   if flask_login.current_user.has_role('patient'):
     patient_id = flask_login.current_user.id
     files = models.getPatientFiles(patient_id)
@@ -124,7 +118,7 @@ def downloadTranscribedAudio():
 @flask_login.login_required
 @requires_roles('doctor')
 def viewPatients():
-  headings = ("first name", "last name", "age", "email", "username")
+  headings = ("first name", "last name", "date of birth", "email", "username")
   return render_template('viewPatients.html', headings=headings, patients=models.getAllPatients())
 
 def writeFile(data, filename):

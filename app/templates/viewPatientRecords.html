@@ -14,8 +14,19 @@
 { % endblock % }
 
 {% block page_content %}
+<<<<<<< HEAD
+    {% if current_user.is_authenticated and current_user.has_role('doctor') %}
+    <h1> Viewing {{patient_name}}'s Past Clinical Documents </h1>
+    {% endif %}
+    {% if current_user.is_authenticated and current_user.has_role('patient') %}
+    <h1>My Records</h1>
+    {% endif %}
+
+    
+=======
     <h1> Viewing Patient's Past Clinical Documents </h1>
     <br/>
+>>>>>>> 08ec2f1270c1f8f41481a7484c32683da8c84377
     <div class='containder'>
         <table class="table">
             <tr>
