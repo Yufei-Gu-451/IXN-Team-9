@@ -1,6 +1,7 @@
 from concurrent.futures import thread
 from xmlrpc.client import MAXINT
 from rouge import FilesRouge
+from sympy import false
 from app import text_summarizer
 from app import file
 from threading import Thread
@@ -9,11 +10,19 @@ import random
 #------------------------------ Parameters
 COMPRESSION_RATE = 0.05
 NUMBER_OF_CLUSTERS = 6
-FILE_START = 1001
-FILE_END = 1080
-THREAD_NUM = 8
+FILE_START = 1008
+FILE_END = 1008
+THREAD_NUM = 1
 
+postfix_list = ['1-1', '1-2', '1-3', '2-1', '2-2', '2-3', '3-1', '3-2', '3-3', \
+                '4-1', '5-1', '6-1', '7-1', '8-1', '8-2', '8-3', '9-1', '10-1']
 
+def file_not_written(file):
+    if (file.exists_file(file) and file.read_txt_file(file) == '') or (not file.exists_file(file)):
+        return True
+    else:
+        return False
+    
 class TextSummarizationThread(Thread):
     def __init__(self, file_start, file_end) -> None:
         super().__init__()
@@ -33,28 +42,16 @@ class SummarizeTextThreadOne(Thread):
         self.number_of_clusters = number_of_clusters
 
     def run(self):
-        final_summary_1_1 = text_summarizer.k_center(sentence_list=self.sentence_list, \
-                compression_rate=self.compression_rate, number_of_clusters=self.number_of_clusters, distance_num=1)
-        file.create_file(self.output_file+'-1-1.txt')
-        file.write_txt_file(output_file_name=self.output_file+'-1-1.txt', text=final_summary_1_1, append=False)
-
-        final_summary_1_2 = text_summarizer.k_center(sentence_list=self.sentence_list, \
-                compression_rate=self.compression_rate, number_of_clusters=self.number_of_clusters, distance_num=2)
-        file.create_file(self.output_file+'-1-2.txt')
-        file.write_txt_file(output_file_name=self.output_file+'-1-2.txt', text=final_summary_1_2, append=False)
-
-        final_summary_1_3 = text_summarizer.k_center(sentence_list=self.sentence_list, \
-                compression_rate=self.compression_rate, number_of_clusters=self.number_of_clusters, distance_num=3)
-        file.create_file(self.output_file+'-1-3.txt')
-        file.write_txt_file(output_file_name=self.output_file+'-1-3.txt', text=final_summary_1_3, append=False)
-
-
-        final_summary_4 = text_summarizer.single_agglomerative_cluster(sentence_list=self.sentence_list, \
-                compression_rate=self.compression_rate, number_of_clusters=self.number_of_clusters, distance_num=1)
-        file.create_file(self.output_file+'-4.txt')
-        file.write_txt_file(output_file_name=self.output_file+'-4.txt', text=final_summary_4, append=False)
-
-
+        algorithm_list = [(4, 1)]
+        for algorithm_num in algorithm_list:
+            output_file = self.output_file + '-' + str(algorithm_num[0]) + '-' + str(algorithm_num[1]) +'.txt'
+            if file_not_written(output_file):
+                file.create_file(output_file)
+                final_summary = generate_summary_through_ml(sentence_list=self.sentence_list, compression_rate=self.compression_rate, \
+                    number_of_clusters=self.number_of_clusters, algorithm_num=algorithm_num[0], distance_num = algorithm_num[1])
+                file.write_txt_file(output_file_name=output_file, text=final_summary, append=False)
+            else:
+                print('\n\n---------- File Already Exists : {} ----------\n\n'.format(output_file))
 
 class SummarizeTextThreadTwo(Thread):
     def __init__(self, output_file, sentence_list, compression_rate, number_of_clusters) -> None:
@@ -65,27 +62,16 @@ class SummarizeTextThreadTwo(Thread):
         self.number_of_clusters = number_of_clusters
 
     def run(self):
-        final_summary_2_1 = text_summarizer.k_means(sentence_list=self.sentence_list, \
-                compression_rate=self.compression_rate, number_of_clusters=self.number_of_clusters, distance_num=1)
-        file.create_file(self.output_file+'-2-1.txt')
-        file.write_txt_file(output_file_name=self.output_file+'-2-1.txt', text=final_summary_2_1, append=False)
-
-        final_summary_2_2 = text_summarizer.k_means(sentence_list=self.sentence_list, \
-                compression_rate=self.compression_rate, number_of_clusters=self.number_of_clusters, distance_num=2)
-        file.create_file(self.output_file+'-2-2.txt')
-        file.write_txt_file(output_file_name=self.output_file+'-2-2.txt', text=final_summary_2_2, append=False)
-
-        final_summary_2_3 = text_summarizer.k_means(sentence_list=self.sentence_list, \
-                compression_rate=self.compression_rate, number_of_clusters=self.number_of_clusters, distance_num=3)
-        file.create_file(self.output_file+'-2-3.txt')
-        file.write_txt_file(output_file_name=self.output_file+'-2-3.txt', text=final_summary_2_3, append=False)
-
-
-        final_summary_5 = text_summarizer.complete_agglomerative_cluster(sentence_list=self.sentence_list, \
-                compression_rate=self.compression_rate, number_of_clusters=self.number_of_clusters, distance_num=1)
-        file.create_file(self.output_file+'-5.txt')
-        file.write_txt_file(output_file_name=self.output_file+'-5.txt', text=final_summary_5, append=False)
-
+        algorithm_list = [(5, 1)]
+        for algorithm_num in algorithm_list:
+            output_file = self.output_file + '-' + str(algorithm_num[0]) + '-' + str(algorithm_num[1]) +'.txt'
+            if file_not_written(output_file):
+                file.create_file(output_file)
+                final_summary = generate_summary_through_ml(sentence_list=self.sentence_list, compression_rate=self.compression_rate, \
+                    number_of_clusters=self.number_of_clusters, algorithm_num=algorithm_num[0], distance_num = algorithm_num[1])
+                file.write_txt_file(output_file_name=output_file, text=final_summary, append=False)
+            else:
+                print('\n\n---------- File Already Exists : {} ----------\n\n'.format(output_file))
 
 
 class SummarizeTextThreadThree(Thread):
@@ -97,26 +83,16 @@ class SummarizeTextThreadThree(Thread):
         self.number_of_clusters = number_of_clusters
 
     def run(self):
-        final_summary_3_1 = text_summarizer.bi_k_means(sentence_list=self.sentence_list, \
-                compression_rate=self.compression_rate, number_of_clusters=self.number_of_clusters, distance_num=1)
-        file.create_file(self.output_file+'-3-1.txt')
-        file.write_txt_file(output_file_name=self.output_file+'-3-1.txt', text=final_summary_3_1, append=False)
-
-        final_summary_3_2 = text_summarizer.bi_k_means(sentence_list=self.sentence_list, \
-                compression_rate=self.compression_rate, number_of_clusters=self.number_of_clusters, distance_num=2)
-        file.create_file(self.output_file+'-3-2.txt')
-        file.write_txt_file(output_file_name=self.output_file+'-3-2.txt', text=final_summary_3_2, append=False)
-
-        final_summary_3_3 = text_summarizer.bi_k_means(sentence_list=self.sentence_list, \
-                compression_rate=self.compression_rate, number_of_clusters=self.number_of_clusters, distance_num=3)
-        file.create_file(self.output_file+'-3-3.txt')
-        file.write_txt_file(output_file_name=self.output_file+'-3-3.txt', text=final_summary_3_3, append=False)
-
-
-        final_summary_6 = text_summarizer.upgma_agglomerative_cluster(sentence_list=self.sentence_list, \
-                compression_rate=self.compression_rate, number_of_clusters=self.number_of_clusters, distance_num=1)
-        file.create_file(self.output_file+'-6.txt')
-        file.write_txt_file(output_file_name=self.output_file+'-6.txt', text=final_summary_6, append=False)
+        algorithm_list = [(6, 1)]
+        for algorithm_num in algorithm_list:
+            output_file = self.output_file + '-' + str(algorithm_num[0]) + '-' + str(algorithm_num[1]) +'.txt'
+            if file_not_written(output_file):
+                file.create_file(output_file)
+                final_summary = generate_summary_through_ml(sentence_list=self.sentence_list, compression_rate=self.compression_rate, \
+                    number_of_clusters=self.number_of_clusters, algorithm_num=algorithm_num[0], distance_num = algorithm_num[1])
+                file.write_txt_file(output_file_name=output_file, text=final_summary, append=False)
+            else:
+                print('\n\n---------- File Already Exists : {} ----------\n\n'.format(output_file))
 
 
 class SummarizeTextThreadFour(Thread):
@@ -128,41 +104,71 @@ class SummarizeTextThreadFour(Thread):
         self.number_of_clusters = number_of_clusters
 
     def run(self):
-        final_summary_7 = text_summarizer.dbscan_clustering(sentence_list=self.sentence_list, \
-                compression_rate=self.compression_rate)
-        file.create_file(self.output_file+'-7.txt')
-        file.write_txt_file(output_file_name=self.output_file+'-7.txt',   text=final_summary_7,   append=False)
+        algorithm_list = [(1, 1), (1, 2), (1, 3), (2, 1), (2, 2), (2, 3), (3, 1), (3, 2), (3, 3), (7, 1), \
+            (8, 1), (8, 2), (8, 3), (9, 1), (10, 1)]
+        for algorithm_num in algorithm_list:
+            output_file = self.output_file + '-' + str(algorithm_num[0]) + '-' + str(algorithm_num[1]) +'.txt'
+            if file_not_written(output_file):
+                file.create_file(output_file)
+                final_summary = generate_summary_through_ml(sentence_list=self.sentence_list, compression_rate=self.compression_rate, \
+                    number_of_clusters=self.number_of_clusters, algorithm_num=algorithm_num[0], distance_num = algorithm_num[1])
+                file.write_txt_file(output_file_name=output_file, text=final_summary, append=False)
 
-        final_summary_8_1 = text_summarizer.optics_clustering(sentence_list=self.sentence_list, \
-                compression_rate=self.compression_rate, distance_num=1)
-        file.create_file(self.output_file+'-8-1.txt')
-        file.write_txt_file(output_file_name=self.output_file+'-8-1.txt', text=final_summary_8_1, append=False)
 
-        final_summary_8_2 = text_summarizer.optics_clustering(sentence_list=self.sentence_list, \
-                compression_rate=self.compression_rate, distance_num=2)
-        file.create_file(self.output_file+'-8-2.txt')
-        file.write_txt_file(output_file_name=self.output_file+'-8-2.txt', text=final_summary_8_2, append=False)
+def generate_summary_through_ml(*, sentence_list, compression_rate, number_of_clusters, algorithm_num, distance_num):
+    final_summary = ''
 
-        final_summary_8_3 = text_summarizer.optics_clustering(sentence_list=self.sentence_list, \
-                compression_rate=self.compression_rate, distance_num=3)
-        file.create_file(self.output_file+'-8-3.txt')
-        file.write_txt_file(output_file_name=self.output_file+'-8-3.txt', text=final_summary_8_3, append=False)
+    # K-Clustering Algorithm
+    if algorithm_num == 1:
+        final_summary = text_summarizer.k_center(sentence_list=sentence_list, compression_rate=compression_rate, \
+            number_of_clusters=number_of_clusters, distance_num=distance_num)
+    elif algorithm_num == 2:
+        final_summary = text_summarizer.k_means(sentence_list=sentence_list, compression_rate=compression_rate, \
+            number_of_clusters=number_of_clusters, distance_num=distance_num)
+    elif algorithm_num == 3:
+        final_summary = text_summarizer.bi_k_means(sentence_list=sentence_list, compression_rate=compression_rate, \
+            number_of_clusters=number_of_clusters, distance_num=distance_num)
+    # Hierarchical-Clustering
+    elif algorithm_num == 4:
+        final_summary = text_summarizer.single_agglomerative_cluster(sentence_list=sentence_list, compression_rate=compression_rate, \
+            number_of_clusters=number_of_clusters, distance_num=distance_num)
+    elif algorithm_num == 5:
+        final_summary = text_summarizer.complete_agglomerative_cluster(sentence_list=sentence_list, compression_rate=compression_rate, \
+            number_of_clusters=number_of_clusters, distance_num=distance_num)
+    elif algorithm_num == 6:
+        final_summary = text_summarizer.upgma_agglomerative_cluster(sentence_list=sentence_list, compression_rate=compression_rate, \
+            number_of_clusters=number_of_clusters, distance_num=distance_num)
+    # Density-Clustering
+    elif algorithm_num == 7:
+        final_summary = text_summarizer.dbscan_clustering(sentence_list=sentence_list, compression_rate=compression_rate)
+    elif algorithm_num == 8:
+        final_summary = text_summarizer.optics_clustering(sentence_list=sentence_list, compression_rate=compression_rate, \
+            distance_num=distance_num)
+    elif algorithm_num == 9:
+        final_summary = text_summarizer.mean_shift_clustering(sentence_list=sentence_list, compression_rate=compression_rate)
+    # Graph-based Algorithms
+    elif algorithm_num == 10:
+        final_summary = text_summarizer.text_rank(sentence_list=sentence_list, compression_rate=compression_rate)
 
-        final_summary_9 = text_summarizer.mean_shift_clustering(sentence_list=self.sentence_list, \
-                compression_rate=self.compression_rate)
-        file.create_file(self.output_file+'-9.txt')
-        file.write_txt_file(output_file_name=self.output_file+'-9.txt',   text=final_summary_9,   append=False)
-
-        final_summary_10 = text_summarizer.text_rank(sentence_list=self.sentence_list, \
-                compression_rate=self.compression_rate)
-        file.create_file(self.output_file+'-10.txt')
-        file.write_txt_file(output_file_name=self.output_file+'-10.txt',  text=final_summary_10,  append=False)
-
+    else:
+        print('\n\nException : Unknown Algorithm. Please reset the algorithm num.\n\n')
+        return 1
+    
+    return final_summary
 
 
 
 #------------------------------------------------------ Testing Algorithm
 def summarize_text_test(*, input_file, output_file, compression_rate, number_of_clusters):
+    complete = True
+    for postfix in postfix_list:
+        file = str(output_file + '-' + postfix + '.txt')
+        if file_not_written(file):
+            complete = False
+    if complete:
+        print('\n\n-------------------- ' + output_file + ' File Complete ! --------------------\n\n')
+        return 0
+
     print('\n-------------------- Create temp files --------------------\n')
 
     # Generate a random unused number for temp files
@@ -224,9 +230,9 @@ def rouge_evaluation(*, file_start, file_end, postfix):
     files_rouge = FilesRouge()
     score = {'rouge-1':{'r':0, 'p':0, 'f':0}, 'rouge-2':{'r':0, 'p':0, 'f':0}}
 
-    for i in range(file_start, file_end):
+    for i in range(file_start, file_end + 1):
         iteration = i + 1 - file_start
-        print('\n\n----------------- Rouge Evaluation No.{} ------------------\n\n'.format(iteration))
+        print('\n\n----------------- Rouge Evaluation No.{} ------------------\n\n'.format(i))
 
         ref_path = 'app/file/Abstracts/Abstract-{}.txt'.format(str(i))
         hyp_path = 'app/file/Hypothesis/Hypothesis-{}-{}.txt'.format(str(i), postfix)
@@ -252,13 +258,13 @@ def rouge_evaluation(*, file_start, file_end, postfix):
         Text += 'score[\'rouge-2\'][\'p\'] = {}\n'.format(str(score['rouge-2']['p']/iteration))
         Text += 'score[\'rouge-2\'][\'f\'] = {}\n'.format(str(score['rouge-2']['f']/iteration))
 
-
-        file.write_txt_file(output_file_name='file/Result/Result-'+postfix, text=Text, append=True)
+        output_file = 'app/file/Result/Result-'+postfix+'.txt'
+        file.create_file(output_file)
+        file.write_txt_file(output_file_name=output_file, text=Text, append=True)
 
 
 def text_summarization(*, file_start, file_end):
     for i in range(file_start, file_end):
-        iteration = i - file_start + 1
         print('\n----------------- File No.{} ------------------\n'.format(i))
         src_path = 'app/file/FullTexts/FullText-{}.txt'.format(str(i))
         hyp_path = 'app/file/Hypothesis/Hypothesis-{}'.format(str(i))
@@ -269,13 +275,15 @@ def text_summarization(*, file_start, file_end):
 if __name__ == '__main__':
     if (FILE_END - FILE_START + 1) % THREAD_NUM == 0:
         gap = int((FILE_END - FILE_START + 1) / THREAD_NUM)
+        thread_list = []
 
         for i in range(THREAD_NUM):
             thread = TextSummarizationThread(FILE_START + i * gap, FILE_START + (i + 1) * gap)
+            thread_list.append(thread)
             thread.start()
 
-        postfix_list = ['1-1', '1-2', '1-3', '2-1', '2-2', '2-3', '3-1', '3-2', '3-3', \
-                '4', '5', '6', '7', '8-1', '8-2', '8-3', '9', '10']
+        for thread in thread_list:
+            thread.join()
 
         for postfix in postfix_list:
                 rouge_evaluation(file_start = FILE_START, file_end = FILE_END, postfix=postfix)

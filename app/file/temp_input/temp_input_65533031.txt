@@ -1,0 +1,135 @@
+Elevated rates of depression among people with diabetes (1) may partly account for their higher rates of cardiovascular disease (CVD) morbidity and mortality (2).
+Depression is associated with adverse CVD outcomes (3,4), likely via behavioral mechanisms (e.g., effects of cigarette smoking, and sedentary lifestyle and poor diet leading to obesity) and physiological mechanisms (e.g., effects of elevated blood glucose, blood pressure, and lipid levels, as well as dysregulation of the hypothalamic-pituitary-adrenal axis).
+Behavioral mechanisms may activate physiological mechanisms.
+Literature suggests that antidepressant medicines (ADMs) may also affect CVD risk factors and outcomes either negatively or positively.
+Some ADMs, such as tricyclic antidepressants (TCAs), may increase the risk of myocardial infarction (5).
+Findings on the association between other widely used ADMs, such as selective serotonin reuptake inhibitors (SSRIs) and serotonin-noradrenaline (norepinephrine) reuptake inhibitors (SNRIs), and cardiovascular outcomes are mixed.
+Some have reported positive outcomes in patients with established CVD (6).
+Others have reported no such benefits (7-9).
+In the Diabetes Prevention Program (DPP), ADM use was associated with increased risk of developing type 2 diabetes, raising the possibility that ADM use could lead to negative health outcomes in people with diabetes or at risk for the disease.
+DPP participants in the placebo and intensive lifestyle intervention (ILI) arms of the study were two to three times more likely to develop diabetes during the course of the study if they were taking ADMs than if they were not (10,11).
+In 2010 we reported that among participants in the Look AHEAD (Action for Health in Diabetes) clinical trial, depression symptoms and ADM use on entry to the study were each independently associated with a wide range of CVD risk factors (12).
+Here we assessed the temporal dynamics of elevated depression symptoms and ADM use with selected CVD risk factors during the first 4 years of Look AHEAD.
+Our specific aim was to determine whether elevated depression symptoms or ADM use were independently associated with subsequent elevated CVD risk factors over trial years 1-4, controlled for baseline characteristics of age, sex, race/ethnicity, education, history of CVD, and diabetes duration, as well as CVD risk factor status in the prior year.
+Look AHEAD is a randomized clinical trial of 5,145 overweight or obese individuals with type 2 diabetes designed to assess the long-term effect (up to 14 years) of a comprehensive behavioral weight loss intervention on cardiovascular and other health outcomes.
+Participants were randomized to an ILI or to a diabetes support and education (DSE) treatment arm.
+The ILI included goals for diet modification (1200-1800 kcal/day based on initial weight and physical activity (175 min of moderate physical activity per week), designed to induce at least 7% weight loss at year 1 and to maintain weight loss in subsequent years.
+ILI participants were seen weekly for the first 6 months and 3 times per month for the next 6 months.
+During years 2-4, participants were seen individually at least once a month and contacted another time each month by telephone or e-mail.
+DSE participants were invited to three group sessions each year.
+Sessions followed a standard protocol and covered diet, exercise, and social support, without addressing behavioral strategies.
+Their personal physicians provided medical care for all participants.
+These physicians made changes in medications, with the exception of changes in diabetes medication made by Look AHEAD physicians when an ILI participant was losing substantial weight.
+Participants are being monitored at 16 clinical centers in the U.S.
+Inclusion criteria for entry to the study were1) age 45-76 years;2) BMI greater than =25 kg/m2(27 kg/m2if currently taking insulin because thinner individuals taking insulin may be less responsive to weight loss); and3) glycosylated hemoglobin (HbA1c) less than 11%, systolic blood pressure (SBP) less than 160 mmHg, diastolic blood pressure (DBP) less than 100 mmHg, and triglyceride (TG) less than 600 mg/dL.
+Exclusion criteria were1) underlying diseases or conditions likely to affect the safety of the interventions or factors that might limit adherence to the interventions or affect conduct of the trial, including hospitalization for depression in the past 6 months; suicidal ideation; current diagnosis of schizophrenia, other psychotic disorders, or bipolar disorder; or self-report of alcohol or substance abuse within the past 12 months; or2) other medical, psychiatric, or behavioral limitations (e.g., difficulty completing the 2-week run-in period during which participants were required to record food eaten) that in the judgment of the principal investigator might interfere with study participation or the ability to follow the protocol.
+ADM use was not a criterion for exclusion, nor was having depression symptoms that did not require hospitalization in the prior 6 months or that did not involve suicidal ideation.
+Full details of the Look AHEAD design and methods are reported elsewhere (13); however, measures relevant to this report are briefly described below.
+The following assessments were completed annually:The Central Biochemistry Laboratory (Northwest Lipid Research Laboratories, University of Washington, Seattle, WA) conducted standardized analyses of HbA1c, fasting serum glucose, total serum cholesterol (TC), LDL cholesterol, HDL cholesterol, and TG in frozen samples (14).
+Weight and height were measured in duplicate using a digital scale and stadiometer.
+BP was measured in duplicate with an automated device using standardized quality controlled protocols.
+Participants reported their smoking status (current, former, never).
+Participants brought all prescription medicines to their assessment visits.
+Study staff recorded the name of each medicine; dosages were not recorded.
+At each visit, participants completed the Beck Depression Inventory (BDI) (15), a self-report scale with reliable psychometric characteristics across a broad spectrum of clinical and nonclinical populations.
+The BDI lists 21 symptoms, with responses scored from 0 to 3 in ascending symptom severity, and total scores ranging from 0 to 63, with higher scores indicating more symptom burden.
+Elevated depression symptoms were defined by a BDI score greater than =11, a value used in the earlier Look AHEAD report and in the DPP reports (10-12).
+The primary objective of this report was to assess the association between elevated depression symptoms or ADM use and subsequent CVD risk factor-positive status.
+Each of nine elements of five CVD risk factors was dichotomized into risk-positive and not.
+Risk factor-positive status was defined as current smoking, BMI greater than =30 kg/m2, HbA1c greater than 7.0%, SBP greater than 130 mmHg, DBP greater than 80 mmHg, LDL greater than =100 mg/dL, HDL less than =40 mg/dL, TC greater than =200 mg/dL, and TG greater than =150 mg/dL, as recommended by the American Diabetes Association (16) or the Expert Panel on Detection, Evaluation, and Treatment of High Blood and Cholesterol in Adults (17), or taking medicine to achieve these targets (18,19).
+Insulin was the only glucose-lowering agent considered as an indicator of CVD risk-positive status because almost all participants were taking some glucose-lowering medicine.
+Insulin use and A1C are commonly used composite measures of diabetes control.
+All antihypertensive and all lipid-lowering agents were considered as "at risk" indicators (the list of medicines included in this determination and the ADMs the participants took is presented in theSupplementary Data).
+We assessed the association that positive status for each CVD risk factor had with elevated BDI scores and ADM use in the prior year, controlled for CVD risk factor status of interest in the prior year, participant characteristics of age, sex, race, education, history of cardiovascular disease, and duration of diabetes, and year of follow-up.
+Analyses included all randomized participants according to intervention assignment.
+First-order Markov models were used to parameterize intrasubject longitudinal correlations and were fitted using generalized estimating equations (20); higher order models were deemed unnecessary based on Wald tests.
+Because relationships differed between intervention treatment arms based on tests of interaction, odds ratios (ORs) with 95% CIs are reported separately for DSE and ILI participants.
+We also conducted a series of ancillary analyses.
+Table 1reports the characteristics of the study population by intervention assignment.
+Earlier, we reported that at baseline, 16.5% of participants were taking ADM and 14.7% had elevated depression symptom scores (BDI greater than =11), indicating likely mild to moderate depression, and 26.8% had elevated depression symptom scores or were using ADM (12).
+However, 85.3% had BDI scores less than 11 (median 8; 25th-75th percentile, 6-9), reflecting that many individuals with severe depression symptoms resulting in hospitalization or inability to successfully complete the run-in period were excluded from Look AHEAD participation (12).
+Characteristics of study participants by treatment armTable 2reports the proportions of DSE and ILI participants with elevated depression symptom scores, using ADM, and with elevated CVD risk factors at baseline and at annual assessments during the first 4 years of the study.
+Of the participants taking ADMs, 73% took SSRIs, SNRIs, or serotonin modulators, 28% took norepinephrine-dopamine reuptake inhibitors, and 23% took TCA or tetracyclic agents at some point during the 4-year follow-up.
+Thirteen percent of participants not using ADMs at baseline took them at some point during the 4-year follow-up.
+Twenty-one percent of those using ADMs at baseline stopped taking them during follow-up.
+NoneNoneNoneSeventeen percent of participants with a BDI score less than 11 at baseline had an elevated BDI score at some time during the 4-year follow up.
+Of those with elevated BDI scores at baseline, 81% had a score below the cutoff of 11 at some point during follow-up.
+BDI scores were elevated in 27-29%, and 26-28% were taking ADMs at some point in the study.
+The proportion of participants with elevated BDI scores who were taking ADMs was 5.7, 7.2, 8.6, and 9.5% in years 1, 2, 3, and 4, respectively, in the DSE arm and 6.2, 7.9, 9.1, and 9.8%, respectively, in the ILI arm.
+Depression measures and CVD risk factor-positive status by timeThe proportion of participants with an elevated A1C level or taking insulin, as well as the proportion with a BMI greater than =30 kg/m2, differed substantially between intervention groups.
+The proportion of DSE and ILI participants with an elevated A1C level or taking insulin at some point in the study was 75.6 and 67.4%, respectively.
+The proportion of DSE and ILI participants with a BMI greater than 30 kg/m2was 90.8 and 86.9%, respectively.
+Table 3summarizes the ORs linking current CVD risk factor-positive status with indicators of depression at the prior annual examination for each of the nine risk factors in DSE and ILI participants, controlled for the CVD risk factor of interest status at the prior examination.
+ORs for CVD risk factor-positive status include those who were risk factor-positive the previous year and remained this way as well as those who were risk factor-negative the previous year and became risk factor-positive.
+In the DSE arm, only two associations with elevated BDI reached nominal statistical significance: the odds (95% CI) of elevated A1C/insulin use were increased (1.03 [1.09-1.56]) and the odds of elevated TC/medicine use were decreased if BDI was elevated in the prior year.
+Two associations with elevated BDI also reached statistical significance in the ILI arm: the odds of low HDL/medicine use (1.40 [1.12-1.75]) and elevated TC/medicine use (1.28 [1.01-1.64]) were increased if BDI was elevated in the prior year.
+ORs for CVD risk factor-positive status with ADM use or BDI greater than =11 the preceding year, controlled for risk factor status in the prior yearIn the DSE cohort, ADM use in the prior year was associated with more prevalent low HDL/medicine use (1.20 [1.03-1.50]), elevated TC/medicine use (1.29 [1.05-1.57]), and current smoking (1.70 [1.04-2.88]).
+In the ILI cohort, ADM use in the prior year was associated with more prevalent elevated A1C/insulin use (1.25 [1.08-1.46]), low HDL/medicine use (1.33 [1.11- 1.58]), elevated TC/medicine use (1.75 [1.43-2.14]), elevated SBP/medicine use (1.39 [1.11-1.74]), and BMI greater than =30 kg/m2(1.47 [1.22-1.76]).
+We also conducted a series of ancillary analyses that confirmed the robustness of our original models (results not shown): First, repeating the analyses using continuous BDI scores rather than a dichotomous classification did not change the direction or statistical significance of any relationships with CVD risk factors.
+Second, when we re-estimated the models with log-transformed BDI scores, we found similar relationships with almost identical ORs and 95% CIs.
+Third, when we repeated the analyses excluding participants who took TCA or tetracyclic ADMs, the results were nearly identical to analyses involving individuals taking any ADM.Fourth, we repeated the analyses controlled for weight change during the study.
+The pattern of associations with ADM use was similar to the pattern in our primary analysis.
+Six of eight associations (all but the association with smoking in the DSE arm and low HDL/medicine in the ILI arm) that were significant in the primary analysis were also significant in the analysis controlled for weight change.
+In the ancillary analysis, only one of four associations with elevated BDI (the association with A1C greater than 7.0% or insulin in the DSE arm) that had been significant in the primary analysis was significant in the analysis controlled for weight change.
+Tests for interaction between age and ADM and BDI yielded nonsignificant relationships (P greater than 0.05).
+We found that depression markers (elevated depression symptom scores or ADM use) during the prior year were associated with current elevated CVD risk factors in both Look AHEAD intervention arms when prior risk factor status and other covariates were controlled.
+These significant associations were most common for ADM use in the ILI treatment arm, but the analyses reported here were not designed to explicate treatment arm differences in these associations.
+Thus, the available data do not allow us to determine the reasons for these findings.
+We assessed CVD risk factors in the five domains of glycemia, lipids, blood pressure, smoking, and BMI, all of which are well-documented risk factors for CVD morbidity and mortality (21-25).
+We found that at least one indicator from each of these domains was increased in the presence of elevated depression symptoms or ADM use.
+Overall, there were more significant associations of CVD risk factors with ADM use than with depression symptoms.
+We found little evidence for a temporal relationship between elevated depression symptoms and subsequent increases in positive CVD risk factor status.
+Others have reported that depression is associated with physiological abnormalities that could contribute to adverse cardiovascular outcomes, including abnormalities that are likely associated with depression per se, because they are observed in depressed patients who do not have CVD.
+These abnormalities include increased inflammatory markers, endothelial dysfunction, abnormal platelet activation, elevated catecholamine levels, high sympathetic tone, and hypercholesterolemia (3,26).
+Of these abnormalities, we assessed only hypercholesterolemia, with mixed findings, as reported above.
+We note that elevated depression screening scores are often more reflective of general emotional distress than major depressive disorder (27), and in patients with diabetes, they may reflect diabetes-related distress (28).
+Although depression-screening tools like the BDI have acceptable psychometric properties for detecting major depressive disorder, they often yield high rate of false-positive results (8).
+All CVD risk factor measures for which we found statistically significant associations with prior ADM use, except for HDL-cholesterol, have well documented associations with CVD morbidity and mortality.
+The current study does not allow us to assess the possible mechanisms that may account for the association between ADM use and subsequent CVD risk factor-positive status.
+Future research should assess these mechanisms:First, individuals taking ADMs may have had a history of more severe, chronic, or recurrent depression.
+Second, some individuals may have a propensity to take medicines, including ADMs and medicines that would qualify them for elevated CVD risk factor status.
+Third, ADMs may contribute directly to CVD risk.
+TCAs are known to contribute to hyperglycemia, elevated TG levels, and weight gain (29,30).
+Findings on the association between TCA use and BP levels are mixed (30-32).
+Most SSRIs (citalopram, escitalopram, sertraline) appear to have no substantial effect on glycemia, lipid levels, BP, or weight (30).
+Among the SSRIs, fluoxetine has been associated with lower levels of glycemia and TG, and with weight loss, especially in the first 6 months of treatment, whereas paroxetine has been associated with the opposite effects (30).
+Bupropion, a noradrenaline-dopamine reuptake inhibitor, has been associated with effects on glycemia, TG levels, and weight similar to fluoxetine, and serotonin-noradrenaline reuptake inhibitors (venlafaxine, desvenlafaxine, duloxetine) and noradrenaline-serotonin specific agonists (mirtazapine) have been associated with effects on glycemia similar to paroxetine (30).
+We found essentially the same pattern of associations between ADM use and subsequent CVD risk factor-positive status for all ADMs and for non-TCA or tetracyclic ADMs.
+In the current study, about 80% of participants who were taking ADMs were taking non-TCAs or tetracyclic ADMs.
+The literature on the effects of ADMs on CVD risk factors does not provide a clear explanation for our findings.
+Future research should be designed to clarify the association between ADM use and CVD risk and the mechanisms that might account for this association, if any, is found.
+The Markov models that we used introduce temporality into analyses to assess relationships that markers of depression in the prior year had with current CVD risk factors once the associations that prior risk factor status had with current status were controlled.
+Thus, the ORs that we report express the degree to which current CVD risk factor status is associated with prior markers of depression beyond what would be predicted by prior risk factor status alone.
+Current positive risk factor status can result from maintaining positive status from the prior year or from transitioning from prior negative status to current positive status.
+This approach offers insights that cannot be gained from the cross-sectional associations we previously reported (10) and strengthens the evidence for depression measures as drivers of CVD risk.
+In general, our ancillary analysis findings confirmed the robustness of our original models.
+We found that the associations of depression symptoms and ADM use with CVD risk factors were independent of one another.
+We also found that the association of elevated BDI and continuous BDI with the CVD risk factors was equally strong.
+An analysis using log-transformed BDI scores also generated results very similar to our main analysis, as did tests for interactions of age with BDI scores and ADM use.
+The association between SSRI (or any non-TCA or tetracyclic) use and CVD risk factors was essentially the same as the association between all ADM use and CVD risk factors.
+The ancillary analysis that controlled for weight change during the study provides additional insight into the possible effects of elevated depression symptoms and ADM use on CVD risk factor status.
+This ancillary analysis reduced the number of significant associations, especially with elevated depression symptoms, but many associations, especially those with ADM use, remained significant.
+This suggests that factors other than weight change account for some of the associations we found and that these factors must be better understood.
+This is the first study of which we are aware to simultaneously assess the independent association of two depression indicators-symptoms and ADM use- with subsequent CVD risk factor status in people with type 2 diabetes.
+Other study strengths include the large, multiethnic population and that depression symptoms, ADM use, and a broad range of cardiovascular risk factors were assessed systematically.
+Moreover, most CVD risk factors were assessed objectively rather than relying on self-reporting.
+Further, the design of the study, assessing depression indicators in the year prior to assessment of CVD, permitted us to draw inferences about directionality that are not possible in cross-sectional studies.
+The longitudinal design included assessment of depression indicators and CVD risk factors at multiple time points, enhancing the robustness of the findings.
+The study also has important limitations.
+It was not a controlled trial assessing the effects of depression symptoms or ADM use on CVD risk factors; thus, we cannot draw definitive causal inferences.
+We did not study a comprehensive array of CVD risk factors, and factors such as inflammatory markers, endothelial cell dysfunction markers, and markers of kidney damage and oxidative stress were not included.
+Future studies of the relationship between depression indicators and CVD events will provide a more definitive picture of effects on overall CVD risk.
+Another limitation is that we did not confirm that all patients took ADMs because of depression rather than for other indications, such as smoking cessation, neuropathic pain, or other psychiatric conditions, including panic disorder, social anxiety disorder, obsessive-compulsive disorder, and post-traumatic stress disorder (33).
+This information was not collected.
+Further, we had no information about the dosage or duration of treatment with ADMs before the start of the study.
+Also, some participants might have failed to disclose that they were taking ADMs, whereas others who reported that they were not taking ADMs at baseline might have discontinued them very recently.
+However, these possibilities would mitigate the likelihood of finding an association between ADM use and CVD risk factors; therefore, they would bias the estimated associations toward the null hypothesis.
+Finally, we were able to identify associations only with classes of ADM, not with specific ADM.Future research should include more robust assessment of depression symptoms and of the reason ADMs are used (i.e., for major depressive disorder or for other conditions).
+Data from the National Health and Nutrition Examination Survey, a cross-sectional survey of a nationally representative population of adults with diabetes conducted in 1999-2000, found that only 7.3% of respondents attained recommended levels of A1C, BP, and TC levels (34).
+If elevated depression symptoms or taking ADM add to the challenges of achieving CVD risk factor control, clinicians should be especially attentive to the fact that these patients may need more aggressive treatment to control CVD risk factors.
+Although the clinical relevance of the associations we report is difficult to assess, we found a dramatic increase of 24 to greater than 50% in the odds of positive status for some CVD risk factors in study participants who had elevated depression symptoms or who were taking an ADM in the preceding year.
+This finding warrants serious attention.
+In conclusion, among Look AHEAD participants, elevated self-reported depression symptoms and ADM use in the prior year were each independently associated with some but not all CVD risk factors during the first 4 years of the trial; significant associations for elevated risk were most consistent for ADM use.
+These results are consistent with the hypothesis of a potential causal link between ADM use and worsening of some CVD risk factors.
+Importantly, Look AHEAD will permit examination of the relationships between depression indicators and actual CVD outcomes, providing a fuller picture of the depression-CVD outcome relationship.
+In the meantime, more aggressive monitoring of CVD risk factors among depressed individuals and those using ADMs may be warranted.
