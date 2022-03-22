@@ -2,6 +2,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from . import db
 from flask_login import UserMixin
 from . import login_manager
+from io import BytesIO
 
 
 class File(db.Model):
@@ -84,14 +85,23 @@ def addProcessedFile(filename, patient_id, doctor_id, appointment_date, clinical
 
     transcribedData = open("app/file/input.txt", "r")
 
-    audioData = open('app/audio/' + filename, 'rb')
+    audioData = open("app/audio/" + filename.split('.')[0] + ".wav")
 
-    upload = File(name=filename, appointment_date=appointment_date, audio=audioData.read().encode(), 
-                transcribedData=transcribedData.read().encode(),processedData=processedFile.read().encode(), 
+    upload = File(name=filename, appointment_date=appointment_date, audio=audioData.read().encode(),
+                transcribedData=transcribedData.read().encode(), processedData=processedFile.read().encode(), 
                 clinical_specialty=clinical_specialty, patient_id=patient_id, doctor_id=doctor_id)
     
     db.session.add(upload)
     db.session.commit()
+
+def deleteLastAddedFile():
+    file = File.query.order_by(File.id.desc()).first()
+    file_id = file.id
+    File.query.filter(File.id == file_id).delete()
+    db.session.commit()
+    
+def getUser(user_id):
+    return User.query.filter(User.id == user_id).first()
 
 def getAllPatients():
     patient_role_id = Role.query.filter_by(name='patient').first()

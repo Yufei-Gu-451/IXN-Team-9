@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{ % block head % }
+<style>
+    td {
+           width: 150px;
+           text-align: center;
+           border: 1px solid black;
+           padding: 5px;
+        }
+</style>
+{ % endblock % }
+
+{% block page_content %}
+    <h1> My Details </h1>
+    <br/>
+    <div class='containder'>
+        <table class="table">
+            <tr>
+                {% for heading in headings %}
+                <th> {{ heading }} </th>
+                {% endfor %}
+            </tr>
+
+            <tr>
+                <td>{{user.first_name}}</td>
+                <td>{{user.last_name}}</td>
+                <td>{{user.date_of_birth}}</td>
+                <td>{{user.email}}</td>
+                <td>{{user.username}}</td>
+            </tr>
+        </table>
+    </div>
+{% endblock %}
