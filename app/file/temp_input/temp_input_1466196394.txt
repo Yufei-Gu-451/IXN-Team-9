@@ -1,0 +1,313 @@
+Glucose homeostasis is supported in a complex manner by the endocrine pancreas, which contains different cell types that respond metabolically to the circulating glucose concentration.
+Oppositely acting closed feedback loops of control have been identified between glucose and the hyperglycemic hormone glucagon on the one hand, and between glucose and the hypoglycemic hormone insulin on the other hand.
+The importance of this duality of secretion of both hormones was suggested by the idea that both lack of insulin and chronic hyperglucagonemia are needed to trigger overt diabetes (1).
+Although there is recent renewed interest in the pancreatic alpha-cell, the exact molecular and cellular mechanisms by which glucose inhibits glucagon secretion are still poorly understood and hotly debated.
+One area of discussion is whether glucose controls alpha-cell activity directly or indirectly through the other cell types in the islets of Langerhans (2).
+A direct effect of glucose on alpha-cells was first proposed as a result of studies on purified rat alpha-cells (3), but the underlying mechanisms are still disputed.
+The most documented hypothesis attributes a key role to ATP-sensitive K+(KATP) channels (4-6), which are highly expressed in alpha-cells, as in beta-cells, and possess the same subunit composition, i.e., the pore-forming subunit Kir6.2 and the sulfonylurea receptor SUR1 (7-9).
+In beta-cells, the closure of KATPchannels by acceleration of glucose metabolism depolarizes the plasma membrane, leading to opening of voltage-dependent Ca2+channels and to an increase of the free cytosolic Ca2+concentration ([Ca2+]c), which triggers insulin release.
+The alpha-cells possess a different equipment of voltage-dependent channels than do beta-cells.
+It has been proposed that at low glucose, the alpha-cell KATPcurrent is already small, and the plasma membrane is partially depolarized, displaying action potentials that involve voltage-dependent channels.
+Hence [Ca2+]cis high and glucagon secretion is stimulated.
+At high glucose, a further closure of KATPchannels depolarizes the plasma membrane to a potential at which low-threshold voltage-dependent channels inactivate, leading to a decreased amplitude of action potentials, Ca2+influx, and eventually exocytosis (4,5).
+This model is, however, challenged by some reports indicating that glucose hyperpolarizes rather than depolarizes the plasma membrane (7,10-12).
+Three other hypotheses of direct inhibition of alpha-cells by glucose suggest a glucose-induced control of a depolarizing store-operated current (10,13), a hyperpolarizing current carried by the Na+pump (14), or AMP-activated protein kinase (15).
+Another hypothesis of direct control proposes that glucose does not inhibit but rather stimulates alpha-cells by mechanisms similar to those present in beta-cells (8,16-18).
+The stimulatory action of glucose observed in these studies with isolated alpha-cells suggests that the glucagonostatic effect of glucose in intact islets is mediated by indirect inhibitory paracrine factor from beta-cells or delta-cells.
+Several factors have been suggested, such as insulin (2), Zn2+co-released with insulin after its vesicular accumulation by the ZnT8 transporter (8,17), or somatostatin (SST) (19).
+However, their involvement in the glucagonostatic effect of glucose is again debated.
+In the current study, we have studied islets isolated from wild-type and genetically modified mouse strains to reassess the role of KATPchannels, paracrine SST, and paracrine Zn2+in the glucagonostatic effect of glucose.
+We found that glucose and the KATPchannel blocker, tolbutamide (Tolb), have distinct effects, and that glucose can control glucagon release independently of KATPchannels, SST, and Zn2+.
+Tolb influences glucagon secretion by two mechanisms, a direct stimulation of alpha-cells and an indirect inhibition by SST released from delta-cells.
+Several mouse models were used:Sur1None(lacking functional KATPchannels) (20) and C57BL/6 (Sur1None) mice,SstNone(21) andSstNonemice (CBA/Ca * C57BL/10 F1 mice used as controls ofSstNonemice to have the same genetic background) (19), andZnT8NoneandZnT8Nonemice (both strains obtained from heterozygousZnT8Nonemice) (22).
+The study was approved by our Commission d'Ethique d'Experimentation Animale.
+Islets were isolated with collagenase and cultured overnight in RPMI 1640 medium containing 7 mmol/L glucose (G7) and 10% heat-inactivated fetal calf serum.
+The medium (pH 7.4) used for all experiments contained (in mmol/L): 120 NaCl, 4.8 KCl, 2.5 CaCl2, 1.2 MgCl2, 24 NaHCO3, 1 mg/mL BSA, and various test agents as indicated.
+It was gassed with O2:CO2(94:6%).
+To stimulate glucagon release, a 6 mmol/L amino acid mixture (2 mmol/L alanine, 2 mmol/L glutamine, and 2 mmol/L arginine) was present in most perifusion experiments.
+RO280450 was from Axon Medchem (the Netherlands), SST-14 was from Bachem, and pertussis toxin was from Tocris.
+Batches of 100 to 500 islets were perifused at 37 degrees C, at a flow rate of 0.5 mL/min, with various test solutions.
+Insulin (homemade assay) (23), glucagon (Millipore), and SST (Euro Diagnostica) were measured by radioimmunoassay.
+The results are presented as mean traces (+/-SE) of experiments with islets obtained from at least three different preparations.
+Statistical significance of differences was evaluated by paired or unpaired Studentttest.
+Except for the experiments illustrated inFig.
+8, all perifusion experiments were performed in the presence of a 6 mmol/L amino acid mixture to stimulate glucagon secretion (23).
+This allows an easier detection of an inhibitory effect of glucose.
+In the presence of 2 mmol/L glucose, glucagon secretion was high.
+Increasing the concentration to G7 reversibly inhibited glucagon release and stimulated insulin secretion (Fig.
+1None).
+Addition of RO280450, a glucokinase activator (24), to a medium containing 2 mmol/L glucose mimicked the glucagonostatic and insulinotropic effects of G7 (Fig.
+1None).
+By contrast, addition of 6 mmol/L 3-O-methyl-d-glucose, a nonmetabolizable glucose analog, to a medium containing 1 mmol/L glucose (G1) did not reproduce the glucagonostatic effect of glucose (Fig.
+1None).
+Glucose (G) metabolism leads to inhibition of glucagon secretion from mouse islets.
+Islets from C57Bl/6 mice were perifused in the presence of alanine, glutamine, and arginine (2 mmol/L each, mix AA).
+A: The G concentration was changed between 2 and 7 mmol/L when indicated.
+B: 10 umol/L RO280450, a glucokinase activator, was added to a medium containing 1 mmol/L G as indicated.
+C: 6 mmol/L 3-O-methyl-d-glucose (3-O-MG) was added to a medium containing 1 mmol/L G as indicated.
+Traces are means +/- SE for three experiments with islets from different preparations.
+To test whether the glucagonostatic effect of glucose requires a modulation of KATPchannels, we compared the effects of G7 on islets fromSur1NoneandSur1Nonemice.
+InSur1Noneislets, switching from G1 to G7 reversibly inhibited glucagon release (Fig.
+2None).
+InSur1Noneislets perifused with G1, glucagon secretion was much lower than inSur1Noneislets (Fig.
+2None;P less than 0.05).
+This difference was not attributable to a difference in the glucagon content of the islets, which was similar inSur1NoneandSur1Noneislets (726 +/- 75 vs. 628 +/- 116 pg/islet, respectively).
+Application of G7 toSur1Noneislets inhibited glucagon release.
+Expression of secretion as a percentage of release in G1 revealed that the extent of the inhibition was ?50% lower inSur1Nonethan inSur1Noneislets (Fig.
+2None).
+Glucose (G) can inhibit glucagon secretion without functional KATPchannels.
+Islets fromSur1NoneorSur1Nonemice were perifused in the presence of alanine, glutamine, and arginine (2 mmol/L each, mix AA).
+A-C: The G concentration was changed between 1 and 7 mmol/L when indicated.
+B: Glucagon secretion from the experiments illustrated in (A) is expressed as percentage of secretion during the last 12 min in G1.
+C: The perifusion medium was supplemented with 500 umol/L Tolb (?)
+or 250 umol/L Dz (?)
+to maximally close or open KATPchannels, respectively.
+Secretion in the presence of Dz is displayed with an extended scale in theinsetto better see the inhibitory effect of glucose.
+Thedashed linesin theinsetcorrespond to changes in glucose concentrations.
+Traces are means +/- SE for seven (AandB:Sur1None), five (AandB:Sur1None), and three (C) experiments with islets from different preparations.
+We next tested the effect of glucose on glucagon secretion fromSur1Noneislets in conditions in which KATPchannels were rendered pharmacologically insensitive to glucose after their maximal closure or opening with, respectively, 500 umol/L Tolb or 250 umol/L diazoxide (Dz).
+In the presence of Tolb and G1 (Fig.
+2None), glucagon secretion was lower than in the absence of the KATPchannel blocker (Fig.
+2None; 0.32 +/- 0.02 [n= 3] vs. 0.68 +/- 0.1 pg/islet/min [n= 5]).
+Applying G7 induced a small and reversible inhibition of secretion (Fig.
+2None).
+In the presence of Dz and G1, glucagon secretion was drastically reduced (0.043 +/- 0.002 pg/islet/min;n= 3;Fig.
+2None).
+Surprisingly, G7 still was able to reversibly suppress glucagon release (Fig.
+2None, inset).
+As expected, neither Tolb nor Dz affected glucagon secretion fromSur1Noneislets in the presence of G1 or G7 (not shown).
+These experiments suggest that at least part of the glucagonostatic effect of glucose does not require KATPchannels.
+Addition of 500 umol/L Tolb to a medium containing G1 reversibly inhibited glucagon secretion (Fig.
+3None).
+The effect of the sulfonylurea was dose-dependent, being modest at 10 umol/L (26% of inhibition;P less than 0.01) and strong at 50 umol/L (66% of inhibition;P less than 0.01;Fig.
+3None).
+Surprisingly, 500 umol/L Tolb stimulated glucagon secretion when applied in G7 (Fig.
+3None).
+A concentration of at least 50 mumol/L Tolb was required to see this effect (48% of stimulation;P less than 0.05;Fig.
+3None).
+It has been suggested that glucose concentrations higher than G7 paradoxically stimulate glucagon secretion (25).
+If this results from an additional closure of KATPchannels, then this could be compatible with the stimulatory effect of Tolb.
+However, we found that an increase from G7 to 30 mmol/L glucose inhibited glucagon secretion (Fig.
+3None) and did not reproduce the stimulatory effect of Tolb.
+Therefore, glucose and Tolb exert distinct effects on glucagon secretion.
+Effect of various concentrations of Tolb and Dz, and of glucose (G) on glucagon secretion.
+Islets from C57Bl/6 mice were perifused in the presence of alanine, glutamine, and arginine (2 mmol/L each, mix AA).
+A-F: The G concentration was either 1 mmol/L (A, C, E) or 7 mmol/L (B, D, F) throughout.
+AandB: 500 umol/L Tolb or 250 umol/L Dz were applied when indicated.
+C-F: Various concentrations (2, 10, or 50 umol/L) of Tolb or Dz were applied when indicated.
+Only the end of the perifusion experiment is shown, i.e., when secretion was more stable.
+G: The glucose concentration of the medium was changed between 7 and 30 mmol/L as indicated.
+Traces are means +/- SE for three to four experiments with islets from different preparations.
+We tested the effect of Dz.
+Addition of 250 umol/L Dz in G1 strongly inhibited glucagon release (Fig.
+3None).
+The inhibitory effect was already robust at 50 umol/L of the drug (48% of inhibition;P less than 0.01;Fig.
+3None).
+We also checked whether any of the tested Dz concentrations could reverse the glucagonostatic effect of glucose; 250 umol/L Dz strongly inhibited glucagon secretion in G7 (Fig.
+3None), and a weak, but nonsignificant, inhibition was observed at 50 umol/L (Fig.
+3None).
+Importantly, lower concentrations of Dz never reversed the inhibitory effect of G7 (Fig.
+3None), suggesting that glucose inhibited glucagon secretion independently from KATPchannel closure.
+The role of SST in the control of glucagon secretion by glucose was studied usingSstNoneandSstNonemice.
+As expected,SstNoneislets lack immunoreactive SST (Supplementary Fig.
+1) and do not secrete detectable amounts of SST.
+In G1, glucagon secretion was significantly (P less than 0.05) higher inSstNonethan inSstNoneislets (Fig.
+4None).
+The difference was larger when secretion was expressed as percentage of content (0.24% +/- 0.06 vs. 0.056% +/- 0.01;P less than 0.05) because the glucagon content was lower inSstNonethan inSstNoneislets (664 +/- 53 pg/islet [n= 18] vs. 820 +/- 53 pg/islet [n= 23], respectively;P less than 0.05).
+This suggests that SST exerts a strong tonic inhibition on glucagon release.
+Switching from G1 to G7 inhibited glucagon secretion from bothSstNoneandSstNoneislets, which demonstrates that SST alone is not responsible for the inhibition of glucagon secretion by glucose (Fig.
+4None).
+However, the inhibition was less sustained inSstNonethan inSstNoneislets, supporting a possible involvement of SST in the glucagonostatic effect of glucose (Fig.
+4None).
+G7 stimulated SST release fromSstNoneislets (Fig.
+4None) and triggered a larger insulin secretion fromSstNonethanSstNoneislets (Fig.
+4None; 23.43 +/- 5.12 [n= 3] vs. 8.28 +/- 0.45 pg/min/islet [n= 5]).
+This latter observation was not attributable to reduced insulin content (47 +/- 16 vs. 58 +/- 19 ng/islet inSstNoneandSstNoneislets, respectively) and suggests that SST exerts an inhibitory paracrine control on insulin release during glucose stimulation.
+Somatostatin released by delta-cells exerts a tonic inhibition on glucagon and insulin secretion but is not required for the glucagonostatic effect of glucose (G).
+Islets fromSstNoneorSstNonemice were perifused in the presence of alanine, glutamine, and arginine (2 mmol/L each, mix AA).
+The G concentration was changed between 1 and 7 mmol/L as indicated.
+B: Glucagon secretion from the experiments illustrated in (A) is expressed as percentage of secretion during the last 12 min in G1.
+Traces are means +/- SE for three (SstNone) or five (SstNone) experiments with islets from different preparations.
+Addition of 500 umol/L Tolb to G1 did not affect glucagon secretion fromSstNoneislets, whereas it stimulated that ofSstNoneislets (Fig.
+5None), demonstrating that Tolb did not reproduce the glucagonostatic effect of glucose.
+Because Tolb strongly stimulated SST release fromSstNoneislets (Fig.
+5None) and because SST-14 potently inhibited glucagon secretion fromSstNoneislets (Fig.
+5None), it is most likely that inSstNoneislets, Tolb-induced SST secretion has counteracted the direct stimulatory effect of Tolb on alpha-cells.
+By contrast, in SstNoneislets, glucagon secretion would be enhanced as a result of the direct stimulatory effect of Tolb on alpha-cells.
+It is worth noting that Tolb much more potently (nine-fold;P less than 0.05) stimulated SST release bySstNoneislets than did G7 (compareFigs.
+4Noneand5None).
+The sulfonylurea equally increased insulin secretion of both types of islets (Fig.
+5None).
+250 umol/L Dz in G1 reversibly inhibited glucagon secretion of both types of islets (Fig.
+5None) and had no detectable effect on insulin and SST secretion (Fig.
+5None,None).
+Effects of KATPchannel modulators, SST, and glucose (G) on islet hormone secretion.
+Islets fromSstNoneorSstNonemice were perifused in the presence of alanine, glutamine, and arginine (2 mmol/L each, mix AA).
+The G concentration of the medium was either 1 (A-D) or 7 mmol/L (E-G) throughout.
+A-CandE-G: 500 umol/L Tolb or 250 umol/L Dz was applied when indicated.
+D: 1 mumol/L SST-14 was added as shown.
+H: The G concentration was changed between 7 and 30 mmol/L as indicated.
+Traces are means +/- SE for seven (A-C:SstNone), six (AandC:SstNone), and three (D-H) experiments with islets from different preparations.
+In the presence of G7, glucagon secretion was significantly (P less than 0.05) higher inSstNonethan inSstNoneislets (Fig.
+5None) and, for both types of islet, was lower than in G1 (0.49 +/- 0.11 [n= 3] vs. 1.31 +/- 0.3 pg/min/islet [n= 6];P= 0.11; and 0.15 +/- 0.002 [n= 3] vs. 0.62 +/- 0.04 pg/min/islet [n= 7];P less than 0.01; compareFig.
+5Noneand 5None).
+Also, 500 umol/L Tolb stimulated glucagon and insulin secretion fromSstNoneandSstNoneislets (Fig.
+5None,None) and increased SST secretion fromSstNoneislets (Fig.
+5None).
+Increasing the glucose concentration from 7 to 30 mmol/L inhibited glucagon release bySstNoneislets (Fig.
+5None).
+Dz reversibly suppressed glucagon secretion fromSstNoneandSstNoneislets (Fig.
+5None) but was ineffective on insulin and SST secretion (Fig.
+5None,None).
+To verify the involvement of SST in the control of islet hormone secretion, C57Bl/6 islets were pretreated for 18 h with 200 ng/mL pertussis toxin (PTX), which, by ADP-ribosylating the alpha-subunit of the Gi/oproteins, locks it in a GDP-bound inactive state and blocks the effect of SST.
+Control experiments showed that the pretreatment stimulated glucagon release approximately two-fold (0.79 +/- 0.18 [n= 7] vs. 1.66 +/- 0.22 pg/min/islet [n= 7];P= 0.01;Fig.
+6None,None) and prevented the glucagonostatic effect of SST (Fig.
+6None).
+Increasing the glucose concentration from 1 to 7 mmol/L strongly and reversibly suppressed glucagon release in control and PTX-treated islets (Fig.
+6None).
+Subsequent application of Tolb inhibited glucagon secretion of control islets but stimulated that of PTX-treated islets, as attested by the rapid decline in secretion on removal of the sulfonylurea.
+PTX treatment largely increased the stimulation of insulin release elicited by G7 and Tolb (Fig.
+6None).
+Similar results were obtained in experiments in which Tolb was applied before G7 (Supplementary Fig.
+2).
+These last experiments also show that G7 exerted a sustained glucagonostatic effect without concomitant sustained insulinotropic effect (insulin increases slightly and transiently only during the first application of G7), suggesting that insulin is not responsible for the glucagonostatic effect of glucose.
+Control and PTX-treated islets had similar glucagon (1.43 +/- 0.12 ng/islet [n= 21] vs. 1.52 +/- 0.17 ng/islet [n= 14], respectively) and insulin contents (148 +/- 16 ng/islet [n= 17] vs. 145 +/- 24 ng/islet [n= 11], respectively).
+These results confirm those obtained onSstNonemice.
+Removal of the SST paracrine influence by pretreatment with PTX does not prevent the glucagonostatic effect of glucose (G) but transforms the inhibitory effect of Tolb into a stimulatory one.
+Islets from C57Bl/6 mice were pretreated or not for 18 h during the culture with 200 ng/mL PTX.
+They were then perifused with a medium containing alanine, glutamine, arginine (2 mmol/L each, mix AA) and 1 mmol/L G.A: 1 mumol/L SST-14 was added as shown.
+BandC: The G concentration of the medium was changed between 1 and 7 mmol/L, and 500 umol/L Tolb was applied when indicated.
+Traces are means +/- SE for three or four experiments with islets from different preparations.
+To test whether glucose could inhibit glucagon secretion independently of KATPchannels and SST,Sur1Noneislets were or were not pretreated with PTX.
+PTX treatment stimulated glucagon secretion four-fold (P= 0.04) in the presence of G1 (Fig.
+7None), which is twice more than in control C57BL/6 islets (Fig.
+6None,None).
+Again, it did not affect the glucagon content of the islets (1.12 +/- 0.36 ng/islet [n= 3] vs. 1.19 +/- 0.34 ng/islet [n= 4] forSur1NoneandSur1None-PTX islets, respectively).
+Switching from G1 to G7 strongly inhibited glucagon release from PTX-treatedSur1Noneislets (Fig.
+7None).
+Other series of experiments were performed onSstNoneandSstNoneislets perifused with 500 umol/L Tolb or 250 umol/L Dz and showed that G7 decreased glucagon release under these conditions (Fig.
+7None).
+These experiments indicate that glucose can inhibit glucagon secretion independently of KATPchannels and SST.
+Glucose (G) can inhibit glucagon secretion independently of KATPchannels and somatostatin.
+Islets fromSur1None,SstNoneandSstNonemice were perifused in the presence of alanine, glutamine, and arginine (2 mmol/L each, mix AA) and submitted to a change of the G concentration of the medium between 1 and 7 mmol/L.
+A:Sur1Noneislets were pretreated or not for 18 h during the culture with 200 ng/mL PTX.
+B: The perifusion medium was supplemented with 500 umol/L Tolb or 250 umol/L Dz to maximally close or open KATPchannels, respectively.
+Traces are means +/- SE for three or four experiments with islets from different preparations.
+Additional experiments were performed in amino acid-free media to verify key observations that were made in the presence of amino acids.
+The absence of amino acids dramatically reduced glucagon release.
+Dz (from 2 to 50 umol/L) did not increase glucagon secretion of C57Bl/6 islets at G7, whereas a decrease in the glucose concentration to 1 mmol/L strongly stimulated glucagon release (Fig.
+8None).
+Dz dose-dependently inhibited insulin release at G7 (Fig.
+8None).
+Switching from G7 to G1 stimulated glucagon release ofSstNoneislets, whereas the subsequent addition of Dz tended to decrease glucagon secretion, as attested to by the reacceleration of secretion on Dz removal (Fig.
+8None).
+Again, Dz dose-dependently inhibited insulin secretion (Fig.
+8None).
+Tolb stimulated both glucagon and insulin release (Fig.
+8None,None).
+At G7, Dz did not affect glucagon secretion of PTX-pretreated C57Bl/6 islets, whereas Tolb potently stimulated their glucagon and insulin release (Fig.
+8None,None).
+The observations that in the complete absence of influence of SST (Fig.
+8None,None), Dz did not reverse the glucagonostatic effect of G7 whereas Tolb strongly stimulated glucagon release suggest that glucose inhibits glucagon release independently from alpha-cell KATPchannels.
+Opening of alpha-cell KATPchannels with increasing concentrations of Dz does not reverse the glucagonostatic effect of glucose (G), and removal of the SST paracrine influence by genetic disruption of theSstgene or pretreatment with PTX unmasks a strong glucagonotropic effect of Tolb.
+All the experiments were performed without amino acids.
+Islets of C57Bl/6,SstNone, orSstNonemice were used.
+In some experiments (E,F,I,J), islets of C57Bl/6 mice were pretreated for 18 h during the culture with 200 ng/mL PTX.
+A-F: The islets were submitted or not to a change of the G concentration of the medium between 1 and 7 mmol/L, and various Dz concentrations and 500 umol/L Tolb were applied as indicated.
+G-J: The G concentration of the medium was 1 mmol/L throughout and 500 umol/L Tolb or 250 umol/L Dz was applied when indicated.
+Traces are means +/- SE for three to five experiments with islets from different preparations.
+The effect of Tolb was also tested at G1.
+Under these conditions, Tolb did not affect glucagon secretion ofSstNoneislets but strongly stimulated that ofSstNoneislets (Fig.
+8None).
+Tolb also triggered a much larger insulin release bySstNonethan bySstNoneislets (32.31 +/- 5.61 [n= 4] vs. 7.08 +/- 2.31 ng/min/islet [n= 4];P less than 0.05;Fig.
+8None) and potently stimulated SST secretion fromSstNoneislets (Supplementary Fig.
+3).
+Similar experiments were performed in C57Bl/6 islets pretreated or not with PTX.
+Tolb did not affect glucagon secretion of control islets, whereas it strongly stimulated that of PTX-treated islets (Fig.
+8None).
+PTX treatment also potently increased the effect of Tolb on insulin release (Fig.
+8None).
+The role of Zn2+in the inhibition of glucagon secretion by glucose was studied usingZnT8NoneandZnT8Nonemice.
+Incubation experiments showed that 10 mmol/L glucose decreased glucagon secretion to the same extent in both types of islets, demonstrating that Zn2+is not responsible for the inhibition of glucagon secretion by glucose (Supplementary Fig.
+4).
+In the current study, we used pharmacological tools and three different genetically modified mouse strains to reassess the much controverted roles of KATPchannels, paracrine SST, and paracrine Zn2+in the glucagonostatic effect of glucose.
+We provide evidence that glucose and the KATPchannels blocker, Tolb, have distinct effects, and that glucose can control glucagon release independently of alpha-cell and delta-cell KATPchannels, SST, and Zn2+.
+We also show that Tolb influences glucagon secretion by two mechanisms, a direct stimulation of alpha-cells and an indirect inhibition by somatostatin released from delta-cells.
+The alpha-cells express GLUT1 (but not GLUT2) (26) and the high Kmhexokinase, glucokinase (27).
+It has been reported that in alpha-cells, glucose slightly increases the free cytosolic [ATP] (17,28) and NAD(P)H fluorescence (18,29), but it does not affect the ATP-to-ADP ratio (30), suggesting that glucose is poorly metabolized.
+However, experiments with radioactive tracers have demonstrated a substantial rate of uptake (26) and anaerobic glycolysis (31), but limited oxidative metabolism and anaplerosis when compared with beta-cells (31).
+By using 3-O-methyl-d-glucose, a nonmetabolizable glucose analog that is taken-up by alpha-cells at a similar rate as glucose (32), we showed that the glucagonostatic effect of glucose requires its metabolism.
+Moreover, activation of glucokinase by RO280450 strongly inhibited glucagon release.
+It is, however, unknown whether this last effect is direct or indirect.
+The alpha-cells possess KATPchannels (6,7,9,33).
+However, whether these channels are essential for the glucose control of glucagon secretion is still disputed (6,13,33).
+Our observations that, in the presence of G1 and amino acids, Tolb mimics the glucagonostatic effect of G7 onSur1Noneislets and that glucagon secretion ofSur1Noneislets was lower than that ofSur1Noneislets support, at the first sight, an involvement of alpha-cell KATPchannels in the glucagonostatic effect of glucose.
+However, this conclusion is challenged by observations demonstrating that glucose and Tolb exert distinct effects.
+1) InSstNoneislets or PTX-treated C57Bl/6 islets perifused with amino acids, Tolb stimulated glucagon secretion, whereas G7 inhibited it.
+2) InSstNoneislets perifused without amino acids, glucagon secretion was stimulated on switching from G7 to G1 and by Tolb.
+3) Glucagon secretion from control islets (C57Bl/6,SstNone) was stimulated by Tolb at G7, whereas it was inhibited by an increase of the glucose concentration from 7 to 30 mmol/L.
+Abrogation of the effect of Tolb by knockout ofSur1demonstrates that the stimulatory effect of Tolb did not result from an action on a mitochondrial-like KATPchannel conductance (34) or the activation of Epac2 (35).
+The distinct effects of glucose and Tolb on glucagon secretion is compatible with previous reports showing that glucose slightly decreased, whereas Tolb increased [Ca2+]cin single alpha-cells (13,33).
+The observation that, at G1, Tolb inhibited glucagon secretion fromSur1Noneislets but was ineffective onSstNoneislets is probably attributable to strain differences.
+Other observations from our study suggest that glucose can inhibit glucagon secretion independently of alpha-cell KATPchannels.
+1) If the glucagonostatic effect of glucose results from a closure of alpha-cell KATPchannels, then it should be reversed by Dz concentrations in a low and narrow range as previously suggested (6).
+We instead found that in the presence of amino acids or in their absence and without influence of paracrine somatostatin signaling (SstNoneand PTX-treated islets), none of the tested Dz concentration reversed the glucagonostatic effect of G7.
+On the contrary, the drug either was ineffective at low concentrations or suppressed glucagon secretion at higher concentrations, as expected from its hyperpolarizing action on alpha-cells (10,33).
+2) Glucose could still inhibit glucagon secretion fromSur1Noneislets or control islets perifused with high concentrations of Tolb or Dz.
+This last observation may seem surprising.
+However, it has been reported by others (13,25) and is consistent with the [Ca2+]c-lowering effect of glucose in Dz-exposed alpha-cells (10).
+Our finding that glucose inhibited glucagon secretion without the intervention of alpha-cell KATPchannels is compatible with a recent report (36) and our previous observation demonstrating that, in alpha-cells, glucose did not significantly affect IKATP(13,33).
+From all the above-discussed observations, it is clear that glucose and Tolb exert distinct effects in alpha-cells and that glucose can inhibit glucagon secretion independently from alpha-cell KATPchannels.
+Nevertheless, we cannot fully exclude the involvement of KATPchannels in the glucagonostatic effect of glucose because Tolb mimicked the inhibitory effect of glucose inSur1Noneislets.
+Previous reports using differentSur1orKir6.2knockout models showed that disruption of the KATPchannels did not affect (37), reduced (38), or completely prevented (6,9,39) the glucagonostatic effect of glucose.
+The delta-cells also possess KATPchannels (40).
+One model proposes that the glucose-induced inhibition of glucagon secretion is mediated by SST (2,19).
+Of the two endogenous bioactive forms of SST (SST-14 and SST-28), SST-14 is the predominant form in pancreatic islets.
+SST is a potent inhibitor of glucagon secretion (2), as confirmed here.
+Five SST receptor subtypes have been described (SSTR1-SSTR5).
+Although experiments using SSTR2-selective agonists and antagonists as well asSstr2knockout mice have suggested that SSTR2 is the main mediator of SST-induced inhibition of glucagon release (41,42), some reports suggest that alpha-cells also express other SSTRs (43,44).
+Because of this diversity in SSTR expression, the lack of selective and potent SSTR antagonists (44), and the reported unspecific effects of some antagonists (2), we have used islets ofSstNonemice and islets of C57Bl/6 mice pretreated with PTX (which, by invalidating Gi/oproteins, impairs SST signaling) to investigate the role of SST in the glucagonostatic effect of glucose.
+In all conditions, we observed a higher rate of glucagon release in islets devoid of SST paracrine influence.
+This is compatible with the higher rate of glucagon release found inSstr2knockout mice (42) and after blockade of SSTR2 receptors (13) or immunoneutralization of SST by antibodies (45), and it suggests that SST exerts a tonic inhibition on glucagon release.
+Importantly, glucose efficiently inhibited glucagon release of islets devoid of SST paracrine influence, indicating clearly that the glucagonostatic effect of glucose does not require SST.
+However, we cannot fully exclude a small participation of SST in the inhibitory action of glucose because glucose stimulated SST secretion and because the glucagonostatic effect of glucose was less sustained inSstNonethan inSstNoneislets (Fig.
+4None).
+Conflicting results have been reported in the literature.
+Thus, the glucagonostatic effect of glucose was found to be preserved or even increased in the presence of a SSTR2 antagonist, a somatostatin antibody (13,45), or after pretreatment with PTX (46).
+However, a previous study using the same mouse model as we used here reported that the suppressive effect of glucose on glucagon secretion was lost inSstNoneislets (19).
+The reasons for these discrepancies are unknown and might be related to differences in experimental conditions.
+The involvement of SST in the effect of Tolb on glucagon secretion is much more obvious.
+Thus, in the presence of G1, Tolb did not affect or inhibited glucagon release ofSstNoneor control C57Bl/6 islets, whereas it stimulated glucagon secretion ofSstNoneor PTX-treated C57Bl/6 islets (even very potently in the absence of amino acids).
+This clearly indicates that SST is involved in the control of glucagon release by Tolb.
+The stronger involvement of SST in the glucagonostatic effect of Tolb than that of glucose is compatible with our observation that the sulfonylurea stimulated SST secretion much more potently than glucose.
+The difference in the effect of Tolb between islets with or without paracrine SST signaling suggests that Tolb modulates glucagon secretion by two distinct mechanisms, a direct stimulatory effect on alpha-cells that is detected in the absence of SST (i.e., inSstNoneor PTX-treated islets) and an indirect inhibitory effect that is caused by the stimulation of SST release.
+The net effect of Tolb on glucagon secretion would thus result from a balance between the stimulatory and the inhibitory effects.
+That Tolb directly stimulates alpha-cells is supported by previous reports showing that the sulfonylurea increases [Ca2+]c(13,33) and glucagon secretion from isolated alpha-cells (8,16).
+Although the alpha-cell KATPcurrent is already small even at low glucose, a tiny additional reduction of the current elicited by Tolb would strongly affect alpha-cell electrical activity because of the high resistance of its plasma membrane.
+The opposite effects of alpha-cell and delta-cell KATPchannel modulation for the control of glucagon secretion would also explain why both Tolb and Dz, which have opposite effects on channel activity, inhibit glucagon secretion at G1.
+On the one hand, the glucagonostatic effect of Tolb would mainly be mediated by the dominating effect of SST as explained above.
+On the other hand, the glucagonostatic effect of Dz would essentially result from its dominating direct hyperpolarizing effect on alpha-cells.
+The strong paracrine influence of SST released from KATPchannel-deficient delta-cells might explain the reduced glucagon secretion ofSur1Noneislets.
+It is compatible with the observation that pretreatment of these islets with PTX potently stimulated glucagon secretion because of the relief of the inhibitory effect of SST.
+At G7, Tolb stimulated glucagon secretion from islets with or without paracrine SST signaling.
+It is possible that in conditions in which glucagon secretion is already inhibited, the direct stimulatory effect of Tolb on alpha-cells overwhelms the indirect inhibitory effect caused by the stimulation of SST release.
+The glucose dependency of the effects of Tolb and its two mechanisms of action, directly on alpha-cells and indirectly through delta-cells, might explain why sulfonylureas have been reported to exert variable effects on glucagon release.
+Thus, glucagon secretion was stimulated (8,16), unaffected (47), or inhibited (38,39,48) by sulfonylureas.
+Paracrine SST also influences insulin secretion.
+Thus, in most tested conditions, glucose and Tolb induced a larger insulin secretion in islets without paracrine SST signaling than in control islets, confirming previous reports (19).
+Experiments on islets with genetic or pharmacological disruption of both the KATPchannels and SST signaling (Fig.
+7) revealed that glucose can inhibit glucagon secretion independently from KATPchannels and SST.
+This is compatible with our previous observation demonstrating that in isolated alpha-cells devoid of paracrine influence, glucose decreased [Ca2+]cin the presence of a high concentration of Tolb (13,33).
+The nature of the underlying mechanism is, however, unknown.
+It has been hypothesized that Zn2+released from beta-cells could be responsible for the glucagonostatic effect of glucose.
+By monitoring Zn2+exocytosis fromZnT8NoneandZnT8Nonemice, we previously showed that ZnT8 is the main transporter responsible for Zn2+accumulation in insulin granules because its ablation reduced the zinc exocytotic events by 99% (22).
+Here, we showed that glucose similarly inhibited glucagon secretion ofZnT8NoneandZnT8Noneislets.
+This confirms previous reports (49,50) and excludes Zn2+as an inhibitory paracrine signal mediating the glucagonostatic effect of glucose.
+SST exerts a tonic inhibition on insulin and glucagon secretion.
+Glucose can inhibit glucagon release independently of Zn2+released from beta-cells, KATPchannels, and SST.
+Participation of these last two factors in the glucagonostatic effect of glucose, however, cannot be excluded.
+Closure of KATPchannels controls glucagon secretion by two mechanisms, a direct stimulation of alpha-cells and an indirect inhibition via SST released from delta-cells.
+The net effect on glucagon release results from a balance between both effects.
+This might explain why Tolb reproduces the glucagonostatic effect of glucose in some conditions, whereas it stimulates glucagon release in others.
+This latter situation should be considered during treatment of type 2 diabetic patients by sulfonylureas because stimulation of glucagon secretion by the drugs could contribute to the unwanted hyperglucagonemia found in diabetes.
+Our study also calls for a careful examination of delta-cell function in diabetes.
