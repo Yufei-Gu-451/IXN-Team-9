@@ -27,12 +27,11 @@
                 {% for heading in headings %}
                 <th> {{ heading }} </th>
                 {% endfor %}
-                <th>Download Clinical Record</th>
             </tr>
             {% for file in files %}
                 <tr>
                     <td>{{file.name}}</td>
-                    <td>{{file.appointment.date}}</td>
+                    <td>{{file.appointment_date}}</td>
                     <td>{{file.clinical_specialty}}</td>
                     
 
