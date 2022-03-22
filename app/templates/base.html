@@ -31,6 +31,7 @@
                 {% if current_user.is_authenticated and current_user.has_role('patient') %}
                 <li><a href="{{ url_for('main.viewPatientRecords') }}">View Records</a></li>
                 {% endif %}
+                <li><a href="{{ url_for('main.personalUserPage') }}">My Details</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 {% if current_user.is_authenticated %}
