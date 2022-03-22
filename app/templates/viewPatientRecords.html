@@ -32,9 +32,19 @@
             {% for file in files %}
                 <tr>
                     <td>{{file.name}}</td>
-                    <td>{{file.appointment_date}}</td>
+                    <td>{{file.appointment.date}}</td>
+                    <td>{{file.clinical_specialty}}</td>
+                    
+
                     <td>
-                    <form action="/download" method="POST" enctype="multipart/form-data">
+                        <form action="/downloadTranscribedFile" method="POST" enctype="multipart/form-data">
+                            <input name='patientFile' type='hidden' value="{{file.id}}"></input>
+                            <button type="submit" class="btn btn-default">Download</button>
+                        </form>
+                    </td>
+
+                    <td>
+                    <form action="/downloadSummarizedFile" method="POST" enctype="multipart/form-data">
                         <input name='patientFile' type='hidden' value="{{file.id}}"></input>
                         <button type="submit" class="btn btn-default">Download</button>
                     </form>

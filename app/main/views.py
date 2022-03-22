@@ -55,17 +55,10 @@ def upload():
 
   writeFile(file.read(), file.filename)
 
-<<<<<<< HEAD
   # speech_to_text.speech_to_text(inputfile='app/audio/' + file.filename, outputfile="app/file/input.txt")
 
   # text_summarizer.summarize_text(input_file='app/file/input.txt', output_file="app/file/output.txt", \
-  # compression_rate=0.3, number_of_clusters=2, algorithm_num=1, distance_num=3)
-=======
-  speech_to_text.speech_to_text(inputfile='app/audio/' + file.filename, outputfile="app/file/input.txt")
-
-  text_summarizer.summarize_text(input_file='app/file/input.txt', output_file="app/file/output.txt", \
-  compression_rate=0.3, number_of_clusters=2, algorithm_num=9, distance_num=1)
->>>>>>> d13c8b9f8b2e10de32395e19022a886e82291790
+  # compression_rate=0.3, number_of_clusters=2, algorithm_num=9, distance_num=1)
 
   models.addProcessedFile(file.filename, patient_id, current_doctor_id, appointment_date, clinical_specialty)
 
@@ -85,45 +78,60 @@ def upload():
 
   return render_template('showProcessedAudio.html', transcribed_lines=transcribed_file_content, summarized_lines=summarized_file_content, patient=patient)
 
-# @main.route('/confirmProcessing', methods=['POST'])
-# @flask_login.login_required
-# @requires_roles('doctor')
-# def confirmProcessing():
-#   file_id = request.form.get('file_id')
-#   satisfied = request.form.get('satisfied')
-#   if satisfied == 'no':
-#     models.deleteFile(file_id)
-#     return render_template('uploadPage.html')
-#   if satisfied == 'yes':
-#     return render_template('index.html')
+@main.route('/confirmProcessing', methods=['POST'])
+@flask_login.login_required
+@requires_roles('doctor')
+def confirmProcessing():
+  confirmation = request.form.get('confirmation')
+  if confirmation == 'no':
+    models.deleteFile(file_id)
+    return render_template('confirmationDenied.html')
+  if satisfied == 'yes':
+    return render_template('index.html')
+
+@main.route('/confirmationDenied', methods=['POST'])
+@flask_login.login_required
+@requires_roles('doctor')
+def confirmationDenied():
+  return render_template('confirmationDenied.html')
 
 
 @main.route('/viewPatientRecords', methods=['GET', 'POST'])
 @flask_login.login_required
 def viewPatientRecords():
-  headings = ('name', 'appointment date', 'download')
+  headings = ('name', 'appointment date', 'clinical specialty', 'download transcribed audio', 'download summarised report')
   if flask_login.current_user.has_role('doctor'):
     patient_id = request.form['patient']
     patient = models.getPatient(patient_id)
     patient_name = patient.first_name + " " + patient.last_name
-
     files = models.getPatientFiles(patient_id)
-    return render_template('viewPatientRecords.html', files=files, patient_name=patient_name)
+    return render_template('viewPatientRecords.html', files=files, patient_name=patient_name, headings=headings)
+
   if flask_login.current_user.has_role('patient'):
     patient_id = flask_login.current_user.id
     files = models.getPatientFiles(patient_id)
-    return render_template('viewPatientRecords.html', files=files)
+    return render_template('viewPatientRecords.html', files=files, headings=headings)
 
 
-@main.route('/download', methods=['GET', 'POST'])
+@main.route('/downloadSummarizedFile', methods=['GET', 'POST'])
 @flask_login.login_required
 @requires_roles('doctor')
-def download():
+def downloadSummarizedFile():
   file_id = request.form['patientFile']
 
   patientFile = models.getFile(file_id)
 
   return send_file(BytesIO(patientFile.processedData), attachment_filename=patientFile.name, as_attachment=True)
+
+@main.route('/downloadTranscribedFile', methods=['GET', 'POST'])
+@flask_login.login_required
+@requires_roles('doctor')
+def downloadTranscribedFile():
+  file_id = request.form['patientFile']
+
+  patientFile = models.getFile(file_id)
+
+  return send_file(BytesIO(patientFile.transcribedData), attachment_filename=patientFile.name, as_attachment=True)
 
 @main.route('/downloadProcessedAudio', methods=['POST'])
 @requires_roles('doctor')

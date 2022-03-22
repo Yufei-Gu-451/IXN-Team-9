@@ -80,19 +80,23 @@ def load_user(user_id):
 
 def addProcessedFile(filename, patient_id, doctor_id, appointment_date, clinical_specialty):
     processedFile = open("app/file/output.txt", "r")
-    text_filename = filename.split('.')[0] + ".txt"
+    filename = filename.split('.')[0] + ".txt"
 
     transcribedData = open("app/file/input.txt", "r")
 
-    upload = File(name=text_filename, appointment_date=appointment_date, 
-                transcribedData=transcribedData.read().encode(),processedData=processedFile.read().encode(), 
+    upload = File(name=filename, appointment_date=appointment_date, 
+                transcribedData=transcribedData.read().encode(), processedData=processedFile.read().encode(), 
                 clinical_specialty=clinical_specialty, patient_id=patient_id, doctor_id=doctor_id)
     
     db.session.add(upload)
     db.session.commit()
 
-def deleteFile(file_id):
+def deleteLastAddedFile():
+    file = File.query.order_by(File.id.desc()).first()
+    file_id = file.id
     File.query.filter(File.id == file_id).delete()
+    db.session.commit()
+    
 
 def getAllPatients():
     patient_role_id = Role.query.filter_by(name='patient').first()
