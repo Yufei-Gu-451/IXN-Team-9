@@ -10,7 +10,6 @@ class File(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     name = db.Column(db.String(300))
     appointment_date = db.Column(db.Date)
-    audio = db.Column(db.LargeBinary)
     transcribedData = db.Column(db.LargeBinary)
     processedData = db.Column(db.LargeBinary)
     clinical_specialty = db.Column(db.String(300))
@@ -85,9 +84,7 @@ def addProcessedFile(filename, patient_id, doctor_id, appointment_date, clinical
 
     transcribedData = open("app/file/input.txt", "r")
 
-    audioData = open("app/audio/" + filename.split('.')[0] + ".wav")
-
-    upload = File(name=filename, appointment_date=appointment_date, audio=audioData.read().encode(),
+    upload = File(name=filename, appointment_date=appointment_date,
                 transcribedData=transcribedData.read().encode(), processedData=processedFile.read().encode(), 
                 clinical_specialty=clinical_specialty, patient_id=patient_id, doctor_id=doctor_id)
     
