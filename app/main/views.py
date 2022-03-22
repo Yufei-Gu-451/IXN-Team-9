@@ -150,6 +150,17 @@ def viewPatients():
   headings = ("first name", "last name", "date of birth", "email", "username")
   return render_template('viewPatients.html', headings=headings, patients=models.getAllPatients())
 
+@main.route('/personalUserPage', methods=['GET'])
+@flask_login.login_required
+def personalUserPage():
+  headings = ("first name", "last name", "date of birth", "email", "username")
+
+  current_user_id = flask_login.current_user.id
+
+  user = models.getUser(current_user_id)
+
+  return render_template('personalUserPage.html', headings=headings, user=user)
+
 def writeFile(data, filename):
   with open('app/audio/' + filename, 'wb') as file:
       file.write(data)
