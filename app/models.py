@@ -10,7 +10,6 @@ class File(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     name = db.Column(db.String(300))
     appointment_date = db.Column(db.Date)
-    audio = db.Column(db.LargeBinary)
     transcribedData = db.Column(db.LargeBinary)
     processedData = db.Column(db.LargeBinary)
     clinical_specialty = db.Column(db.String(300))
@@ -45,8 +44,6 @@ class User(UserMixin, db.Model):
     username = db.Column(db.String(64), unique=True, index=True)
     role_id = db.Column(db.Integer, db.ForeignKey('role.id'))
     password_hash = db.Column(db.String(128))
-    
-    # file = db.relationship("File", backref="user", lazy='dynamic')
 
     @property
     def password(self):
@@ -68,13 +65,6 @@ class User(UserMixin, db.Model):
     def __repr__(self):
         return '<User %r>' % self.username
 
-# class Appointment(db.Model):
-#     __tablename__ = 'appointment'
-#     id = db.Column(db.Integer, primary_key=True)
-
-#     patient_id = db.Column(db.Integer, db.ForeignKey('patient.id'))
-#     doctor_id = db.Column(db.Integer, db.ForeignKey('doctor.id'))
-
 @login_manager.user_loader
 def load_user(user_id):
     return User.query.get(int(user_id))
@@ -85,9 +75,7 @@ def addProcessedFile(filename, patient_id, doctor_id, appointment_date, clinical
 
     transcribedData = open("app/file/input.txt", "r")
 
-    audioData = open("app/audio/" + filename.split('.')[0] + ".wav")
-
-    upload = File(name=filename, appointment_date=appointment_date, audio=audioData.read().encode(),
+    upload = File(name=filename, appointment_date=appointment_date,
                 transcribedData=transcribedData.read().encode(), processedData=processedFile.read().encode(), 
                 clinical_specialty=clinical_specialty, patient_id=patient_id, doctor_id=doctor_id)
     
