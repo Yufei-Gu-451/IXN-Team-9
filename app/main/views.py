@@ -27,7 +27,6 @@ def requires_roles(*roles):
 
 @main.route('/')
 def index():
-    # print(models.getAllPatients())
   return render_template('index.html')
 
 @main.route('/uploadPage', methods=['GET', 'POST'])
