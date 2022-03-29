@@ -1,7 +1,6 @@
 from concurrent.futures import thread
 from xmlrpc.client import MAXINT
 from rouge import FilesRouge
-from sympy import false
 from app import text_summarizer
 from app import file
 from threading import Thread
@@ -10,15 +9,22 @@ import random
 #------------------------------ Parameters
 COMPRESSION_RATE = 0.05
 NUMBER_OF_CLUSTERS = 6
-FILE_START = 1008
-FILE_END = 1008
-THREAD_NUM = 1
+FILE_START = 1001
+FILE_END = 1100
+THREAD_NUM = 2
 
-postfix_list = ['1-1', '1-2', '1-3', '2-1', '2-2', '2-3', '3-1', '3-2', '3-3', \
-                '4-1', '5-1', '6-1', '7-1', '8-1', '8-2', '8-3', '9-1', '10-1']
+algorithm_list = [(1, 1), (1, 2), (1, 3), (2, 1), (2, 2), (2, 3), (3, 1), (3, 2), (3, 3), (4, 1), (5, 1), (6, 1), (7, 1), (8, 1), (8, 2), (8, 3), (9, 1), (10, 1)]
+# algorithm_list = [(4, 1), (5, 1), (6, 1), (7, 1), (8, 1), (8, 2), (8, 3), (9, 1), (10, 1)]
 
-def file_not_written(file):
-    if (file.exists_file(file) and file.read_txt_file(file) == '') or (not file.exists_file(file)):
+algorithm_list1 = [(4, 1)]
+algorithm_list2 = [(5, 1)]
+algorithm_list3 = [(6, 1)]
+algorithm_list4 = [(1, 1), (1, 2), (1, 3), (2, 1), (2, 2), (2, 3), (3, 1), (3, 2), (3, 3), \
+    (7, 1), (8, 1), (8, 2), (8, 3), (9, 1), (10, 1)]
+
+
+def file_not_written(output_file):
+    if (file.exists_file(output_file) and file.read_txt_file(output_file) == '') or (not file.exists_file(output_file)):
         return True
     else:
         return False
@@ -42,8 +48,7 @@ class SummarizeTextThreadOne(Thread):
         self.number_of_clusters = number_of_clusters
 
     def run(self):
-        algorithm_list = [(4, 1)]
-        for algorithm_num in algorithm_list:
+        for algorithm_num in algorithm_list1:
             output_file = self.output_file + '-' + str(algorithm_num[0]) + '-' + str(algorithm_num[1]) +'.txt'
             if file_not_written(output_file):
                 file.create_file(output_file)
@@ -62,8 +67,7 @@ class SummarizeTextThreadTwo(Thread):
         self.number_of_clusters = number_of_clusters
 
     def run(self):
-        algorithm_list = [(5, 1)]
-        for algorithm_num in algorithm_list:
+        for algorithm_num in algorithm_list2:
             output_file = self.output_file + '-' + str(algorithm_num[0]) + '-' + str(algorithm_num[1]) +'.txt'
             if file_not_written(output_file):
                 file.create_file(output_file)
@@ -83,8 +87,7 @@ class SummarizeTextThreadThree(Thread):
         self.number_of_clusters = number_of_clusters
 
     def run(self):
-        algorithm_list = [(6, 1)]
-        for algorithm_num in algorithm_list:
+        for algorithm_num in algorithm_list3:
             output_file = self.output_file + '-' + str(algorithm_num[0]) + '-' + str(algorithm_num[1]) +'.txt'
             if file_not_written(output_file):
                 file.create_file(output_file)
@@ -104,9 +107,7 @@ class SummarizeTextThreadFour(Thread):
         self.number_of_clusters = number_of_clusters
 
     def run(self):
-        algorithm_list = [(1, 1), (1, 2), (1, 3), (2, 1), (2, 2), (2, 3), (3, 1), (3, 2), (3, 3), (7, 1), \
-            (8, 1), (8, 2), (8, 3), (9, 1), (10, 1)]
-        for algorithm_num in algorithm_list:
+        for algorithm_num in algorithm_list4:
             output_file = self.output_file + '-' + str(algorithm_num[0]) + '-' + str(algorithm_num[1]) +'.txt'
             if file_not_written(output_file):
                 file.create_file(output_file)
@@ -160,15 +161,6 @@ def generate_summary_through_ml(*, sentence_list, compression_rate, number_of_cl
 
 #------------------------------------------------------ Testing Algorithm
 def summarize_text_test(*, input_file, output_file, compression_rate, number_of_clusters):
-    complete = True
-    for postfix in postfix_list:
-        file = str(output_file + '-' + postfix + '.txt')
-        if file_not_written(file):
-            complete = False
-    if complete:
-        print('\n\n-------------------- ' + output_file + ' File Complete ! --------------------\n\n')
-        return 0
-
     print('\n-------------------- Create temp files --------------------\n')
 
     # Generate a random unused number for temp files
@@ -193,12 +185,13 @@ def summarize_text_test(*, input_file, output_file, compression_rate, number_of_
         temp_file_token_address=temp_file_token_address, temp_file_features_address=temp_file_features_address)
 
     print('-------------- The number of sentences : ', len(sentence_list), '--------------')
+    file.write_txt_file(output_file_name='app/file/Result/Result.txt', text=str(len(sentence_list)) + '\n', append=True)
+
     # If too less text : output and exit summarization
     if len(sentence_list) <= number_of_clusters:
         print('\n-------------------- Number of sentence less than number of clusters --------------------\n')
         file.write_txt_file(output_file_name=output_file, text=file.read_txt_file(filename=input_file), append=False)
         return
-
 
     print('\n\n-------------------- Clustering started --------------------\n')
 
@@ -225,7 +218,17 @@ def summarize_text_test(*, input_file, output_file, compression_rate, number_of_
     return 0
 
 
-def rouge_evaluation(*, file_start, file_end, postfix):
+def text_summarization(*, file_start, file_end):
+    for i in range(file_start, file_end):
+        print('\n----------------- File No.{} ------------------\n'.format(i))
+        src_path = 'app/file/FullTexts/FullText-{}.txt'.format(str(i))
+        hyp_path = 'app/file/Hypothesis/Hypothesis-{}'.format(str(i))
+
+        summarize_text_test(input_file=src_path, output_file=hyp_path, \
+            compression_rate=COMPRESSION_RATE, number_of_clusters=NUMBER_OF_CLUSTERS)
+
+
+def rouge_evaluation(*, file_start, file_end, algorithm_num, distance_num):
     #-------------------- Initilize variables
     files_rouge = FilesRouge()
     score = {'rouge-1':{'r':0, 'p':0, 'f':0}, 'rouge-2':{'r':0, 'p':0, 'f':0}}
@@ -235,7 +238,7 @@ def rouge_evaluation(*, file_start, file_end, postfix):
         print('\n\n----------------- Rouge Evaluation No.{} ------------------\n\n'.format(i))
 
         ref_path = 'app/file/Abstracts/Abstract-{}.txt'.format(str(i))
-        hyp_path = 'app/file/Hypothesis/Hypothesis-{}-{}.txt'.format(str(i), postfix)
+        hyp_path = 'app/file/Hypothesis/Hypothesis-{}-{}-{}.txt'.format(str(i), str(algorithm_num), str(distance_num))
 
         scores = files_rouge.get_scores(hyp_path=hyp_path, ref_path=ref_path, avg = True)
 
@@ -258,34 +261,32 @@ def rouge_evaluation(*, file_start, file_end, postfix):
         Text += 'score[\'rouge-2\'][\'p\'] = {}\n'.format(str(score['rouge-2']['p']/iteration))
         Text += 'score[\'rouge-2\'][\'f\'] = {}\n'.format(str(score['rouge-2']['f']/iteration))
 
-        output_file = 'app/file/Result/Result-'+postfix+'.txt'
-        file.create_file(output_file)
+        output_file = 'app/file/Result/Result-' + str(algorithm_num) + '-' + str(distance_num) +'.txt'
+        if file_not_written(output_file=output_file):
+            file.create_file(output_file)
         file.write_txt_file(output_file_name=output_file, text=Text, append=True)
 
 
-def text_summarization(*, file_start, file_end):
-    for i in range(file_start, file_end):
-        print('\n----------------- File No.{} ------------------\n'.format(i))
-        src_path = 'app/file/FullTexts/FullText-{}.txt'.format(str(i))
-        hyp_path = 'app/file/Hypothesis/Hypothesis-{}'.format(str(i))
-
-        summarize_text_test(input_file=src_path, output_file=hyp_path, \
-            compression_rate=COMPRESSION_RATE, number_of_clusters=NUMBER_OF_CLUSTERS)
 
 if __name__ == '__main__':
     if (FILE_END - FILE_START + 1) % THREAD_NUM == 0:
+        '''
         gap = int((FILE_END - FILE_START + 1) / THREAD_NUM)
         thread_list = []
 
         for i in range(THREAD_NUM):
             thread = TextSummarizationThread(FILE_START + i * gap, FILE_START + (i + 1) * gap)
             thread_list.append(thread)
+
+        for thread in thread_list:
             thread.start()
 
         for thread in thread_list:
             thread.join()
-
-        for postfix in postfix_list:
-                rouge_evaluation(file_start = FILE_START, file_end = FILE_END, postfix=postfix)
+        '''
+        for algorithm_num in algorithm_list:
+            file.create_file('app/file/Result/Result-' + str(algorithm_num[0]) + '-' + str(algorithm_num[1]) +'.txt')
+            rouge_evaluation(file_start = FILE_START, file_end = FILE_END, \
+                    algorithm_num=algorithm_num[0], distance_num=algorithm_num[1])
     else:
         print('Error Thread Number')
