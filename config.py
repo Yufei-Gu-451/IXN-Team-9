@@ -5,13 +5,9 @@ from sqlalchemy import create_engine
 
 basedir = os.path.abspath(os.path.dirname(__file__))
 
-# conn_str = "mysql+mysqlconnector://teamixn9@ixn9:Uclcsixn9@ixn9.mysql.database.azure.com/ixn9"
-conn_str = "mysql://root:@localhost/ixn9"
+conn_str = 'mssql+pymssql://sa:UCLCSixn2122@20.127.94.166/ixn'
 
 engine_azure = create_engine(conn_str,echo=True)
-# engine_azure.connect()
-
-# print(engine_azure.table_names())
 
 class Config:
     SECRET_KEY = os.environ.get('SECRET_KEY') or 'afasfsafafs'
