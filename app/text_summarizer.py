@@ -274,7 +274,7 @@ def summarize_text(*, input_file, output_file, compression_rate, number_of_clust
     file.delete_file(temp_file_token_address)
     file.delete_file(temp_file_features_address)
 
-    return 0
+    return len(sentence_list)
 
 
 # Preprocess the text file and extract features for the sentences
@@ -850,28 +850,29 @@ def produce_summary_for_clustering(*, cluster_list, sentence_list, compression_r
     print("\n\n-------------------- Produce the final summary --------------------\n\n")
 
     selected_sentences = [] #select the top sentences in each cluster
+    distance_dict = {}
+
     for cluster in cluster_list:
         # Compute the mean of the cluster
         cluster.update_mean(sentence_list)
-        distance_dict = {}
 
         for i in cluster.members: # i is the no of sentences in sentence_list
             distance_dict[i] = sentence_list[i].distance(cluster.mean, distance_num)
             #print(distance_dict[i])
 
-        # Sort the sentences according to their distance to center
-        sorted_list = sorted(distance_dict.items(), key = lambda item:item[1])
-        #print('Sorted similiarity dict : ', sorted_list)
+    # Sort the sentences according to their distance to center
+    sorted_list = sorted(distance_dict.items(), key = lambda item:item[1])
+    #print('Sorted similiarity dict : ', sorted_list)
 
-        # Calculate the number of sentences to be selected in this cluster
-        num_sentence_selected = int(len(cluster.members)*compression_rate) + 1
-        print('Number of sentence selected in this cluster : ', num_sentence_selected, '\n')
+    # Calculate the number of sentences to be selected in this cluster
+    num_sentence_selected = int(len(sentence_list)*compression_rate)
+    print('Number of sentence selected : ', num_sentence_selected, '\n')
 
-        # Select the best sentences in this cluster
-        print('Sentence selected : ', end = '')
-        for i in range(num_sentence_selected):
-            selected_sentences.append(sorted_list[i][0])
-            print(sorted_list[i][0], end = ' ')
+    # Select the best sentences in this cluster
+    print('Sentence selected : ', end = '')
+    for i in range(num_sentence_selected):
+        selected_sentences.append(sorted_list[i][0])
+        print(sorted_list[i][0], end = ' ')
 
     # Restore the original order
     selected_sentences.sort()
