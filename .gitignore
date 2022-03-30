@@ -5,6 +5,8 @@ venv
 
 .DS_Store
 
+app/bert
+
 # Initially taken from Github's Python gitignore file
 
 # Byte-compiled / optimized / DLL files
