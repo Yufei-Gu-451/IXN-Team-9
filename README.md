@@ -13,5 +13,5 @@ https://students.cs.ucl.ac.uk/2021/group9/index.html
 
 &nbsp;
 
-# User Manual
+# Deployment Manual : Web Application
 https://students.cs.ucl.ac.uk/2021/group9/files/DMWB.pdf
