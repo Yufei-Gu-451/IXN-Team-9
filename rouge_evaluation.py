@@ -5,6 +5,7 @@ from app import text_summarizer
 from app import file
 from threading import Thread
 import random
+import nltk
 
 #------------------------------ Parameters
 COMPRESSION_RATE = 0.05
@@ -228,6 +229,26 @@ def text_summarization(*, file_start, file_end):
             compression_rate=COMPRESSION_RATE, number_of_clusters=NUMBER_OF_CLUSTERS)
 
 
+def baseline_evaluation(*, file_start, file_end):
+    for i in range(file_start, file_end + 1):
+        print('\n----------------- File No.{} ------------------\n'.format(i))
+        src_path = 'app/file/FullTexts/FullText-{}.txt'.format(str(i))
+        hyp_path = 'app/file/Hypothesis/Hypothesis-{}-0-0.txt'.format(str(i))
+
+        input_text = file.read_txt_file(filename=src_path)
+        input_sentences = nltk.sent_tokenize(input_text)
+        selected_sentence_num = int(len(input_sentences) * COMPRESSION_RATE)
+
+        final_summary = ''
+        for i in range(selected_sentence_num):
+            final_summary += input_sentences[i] + ' '
+
+        file.create_file(hyp_path)
+        file.write_txt_file(output_file_name=hyp_path, text=final_summary, append=False)
+
+    rouge_evaluation(file_start=file_start, file_end=file_end, algorithm_num=0, distance_num=0)
+
+
 def rouge_evaluation(*, file_start, file_end, algorithm_num, distance_num):
     #-------------------- Initilize variables
     files_rouge = FilesRouge()
@@ -239,6 +260,7 @@ def rouge_evaluation(*, file_start, file_end, algorithm_num, distance_num):
 
         ref_path = 'app/file/Abstracts/Abstract-{}.txt'.format(str(i))
         hyp_path = 'app/file/Hypothesis/Hypothesis-{}-{}-{}.txt'.format(str(i), str(algorithm_num), str(distance_num))
+        print(hyp_path)
 
         scores = files_rouge.get_scores(hyp_path=hyp_path, ref_path=ref_path, avg = True)
 
@@ -270,7 +292,6 @@ def rouge_evaluation(*, file_start, file_end, algorithm_num, distance_num):
 
 if __name__ == '__main__':
     if (FILE_END - FILE_START + 1) % THREAD_NUM == 0:
-
         gap = int((FILE_END - FILE_START + 1) / THREAD_NUM)
         thread_list = []
 
@@ -290,3 +311,5 @@ if __name__ == '__main__':
                     algorithm_num=algorithm_num[0], distance_num=algorithm_num[1])
     else:
         print('Error Thread Number')
+
+    baseline_evaluation(file_start=FILE_START, file_end=FILE_END)
