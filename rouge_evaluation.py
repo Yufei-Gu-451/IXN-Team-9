@@ -10,12 +10,12 @@ import nltk
 #------------------------------ Parameters
 COMPRESSION_RATE = 0.05
 NUMBER_OF_CLUSTERS = 6
-FILE_START = 1002
-FILE_END = 1002
+FILE_START = 1001
+FILE_END = 1001
 THREAD_NUM = 1
 
-algorithm_list = [(1, 1), (1, 2), (1, 3), (2, 1), (2, 2), (2, 3), (3, 1), (3, 2), (3, 3), (4, 1), (5, 1), (6, 1), (7, 1), (8, 1), (8, 2), (8, 3), (9, 1), (10, 1)]
-# algorithm_list = [(4, 1), (5, 1), (6, 1), (7, 1), (8, 1), (8, 2), (8, 3), (9, 1), (10, 1)]
+algorithm_list = [(1, 1), (1, 2), (1, 3), (2, 1), (2, 2), (2, 3), (3, 1), (3, 2), (3, 3), \
+    (4, 1), (5, 1), (6, 1), (7, 1), (8, 1), (8, 2), (8, 3), (9, 1), (10, 1)]
 
 algorithm_list1 = [(4, 1)]
 algorithm_list2 = [(5, 1)]
@@ -306,7 +306,6 @@ if __name__ == '__main__':
             thread.join()
 
         for algorithm_num in algorithm_list:
-            file.create_file('app/file/Result/Result-' + str(algorithm_num[0]) + '-' + str(algorithm_num[1]) +'.txt')
             rouge_evaluation(file_start = FILE_START, file_end = FILE_END, \
                     algorithm_num=algorithm_num[0], distance_num=algorithm_num[1])
     else:
