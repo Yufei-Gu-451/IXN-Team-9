@@ -139,12 +139,5 @@ def speech_to_text(*, inputfile, outputfile):
     if not os_file.check_file_type(inputfile, 'wav'):
         raise IOError('speech_to_text: audio file type error: {} should be of type wav'.format(inputfile))
     
-    if not os_file.exists_file(outputfile):
-        raise IOError('speech_to_text: output file not exists: {}'.format(outputfile))
-
-    if os_file.check_file_type(outputfile, 'txt'):
-        os_file.write_txt_file(output_file_name=outputfile, text='', append=False)
-    else:
-        raise IOError('speech_to_text: output file type error: {} should be of type txt'.format(outputfile))
-
+    os_file.create_file(outputfile)
     speech_recognize_continuous_from_file(input_file_name=inputfile, output_file_name=outputfile)
