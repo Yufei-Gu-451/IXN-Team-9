@@ -12,7 +12,7 @@ except ImportError:
 
 import time
 import pytest
-from . import file
+from . import os_file
 
 from azure.cognitiveservices.speech import audio
 
@@ -101,7 +101,7 @@ def speech_recognize_continuous_from_file(*, input_file_name, output_file_name):
     # Print event log to terminal
     speech_recognizer.recognized.connect(lambda evt: print('RECOGNIZED: {}'.format(evt.result.text)))
     #Write result text to output file
-    speech_recognizer.recognized.connect(lambda evt: file.write_txt_file(output_file_name=output_file_name, 
+    speech_recognizer.recognized.connect(lambda evt: os_file.write_txt_file(output_file_name=output_file_name, 
                                                             text = '{}\n'.format(evt.result.text), append=True))
 
     # If a recognition session has started
@@ -133,17 +133,17 @@ def speech_recognize_continuous_from_file(*, input_file_name, output_file_name):
 
 #speech_recognize_once_from_mic()
 def speech_to_text(*, inputfile, outputfile):
-    if not file.exists_file(inputfile):
+    if not os_file.exists_file(inputfile):
         raise IOError('speech_to_text: audio file not exists: {}'.format(inputfile))
 
-    if not file.check_file_type(inputfile, 'wav'):
+    if not os_file.check_file_type(inputfile, 'wav'):
         raise IOError('speech_to_text: audio file type error: {} should be of type wav'.format(inputfile))
     
-    if not file.exists_file(outputfile):
+    if not os_file.exists_file(outputfile):
         raise IOError('speech_to_text: output file not exists: {}'.format(outputfile))
 
-    if file.check_file_type(outputfile, 'txt'):
-        file.write_txt_file(output_file_name=outputfile, text='', append=False)
+    if os_file.check_file_type(outputfile, 'txt'):
+        os_file.write_txt_file(output_file_name=outputfile, text='', append=False)
     else:
         raise IOError('speech_to_text: output file type error: {} should be of type txt'.format(outputfile))
 

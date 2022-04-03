@@ -7,7 +7,7 @@ import numpy as np
 import networkx as nx
 from sklearn.cluster import MeanShift, DBSCAN, OPTICS
 
-from . import file
+from . import os_file
 
 # Change this variable to your python3.7 directory
 #PYTHON_DIRECTORY = '/Library/Frameworks/Python.framework/Versions/3.7/bin/python3.7'
@@ -194,7 +194,7 @@ def summarize_text(*, input_file, output_file, compression_rate, number_of_clust
 
     # Generate a random unused number for temp files
     temp_file_num = 0
-    while file.exists_file('app/file/temp_input/temp_input_{}.txt'.format(str(temp_file_num))):
+    while os_file.exists_file('app/file/temp_input/temp_input_{}.txt'.format(str(temp_file_num))):
         temp_file_num = random.randint(0, MAXINT)
 
     # Define the name of temp files
@@ -203,9 +203,9 @@ def summarize_text(*, input_file, output_file, compression_rate, number_of_clust
     temp_file_features_address = 'app/file/temp_features/temp_features_{}.jsonl'.format(str(temp_file_num))
 
     # Create temp files
-    file.create_file(temp_file_address)
-    file.create_file(temp_file_token_address)
-    file.create_file(temp_file_features_address)
+    os_file.create_file(temp_file_address)
+    os_file.create_file(temp_file_token_address)
+    os_file.create_file(temp_file_features_address)
 
 
     print('\n-------------------- Preprocessing started --------------------\n')
@@ -217,7 +217,7 @@ def summarize_text(*, input_file, output_file, compression_rate, number_of_clust
     # If too less text : output and exit summarization
     if len(sentence_list) <= number_of_clusters:
         print('\n-------------------- Number of sentence less than number of clusters --------------------\n')
-        file.write_txt_file(output_file_name=output_file, text=file.read_txt_file(filename=input_file), append=False)
+        os_file.write_txt_file(output_file_name=output_file, text=os_file.read_txt_file(filename=input_file), append=False)
         return
 
 
@@ -265,14 +265,14 @@ def summarize_text(*, input_file, output_file, compression_rate, number_of_clust
 
     print('\n\n-------------------- Write summary to output file --------------------\n')
 
-    file.write_txt_file(output_file_name=output_file, text=final_summary, append=False)
+    os_file.write_txt_file(output_file_name=output_file, text=final_summary, append=False)
 
 
     print('\n\n-------------------- Delete temp files --------------------\n')
 
-    file.delete_file(temp_file_address)
-    file.delete_file(temp_file_token_address)
-    file.delete_file(temp_file_features_address)
+    os_file.delete_file(temp_file_address)
+    os_file.delete_file(temp_file_token_address)
+    os_file.delete_file(temp_file_features_address)
 
     return len(sentence_list)
 
@@ -281,7 +281,7 @@ def summarize_text(*, input_file, output_file, compression_rate, number_of_clust
 def preprocessing(*, input_file, temp_file_address, temp_file_token_address, temp_file_features_address):
     print('\n-------------------- Split sentences and get tokens --------------------\n')
 
-    input_text = file.read_txt_file(filename=input_file)
+    input_text = os_file.read_txt_file(filename=input_file)
     input_sentences = nltk.sent_tokenize(input_text)
     sentence_split_text, preprocessed_text = '', ''
     sentence_list, sentence_num = [], 0
@@ -302,19 +302,19 @@ def preprocessing(*, input_file, temp_file_address, temp_file_token_address, tem
     print('\n-------------------- Prepare text files --------------------\n')
 
     # Write sentences and tokens
-    file.write_txt_file(output_file_name=temp_file_address, text=sentence_split_text, append=False)
-    file.write_txt_file(output_file_name=temp_file_token_address, text=preprocessed_text, append=False)
+    os_file.write_txt_file(output_file_name=temp_file_address, text=sentence_split_text, append=False)
+    os_file.write_txt_file(output_file_name=temp_file_token_address, text=preprocessed_text, append=False)
 
 
     print('\n-------------------- Feature extraction --------------------\n')
 
     import os
-    extract_feature_script = file.get_root_dir() + file.get_sep() + 'app/bert/extract_features.py'
-    temp_input_file = file.get_root_dir() + file.get_sep() + temp_file_address
-    temp_output_file = file.get_root_dir() + file.get_sep() + temp_file_features_address
-    vocab_file = file.get_root_dir() + file.get_sep() + 'app/bert/vocab.txt'
-    bert_config_file = file.get_root_dir() + file.get_sep()+ 'app/bert/bert_config.json'
-    init_checkpoint = file.get_root_dir() + file.get_sep() + 'app/bert/bert_model.ckpt'
+    extract_feature_script = os_file.get_root_dir() + os_file.get_sep() + 'app/bert/extract_features.py'
+    temp_input_file = os_file.get_root_dir() + os_file.get_sep() + temp_file_address
+    temp_output_file = os_file.get_root_dir() + os_file.get_sep() + temp_file_features_address
+    vocab_file = os_file.get_root_dir() + os_file.get_sep() + 'app/bert/vocab.txt'
+    bert_config_file = os_file.get_root_dir() + os_file.get_sep()+ 'app/bert/bert_config.json'
+    init_checkpoint = os_file.get_root_dir() + os_file.get_sep() + 'app/bert/bert_model.ckpt'
 
     os.system(PYTHON_DIRECTORY + ' ' + extract_feature_script + ' --input_file=' + temp_input_file +\
             ' --output_file=' + temp_output_file + ' --vocab_file=' + vocab_file + \
@@ -325,7 +325,7 @@ def preprocessing(*, input_file, temp_file_address, temp_file_token_address, tem
     print('\n-------------------- Get features for every sentence --------------------\n')
 
     sentence_num = 0
-    with open(file.get_root_dir() + file.get_sep() + temp_file_features_address) as input_file:
+    with open(os_file.get_root_dir() + os_file.get_sep() + temp_file_features_address) as input_file:
         for line in json_lines.reader(input_file):
             feature_set = line['features']
 
