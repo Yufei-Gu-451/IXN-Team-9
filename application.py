@@ -1,7 +1,7 @@
 import os
 import click
 from flask import Flask
-from app import create_app, db, file
+from app import create_app, db, os_file
 from app.models import User, Role, File
 
 

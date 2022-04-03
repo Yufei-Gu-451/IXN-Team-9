@@ -3,7 +3,7 @@ import flask_login
 # from .. import db
 from ..models import User, File, Role
 from . import main
-from .. import file
+from .. import os_file
 from .. import speech_to_text
 from .. import text_summarizer
 from .forms import AppointmentForm
@@ -54,9 +54,9 @@ def upload():
 
   writeFile(file.read(), file.filename)
 
-  speech_to_text.speech_to_text(inputfile=file.get_root_dir() + file.get_sep() + 'app/audio/' + file.filename, outputfile="app/file/input.txt")
+  speech_to_text.speech_to_text(inputfile=os_file.get_root_dir() + os_file.get_sep() + 'app/audio/' + file.filename, outputfile="app/file/input.txt")
 
-  text_summarizer.summarize_text(input_file=file.get_root_dir() + file.get_sep() + 'app/file/input.txt', output_file="app/file/output.txt", \
+  text_summarizer.summarize_text(input_file=os_file.get_root_dir() + os_file.get_sep() + 'app/file/input.txt', output_file="app/file/output.txt", \
   compression_rate=0.1, number_of_clusters=6, algorithm_num=10, distance_num=1)
 
   models.addProcessedFile(file.filename, patient_id, current_doctor_id, appointment_date, clinical_specialty)
@@ -161,5 +161,5 @@ def personalUserPage():
   return render_template('personalUserPage.html', headings=headings, user=user)
 
 def writeFile(data, filename):
-  with open(file.get_root_dir() + file.get_sep() + 'app/audio/' + filename, 'wb') as file:
+  with open(os_file.get_root_dir() + os_file.get_sep() + 'app/audio/' + filename, 'wb') as file:
       file.write(data)
