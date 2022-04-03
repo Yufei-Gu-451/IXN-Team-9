@@ -3,7 +3,7 @@ from . import db
 from flask_login import UserMixin
 from . import login_manager
 from io import BytesIO
-import os_file
+from . import os_file
 
 class File(db.Model):
     __tablename__ = 'file'
@@ -76,7 +76,7 @@ def addProcessedFile(filename, patient_id, doctor_id, appointment_date, clinical
     transcribedData = os_file.read_txt_file("app/file/input.txt")
 
     upload = File(name=filename, appointment_date=appointment_date,
-                transcribedData=transcribedData.read().encode(), processedData=processedFile.read().encode(), 
+                transcribedData=transcribedData.encode(), processedData=processedFile.encode(), 
                 clinical_specialty=clinical_specialty, patient_id=patient_id, doctor_id=doctor_id)
     
     db.session.add(upload)
