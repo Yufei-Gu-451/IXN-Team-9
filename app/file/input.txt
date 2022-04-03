@@ -1,4 +1,1 @@
-What is the speech services? The speech service is the unification of speech, text, text, speech, and speech translation into a single edge subscription. It is easy to speech, enable your applications towards the devices with the speech SDK, Speech Devices, SDK, and a Restful APIs.
-These features made up the speech services use the links in this table to learn more about common use cases for each feature, or browse the API references.
-Speech to text, transcribe or translate audio streams or local files to text in real time that your applications, tools, or devices can consumer display.
-Use speech to text with language and standing to divide user intent from the transcribed speech and act on voice commands.
+I'll talk for a few seconds so you can recognize my voice in the future.
