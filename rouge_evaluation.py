@@ -10,8 +10,8 @@ import nltk
 #------------------------------ Parameters
 COMPRESSION_RATE = 0.05
 NUMBER_OF_CLUSTERS = 6
-FILE_START = 1001
-FILE_END = 1001
+FILE_START = 1002
+FILE_END = 1002
 THREAD_NUM = 1
 
 algorithm_list = [(1, 1), (1, 2), (1, 3), (2, 1), (2, 2), (2, 3), (3, 1), (3, 2), (3, 3), (4, 1), (5, 1), (6, 1), (7, 1), (8, 1), (8, 2), (8, 3), (9, 1), (10, 1)]
