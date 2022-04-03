@@ -10,8 +10,8 @@ from sklearn.cluster import MeanShift, DBSCAN, OPTICS
 from . import file
 
 # Change this variable to your python3.7 directory
-# PYTHON_DIRECTORY = '/Library/Frameworks/Python.framework/Versions/3.7/bin/python3.7'
-PYTHON_DIRECTORY = '/usr/bin/python3.7'
+PYTHON_DIRECTORY = '/Library/Frameworks/Python.framework/Versions/3.7/bin/python3.7'
+#PYTHON_DIRECTORY = '/usr/bin/python3.7'
 
 class Feature:
     def __init__(self, word):
@@ -309,16 +309,23 @@ def preprocessing(*, input_file, temp_file_address, temp_file_token_address, tem
     print('\n-------------------- Feature extraction --------------------\n')
 
     import os
-    os.system(PYTHON_DIRECTORY + ' app/bert/extract_features.py'\
-            ' --input_file=' + temp_file_address +' --output_file=' + temp_file_features_address + \
-                ' --vocab_file=app/bert/vocab.txt --bert_config_file=app/bert/bert_config.json'\
-                    ' --init_checkpoint=app/bert/bert_model.ckpt --layers=-1 --max_seq_length=128 --batch_size=8')
+    extract_feature_script = file.get_root_dir() + file.get_sep() + 'app/bert/extract_features.py'
+    temp_input_file = file.get_root_dir() + file.get_sep() + temp_file_address
+    temp_output_file = file.get_root_dir() + file.get_sep() + temp_file_features_address
+    vocab_file = file.get_root_dir() + file.get_sep() + 'app/bert/vocab.txt'
+    bert_config_file = file.get_root_dir() + file.get_sep()+ 'app/bert/bert_config.json'
+    init_checkpoint = file.get_root_dir() + file.get_sep() + 'app/bert/bert_model.ckpt'
+
+    os.system(PYTHON_DIRECTORY + ' ' + extract_feature_script + ' --input_file=' + temp_input_file +\
+            ' --output_file=' + temp_output_file + ' --vocab_file=' + vocab_file + \
+            ' --bert_config_file=' + bert_config_file + ' --init_checkpoint=' + init_checkpoint +\
+            ' --layers=-1 --max_seq_length=128 --batch_size=8')
 
 
     print('\n-------------------- Get features for every sentence --------------------\n')
 
     sentence_num = 0
-    with open(temp_file_features_address) as input_file:
+    with open(file.get_root_dir() + file.get_sep() + temp_file_features_address) as input_file:
         for line in json_lines.reader(input_file):
             feature_set = line['features']
 

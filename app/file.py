@@ -1,24 +1,35 @@
 import filetype
 import os
 
+# Return root directory 
+print(os.path.relpath(os.path.dirname(os.path.dirname(__file__))))
+def get_root_dir():
+    return os.path.relpath(os.path.dirname(os.path.dirname(__file__)))
+
+def get_sep():
+    return os.sep
+
 # Create a file
-def create_file(file_name):
-    file = open(file_name, 'w')
+def create_file(filename):
+    filename = get_root_dir() + get_sep() + filename
+    file = open(filename, 'w')
     file.close()
 
 # Delete a file
 # If file not exist, do nothing
-def delete_file(file_name):
-    if exists_file(file_name):
-        os.remove(file_name)
+def delete_file(filename):
+    filename = get_root_dir() + get_sep() + filename
+
+    if exists_file(filename):
+        os.remove(filename)
 
 # Check if a file exists
-def exists_file(file):
-    return os.path.exists(file) and os.path.isfile(file)
+def exists_file(filename):
+    return os.path.exists(filename) and os.path.isfile(filename)
 
 # Check if a directory exists
-def exists_dir(dir):
-    return os.path.exists(dir) and os.path.isdir(dir)
+def exists_dir(directory):
+    return os.path.exists(directory) and os.path.isdir(directory)
 
 # Check file type according to the first 16 bit of the file
 def check_file_type(filename, target_type):
@@ -42,6 +53,8 @@ def check_file_type(filename, target_type):
 # Try to read a txt file and return its content in a string
 # If file does not exist / not txt file, raise IOError
 def read_txt_file(filename):
+    filename = get_root_dir() + get_sep() + filename
+
     if exists_file(filename) and check_file_type(filename, 'txt'):
         f = open(filename)
         file_content = ''
@@ -58,6 +71,8 @@ def read_txt_file(filename):
 # If append is false, cover original content
 # If file does not exist / not txt file, raise IOError
 def write_txt_file(*, output_file_name, text, append):
+    output_file_name = get_root_dir() + get_sep() + output_file_name
+
     if exists_file(output_file_name) and check_file_type(output_file_name, 'txt'):
         if append:
             with open (output_file_name, 'a') as f:
