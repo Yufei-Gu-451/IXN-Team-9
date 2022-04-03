@@ -3,7 +3,7 @@ from . import db
 from flask_login import UserMixin
 from . import login_manager
 from io import BytesIO
-import os_file
+from . import os_file
 
 class File(db.Model):
     __tablename__ = 'file'
