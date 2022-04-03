@@ -24,4 +24,4 @@ def test(test_names):
         tests = unittest.TestLoader().discover('tests')
     unittest.TextTestRunner(verbosity=2).run(tests)
 
-app.run(host='0.0.0.0', port=8000, debug=True)
+app.run(host='0.0.0.0', port=8080, debug=True)
