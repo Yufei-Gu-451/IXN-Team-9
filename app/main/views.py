@@ -161,5 +161,5 @@ def personalUserPage():
   return render_template('personalUserPage.html', headings=headings, user=user)
 
 def writeFile(data, filename):
-  with open('app/audio/' + filename, 'wb') as file:
+  with open(file.get_root_dir() + file.get_sep() + 'app/audio/' + filename, 'wb') as file:
       file.write(data)
