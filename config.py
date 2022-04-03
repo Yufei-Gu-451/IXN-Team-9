@@ -5,7 +5,7 @@ from sqlalchemy import create_engine
 
 basedir = os.path.abspath(os.path.dirname(__file__))
 
-conn_str = 'mssql+pymssql://sa:UCLCSixn2122@20.127.94.166/ixn' 
+conn_str = 'mssql+pymssql://sa:UCLCSixn2122@20.228.220.224/ixn' 
 
 engine_azure = create_engine(conn_str,echo=True)
 
