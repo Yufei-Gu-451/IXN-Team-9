@@ -58,8 +58,7 @@ def upload():
     outputfile="app/file/input.txt")
 
   text_summarizer.summarize_text(input_file='app/file/input.txt', \
-    output_file="app/file/output.txt", \
-  compression_rate=0.1, number_of_clusters=6, algorithm_num=10, distance_num=1)
+    output_file="app/file/output.txt", compression_rate=0.05, number_of_clusters=6, algorithm_num=10, distance_num=1)
 
   models.addProcessedFile(file.filename, patient_id, current_doctor_id, appointment_date, clinical_specialty)
 
