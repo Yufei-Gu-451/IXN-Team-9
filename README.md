@@ -15,30 +15,43 @@ https://students.cs.ucl.ac.uk/2021/group9/index.html
 
 # Deployment Manual
 Please check the `Deployment Manual - Web Application.pdf` file for deployment of the web application.
+&nbsp;
 Please check the `Deployment Manual - Database.pdf` file for deployment of the database.
 
 &nbsp;
 
 # User Manual 
 Please check the `User Manual - Patient.pdf` file for patients.
+&nbsp;
 Please check the `User Manual - Doctor.pdf` file for doctors.
 
 &nbsp;
 
 # Prototype
 Web Application Server (Azure Virtual Machine)
+&nbsp;
 Username: `User_1`
+&nbsp;
 Password: `UCLCSixn2122`
+&nbsp;
 Public IP address: `20.117.101.114`
 
+&nbsp;
 Start the Web Application:
+&nbsp;
 Connect to VM `ssh User_1@20.117.101.114`
+&nbsp;
 Enter the password `UCLCSixn2122`
+&nbsp;
 Start hosting the app `python3.7 application.py`
+&nbsp;
 Visit the Web Application at http://20.117.101.114:8080/
 
 # Testing Account
+&nbsp;
 Username: `davidcox@example.com`
+&nbsp;
 Password: `test`
 
+&nbsp;
 A patient account can be created through a doctor's account.
