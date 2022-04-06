@@ -14,4 +14,11 @@ https://students.cs.ucl.ac.uk/2021/group9/index.html
 &nbsp;
 
 # Deployment Manual
-Please check the `Deployment Manual - Web Application.pdf` file in the main repostiory.
+Please check the `Deployment Manual - Web Application.pdf` file for deployment of the web application.
+Please check the `Deployment Manual - Database.pdf` file for deployment of the database.
+
+&nbsp;
+
+# User Manual 
+Please check the `User Manual - Patient.pdf` file for patients.
+Please check the `User Manual - Doctor.pdf` file for doctors.
