@@ -22,3 +22,23 @@ Please check the `Deployment Manual - Database.pdf` file for deployment of the d
 # User Manual 
 Please check the `User Manual - Patient.pdf` file for patients.
 Please check the `User Manual - Doctor.pdf` file for doctors.
+
+&nbsp;
+
+# Prototype
+Web Application Server (Azure Virtual Machine)
+Username: `User_1`
+Password: `UCLCSixn2122`
+Public IP address: `20.117.101.114`
+
+Start the Web Application:
+Connect to VM `ssh User_1@20.117.101.114`
+Enter the password `UCLCSixn2122`
+Start hosting the app `python3.7 application.py`
+Visit the Web Application at http://20.117.101.114:8080/
+
+# Testing Account
+Username: `davidcox@example.com`
+Password: `test`
+
+A patient account can be created through a doctor's account.
